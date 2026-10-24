@@ -191,11 +191,11 @@ deinem Gerät ändert sich dann nichts.
 
 ![Einstellungen: Sprache und Darstellung](../images/de/20-settings.png) ![Einstellungen: tägliche Wiederholung](../images/de/21-settings-review.png)
 
-**Sprache**
+### Sprache
 
 - **App-Sprache**: wie im System, oder immer Deutsch oder Englisch.
 
-**Darstellung**
+### Darstellung
 
 - **Design**: hell, dunkel oder wie auf deinem Gerät eingestellt.
 - **Farbschema**: die Farben deines Hintergrundbilds (ab Android 12), eines von sechs Farbschemata oder eine eigene
@@ -203,26 +203,26 @@ deinem Gerät ändert sich dann nichts.
 - **Bilder auf Karten anzeigen** schaltet die Bilder auf Vokabelkarten ein oder aus.
 - **Animationen**: wie auf deinem Gerät eingestellt, reduziert oder vollständig.
 
-**Aussprache**
+### Aussprache
 
 - **Automatisch abspielen** spricht die Antwort, sobald eine Karte umgedreht wird.
 - **… beim Anzeigen abspielen** spricht die Lernsprache, sobald eine Karte sie auf der Vorderseite zeigt.
 - **Sprechtempo** macht die Stimme langsamer oder schneller.
 
-**Tägliche Wiederholung**
+### Tägliche Wiederholung
 
 - **Behalten**: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise
   90 %). Höher heißt häufiger wiederholen.
 - **Neue Karten pro Tag** und **Höchstens Wiederholungen pro Tag** begrenzen, wie viel die tägliche Wiederholung
   enthält.
 
-**Daten**
+### Daten
 
 - **Sprachpakete** öffnet die [Paketverwaltung](#sprachpakete).
 - **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen. Installierte Pakete bleiben. Das lässt sich
   nicht rückgängig machen.
 
-**Über wörds**
+### Über wörds
 
 - **Open-Source-Lizenzen** listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu
   lesen.

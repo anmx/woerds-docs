@@ -182,11 +182,11 @@ content that breaks the rules is rejected, and wörds tells you why. Nothing on 
 
 ![Settings: language and appearance](../images/en/20-settings.png) ![Settings: daily review](../images/en/21-settings-review.png)
 
-**Language**
+### Language
 
 - **App language**: follow the system, or always German or English.
 
-**Appearance**
+### Appearance
 
 - **Theme**: light, dark, or as set on your device.
 - **Color scheme**: the colors of your wallpaper (Android 12 and later), one of six schemes, or a color of your
@@ -194,24 +194,24 @@ content that breaks the rules is rejected, and wörds tells you why. Nothing on 
 - **Show pictures on cards** turns the pictures on vocabulary cards on or off.
 - **Animations**: as set on your device, reduced, or full.
 
-**Pronunciation**
+### Pronunciation
 
 - **Play automatically** speaks the answer when a card is flipped.
 - **Play … when shown** speaks the learned language as soon as a card appears with it on the front.
 - **Speech rate** makes the voice slower or faster.
 
-**Daily review**
+### Daily review
 
 - **Remember**: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %).
   Higher means more frequent reviews.
 - **New cards per day** and **Reviews per day at most** limit how much each day's review contains.
 
-**Data**
+### Data
 
 - **Language packs** opens the [pack management](#language-packs).
 - **Reset learning progress** deletes all answers and sessions. Installed packs stay. This cannot be undone.
 
-**About wörds**
+### About wörds
 
 - **Open-source licenses** lists the libraries wörds is built with; tap one to read its license.
 
