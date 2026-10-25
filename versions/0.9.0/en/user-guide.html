@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your…">
+  <meta name="robots" content="noindex">
+  <title>wörds user guide</title>
+  <link rel="stylesheet" href="../../../manual.css">
+  <link rel="alternate" hreflang="de" href="../de/benutzerhandbuch.html">
+  <link rel="alternate" hreflang="en" href="user-guide.html">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Manual">
+      <a href="../../../index.html">Manual</a>
+      <a href="user-guide.html" aria-current="page">User guide</a>
+      <a href="../../../en/privacy-policy.html">Privacy policy</a>
+      <a class="lang" href="../de/benutzerhandbuch.html" hreflang="de" lang="de">Deutsch</a>
+    </nav>
+  </header>
+  <main id="main">
+    <p class="version archived" role="note">This guide describes wörds 0.9.0, an earlier version. <a href="../../../en/user-guide.html">Guide for the latest version (0.10.0)</a></p>
+    <h1 id="wörds-user-guide">wörds user guide</h1>
+    <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card, check yourself honestly and grade it. wörds then works out when you should see the card again.</p>
+    <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub.</p>
+    <p>This guide describes wörds 0.9.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <h2 id="contents">Contents</h2>
+    <nav aria-labelledby="contents">
+      <ul>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#the-library">The library</a></li>
+        <li><a href="#starting-a-session">Starting a session</a></li>
+        <li><a href="#studying-a-card">Studying a card</a></li>
+        <li><a href="#end-of-a-session">End of a session</a></li>
+        <li><a href="#todays-review">Today's review</a></li>
+        <li><a href="#progress">Progress</a></li>
+        <li><a href="#language-packs">Language packs</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#tablets-and-foldables">Tablets and foldables</a></li>
+        <li><a href="#accessibility-and-privacy">Accessibility and privacy</a></li>
+        <li><a href="#questions-and-problems">Questions and problems</a></li>
+      </ul>
+    </nav>
+    <h2 id="getting-started">Getting started</h2>
+    <p>On first start wörds installs its built-in content and asks what you want to learn. Choose a language pair and tap <strong>Let's go</strong>. You can install more pairs later and switch between them at any time.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/01-onboarding.png" alt="The welcome screen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The welcome screen</figcaption>
+      </figure>
+    </div>
+    <p>The app has three areas, always reachable from the bar at the bottom (on tablets: at the side):</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Area</th><th scope="col">What it is for</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Library</th><td>Browse the content and start a session</td></tr>
+          <tr><th scope="row">Progress</th><td>Today's review and what you have learned so far</td></tr>
+          <tr><th scope="row">Settings</th><td>Language, colors, pronunciation, daily review, language packs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="the-library">The library</h2>
+    <p>The library shows everything you can learn in the current language pair. The row of chips at the top switches between the installed packs, for example <em>Verben</em> (verb conjugation) and <em>Wortschatz</em> (vocabulary). Each pack is divided into sections (lessons), and each section into items: a verb with all its forms, or a word.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/08-library.png" alt="The library with today&#x27;s review at the top" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The library with today&#x27;s review at the top</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/09-library-vocabulary.png" alt="The vocabulary pack" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The vocabulary pack</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Search</strong> finds words and verb forms in the selected pack.</li>
+      <li><strong>Today's review</strong> at the top starts or continues your daily review (see <a href="#todays-review">Today's review</a>).</li>
+      <li><strong>Continue last session</strong> appears when a session is still open; it picks up exactly where you left off.</li>
+      <li>The <strong>▶ button</strong> next to a section starts that whole section.</li>
+      <li>With two or more language pairs installed, tap the pair under the title to switch between them.</li>
+      <li>The <strong>box icon</strong> at the top right opens the <a href="#language-packs">language packs</a>.</li>
+    </ul>
+    <p>To study only some items, tick them. <strong>Select all</strong> ticks a whole section; <strong>Clear</strong> at the top removes the selection. The button at the bottom shows how many items you have chosen.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/02-library-selection.png" alt="Two verbs selected" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Two verbs selected</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/15-pair-switcher.png" alt="Switching the language pair" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Switching the language pair</figcaption>
+      </figure>
+    </div>
+    <h2 id="starting-a-session">Starting a session</h2>
+    <p>Before a session starts, a sheet lets you decide how to practise:</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/03-session-setup.png" alt="The session setup" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The session setup</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Direction</strong>: from your language to the learned one (<em>German → Italian</em>: you are shown "ich bin" and say "io sono"), the other way round, or <strong>Both</strong>.</li>
+      <li><strong>Order</strong> (only with <em>Both</em>): <strong>One after the other</strong> practises all cards of an item in one direction, then in the other. <strong>Alternating</strong> asks each card in both directions in turn.</li>
+      <li><strong>Tenses</strong> (verbs only): choose which tenses to practise.</li>
+    </ul>
+    <p>The sheet shows how many cards that makes and roughly how long it takes. Tap <strong>Start</strong>.</p>
+    <h2 id="studying-a-card">Studying a card</h2>
+    <p>A card shows a prompt. Say or think the answer, then tap the card to flip it.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/04-card-front.png" alt="The front of a card" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The front of a card</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/05-card-answer.png" alt="The answer" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The answer</figcaption>
+      </figure>
+    </div>
+    <p>Then grade yourself:</p>
+    <ul>
+      <li><strong>Knew it</strong>, or swipe the card to the right.</li>
+      <li><strong>Didn't know it</strong>, or swipe the card to the left.</li>
+    </ul>
+    <p>Be honest: wörds plans your reviews from these answers. That is also why <strong>Knew it</strong> only becomes available once the answer is visible. If you tap <strong>Didn't know it</strong> before flipping, the card shows its answer first; tap <strong>Didn't know it</strong> again to move on.</p>
+    <p>More on the card screen:</p>
+    <ul>
+      <li>The <strong>speaker</strong> plays the pronunciation with your device's text-to-speech voice. If the voice for the language is missing, wörds offers to install it.</li>
+      <li><strong>Undo</strong> (the arrow at the top right, or the message at the bottom) takes back the last answer.</li>
+      <li>The tag at the top left shows the direction, for example <em>DE → IT</em>.</li>
+      <li><strong>✕</strong> closes the session. It stays open, and you can continue it later from the library.</li>
+    </ul>
+    <p><strong>Vocabulary cards</strong> show the word, and on the answer side its article, plural and an example sentence where the pack has one. Many words of the built-in Italian pack also have a picture of their meaning. You can turn pictures off in the settings.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/10-vocabulary-front.png" alt="A vocabulary card with a picture" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A vocabulary card with a picture</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/11-vocabulary-answer.png" alt="Its answer side" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Its answer side</figcaption>
+      </figure>
+    </div>
+    <h2 id="end-of-a-session">End of a session</h2>
+    <p>A session is split into groups: one per verb and tense, or a handful of words. After each group wörds shows how it went and what comes next. At the end you see the result of the whole session.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/06-group-done.png" alt="A finished group" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A finished group</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/07-session-complete.png" alt="The session summary" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The session summary</figcaption>
+      </figure>
+    </div>
+    <p><strong>Repeat unknown cards</strong> starts a short session with just the cards you did not know. <strong>Done</strong> returns to the library.</p>
+    <h2 id="todays-review">Today's review</h2>
+    <p>wörds uses <em>spaced repetition</em>: a card you know well comes back after a long break, a card you struggle with comes back soon. Behind this is FSRS, a modern scheduling method that estimates for each card how likely you are to still remember it.</p>
+    <p>Every day wörds puts together <strong>today's review</strong>:</p>
+    <ul>
+      <li>cards that are due, the ones you are most likely to forget first, and</li>
+      <li>a few <strong>new cards</strong> from packs you have already started (20 a day unless you change it).</li>
+    </ul>
+    <p>You start the review from the top of the library or from the <strong>Progress</strong> tab. A number on the Progress tab shows how many cards are waiting. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued the same day. A review day starts at 4:00 in the morning, so a late evening session still counts for that day.</p>
+    <p>Every answer counts towards your schedule: in a normal session as well as in the review.</p>
+    <h2 id="progress">Progress</h2>
+    <p>The <strong>Progress</strong> tab shows today's review and, for each pack, how far you have got. Tap a pack to see the same figures per section; within a section you can show its groups.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/12-progress.png" alt="Progress" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Progress</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/13-progress-pack.png" alt="Progress of one pack" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Progress of one pack</figcaption>
+      </figure>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Figure</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">learned</th><td>Cards you have answered at least once</td></tr>
+          <tr><th scope="row">Remembered</th><td>Cards you would still know after three weeks or more</td></tr>
+          <tr><th scope="row">Due</th><td>Cards that are due for review now</td></tr>
+          <tr><th scope="row">Accuracy</th><td>Share of answers marked <em>Knew it</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The <strong>Direction</strong> buttons show the figures for one direction or both.</p>
+    <h2 id="language-packs">Language packs</h2>
+    <p>All content comes in language packs. Open them from the box icon in the library, or via <strong>Settings → Language packs</strong>.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/30-packs-installed.png" alt="Installed packs" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Installed packs</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/31-packs-github.png" alt="GitHub sources" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>GitHub sources</figcaption>
+      </figure>
+    </div>
+    <p><strong>Installed</strong> lists your packs by language pair, with version and origin (<em>Built in</em>, <em>Imported file</em> or <em>GitHub</em>).</p>
+    <ul>
+      <li><strong>Import file</strong> installs or updates a pack from a <code>.linguapack</code> file, for example from your downloads.</li>
+      <li>The bin icon removes a pack. Your learning progress is kept and comes back if you install the pack again. Built-in packs cannot be removed.</li>
+    </ul>
+    <p><strong>GitHub</strong> installs packs from GitHub repositories that publish a pack index (<code>lingua-index.json</code>):</p>
+    <ol>
+      <li>Tap <strong>Add source</strong> and enter the owner and name of the repository. You can also paste a GitHub link into the owner field. Branch and folder are optional.</li>
+      <li>For a <strong>private</strong> repository, add a fine-grained access token with read-only access to that repository's contents. wörds stores it encrypted, with a key that never leaves your device. Showing, replacing or deleting a saved token requires your fingerprint, face or screen lock.</li>
+      <li>Save. wörds shows the packs the repository offers. Tap <strong>Install</strong>.</li>
+    </ol>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/32-source-editor.png" alt="Adding a GitHub source" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Adding a GitHub source</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/33-source-index.png" alt="The packs of a source" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The packs of a source</figcaption>
+      </figure>
+    </div>
+    <p>wörds checks once a day, on Wi-Fi, whether your sources have new versions, and shows <strong>Update</strong> where one is available. Large downloads continue in the background with a notification.</p>
+    <p><strong>Every pack is checked before anything is stored.</strong> A damaged file, a pack that does not match its checksum or content that breaks the rules is rejected, and wörds tells you why. Nothing on your device changes in that case.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/34-pack-rejected.png" alt="A manipulated pack is rejected" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A manipulated pack is rejected</figcaption>
+      </figure>
+    </div>
+    <h2 id="settings">Settings</h2>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/20-settings.png" alt="Settings: language and appearance" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Settings: language and appearance</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/21-settings-review.png" alt="Settings: daily review" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Settings: daily review</figcaption>
+      </figure>
+    </div>
+    <h3 id="language">Language</h3>
+    <ul>
+      <li><strong>App language</strong>: follow the system, or always German or English.</li>
+    </ul>
+    <h3 id="appearance">Appearance</h3>
+    <ul>
+      <li><strong>Theme</strong>: light, dark, or as set on your device.</li>
+      <li><strong>Color scheme</strong>: the colors of your wallpaper (Android 12 and later), one of six schemes, or a color of your own. Colors follow the system's contrast setting (Android 14 and later).</li>
+      <li><strong>Show pictures on cards</strong> turns the pictures on vocabulary cards on or off.</li>
+      <li><strong>Animations</strong>: as set on your device, reduced, or full.</li>
+    </ul>
+    <h3 id="pronunciation">Pronunciation</h3>
+    <ul>
+      <li><strong>Play automatically</strong> speaks the answer when a card is flipped.</li>
+      <li><strong>Play … when shown</strong> speaks the learned language as soon as a card appears with it on the front.</li>
+      <li><strong>Speech rate</strong> makes the voice slower or faster.</li>
+    </ul>
+    <h3 id="daily-review">Daily review</h3>
+    <ul>
+      <li><strong>Remember</strong>: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %). Higher means more frequent reviews.</li>
+      <li><strong>New cards per day</strong> and <strong>Reviews per day at most</strong> limit how much each day's review contains.</li>
+    </ul>
+    <h3 id="data">Data</h3>
+    <ul>
+      <li><strong>Language packs</strong> opens the <a href="#language-packs">pack management</a>.</li>
+      <li><strong>Reset learning progress</strong> deletes all answers and sessions. Installed packs stay. This cannot be undone.</li>
+    </ul>
+    <h3 id="about-wörds">About wörds</h3>
+    <ul>
+      <li><strong>Open-source licenses</strong> lists the libraries wörds is built with; tap one to read its license.</li>
+    </ul>
+    <p><strong>Custom color</strong>: pick a hue and colorfulness (or enter a hex code) and a style. The preview shows the result in light and dark.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/22-custom-color.png" alt="Your own color" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Your own color</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/16-library-dark.png" alt="Dark theme" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Dark theme</figcaption>
+      </figure>
+    </div>
+    <h2 id="tablets-and-foldables">Tablets and foldables</h2>
+    <p>On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of the selected source side by side. On a half-folded foldable (tabletop posture), the card sits above the fold and the grade buttons below it, so you can study with the device standing on a table.</p>
+    <div class="figures">
+      <figure class="wide">
+        <img src="../images/tablet/en_1_library.png" alt="Library on a tablet" width="2560" height="1440" loading="lazy" decoding="async">
+        <figcaption>Library on a tablet</figcaption>
+      </figure>
+    </div>
+    <h2 id="accessibility-and-privacy">Accessibility and privacy</h2>
+    <ul>
+      <li>wörds works with <strong>TalkBack</strong>, large text, high contrast, reduced motion, keyboards and D-pads. On a hardware keyboard, <strong>Esc</strong> goes back.</li>
+      <li>wörds needs <strong>no account</strong> and works <strong>offline</strong>. It only goes online to talk to GitHub, and only when you use GitHub sources. There are no ads and no tracking.</li>
+      <li>Your progress and settings are part of your device's backup. Access tokens are not: after a restore, wörds asks for them again.</li>
+    </ul>
+    <h2 id="questions-and-problems">Questions and problems</h2>
+    <p><strong>A card has no sound.</strong> Your device lacks the text-to-speech voice for the language. Tap <strong>Install</strong> in the message on the card, or add the voice in your device's speech settings.</p>
+    <p><strong>A pack was not installed.</strong> The message says what is wrong with it. Nothing has been changed on your device. Ask the author of the pack for a corrected version.</p>
+    <p><strong>GitHub reports an error.</strong> Check your connection. For a private repository, check that the access token has not expired and grants read access to the repository's contents. If GitHub's request limit has been reached, the message says when you can try again.</p>
+    <p><strong>I want to start over.</strong> <strong>Settings → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
+  </main>
+</body>
+</html>

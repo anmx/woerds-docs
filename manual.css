@@ -81,6 +81,17 @@ a { color: var(--primary); }
 .email .decoy { display: none; }
 
 p, ul, ol { margin: 12px 0; }
+
+/* Which version a guide page describes; on an earlier version's pages, a note pointing to the latest one. */
+.version { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+.version.archived {
+  padding: 12px 16px;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--surface-variant);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
 li { margin: 4px 0; }
 
 code {

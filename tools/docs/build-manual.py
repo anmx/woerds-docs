@@ -13,14 +13,25 @@ of that:
 - Dates (YYYY-MM-DD) become <time> elements. Addresses written as "name _at_ host _dot_ tld" become an address with a
   hidden decoy part, so that harvesters copying the text get a wrong address.
 
+The user guide is versioned; the privacy policy is not (it applies to every version and carries its own date).
+en/ and de/ hold the guide of the latest version, so its address never changes. Each earlier version is a frozen copy
+in versions/<version>/ with the screenshots it showed (versions/<version>/images/), listed in versions.json. Guide
+pages show which version they describe and link to the others; an earlier version's pages point to the latest one
+and are kept out of search results. The version the guide names ("This guide describes wörds 0.10.0.") must match
+versions.json, and index.html must link every earlier version.
+
 Usage:
 
     python3 tools/docs/build-manual.py           # write the HTML files
     python3 tools/docs/build-manual.py --check   # exit with 1 when an HTML file is missing or out of date (CI)
+    python3 tools/docs/build-manual.py --freeze 0.11.0  # before changing the guide for 0.11.0: copy the latest
+                                                        # guide into versions/<latest>/ and make 0.11.0 the latest
 """
 import html
+import json
 import os
 import re
+import shutil
 import struct
 import sys
 
@@ -35,9 +46,28 @@ COUNTERPARTS = {
 COUNTERPARTS.update({de: en for en, de in COUNTERPARTS.items()})
 
 LABELS = {
-    "en": {"home": "Manual", "other": "Deutsch", "skip": "Skip to content"},
-    "de": {"home": "Handbuch", "other": "English", "skip": "Zum Inhalt springen"},
+    "en": {
+        "home": "Manual", "other": "Deutsch", "skip": "Skip to content",
+        "version": "Version {version}", "current": "Version {version} (latest)", "earlier": "Earlier versions:",
+        "archived": "This guide describes wörds {version}, an earlier version.",
+        "latest": "Guide for the latest version ({version})", "versions": "Versions",
+    },
+    "de": {
+        "home": "Handbuch", "other": "English", "skip": "Zum Inhalt springen",
+        "version": "Version {version}", "current": "Version {version} (aktuell)", "earlier": "Frühere Versionen:",
+        "archived": "Dieses Handbuch beschreibt wörds {version}, eine frühere Version.",
+        "latest": "Handbuch der aktuellen Version ({version})", "versions": "Versionen",
+    },
 }
+# The versioned document per language, and the sentence in it that names the version it describes.
+GUIDES = {"en": "en/user-guide.md", "de": "de/benutzerhandbuch.md"}
+GUIDE_VERSION = {
+    "en": re.compile(r"This guide describes wörds (\d+\.\d+\.\d+)\b"),
+    "de": re.compile(r"Dieses Handbuch beschreibt wörds (\d+\.\d+\.\d+)\b"),
+}
+VERSIONS_FILE = "versions.json"
+VERSIONS_DIRECTORY = "versions"
+VERSION = re.compile(r"\d+\.\d+\.\d+")
 # The header lists the parts of the site, in this order.
 PARTS = {
     "en": (("en/user-guide.md", "User guide"), ("en/privacy-policy.md", "Privacy policy")),
@@ -116,7 +146,10 @@ def png_size(path):
 
 
 def figure(alt, src, source):
-    width, height = png_size(os.path.join(os.path.dirname(source), src))
+    path = os.path.join(os.path.dirname(source), src)
+    if not os.path.exists(path):
+        raise ValueError(f"{os.path.relpath(source, ROOT)} shows {src}, which does not exist")
+    width, height = png_size(path)
     wide = "/tablet/" in src
     return [
         f'<figure class="{"wide" if wide else "shot"}">',
@@ -220,13 +253,77 @@ def shorten(text):
     return text[:DESCRIPTION_LENGTH - 1].rsplit(" ", 1)[0] + "…"
 
 
-def page(source):
+def read_versions():
+    with open(os.path.join(ROOT, VERSIONS_FILE), encoding="utf-8") as f:
+        versions = json.load(f)
+    listed = [versions["latest"], *versions["archived"]]
+    for version in listed:
+        if not VERSION.fullmatch(version):
+            raise ValueError(f"{VERSIONS_FILE}: '{version}' is not major.minor.patch")
+    if len(set(listed)) != len(listed):
+        raise ValueError(f"{VERSIONS_FILE} lists a version twice")
+    return versions
+
+
+def split_version(relative):
+    """("0.9.0", "en/user-guide.md") for versions/0.9.0/en/user-guide.md; (None, relative) for the latest pages."""
+    parts = relative.split("/")
+    if parts[0] == VERSIONS_DIRECTORY:
+        return parts[1], "/".join(parts[2:])
+    return None, relative
+
+
+def located(version, document):
+    """The path from the root of a document (as in GUIDES) in a version; None stands for the latest."""
+    return document if version is None else f"{VERSIONS_DIRECTORY}/{version}/{document}"
+
+
+def version_bar(language, version, versions):
+    """The note under the header of a guide page: the version it describes and links to the other versions."""
+    labels, document = LABELS[language], GUIDES[language]
+    here = located(version, document)
+
+    def link(target_version, text):
+        target = output_name(located(target_version, document))
+        return f'<a href="{html.escape(href(target, here))}">{html.escape(text)}</a>'
+
+    if version is None:
+        lines = [f'<p class="version">{html.escape(labels["current"].format(version=versions["latest"]))}']
+        if versions["archived"]:
+            lines[0] += " · " + html.escape(labels["earlier"]) + " " + ", ".join(
+                link(earlier, earlier) for earlier in versions["archived"])
+        return [lines[0] + "</p>"]
+    others = [earlier for earlier in versions["archived"] if earlier != version]
+    note = (f'<p class="version archived" role="note">{html.escape(labels["archived"].format(version=version))} '
+            + link(None, labels["latest"].format(version=versions["latest"])))
+    if others:
+        note += " · " + html.escape(labels["earlier"]) + " " + ", ".join(link(other, other) for other in others)
+    return [note + "</p>"]
+
+
+def href(target, page_path):
+    """A relative link from the page at page_path to target, both relative to the root."""
+    return os.path.relpath(target, os.path.dirname(page_path) or ".").replace(os.sep, "/")
+
+
+def page(source, versions):
     relative = os.path.relpath(source, ROOT).replace(os.sep, "/")
-    language = relative.split("/")[0]
+    version, document = split_version(relative)
+    language = document.split("/")[0]
     labels = LABELS[language]
     with open(source, encoding="utf-8") as f:
-        title, description, body = convert(f.read(), source)
-    other = COUNTERPARTS.get(relative)
+        markdown = f.read()
+    guide = document == GUIDES[language]
+    if guide:
+        named = GUIDE_VERSION[language].search(markdown)
+        expected = version or versions["latest"]
+        if not named or named.group(1) != expected:
+            raise ValueError(f"{relative} must say that it describes wörds {expected} (see {VERSIONS_FILE})")
+    title, description, body = convert(markdown, source)
+    if guide:
+        body = version_bar(language, version, versions) + body
+    other_document = COUNTERPARTS.get(document)
+    other = other_document and located(version, other_document)
     head = [
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
@@ -235,20 +332,26 @@ def page(source):
     ]
     if description:
         head.append(f'<meta name="description" content="{html.escape(description)}">')
+    if version:
+        # Searches should find the guide of the latest version, not an earlier one.
+        head.append('<meta name="robots" content="noindex">')
     head += [
         f"<title>{html.escape(re.sub(r'<[^>]+>', '', title))}</title>",
-        '<link rel="stylesheet" href="../manual.css">',
+        f'<link rel="stylesheet" href="{href("manual.css", relative)}">',
     ]
     if other:
-        for version in sorted((relative, other)):
-            head.append(f'<link rel="alternate" hreflang="{version.split("/")[0]}" href="../{output_name(version)}">')
-    nav = [f'<a href="../index.html">{labels["home"]}</a>']
+        for alternate in sorted((relative, other), key=lambda path: split_version(path)[1]):
+            head.append(f'<link rel="alternate" hreflang="{split_version(alternate)[1].split("/")[0]}" '
+                        f'href="{href(output_name(alternate), relative)}">')
+    nav = [f'<a href="{href("index.html", relative)}">{labels["home"]}</a>']
     for target, label in PARTS[language]:
+        # The guide links stay in the version of the page; the privacy policy has only one.
+        target = located(version, target) if target == GUIDES[language] else target
         current = ' aria-current="page"' if target == relative else ""
-        nav.append(f'<a href="../{output_name(target)}"{current}>{label}</a>')
+        nav.append(f'<a href="{href(output_name(target), relative)}"{current}>{label}</a>')
     if other:
-        other_language = other.split("/")[0]
-        nav.append(f'<a class="lang" href="../{output_name(other)}" hreflang="{other_language}" '
+        other_language = split_version(other)[1].split("/")[0]
+        nav.append(f'<a class="lang" href="{href(output_name(other), relative)}" hreflang="{other_language}" '
                    f'lang="{other_language}">{labels["other"]}</a>')
     lines = (
         ["<!doctype html>", f'<html lang="{language}">', "<head>"]
@@ -268,28 +371,99 @@ def page(source):
     return "\n".join(lines) + "\n"
 
 
-def main():
-    check = "--check" in sys.argv[1:]
-    stale = []
+def sources(versions):
+    """The Markdown pages: every page of the latest version, and the guides of the earlier ones."""
     for language in LANGUAGES:
         directory = os.path.join(ROOT, language)
         for name in sorted(os.listdir(directory)):
-            if not name.endswith(".md"):
-                continue
-            source = os.path.join(directory, name)
-            target = output_name(source)
-            content = page(source)
-            current = open(target, encoding="utf-8").read() if os.path.exists(target) else None
-            if current != content:
-                stale.append(os.path.relpath(target, ROOT))
-                if not check:
-                    with open(target, "w", encoding="utf-8") as f:
-                        f.write(content)
+            if name.endswith(".md"):
+                yield os.path.join(directory, name)
+    for version in versions["archived"]:
+        for language in LANGUAGES:
+            source = os.path.join(ROOT, located(version, GUIDES[language]))
+            if not os.path.exists(source):
+                raise ValueError(f"{VERSIONS_FILE} lists {version}, but {os.path.relpath(source, ROOT)} is missing")
+            yield source
+
+
+def freeze(versions, new_version):
+    """Copies the latest guides, with the images they show, into versions/<latest>/, lists that version as earlier
+    and makes new_version the latest, also in the sentence of the guides that names it."""
+    version = versions["latest"]
+    if not VERSION.fullmatch(new_version) or new_version in (version, *versions["archived"]):
+        raise ValueError(f"'{new_version}' is not a new major.minor.patch version")
+    target = os.path.join(ROOT, VERSIONS_DIRECTORY, version)
+    if os.path.exists(target):
+        raise ValueError(f"{os.path.relpath(target, ROOT)} exists already")
+    for language in LANGUAGES:
+        source = os.path.join(ROOT, GUIDES[language])
+        with open(source, encoding="utf-8") as f:
+            markdown = f.read()
+        images = {src for _, src in IMAGE.findall(markdown)}
+        copy = os.path.join(target, GUIDES[language])
+        os.makedirs(os.path.dirname(copy), exist_ok=True)
+        shutil.copyfile(source, copy)
+        for src in images:
+            # The copy keeps the layout of the root, so the relative image paths stay valid.
+            image = os.path.normpath(os.path.join(os.path.dirname(source), src))
+            image_copy = os.path.join(target, os.path.relpath(image, ROOT))
+            os.makedirs(os.path.dirname(image_copy), exist_ok=True)
+            shutil.copyfile(image, image_copy)
+        named = GUIDE_VERSION[language].search(markdown)
+        if not named:
+            raise ValueError(f"{GUIDES[language]} does not say which version it describes")
+        with open(source, "w", encoding="utf-8") as f:
+            f.write(markdown[:named.start(1)] + new_version + markdown[named.end(1):])
+    versions["archived"].insert(0, version)
+    versions["latest"] = new_version
+    with open(os.path.join(ROOT, VERSIONS_FILE), "w", encoding="utf-8") as f:
+        json.dump(versions, f, indent=2)
+        f.write("\n")
+    print(f"Froze {version} in {os.path.relpath(target, ROOT)}; the guides now describe {new_version}. Link "
+          f"{version} in index.html and README.md, then run this tool again.")
+
+
+def unlisted(versions):
+    """Earlier versions that index.html does not link to."""
+    with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
+        index = f.read()
+    return [version for version in versions["archived"]
+            if any(f'href="{output_name(located(version, GUIDES[language]))}"' not in index for language in LANGUAGES)]
+
+
+def main():
+    check = "--check" in sys.argv[1:]
+    versions = read_versions()
+    if "--freeze" in sys.argv[1:]:
+        arguments = sys.argv[1:]
+        position = arguments.index("--freeze") + 1
+        if position >= len(arguments):
+            raise ValueError("--freeze needs the new version, for example --freeze 0.11.0")
+        freeze(versions, arguments[position])
+        return
+    stale = []
+    for source in sources(versions):
+        target = output_name(source)
+        content = page(source, versions)
+        current = open(target, encoding="utf-8").read() if os.path.exists(target) else None
+        if current != content:
+            stale.append(os.path.relpath(target, ROOT))
+            if not check:
+                with open(target, "w", encoding="utf-8") as f:
+                    f.write(content)
+    missing = unlisted(versions)
+    if missing:
+        print("index.html does not link the guides of " + ", ".join(missing), file=sys.stderr)
     if check and stale:
         print("Out of date: " + ", ".join(stale) + "\nRun: python3 tools/docs/build-manual.py", file=sys.stderr)
+    if missing or (check and stale):
         sys.exit(1)
     print(("Up to date" if check else "Written: " + (", ".join(stale) or "nothing changed")))
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as error:
+        print(error, file=sys.stderr)
+        sys.exit(1)

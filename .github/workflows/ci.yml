@@ -20,5 +20,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: HTML is up to date
-        # en/*.html and de/*.html are generated from the Markdown next to them; locally: python3 tools/docs/build-manual.py
+        # The HTML pages are generated from the Markdown next to them, and the guides must name the version in
+        # versions.json; locally: python3 tools/docs/build-manual.py
         run: python3 tools/docs/build-manual.py --check
