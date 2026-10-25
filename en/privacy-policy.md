@@ -1,6 +1,6 @@
 # Privacy policy for wörds
 
-Last updated: 2026-10-23
+Last updated: 2026-10-25
 
 wörds is a flashcard app for learning languages, provided by anmx, anmx-dev _at_ pm _dot_ me ("we").
 
@@ -13,12 +13,30 @@ advertising, no analytics and no crash reporting.
 
 - Your learning progress (your answers and the review schedule derived from them), study sessions and settings
 - The language packs you install, including their pictures and audio
+- The packs you make or edit yourself, with their words and pictures
+- While you import words from photos: copies of those photos, a smaller preview of each and the text read from them
+  (see below)
 - The GitHub sources you add and, for private repositories, your access token. The token is encrypted with a key
   held in your device's secure hardware (Android Keystore). It is shown again only after you confirm with your
   screen lock, and it is never included in backups.
 
 You can delete this data at any time: reset your learning progress in the settings, remove sources and packs, or
 uninstall the app.
+
+## Photos of word lists
+
+You can take a photo with your device's camera app or choose photos in the system photo picker; wörds sees only the
+photos you choose and needs no camera or storage permission. The text is read on your device by a text recognition
+engine built into the app (Tesseract); the photos and their text are never uploaded. While an import is open, wörds
+keeps a copy of each photo, a preview and the text read from it in its private storage, which is excluded from
+backups. They are deleted when you finish or discard the import, or after a day if an import is left unfinished.
+Only the words you import stay, in your pack.
+
+## Sharing and exporting packs
+
+When you export or share a pack you made, wörds writes a pack file and hands it to the place you pick (a folder, or
+an app in the share menu). What happens to it there is up to you and that app. Copies made for sharing are deleted
+from the app's temporary storage after a day.
 
 ## Connections to GitHub
 
@@ -30,8 +48,9 @@ If you add no GitHub source, the app makes no network connections at all.
 
 ## Backup
 
-If backup is enabled on your device, Android includes your learning progress and settings in your device backup.
-Access tokens and pack media are excluded. Backups are managed by your device and your Google account, not by us.
+If backup is enabled on your device, Android includes your learning progress, settings and the packs you made
+(with their pictures) in your device backup. Access tokens, the media of installed packs and photos of an open
+import are excluded. Backups are managed by your device and your Google account, not by us.
 
 ## Pronunciation and biometrics
 

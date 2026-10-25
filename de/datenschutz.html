@@ -8,7 +8,7 @@
   <meta name="description" content="wörds erhebt keine personenbezogenen Daten. Alles, was du in der App tust, bleibt auf deinem Gerät. Es gibt kein Konto, keine Werbung, keine Analyse und keine…">
   <title>Datenschutzerklärung für wörds</title>
   <link rel="stylesheet" href="../manual.css">
-  <link rel="alternate" hreflang="de" href="../de/datenschutz.html">
+  <link rel="alternate" hreflang="de" href="datenschutz.html">
   <link rel="alternate" hreflang="en" href="../en/privacy-policy.html">
 </head>
 <body>
@@ -17,14 +17,14 @@
   <header>
     <nav aria-label="Handbuch">
       <a href="../index.html">Handbuch</a>
-      <a href="../de/benutzerhandbuch.html">Benutzerhandbuch</a>
-      <a href="../de/datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="benutzerhandbuch.html">Benutzerhandbuch</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
       <a class="lang" href="../en/privacy-policy.html" hreflang="en" lang="en">English</a>
     </nav>
   </header>
   <main id="main">
     <h1 id="datenschutzerklärung-für-wörds">Datenschutzerklärung für wörds</h1>
-    <p>Stand: <time datetime="2026-10-23">2026-10-23</time></p>
+    <p>Stand: <time datetime="2026-10-25">2026-10-25</time></p>
     <p>wörds ist eine Lernkarten-App zum Sprachenlernen, angeboten von anmx, <span class="email">anmx-dev@<span class="decoy">no.spam.</span>pm.me</span> („wir“).</p>
     <h2 id="kurz-gesagt">Kurz gesagt</h2>
     <p>wörds erhebt keine personenbezogenen Daten. Alles, was du in der App tust, bleibt auf deinem Gerät. Es gibt kein Konto, keine Werbung, keine Analyse und keine Absturzberichte.</p>
@@ -32,13 +32,19 @@
     <ul>
       <li>Dein Lernfortschritt (deine Antworten und der daraus berechnete Wiederholungsplan), Lernsitzungen und Einstellungen</li>
       <li>Die Sprachpakete, die du installierst, mit ihren Bildern und Audiodateien</li>
+      <li>Die Pakete, die du selbst erstellst oder bearbeitest, mit ihren Wörtern und Bildern</li>
+      <li>Während du Wörter aus Fotos importierst: Kopien dieser Fotos, je eine kleinere Vorschau und der daraus gelesene Text (siehe unten)</li>
       <li>Die GitHub-Quellen, die du hinzufügst, und bei privaten Repositorys dein Zugriffstoken. Das Token wird mit einem Schlüssel aus dem sicheren Speicher deines Geräts (Android Keystore) verschlüsselt. Angezeigt wird es nur, nachdem du mit deiner Displaysperre bestätigt hast, und es wird nie gesichert.</li>
     </ul>
     <p>Du kannst diese Daten jederzeit löschen: den Lernfortschritt in den Einstellungen zurücksetzen, Quellen und Pakete entfernen oder die App deinstallieren.</p>
+    <h2 id="fotos-von-wortlisten">Fotos von Wortlisten</h2>
+    <p>Du kannst mit der Kamera-App deines Geräts ein Foto aufnehmen oder Fotos in der Fotoauswahl des Systems wählen; wörds sieht nur die Fotos, die du auswählst, und braucht keine Kamera- oder Speicherberechtigung. Den Text liest eine in die App eingebaute Texterkennung (Tesseract) auf deinem Gerät; die Fotos und ihr Text werden nie hochgeladen. Solange ein Import offen ist, bewahrt wörds von jedem Foto eine Kopie, eine Vorschau und den gelesenen Text in seinem privaten Speicher auf, der nicht gesichert wird. Sie werden gelöscht, wenn du den Import abschließt oder verwirfst, oder nach einem Tag, wenn ein Import liegen bleibt. Nur die Wörter, die du importierst, bleiben in deinem Paket.</p>
+    <h2 id="pakete-teilen-und-exportieren">Pakete teilen und exportieren</h2>
+    <p>Wenn du ein selbst erstelltes Paket exportierst oder teilst, schreibt wörds eine Paketdatei und übergibt sie an den Ort, den du wählst (einen Ordner oder eine App im Teilen-Menü). Was dort damit geschieht, liegt bei dir und dieser App. Kopien zum Teilen werden nach einem Tag aus dem temporären Speicher der App gelöscht.</p>
     <h2 id="verbindungen-zu-github">Verbindungen zu GitHub</h2>
     <p>wörds verbindet sich nur mit dem Internet, um Sprachpakete aus GitHub-Repositorys zu lesen, die du selbst hinzufügst. Die App sendet dann Anfragen an GitHub (api.github.com), bei privaten Repositorys mit deinem Zugriffstoken. GitHub erhält dabei die technischen Daten dieser Anfragen, etwa deine IP-Adresse. Für deren Verarbeitung gilt das GitHub Privacy Statement (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement</a>). Wir erhalten diese Daten nicht. Wenn du keine GitHub-Quelle hinzufügst, baut die App keine Netzwerkverbindungen auf.</p>
     <h2 id="sicherung">Sicherung</h2>
-    <p>Wenn die Sicherung auf deinem Gerät eingeschaltet ist, nimmt Android deinen Lernfortschritt und deine Einstellungen in die Gerätesicherung auf. Zugriffstoken und Medien der Pakete sind davon ausgenommen. Sicherungen verwaltet dein Gerät bzw. dein Google-Konto, nicht wir.</p>
+    <p>Wenn die Sicherung auf deinem Gerät eingeschaltet ist, nimmt Android deinen Lernfortschritt, deine Einstellungen und deine selbst erstellten Pakete (mit ihren Bildern) in die Gerätesicherung auf. Zugriffstoken, die Medien installierter Pakete und die Fotos eines offenen Imports sind davon ausgenommen. Sicherungen verwaltet dein Gerät bzw. dein Google-Konto, nicht wir.</p>
     <h2 id="aussprache-und-biometrie">Aussprache und Biometrie</h2>
     <p>Die Aussprache nutzt die Sprachausgabe-Stimmen auf deinem Gerät. Den Zugriff auf ein gespeichertes Token bestätigst du über die Displaysperre oder die biometrische Abfrage deines Geräts; die App erhält dabei keine biometrischen Daten.</p>
     <h2 id="kinder">Kinder</h2>

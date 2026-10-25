@@ -9,7 +9,7 @@
   <title>wörds user guide</title>
   <link rel="stylesheet" href="../manual.css">
   <link rel="alternate" hreflang="de" href="../de/benutzerhandbuch.html">
-  <link rel="alternate" hreflang="en" href="../en/user-guide.html">
+  <link rel="alternate" hreflang="en" href="user-guide.html">
 </head>
 <body>
   <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
@@ -17,16 +17,17 @@
   <header>
     <nav aria-label="Manual">
       <a href="../index.html">Manual</a>
-      <a href="../en/user-guide.html" aria-current="page">User guide</a>
-      <a href="../en/privacy-policy.html">Privacy policy</a>
+      <a href="user-guide.html" aria-current="page">User guide</a>
+      <a href="privacy-policy.html">Privacy policy</a>
       <a class="lang" href="../de/benutzerhandbuch.html" hreflang="de" lang="de">Deutsch</a>
     </nav>
   </header>
   <main id="main">
+    <p class="version">Version 0.10.0 (latest) · Earlier versions: <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card, check yourself honestly and grade it. wörds then works out when you should see the card again.</p>
-    <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub.</p>
-    <p>This guide describes wörds 0.9.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
+    <p>This guide describes wörds 0.10.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -38,6 +39,8 @@
         <li><a href="#todays-review">Today's review</a></li>
         <li><a href="#progress">Progress</a></li>
         <li><a href="#language-packs">Language packs</a></li>
+        <li><a href="#your-own-packs">Your own packs</a></li>
+        <li><a href="#words-from-photos">Words from photos</a></li>
         <li><a href="#settings">Settings</a></li>
         <li><a href="#tablets-and-foldables">Tablets and foldables</a></li>
         <li><a href="#accessibility-and-privacy">Accessibility and privacy</a></li>
@@ -235,6 +238,44 @@
         <figcaption>A manipulated pack is rejected</figcaption>
       </figure>
     </div>
+    <h2 id="your-own-packs">Your own packs</h2>
+    <p>Make a pack of your own words, for example the vocabulary of your textbook, and study it like any other pack.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/40-editor.png" alt="The pack editor" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The pack editor</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/41-word.png" alt="Adding a word" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Adding a word</figcaption>
+      </figure>
+    </div>
+    <p><strong>Create a pack.</strong> In <strong>Language packs</strong>, tap the add button and choose <strong>New pack</strong> (or <strong>New pack from photo</strong>, see <a href="#words-from-photos">Words from photos</a>). Enter a title, the language you know and the one you are learning, which way the cards can be studied (<strong>Both</strong>, <strong>Recognize</strong> or <strong>Produce</strong>) and a license, then tap <strong>Create</strong>. The editor opens. <strong>Pack settings</strong> in the editor's top bar changes all of this later; the languages are fixed once the pack has words.</p>
+    <p><strong>Add words.</strong> Tap the add button at the bottom and choose <strong>Add word</strong>. A word and its translation are enough. <strong>Save and add next</strong> keeps the keyboard open, so you can type a whole list. <strong>More details</strong> adds the part of speech, gender, plural, an example sentence and a picture; give the picture a description, which screen readers read aloud. wörds points out a word that is already in the pack. Everything is saved as you go, and the pack can be studied at once.</p>
+    <p><strong>Lections</strong> group the words like the chapters of a textbook. You can study one lection at a time, and their order decides which new words come first in your daily review. <strong>Lections</strong> in the top bar adds, renames, reorders and deletes them; the add button on a lection's header adds a word right there.</p>
+    <p><strong>Change words.</strong> Tap a word to edit it; it keeps its learning progress. <strong>More options → Reset progress</strong> lets you learn it from the start, <strong>Delete word</strong> removes it. Drag a word by its handle to reorder it within its lection. Touch and hold a word to select several, then move them to another lection or delete them. With TalkBack, the same actions are in the actions menu of each word and lection.</p>
+    <p><strong>Edit an installed pack.</strong> Installed packs cannot be changed. Their menu (⋮) offers <strong>Duplicate to edit</strong>: wörds makes an editable copy that keeps your learning progress, and hides the original, marked <em>Hidden</em>. <strong>Show original</strong> brings it back. Your own packs are marked <em>Editable</em>; their menu has <strong>Edit</strong>, <strong>Export to file</strong>, <strong>Share</strong>, <strong>Duplicate</strong> and <strong>Delete</strong>.</p>
+    <p><strong>Export and share.</strong> <strong>Export to file</strong> saves your pack as a <code>.linguapack</code> file in a folder you choose, <strong>Share</strong> sends it to an app, and <strong>Export all your packs</strong> (top bar of the language packs) writes all of them into one folder. The license you chose goes with the file. Anyone with wörds can open the file with <strong>Import file</strong>; it arrives as an editable pack. If that pack is already there, choose <strong>Replace</strong> (words in both keep their progress) or <strong>Keep both</strong>.</p>
+    <h2 id="words-from-photos">Words from photos</h2>
+    <p>wörds can read a printed word list from photos, so you don't have to type it. The text is read on your device; your photos are never uploaded.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/42-import-pages.png" alt="Photos of a word list" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Photos of a word list</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/43-import-review.png" alt="Checking the words" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Checking the words</figcaption>
+      </figure>
+    </div>
+    <ol>
+      <li>In the editor, tap the add button and choose <strong>Import from photo</strong>. Or start a pack with <strong>New pack from photo</strong> in <strong>Language packs</strong>.</li>
+      <li><strong>Take photo</strong> opens your camera app; <strong>Choose photos</strong> opens the photo picker, where you can pick several pages. wörds sees only the photos you choose and asks for no permission. Take one page per photo, as straight and sharp as you can.</li>
+      <li>Each page is read while you go on: a photo that came sideways is turned by itself. If a page reads badly, its menu offers <strong>Rotate and crop</strong>: turn it and drag the corners to the word list.</li>
+      <li>Tap <strong>Review <em>n</em> words</strong> to check them. The photo shows a frame around each pair found; tap a frame to find its row, or a row to see where it was read. Rows marked <strong>Check the spelling</strong> were hard to read, and words already in the pack are left unchecked. Tap the pencil to correct a row, uncheck what you don't want, and use <strong>Swap the columns of this page</strong> if word and translation came out the wrong way round. Headings found on the page become lections; <strong>Move to lection…</strong> puts rows into another or a new one.</li>
+      <li>Tap <strong>Import <em>n</em> words</strong> to add the checked words. The summary says how many words went into which lections. <strong>Undo</strong> removes them again and takes you back to the review.</li>
+    </ol>
+    <p>You can leave an import and come back later; it waits where you left it. <strong>Discard</strong> deletes the photos and everything read from them. An import left for a day is deleted.</p>
     <h2 id="settings">Settings</h2>
     <div class="figures">
       <figure class="shot">
@@ -289,7 +330,7 @@
       </figure>
     </div>
     <h2 id="tablets-and-foldables">Tablets and foldables</h2>
-    <p>On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of the selected source side by side. On a half-folded foldable (tabletop posture), the card sits above the fold and the grade buttons below it, so you can study with the device standing on a table.</p>
+    <p>On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of the selected source side by side. The pack editor shows the word list and the word you edit side by side, and the review of a photo import the rows and the photo. On a half-folded foldable (tabletop posture), the card sits above the fold and the grade buttons below it, so you can study with the device standing on a table.</p>
     <div class="figures">
       <figure class="wide">
         <img src="../images/tablet/en_1_library.png" alt="Library on a tablet" width="2560" height="1440" loading="lazy" decoding="async">
@@ -299,13 +340,14 @@
     <h2 id="accessibility-and-privacy">Accessibility and privacy</h2>
     <ul>
       <li>wörds works with <strong>TalkBack</strong>, large text, high contrast, reduced motion, keyboards and D-pads. On a hardware keyboard, <strong>Esc</strong> goes back.</li>
-      <li>wörds needs <strong>no account</strong> and works <strong>offline</strong>. It only goes online to talk to GitHub, and only when you use GitHub sources. There are no ads and no tracking.</li>
-      <li>Your progress and settings are part of your device's backup. Access tokens are not: after a restore, wörds asks for them again.</li>
+      <li>wörds needs <strong>no account</strong> and works <strong>offline</strong>. It only goes online to talk to GitHub, and only when you use GitHub sources. There are no ads and no tracking. Photos of word lists are read on your device and never uploaded.</li>
+      <li>Your progress, settings and own packs are part of your device's backup. Access tokens are not: after a restore, wörds asks for them again.</li>
     </ul>
     <h2 id="questions-and-problems">Questions and problems</h2>
     <p><strong>A card has no sound.</strong> Your device lacks the text-to-speech voice for the language. Tap <strong>Install</strong> in the message on the card, or add the voice in your device's speech settings.</p>
     <p><strong>A pack was not installed.</strong> The message says what is wrong with it. Nothing has been changed on your device. Ask the author of the pack for a corrected version.</p>
     <p><strong>GitHub reports an error.</strong> Check your connection. For a private repository, check that the access token has not expired and grants read access to the repository's contents. If GitHub's request limit has been reached, the message says when you can try again.</p>
+    <p><strong>Words from a photo come out wrong.</strong> Take the photo again in good light, with the page flat and filling the picture, or use <strong>Rotate and crop</strong> to frame just the word list. Every row can be corrected in the review before anything is imported.</p>
     <p><strong>I want to start over.</strong> <strong>Settings → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
   </main>
 </body>

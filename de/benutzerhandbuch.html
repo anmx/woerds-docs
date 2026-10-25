@@ -8,7 +8,7 @@
   <meta name="description" content="wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du…">
   <title>wörds – Benutzerhandbuch</title>
   <link rel="stylesheet" href="../manual.css">
-  <link rel="alternate" hreflang="de" href="../de/benutzerhandbuch.html">
+  <link rel="alternate" hreflang="de" href="benutzerhandbuch.html">
   <link rel="alternate" hreflang="en" href="../en/user-guide.html">
 </head>
 <body>
@@ -17,16 +17,17 @@
   <header>
     <nav aria-label="Handbuch">
       <a href="../index.html">Handbuch</a>
-      <a href="../de/benutzerhandbuch.html" aria-current="page">Benutzerhandbuch</a>
-      <a href="../de/datenschutz.html">Datenschutz</a>
+      <a href="benutzerhandbuch.html" aria-current="page">Benutzerhandbuch</a>
+      <a href="datenschutz.html">Datenschutz</a>
       <a class="lang" href="../en/user-guide.html" hreflang="en" lang="en">English</a>
     </nav>
   </header>
   <main id="main">
+    <p class="version">Version 0.10.0 (aktuell) · Frühere Versionen: <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um, prüfst dich ehrlich und bewertest dich. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
-    <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.9.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.10.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -38,6 +39,8 @@
         <li><a href="#heutige-wiederholung">Heutige Wiederholung</a></li>
         <li><a href="#fortschritt">Fortschritt</a></li>
         <li><a href="#sprachpakete">Sprachpakete</a></li>
+        <li><a href="#eigene-pakete">Eigene Pakete</a></li>
+        <li><a href="#wörter-aus-fotos">Wörter aus Fotos</a></li>
         <li><a href="#einstellungen">Einstellungen</a></li>
         <li><a href="#tablets-und-foldables">Tablets und Foldables</a></li>
         <li><a href="#barrierefreiheit-und-datenschutz">Barrierefreiheit und Datenschutz</a></li>
@@ -235,6 +238,44 @@
         <figcaption>Ein manipuliertes Paket wird abgelehnt</figcaption>
       </figure>
     </div>
+    <h2 id="eigene-pakete">Eigene Pakete</h2>
+    <p>Erstelle ein Paket mit deinen eigenen Wörtern, zum Beispiel den Vokabeln deines Lehrbuchs, und lerne damit wie mit jedem anderen Paket.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/40-editor.png" alt="Der Paket-Editor" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Der Paket-Editor</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/41-word.png" alt="Ein Wort hinzufügen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ein Wort hinzufügen</figcaption>
+      </figure>
+    </div>
+    <p><strong>Ein Paket erstellen.</strong> Tippe in den <strong>Sprachpaketen</strong> auf die Plus-Taste und wähle <strong>Neues Paket</strong> (oder <strong>Neues Paket aus Foto</strong>, siehe <a href="#wörter-aus-fotos">Wörter aus Fotos</a>). Gib einen Titel ein, die Sprache, die du kannst, und die, die du lernst, in welche Richtungen die Karten gelernt werden können (<strong>Beide</strong>, <strong>Erkennen</strong> oder <strong>Bilden</strong>) und eine Lizenz, dann tippe auf <strong>Erstellen</strong>. Der Editor öffnet sich. Mit <strong>Paket-Einstellungen</strong> oben im Editor änderst du das alles später; die Sprachen stehen fest, sobald das Paket Wörter enthält.</p>
+    <p><strong>Wörter hinzufügen.</strong> Tippe unten auf die Plus-Taste und wähle <strong>Wort hinzufügen</strong>. Ein Wort und seine Übersetzung genügen. <strong>Speichern und nächstes</strong> lässt die Tastatur offen, so tippst du eine ganze Liste ab. <strong>Mehr Angaben</strong> ergänzt Wortart, Genus, Plural, einen Beispielsatz und ein Bild; gib dem Bild eine Beschreibung, die Screenreader vorlesen. wörds weist dich auf ein Wort hin, das schon im Paket ist. Alles wird laufend gespeichert, und du kannst das Paket sofort lernen.</p>
+    <p><strong>Lektionen</strong> gruppieren die Wörter wie die Kapitel eines Lehrbuchs. Du kannst eine Lektion allein lernen, und ihre Reihenfolge bestimmt, welche neuen Wörter in deiner täglichen Wiederholung zuerst kommen. Mit <strong>Lektionen</strong> oben im Editor legst du sie an, benennst sie um, sortierst und löschst sie; die Plus-Taste im Kopf einer Lektion fügt direkt dort ein Wort hinzu.</p>
+    <p><strong>Wörter ändern.</strong> Tippe auf ein Wort, um es zu bearbeiten; sein Lernfortschritt bleibt erhalten. <strong>Weitere Optionen → Fortschritt zurücksetzen</strong> lässt dich es von vorn lernen, <strong>Wort löschen</strong> entfernt es. Ziehe ein Wort am Griff, um es innerhalb seiner Lektion umzusortieren. Halte ein Wort gedrückt, um mehrere auszuwählen, und verschiebe sie in eine andere Lektion oder lösche sie. Mit TalkBack findest du dieselben Aktionen im Aktionsmenü jedes Worts und jeder Lektion.</p>
+    <p><strong>Ein installiertes Paket bearbeiten.</strong> Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet <strong>Zum Bearbeiten duplizieren</strong>: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das Original aus (<em>Ausgeblendet</em>). <strong>Original einblenden</strong> holt es zurück. Deine eigenen Pakete sind als <em>Bearbeitbar</em> markiert; ihr Menü hat <strong>Bearbeiten</strong>, <strong>Als Datei exportieren</strong>, <strong>Teilen</strong>, <strong>Duplizieren</strong> und <strong>Löschen</strong>.</p>
+    <p><strong>Exportieren und teilen.</strong> <strong>Als Datei exportieren</strong> speichert dein Paket als <code>.linguapack</code>-Datei in einem Ordner deiner Wahl, <strong>Teilen</strong> schickt es an eine App, und <strong>Alle deine Pakete exportieren</strong> (oben in den Sprachpaketen) schreibt alle in einen Ordner. Die Lizenz, die du gewählt hast, geht mit der Datei. Wer wörds hat, öffnet die Datei mit <strong>Datei importieren</strong>; sie kommt als bearbeitbares Paket an. Ist das Paket schon da, wähle <strong>Ersetzen</strong> (Wörter, die in beiden sind, behalten ihren Lernstand) oder <strong>Beide behalten</strong>.</p>
+    <h2 id="wörter-aus-fotos">Wörter aus Fotos</h2>
+    <p>wörds kann eine gedruckte Wortliste aus Fotos lesen, damit du sie nicht abtippen musst. Der Text wird auf deinem Gerät gelesen; deine Fotos werden nie hochgeladen.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/42-import-pages.png" alt="Fotos einer Wortliste" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Fotos einer Wortliste</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/43-import-review.png" alt="Die Wörter prüfen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Wörter prüfen</figcaption>
+      </figure>
+    </div>
+    <ol>
+      <li>Tippe im Editor auf die Plus-Taste und wähle <strong>Aus Foto importieren</strong>. Oder beginne ein Paket mit <strong>Neues Paket aus Foto</strong> in den <strong>Sprachpaketen</strong>.</li>
+      <li><strong>Foto aufnehmen</strong> öffnet deine Kamera-App, <strong>Fotos auswählen</strong> die Fotoauswahl, in der du mehrere Seiten wählen kannst. wörds sieht nur die Fotos, die du wählst, und fragt nach keiner Berechtigung. Nimm eine Seite pro Foto auf, so gerade und scharf wie möglich.</li>
+      <li>Jede Seite wird gelesen, während du weitermachst; ein seitlich aufgenommenes Foto dreht wörds selbst. Liest sich eine Seite schlecht, bietet ihr Menü <strong>Drehen und zuschneiden</strong>: drehe sie und ziehe die Ecken an die Wortliste.</li>
+      <li>Tippe auf <strong><em>n</em> Wörter prüfen</strong>, um sie durchzusehen. Das Foto zeigt einen Rahmen um jedes gefundene Paar; tippe auf einen Rahmen, um seine Zeile zu finden, oder auf eine Zeile, um zu sehen, wo sie gelesen wurde. Zeilen mit <strong>Schreibweise prüfen</strong> waren schwer zu lesen, und Wörter, die schon im Paket sind, bleiben abgewählt. Tippe auf den Stift, um eine Zeile zu berichtigen, wähle ab, was du nicht willst, und tausche mit <strong>Spalten dieser Seite tauschen</strong>, wenn Wort und Übersetzung vertauscht sind. Überschriften auf der Seite werden zu Lektionen; <strong>In Lektion verschieben …</strong> legt Zeilen in eine andere oder neue.</li>
+      <li>Tippe auf <strong><em>n</em> Wörter importieren</strong>, um die ausgewählten Wörter hinzuzufügen. Die Zusammenfassung zeigt, wie viele Wörter in welche Lektionen gingen. <strong>Rückgängig</strong> entfernt sie wieder und bringt dich zurück zur Prüfung.</li>
+    </ol>
+    <p>Du kannst einen Import verlassen und später weitermachen; er wartet, wo du aufgehört hast. <strong>Verwerfen</strong> löscht die Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen bleibt, wird gelöscht.</p>
     <h2 id="einstellungen">Einstellungen</h2>
     <div class="figures">
       <figure class="shot">
@@ -289,7 +330,7 @@
       </figure>
     </div>
     <h2 id="tablets-und-foldables">Tablets und Foldables</h2>
-    <p>Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen und die Pakete der gewählten Quelle nebeneinander. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen.</p>
+    <p>Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen.</p>
     <div class="figures">
       <figure class="wide">
         <img src="../images/tablet/de_1_library.png" alt="Die Bibliothek auf einem Tablet" width="2560" height="1440" loading="lazy" decoding="async">
@@ -299,13 +340,14 @@
     <h2 id="barrierefreiheit-und-datenschutz">Barrierefreiheit und Datenschutz</h2>
     <ul>
       <li>wörds funktioniert mit <strong>TalkBack</strong>, großer Schrift, hohem Kontrast, reduzierten Animationen, Tastatur und D-Pad. Auf einer Hardwaretastatur geht <strong>Esc</strong> zurück.</li>
-      <li>wörds braucht <strong>kein Konto</strong> und funktioniert <strong>offline</strong>. Ins Internet geht es nur, um mit GitHub zu sprechen, und nur, wenn du GitHub-Quellen nutzt. Es gibt keine Werbung und kein Tracking.</li>
-      <li>Dein Fortschritt und deine Einstellungen sind Teil der Sicherung deines Geräts. Zugriffstokens nicht: Nach einer Wiederherstellung fragt wörds erneut danach.</li>
+      <li>wörds braucht <strong>kein Konto</strong> und funktioniert <strong>offline</strong>. Ins Internet geht es nur, um mit GitHub zu sprechen, und nur, wenn du GitHub-Quellen nutzt. Es gibt keine Werbung und kein Tracking. Fotos von Wortlisten werden auf deinem Gerät gelesen und nie hochgeladen.</li>
+      <li>Dein Fortschritt, deine Einstellungen und deine eigenen Pakete sind Teil der Sicherung deines Geräts. Zugriffstokens nicht: Nach einer Wiederherstellung fragt wörds erneut danach.</li>
     </ul>
     <h2 id="fragen-und-probleme">Fragen und Probleme</h2>
     <p><strong>Eine Karte hat keinen Ton.</strong> Deinem Gerät fehlt die Stimme der Sprachausgabe für diese Sprache. Tippe in der Meldung auf der Karte auf <strong>Installieren</strong> oder füge die Stimme in den Sprachausgabe-Einstellungen deines Geräts hinzu.</p>
     <p><strong>Ein Paket wurde nicht installiert.</strong> Die Meldung sagt, was damit nicht stimmt. Auf deinem Gerät wurde nichts geändert. Bitte den Autor des Pakets um eine korrigierte Fassung.</p>
     <p><strong>GitHub meldet einen Fehler.</strong> Prüfe deine Verbindung. Bei einem privaten Repository prüfe, ob das Zugriffstoken noch gültig ist und Lesezugriff auf die Inhalte des Repositorys hat. Ist das Anfragelimit von GitHub erreicht, sagt die Meldung, wann du es wieder versuchen kannst.</p>
+    <p><strong>Wörter aus einem Foto kommen falsch an.</strong> Fotografiere die Seite noch einmal bei gutem Licht, flach und bildfüllend, oder schneide mit <strong>Drehen und zuschneiden</strong> nur die Wortliste aus. Jede Zeile lässt sich in der Prüfung berichtigen, bevor etwas importiert wird.</p>
     <p><strong>Ich will von vorn anfangen.</strong> <strong>Einstellungen → Lernfortschritt zurücksetzen</strong> löscht alle Antworten; die Pakete bleiben installiert.</p>
   </main>
 </body>

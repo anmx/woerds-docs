@@ -5,9 +5,10 @@ Each card shows one side. You answer in your head, flip the card, check yourself
 works out when you should see the card again.
 
 wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and
-120 everyday words); more language packs can be added from a file or from GitHub.
+120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
+also from photos of a word list.
 
-This guide describes wörds 0.9.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.10.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -19,6 +20,8 @@ This guide describes wörds 0.9.0. The screenshots show the Terracotta color sch
 - [Today's review](#todays-review)
 - [Progress](#progress)
 - [Language packs](#language-packs)
+- [Your own packs](#your-own-packs)
+- [Words from photos](#words-from-photos)
 - [Settings](#settings)
 - [Tablets and foldables](#tablets-and-foldables)
 - [Accessibility and privacy](#accessibility-and-privacy)
@@ -178,6 +181,68 @@ content that breaks the rules is rejected, and wörds tells you why. Nothing on 
 
 ![A manipulated pack is rejected](../images/en/34-pack-rejected.png)
 
+## Your own packs
+
+Make a pack of your own words, for example the vocabulary of your textbook, and study it like any other pack.
+
+![The pack editor](../images/en/40-editor.png) ![Adding a word](../images/en/41-word.png)
+
+**Create a pack.** In **Language packs**, tap the add button and choose **New pack** (or **New pack from photo**, see
+[Words from photos](#words-from-photos)). Enter a title, the language you know and the one you are learning, which
+way the cards can be studied (**Both**, **Recognize** or **Produce**) and a license, then tap **Create**. The editor
+opens. **Pack settings** in the editor's top bar changes all of this later; the languages are fixed once the pack has
+words.
+
+**Add words.** Tap the add button at the bottom and choose **Add word**. A word and its translation are enough. **Save
+and add next** keeps the keyboard open, so you can type a whole list. **More details** adds the part of speech,
+gender, plural, an example sentence and a picture; give the picture a description, which screen readers read aloud.
+wörds points out a word that is already in the pack. Everything is saved as you go, and the pack can be studied at
+once.
+
+**Lections** group the words like the chapters of a textbook. You can study one lection at a time, and their order
+decides which new words come first in your daily review. **Lections** in the top bar adds, renames, reorders and
+deletes them; the add button on a lection's header adds a word right there.
+
+**Change words.** Tap a word to edit it; it keeps its learning progress. **More options → Reset progress** lets you
+learn it from the start, **Delete word** removes it. Drag a word by its handle to reorder it within its lection.
+Touch and hold a word to select several, then move them to another lection or delete them. With TalkBack, the same
+actions are in the actions menu of each word and lection.
+
+**Edit an installed pack.** Installed packs cannot be changed. Their menu (⋮) offers **Duplicate to edit**: wörds
+makes an editable copy that keeps your learning progress, and hides the original, marked *Hidden*. **Show original**
+brings it back. Your own packs are marked *Editable*; their menu has **Edit**, **Export to file**, **Share**,
+**Duplicate** and **Delete**.
+
+**Export and share.** **Export to file** saves your pack as a `.linguapack` file in a folder you choose, **Share**
+sends it to an app, and **Export all your packs** (top bar of the language packs) writes all of them into one folder.
+The license you chose goes with the file. Anyone with wörds can open the file with **Import file**; it arrives as an
+editable pack. If that pack is already there, choose **Replace** (words in both keep their progress) or **Keep both**.
+
+## Words from photos
+
+wörds can read a printed word list from photos, so you don't have to type it. The text is read on your device; your
+photos are never uploaded.
+
+![Photos of a word list](../images/en/42-import-pages.png) ![Checking the words](../images/en/43-import-review.png)
+
+1. In the editor, tap the add button and choose **Import from photo**. Or start a pack with **New pack from photo**
+   in **Language packs**.
+2. **Take photo** opens your camera app; **Choose photos** opens the photo picker, where you can pick several pages.
+   wörds sees only the photos you choose and asks for no permission. Take one page per photo, as straight and
+   sharp as you can.
+3. Each page is read while you go on: a photo that came sideways is turned by itself. If a page reads badly, its
+   menu offers **Rotate and crop**: turn it and drag the corners to the word list.
+4. Tap **Review *n* words** to check them. The photo shows a frame around each pair found; tap a frame to find its row,
+   or a row to see where it was read. Rows marked **Check the spelling** were hard to read, and words already in the
+   pack are left unchecked. Tap the pencil to correct a row, uncheck what you don't want, and use **Swap the columns
+   of this page** if word and translation came out the wrong way round. Headings found on the page become lections;
+   **Move to lection…** puts rows into another or a new one.
+5. Tap **Import *n* words** to add the checked words. The summary says how many words went into which lections. **Undo**
+   removes them again and takes you back to the review.
+
+You can leave an import and come back later; it waits where you left it. **Discard** deletes the photos and
+everything read from them. An import left for a day is deleted.
+
 ## Settings
 
 ![Settings: language and appearance](../images/en/20-settings.png) ![Settings: daily review](../images/en/21-settings-review.png)
@@ -223,7 +288,8 @@ light and dark.
 ## Tablets and foldables
 
 On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of
-the selected source side by side. On a half-folded foldable (tabletop posture), the card sits above the fold and the
+the selected source side by side. The pack editor shows the word list and the word you edit side by side, and the
+review of a photo import the rows and the photo. On a half-folded foldable (tabletop posture), the card sits above the fold and the
 grade buttons below it, so you can study with the device standing on a table.
 
 ![Library on a tablet](../images/tablet/en_1_library.png)
@@ -233,9 +299,10 @@ grade buttons below it, so you can study with the device standing on a table.
 - wörds works with **TalkBack**, large text, high contrast, reduced motion, keyboards and D-pads. On a hardware
   keyboard, **Esc** goes back.
 - wörds needs **no account** and works **offline**. It only goes online to talk to GitHub, and only when you use
-  GitHub sources. There are no ads and no tracking.
-- Your progress and settings are part of your device's backup. Access tokens are not: after a restore, wörds asks
-  for them again.
+  GitHub sources. There are no ads and no tracking. Photos of word lists are read on your device and never
+  uploaded.
+- Your progress, settings and own packs are part of your device's backup. Access tokens are not: after a restore,
+  wörds asks for them again.
 
 ## Questions and problems
 
@@ -248,5 +315,9 @@ the author of the pack for a corrected version.
 **GitHub reports an error.** Check your connection. For a private repository, check that the access token has not
 expired and grants read access to the repository's contents. If GitHub's request limit has been reached, the
 message says when you can try again.
+
+**Words from a photo come out wrong.** Take the photo again in good light, with the page flat and filling the
+picture, or use **Rotate and crop** to frame just the word list. Every row can be corrected in the review before
+anything is imported.
 
 **I want to start over.** **Settings → Reset learning progress** deletes all answers; the packs stay installed.

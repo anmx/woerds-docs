@@ -6,9 +6,9 @@ dich. wörds berechnet dann, wann du die Karte wiedersehen solltest.
 
 wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
-GitHub hinzufügen.
+GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.9.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.10.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -21,6 +21,8 @@ andere Farben haben.
 - [Heutige Wiederholung](#heutige-wiederholung)
 - [Fortschritt](#fortschritt)
 - [Sprachpakete](#sprachpakete)
+- [Eigene Pakete](#eigene-pakete)
+- [Wörter aus Fotos](#wörter-aus-fotos)
 - [Einstellungen](#einstellungen)
 - [Tablets und Foldables](#tablets-und-foldables)
 - [Barrierefreiheit und Datenschutz](#barrierefreiheit-und-datenschutz)
@@ -187,6 +189,73 @@ deinem Gerät ändert sich dann nichts.
 
 ![Ein manipuliertes Paket wird abgelehnt](../images/de/34-pack-rejected.png)
 
+## Eigene Pakete
+
+Erstelle ein Paket mit deinen eigenen Wörtern, zum Beispiel den Vokabeln deines Lehrbuchs, und lerne damit wie mit
+jedem anderen Paket.
+
+![Der Paket-Editor](../images/de/40-editor.png) ![Ein Wort hinzufügen](../images/de/41-word.png)
+
+**Ein Paket erstellen.** Tippe in den **Sprachpaketen** auf die Plus-Taste und wähle **Neues Paket** (oder **Neues
+Paket aus Foto**, siehe [Wörter aus Fotos](#wörter-aus-fotos)). Gib einen Titel ein, die Sprache, die du kannst, und
+die, die du lernst, in welche Richtungen die Karten gelernt werden können (**Beide**, **Erkennen** oder **Bilden**)
+und eine Lizenz, dann tippe auf **Erstellen**. Der Editor öffnet sich. Mit **Paket-Einstellungen** oben im Editor
+änderst du das alles später; die Sprachen stehen fest, sobald das Paket Wörter enthält.
+
+**Wörter hinzufügen.** Tippe unten auf die Plus-Taste und wähle **Wort hinzufügen**. Ein Wort und seine Übersetzung
+genügen. **Speichern und nächstes** lässt die Tastatur offen, so tippst du eine ganze Liste ab. **Mehr Angaben**
+ergänzt Wortart, Genus, Plural, einen Beispielsatz und ein Bild; gib dem Bild eine Beschreibung, die Screenreader
+vorlesen. wörds weist dich auf ein Wort hin, das schon im Paket ist. Alles wird laufend gespeichert, und du kannst
+das Paket sofort lernen.
+
+**Lektionen** gruppieren die Wörter wie die Kapitel eines Lehrbuchs. Du kannst eine Lektion allein lernen, und ihre
+Reihenfolge bestimmt, welche neuen Wörter in deiner täglichen Wiederholung zuerst kommen. Mit **Lektionen** oben im
+Editor legst du sie an, benennst sie um, sortierst und löschst sie; die Plus-Taste im Kopf einer Lektion fügt
+direkt dort ein Wort hinzu.
+
+**Wörter ändern.** Tippe auf ein Wort, um es zu bearbeiten; sein Lernfortschritt bleibt erhalten. **Weitere
+Optionen → Fortschritt zurücksetzen** lässt dich es von vorn lernen, **Wort löschen** entfernt es. Ziehe ein Wort am
+Griff, um es innerhalb seiner Lektion umzusortieren. Halte ein Wort gedrückt, um mehrere auszuwählen, und verschiebe
+sie in eine andere Lektion oder lösche sie. Mit TalkBack findest du dieselben Aktionen im Aktionsmenü jedes Worts
+und jeder Lektion.
+
+**Ein installiertes Paket bearbeiten.** Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet **Zum
+Bearbeiten duplizieren**: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das
+Original aus (*Ausgeblendet*). **Original einblenden** holt es zurück. Deine eigenen Pakete sind als *Bearbeitbar*
+markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **Duplizieren** und **Löschen**.
+
+**Exportieren und teilen.** **Als Datei exportieren** speichert dein Paket als `.linguapack`-Datei in einem Ordner
+deiner Wahl, **Teilen** schickt es an eine App, und **Alle deine Pakete exportieren** (oben in den Sprachpaketen)
+schreibt alle in einen Ordner. Die Lizenz, die du gewählt hast, geht mit der Datei. Wer wörds hat, öffnet die Datei
+mit **Datei importieren**; sie kommt als bearbeitbares Paket an. Ist das Paket schon da, wähle **Ersetzen** (Wörter,
+die in beiden sind, behalten ihren Lernstand) oder **Beide behalten**.
+
+## Wörter aus Fotos
+
+wörds kann eine gedruckte Wortliste aus Fotos lesen, damit du sie nicht abtippen musst. Der Text wird auf deinem
+Gerät gelesen; deine Fotos werden nie hochgeladen.
+
+![Fotos einer Wortliste](../images/de/42-import-pages.png) ![Die Wörter prüfen](../images/de/43-import-review.png)
+
+1. Tippe im Editor auf die Plus-Taste und wähle **Aus Foto importieren**. Oder beginne ein Paket mit **Neues Paket
+   aus Foto** in den **Sprachpaketen**.
+2. **Foto aufnehmen** öffnet deine Kamera-App, **Fotos auswählen** die Fotoauswahl, in der du mehrere Seiten wählen
+   kannst. wörds sieht nur die Fotos, die du wählst, und fragt nach keiner Berechtigung. Nimm eine Seite pro Foto
+   auf, so gerade und scharf wie möglich.
+3. Jede Seite wird gelesen, während du weitermachst; ein seitlich aufgenommenes Foto dreht wörds selbst. Liest sich
+   eine Seite schlecht, bietet ihr Menü **Drehen und zuschneiden**: drehe sie und ziehe die Ecken an die Wortliste.
+4. Tippe auf ***n* Wörter prüfen**, um sie durchzusehen. Das Foto zeigt einen Rahmen um jedes gefundene Paar; tippe auf
+   einen Rahmen, um seine Zeile zu finden, oder auf eine Zeile, um zu sehen, wo sie gelesen wurde. Zeilen mit
+   **Schreibweise prüfen** waren schwer zu lesen, und Wörter, die schon im Paket sind, bleiben abgewählt. Tippe auf
+   den Stift, um eine Zeile zu berichtigen, wähle ab, was du nicht willst, und tausche mit **Spalten dieser Seite
+   tauschen**, wenn Wort und Übersetzung vertauscht sind. Überschriften auf der Seite werden zu Lektionen; **In
+   Lektion verschieben …** legt Zeilen in eine andere oder neue.
+5. Tippe auf ***n* Wörter importieren**, um die ausgewählten Wörter hinzuzufügen. Die Zusammenfassung zeigt, wie viele Wörter in
+   welche Lektionen gingen. **Rückgängig** entfernt sie wieder und bringt dich zurück zur Prüfung.
+
+Du kannst einen Import verlassen und später weitermachen; er wartet, wo du aufgehört hast. **Verwerfen** löscht die
+Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen bleibt, wird gelöscht.
+
 ## Einstellungen
 
 ![Einstellungen: Sprache und Darstellung](../images/de/20-settings.png) ![Einstellungen: tägliche Wiederholung](../images/de/21-settings-review.png)
@@ -235,7 +304,8 @@ Ergebnis hell und dunkel.
 ## Tablets und Foldables
 
 Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen
-und die Pakete der gewählten Quelle nebeneinander. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte
+und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du
+bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte
 über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen.
 
 ![Die Bibliothek auf einem Tablet](../images/tablet/de_1_library.png)
@@ -245,9 +315,10 @@ und die Pakete der gewählten Quelle nebeneinander. Auf einem halb geöffneten F
 - wörds funktioniert mit **TalkBack**, großer Schrift, hohem Kontrast, reduzierten Animationen, Tastatur und
   D-Pad. Auf einer Hardwaretastatur geht **Esc** zurück.
 - wörds braucht **kein Konto** und funktioniert **offline**. Ins Internet geht es nur, um mit GitHub zu sprechen,
-  und nur, wenn du GitHub-Quellen nutzt. Es gibt keine Werbung und kein Tracking.
-- Dein Fortschritt und deine Einstellungen sind Teil der Sicherung deines Geräts. Zugriffstokens nicht: Nach einer
-  Wiederherstellung fragt wörds erneut danach.
+  und nur, wenn du GitHub-Quellen nutzt. Es gibt keine Werbung und kein Tracking. Fotos von Wortlisten werden auf
+  deinem Gerät gelesen und nie hochgeladen.
+- Dein Fortschritt, deine Einstellungen und deine eigenen Pakete sind Teil der Sicherung deines Geräts.
+  Zugriffstokens nicht: Nach einer Wiederherstellung fragt wörds erneut danach.
 
 ## Fragen und Probleme
 
@@ -261,6 +332,10 @@ geändert. Bitte den Autor des Pakets um eine korrigierte Fassung.
 **GitHub meldet einen Fehler.** Prüfe deine Verbindung. Bei einem privaten Repository prüfe, ob das Zugriffstoken
 noch gültig ist und Lesezugriff auf die Inhalte des Repositorys hat. Ist das Anfragelimit von GitHub erreicht,
 sagt die Meldung, wann du es wieder versuchen kannst.
+
+**Wörter aus einem Foto kommen falsch an.** Fotografiere die Seite noch einmal bei gutem Licht, flach und
+bildfüllend, oder schneide mit **Drehen und zuschneiden** nur die Wortliste aus. Jede Zeile lässt sich in der
+Prüfung berichtigen, bevor etwas importiert wird.
 
 **Ich will von vorn anfangen.** **Einstellungen → Lernfortschritt zurücksetzen** löscht alle Antworten; die Pakete
 bleiben installiert.
