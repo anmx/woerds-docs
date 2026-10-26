@@ -8,7 +8,8 @@ wörds ist eine Lernkarten-App zum Sprachenlernen: Vokabeln und Verbformen, mit 
 | --- | --- | --- |
 | **Using the app (latest version)** · **Die App benutzen (aktuelle Version)** | [User guide](en/user-guide.md) | [Benutzerhandbuch](de/benutzerhandbuch.md) |
 | **Privacy** · **Datenschutz** | [Privacy policy](en/privacy-policy.md) | [Datenschutzerklärung](de/datenschutz.md) |
-| **Earlier versions** · **Frühere Versionen** | [User guide 0.9.0](versions/0.9.0/en/user-guide.md) | [Benutzerhandbuch 0.9.0](versions/0.9.0/de/benutzerhandbuch.md) |
+| **Earlier versions** · **Frühere Versionen** | [User guide 0.10.0](versions/0.10.0/en/user-guide.md) | [Benutzerhandbuch 0.10.0](versions/0.10.0/de/benutzerhandbuch.md) |
+| | [User guide 0.9.0](versions/0.9.0/en/user-guide.md) | [Benutzerhandbuch 0.9.0](versions/0.9.0/de/benutzerhandbuch.md) |
 
 ## Versions
 

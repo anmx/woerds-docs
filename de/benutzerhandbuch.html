@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.10.0 (aktuell) · Frühere Versionen: <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.11.0 (aktuell) · Frühere Versionen: <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
-    <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um, prüfst dich ehrlich und bewertest dich. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
+    <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.10.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.11.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -35,9 +35,12 @@
         <li><a href="#die-bibliothek">Die Bibliothek</a></li>
         <li><a href="#eine-sitzung-starten">Eine Sitzung starten</a></li>
         <li><a href="#mit-einer-karte-lernen">Mit einer Karte lernen</a></li>
+        <li><a href="#die-antwort-eintippen">Die Antwort eintippen</a></li>
         <li><a href="#ende-einer-sitzung">Ende einer Sitzung</a></li>
         <li><a href="#heutige-wiederholung">Heutige Wiederholung</a></li>
+        <li><a href="#erinnerung-und-widget">Erinnerung und Widget</a></li>
         <li><a href="#fortschritt">Fortschritt</a></li>
+        <li><a href="#artikel-üben">Artikel üben</a></li>
         <li><a href="#sprachpakete">Sprachpakete</a></li>
         <li><a href="#eigene-pakete">Eigene Pakete</a></li>
         <li><a href="#wörter-aus-fotos">Wörter aus Fotos</a></li>
@@ -111,6 +114,7 @@
       <li><strong>Richtung</strong>: von deiner Sprache in die Lernsprache (<em>Deutsch → Italienisch</em>: du siehst „ich bin" und sagst „io sono"), umgekehrt oder <strong>Beide</strong>.</li>
       <li><strong>Reihenfolge</strong> (nur bei <em>Beide</em>): <strong>nacheinander</strong> übt alle Karten eines Eintrags erst in der einen, dann in der anderen Richtung. <strong>abwechselnd</strong> fragt jede Karte im Wechsel in beiden Richtungen ab.</li>
       <li><strong>Zeiten</strong> (nur bei Verben): welche Zeitformen du üben willst.</li>
+      <li><strong>Antwort</strong>: die Karte <strong>Umdrehen</strong> und dich selbst bewerten, oder die Antwort <strong>Eintippen</strong> (siehe <a href="#die-antwort-eintippen">Die Antwort eintippen</a>). wörds merkt sich deine Wahl für jedes Sprachpaar.</li>
     </ul>
     <p>Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf <strong>Starten</strong>.</p>
     <h2 id="mit-einer-karte-lernen">Mit einer Karte lernen</h2>
@@ -149,6 +153,27 @@
         <figcaption>Ihre Antwortseite</figcaption>
       </figure>
     </div>
+    <h2 id="die-antwort-eintippen">Die Antwort eintippen</h2>
+    <p>Mit <strong>Antwort: Eintippen</strong> nimmt ein Feld deine Antwort in der Sprache der Kartenrückseite entgegen, und die Tastatur wechselt nach Möglichkeit in diese Sprache. Tasten über der Tastatur fügen Buchstaben ein, die ihr fehlen können, etwa <em>à</em> oder <em>è</em>. Tippe auf <strong>Prüfen</strong> (oder drücke die Eingabetaste).</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/23-typed-question.png" alt="Eine Antwort eintippen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine Antwort eintippen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/24-typed-verdict.png" alt="Die Prüfung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Prüfung</figcaption>
+      </figure>
+    </div>
+    <p>wörds vergleicht deine Antwort mit der Lösung und sagt, was es gefunden hat:</p>
+    <ul>
+      <li><strong>Richtig</strong> zählt als gewusst.</li>
+      <li><strong>Fast</strong> – ein Buchstabe falsch in einem längeren Wort, nur die Akzente (wenn akzeptiert), der falsche Artikel oder kein Artikel (wenn akzeptiert) – zählt als <em>fast gewusst</em>: Die Karte kommt früher wieder als eine gewusste, aber später als eine vergessene.</li>
+      <li><strong>Nicht ganz</strong> zählt als nicht gewusst.</li>
+    </ul>
+    <p>Groß- und Kleinschreibung, zusätzliche Leerzeichen und Satzzeichen spielen nie eine Rolle. Bietet eine Lösung Alternativen an (<em>lui/lei è</em>), ist jede davon richtig, und ein Subjektpronomen, mit dem die Lösung beginnt, darf fehlen (<em>sono</em> für <em>io sono</em>). Unter dem Ergebnis zeigt die Lösung, was gefehlt hat oder anders war, und deine Eingabe, was falsch war.</p>
+    <p>Liegt wörds daneben, tippe auf <strong>Ich hatte recht</strong>, dann zählt die Antwort als gewusst. <strong>Lösung zeigen</strong> gibt eine Karte auf; sie zählt dann als nicht gewusst. Was du eintippst, wird nie gespeichert.</p>
+    <p>Eintippen geht in beiden Richtungen. Für die heutige Wiederholung schaltest du es unter <strong>Einstellungen → Tägliche Wiederholung → Antworten eintippen</strong> ein.</p>
     <h2 id="ende-einer-sitzung">Ende einer Sitzung</h2>
     <p>Eine Sitzung ist in Gruppen aufgeteilt: eine pro Verb und Zeit oder eine Handvoll Wörter. Nach jeder Gruppe zeigt wörds, wie es lief und was als Nächstes kommt. Am Ende siehst du das Ergebnis der ganzen Sitzung.</p>
     <div class="figures">
@@ -171,6 +196,15 @@
     </ul>
     <p>Du startest die Wiederholung oben in der Bibliothek oder im Bereich <strong>Fortschritt</strong>. Eine Zahl am Bereich Fortschritt zeigt, wie viele Karten warten. Lange Wiederholungen sind in Blöcke zu 20 Karten aufgeteilt. Eine unterbrochene Wiederholung kannst du am selben Tag fortsetzen. Ein Lerntag beginnt um 4 Uhr morgens, damit eine Sitzung spät am Abend noch zu diesem Tag zählt.</p>
     <p>Jede Antwort fließt in deinen Plan ein: in einer normalen Sitzung genauso wie in der Wiederholung.</p>
+    <h2 id="erinnerung-und-widget">Erinnerung und Widget</h2>
+    <p><strong>Einstellungen → Tägliche Wiederholung → Tägliche Erinnerung</strong> schickt zur gewählten Uhrzeit eine Benachrichtigung (19:00 Uhr, wenn du nichts änderst), aber nur an Tagen, an denen die heutige Wiederholung noch Karten für dich hat. Beim Einschalten fragt sie nach der Erlaubnis für Benachrichtigungen; die Benachrichtigung nennt keine Wörter.</p>
+    <p>Das Widget <strong>Heutige Wiederholung</strong> für den Startbildschirm zeigt, wie viele Karten warten, und startet die Wiederholung mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die Farben der App.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/25-settings-reminder.png" alt="Einstellungen mit der Erinnerung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Einstellungen mit der Erinnerung</figcaption>
+      </figure>
+    </div>
     <h2 id="fortschritt">Fortschritt</h2>
     <p>Der Bereich <strong>Fortschritt</strong> zeigt die heutige Wiederholung und für jedes Paket, wie weit du bist. Tippe auf ein Paket, um dieselben Zahlen pro Abschnitt zu sehen; innerhalb eines Abschnitts kannst du seine Gruppen einblenden.</p>
     <div class="figures">
@@ -197,6 +231,36 @@
       </table>
     </div>
     <p>Mit den Tasten unter <strong>Richtung</strong> siehst du die Zahlen für eine Richtung oder für beide.</p>
+    <p>Über den Paketen zeigt der Fortschritt:</p>
+    <ul>
+      <li><strong>Schwierige Wörter</strong>: Wörter, die du dreimal oder öfter vergessen hast, nachdem du sie schon konntest. Tippe auf die Karte, um sie zu sehen. In der Liste kannst du ein Wort <strong>bearbeiten</strong> (ein Wort eines installierten Pakets bearbeitest du in einer Kopie des Pakets, die deinen Fortschritt übernimmt) oder <strong>zurücksetzen</strong>, um es von vorn zu lernen. Ein Wort verschwindet aus der Liste, sobald du es drei Wochen lang behältst. In der Bibliothek, im Editor und auf der Antwortseite einer Karte sind diese Wörter als <strong>Schwierig</strong> markiert.</li>
+      <li><strong>Die nächsten 7 Tage</strong>: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.</li>
+      <li><strong>Die letzten 12 Wochen</strong>: ein Kalender der Tage, an denen du gelernt hast; je dunkler ein Tag, desto mehr Antworten. <strong>Als Liste zeigen</strong> schreibt beide Diagramme als Tabelle aus.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/14-progress-insights.png" alt="Ausblick und Kalender" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ausblick und Kalender</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/26-difficult-words.png" alt="Schwierige Wörter" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Schwierige Wörter</figcaption>
+      </figure>
+    </div>
+    <h2 id="artikel-üben">Artikel üben</h2>
+    <p><strong>Artikel üben</strong> fragt nur nach dem Artikel von Nomen: <em>casa</em> – heißt es <em>il</em>, <em>lo</em>, <em>la</em> oder <em>l'</em>? Du findest es in der Bibliothek (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf Nomen mit ihrem Artikel gibt.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/27-articles.png" alt="Artikel üben" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Artikel üben</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/28-articles-wrong.png" alt="Ein falscher Artikel" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ein falscher Artikel</figcaption>
+      </figure>
+    </div>
+    <p>Eine Runde hat bis zu 20 Nomen. Nach einer richtigen Antwort folgt das nächste Nomen von selbst; nach einer falschen zeigt wörds den richtigen Artikel, bis du auf <strong>Weiter</strong> tippst, und fragt das Nomen am Ende der Runde noch einmal. Die nächste Runde beginnt mit den Nomen, die falsch waren.</p>
+    <p>Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, aber seine Antworten zählen im Kalender.</p>
     <h2 id="sprachpakete">Sprachpakete</h2>
     <p>Alle Inhalte kommen in Sprachpaketen. Du öffnest sie über das Kisten-Symbol in der Bibliothek oder über <strong>Einstellungen → Sprachpakete</strong>.</p>
     <div class="figures">
@@ -308,11 +372,15 @@
     <ul>
       <li><strong>Behalten</strong>: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise 90 %). Höher heißt häufiger wiederholen.</li>
       <li><strong>Neue Karten pro Tag</strong> und <strong>Höchstens Wiederholungen pro Tag</strong> begrenzen, wie viel die tägliche Wiederholung enthält.</li>
+      <li><strong>Antworten eintippen</strong>: In der heutigen Wiederholung tippst du jede Antwort ein, statt die Karte umzudrehen.</li>
+      <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
+      <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
+      <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
     </ul>
     <h3 id="daten">Daten</h3>
     <ul>
       <li><strong>Sprachpakete</strong> öffnet die <a href="#sprachpakete">Paketverwaltung</a>.</li>
-      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen. Installierte Pakete bleiben. Das lässt sich nicht rückgängig machen.</li>
+      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete bleiben. Das lässt sich nicht rückgängig machen.</li>
     </ul>
     <h3 id="über-wörds">Über wörds</h3>
     <ul>
@@ -330,7 +398,7 @@
       </figure>
     </div>
     <h2 id="tablets-und-foldables">Tablets und Foldables</h2>
-    <p>Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen.</p>
+    <p>Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen. Solange die Bildschirmtastatur für eine eingetippte Antwort offen ist, rückt alles über den Knick.</p>
     <div class="figures">
       <figure class="wide">
         <img src="../images/tablet/de_1_library.png" alt="Die Bibliothek auf einem Tablet" width="2560" height="1440" loading="lazy" decoding="async">

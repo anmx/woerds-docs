@@ -1,14 +1,14 @@
 # wörds – Benutzerhandbuch
 
 wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des
-Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um, prüfst dich ehrlich und bewertest
-dich. wörds berechnet dann, wann du die Karte wiedersehen solltest.
+Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du
+tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.
 
 wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.10.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.11.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -17,9 +17,12 @@ andere Farben haben.
 - [Die Bibliothek](#die-bibliothek)
 - [Eine Sitzung starten](#eine-sitzung-starten)
 - [Mit einer Karte lernen](#mit-einer-karte-lernen)
+- [Die Antwort eintippen](#die-antwort-eintippen)
 - [Ende einer Sitzung](#ende-einer-sitzung)
 - [Heutige Wiederholung](#heutige-wiederholung)
+- [Erinnerung und Widget](#erinnerung-und-widget)
 - [Fortschritt](#fortschritt)
+- [Artikel üben](#artikel-üben)
 - [Sprachpakete](#sprachpakete)
 - [Eigene Pakete](#eigene-pakete)
 - [Wörter aus Fotos](#wörter-aus-fotos)
@@ -76,6 +79,8 @@ Bevor eine Sitzung beginnt, legst du in einem Blatt fest, wie du üben willst:
 - **Reihenfolge** (nur bei *Beide*): **nacheinander** übt alle Karten eines Eintrags erst in der einen, dann in der
   anderen Richtung. **abwechselnd** fragt jede Karte im Wechsel in beiden Richtungen ab.
 - **Zeiten** (nur bei Verben): welche Zeitformen du üben willst.
+- **Antwort**: die Karte **Umdrehen** und dich selbst bewerten, oder die Antwort **Eintippen** (siehe
+  [Die Antwort eintippen](#die-antwort-eintippen)). wörds merkt sich deine Wahl für jedes Sprachpaar.
 
 Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf **Starten**.
 
@@ -108,6 +113,33 @@ Einstellungen kannst du die Bilder ausschalten.
 
 ![Eine Vokabelkarte mit Bild](../images/de/10-vocabulary-front.png) ![Ihre Antwortseite](../images/de/11-vocabulary-answer.png)
 
+## Die Antwort eintippen
+
+Mit **Antwort: Eintippen** nimmt ein Feld deine Antwort in der Sprache der Kartenrückseite entgegen, und die Tastatur
+wechselt nach Möglichkeit in diese Sprache. Tasten über der Tastatur fügen Buchstaben ein, die ihr fehlen können,
+etwa *à* oder *è*. Tippe auf **Prüfen** (oder drücke die Eingabetaste).
+
+![Eine Antwort eintippen](../images/de/23-typed-question.png) ![Die Prüfung](../images/de/24-typed-verdict.png)
+
+wörds vergleicht deine Antwort mit der Lösung und sagt, was es gefunden hat:
+
+- **Richtig** zählt als gewusst.
+- **Fast** – ein Buchstabe falsch in einem längeren Wort, nur die Akzente (wenn akzeptiert), der falsche Artikel
+  oder kein Artikel (wenn akzeptiert) – zählt als *fast gewusst*: Die Karte kommt früher wieder als eine gewusste,
+  aber später als eine vergessene.
+- **Nicht ganz** zählt als nicht gewusst.
+
+Groß- und Kleinschreibung, zusätzliche Leerzeichen und Satzzeichen spielen nie eine Rolle. Bietet eine Lösung
+Alternativen an (*lui/lei è*), ist jede davon richtig, und ein Subjektpronomen, mit dem die Lösung beginnt, darf fehlen
+(*sono* für *io sono*). Unter dem Ergebnis zeigt die Lösung, was gefehlt hat oder anders war, und deine Eingabe, was
+falsch war.
+
+Liegt wörds daneben, tippe auf **Ich hatte recht**, dann zählt die Antwort als gewusst. **Lösung zeigen** gibt eine
+Karte auf; sie zählt dann als nicht gewusst. Was du eintippst, wird nie gespeichert.
+
+Eintippen geht in beiden Richtungen. Für die heutige Wiederholung schaltest du es unter **Einstellungen → Tägliche
+Wiederholung → Antworten eintippen** ein.
+
 ## Ende einer Sitzung
 
 Eine Sitzung ist in Gruppen aufgeteilt: eine pro Verb und Zeit oder eine Handvoll Wörter. Nach jeder Gruppe zeigt
@@ -136,6 +168,18 @@ Sitzung spät am Abend noch zu diesem Tag zählt.
 
 Jede Antwort fließt in deinen Plan ein: in einer normalen Sitzung genauso wie in der Wiederholung.
 
+## Erinnerung und Widget
+
+**Einstellungen → Tägliche Wiederholung → Tägliche Erinnerung** schickt zur gewählten Uhrzeit eine Benachrichtigung
+(19:00 Uhr, wenn du nichts änderst), aber nur an Tagen, an denen die heutige Wiederholung noch Karten für dich hat.
+Beim Einschalten fragt sie nach der Erlaubnis für Benachrichtigungen; die Benachrichtigung nennt keine Wörter.
+
+Das Widget **Heutige Wiederholung** für den Startbildschirm zeigt, wie viele Karten warten, und startet die
+Wiederholung mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die
+Farben der App.
+
+![Einstellungen mit der Erinnerung](../images/de/25-settings-reminder.png)
+
 ## Fortschritt
 
 Der Bereich **Fortschritt** zeigt die heutige Wiederholung und für jedes Paket, wie weit du bist. Tippe auf ein
@@ -151,6 +195,33 @@ Paket, um dieselben Zahlen pro Abschnitt zu sehen; innerhalb eines Abschnitts ka
 | **Trefferquote** | Anteil der Antworten mit *Gewusst* |
 
 Mit den Tasten unter **Richtung** siehst du die Zahlen für eine Richtung oder für beide.
+
+Über den Paketen zeigt der Fortschritt:
+
+- **Schwierige Wörter**: Wörter, die du dreimal oder öfter vergessen hast, nachdem du sie schon konntest. Tippe auf
+  die Karte, um sie zu sehen. In der Liste kannst du ein Wort **bearbeiten** (ein Wort eines installierten Pakets
+  bearbeitest du in einer Kopie des Pakets, die deinen Fortschritt übernimmt) oder **zurücksetzen**, um es von vorn
+  zu lernen. Ein Wort verschwindet aus der Liste, sobald du es drei Wochen lang behältst. In der Bibliothek, im Editor
+  und auf der Antwortseite einer Karte sind diese Wörter als **Schwierig** markiert.
+- **Die nächsten 7 Tage**: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.
+- **Die letzten 12 Wochen**: ein Kalender der Tage, an denen du gelernt hast; je dunkler ein Tag, desto mehr Antworten.
+  **Als Liste zeigen** schreibt beide Diagramme als Tabelle aus.
+
+![Ausblick und Kalender](../images/de/14-progress-insights.png) ![Schwierige Wörter](../images/de/26-difficult-words.png)
+
+## Artikel üben
+
+**Artikel üben** fragt nur nach dem Artikel von Nomen: *casa* – heißt es *il*, *lo*, *la* oder *l'*? Du findest es in
+der Bibliothek (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf
+Nomen mit ihrem Artikel gibt.
+
+![Artikel üben](../images/de/27-articles.png) ![Ein falscher Artikel](../images/de/28-articles-wrong.png)
+
+Eine Runde hat bis zu 20 Nomen. Nach einer richtigen Antwort folgt das nächste Nomen von selbst; nach einer falschen
+zeigt wörds den richtigen Artikel, bis du auf **Weiter** tippst, und fragt das Nomen am Ende der Runde noch einmal. Die
+nächste Runde beginnt mit den Nomen, die falsch waren.
+
+Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, aber seine Antworten zählen im Kalender.
 
 ## Sprachpakete
 
@@ -284,12 +355,17 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
   90 %). Höher heißt häufiger wiederholen.
 - **Neue Karten pro Tag** und **Höchstens Wiederholungen pro Tag** begrenzen, wie viel die tägliche Wiederholung
   enthält.
+- **Antworten eintippen**: In der heutigen Wiederholung tippst du jede Antwort ein, statt die Karte umzudrehen.
+- **Fehlende Akzente akzeptieren** lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig
+  gelten; ausgeschaltet ist sie falsch.
+- **Fehlenden Artikel akzeptieren** lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.
+- **Tägliche Erinnerung** und ihre **Uhrzeit**: siehe [Erinnerung und Widget](#erinnerung-und-widget).
 
 ### Daten
 
 - **Sprachpakete** öffnet die [Paketverwaltung](#sprachpakete).
-- **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen. Installierte Pakete bleiben. Das lässt sich
-  nicht rückgängig machen.
+- **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte
+  Pakete bleiben. Das lässt sich nicht rückgängig machen.
 
 ### Über wörds
 
@@ -306,7 +382,8 @@ Ergebnis hell und dunkel.
 Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen
 und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du
 bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte
-über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen.
+über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen. Solange die
+Bildschirmtastatur für eine eingetippte Antwort offen ist, rückt alles über den Knick.
 
 ![Die Bibliothek auf einem Tablet](../images/tablet/de_1_library.png)
 

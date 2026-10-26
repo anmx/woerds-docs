@@ -1,14 +1,14 @@
 # wörds user guide
 
 wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words.
-Each card shows one side. You answer in your head, flip the card, check yourself honestly and grade it. wörds then
-works out when you should see the card again.
+Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer
+and wörds checks it. wörds then works out when you should see the card again.
 
 wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.10.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.11.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -16,9 +16,12 @@ This guide describes wörds 0.10.0. The screenshots show the Terracotta color sc
 - [The library](#the-library)
 - [Starting a session](#starting-a-session)
 - [Studying a card](#studying-a-card)
+- [Typing the answer](#typing-the-answer)
 - [End of a session](#end-of-a-session)
 - [Today's review](#todays-review)
+- [Reminder and widget](#reminder-and-widget)
 - [Progress](#progress)
+- [Practising articles](#practising-articles)
 - [Language packs](#language-packs)
 - [Your own packs](#your-own-packs)
 - [Words from photos](#words-from-photos)
@@ -73,6 +76,8 @@ Before a session starts, a sheet lets you decide how to practise:
 - **Order** (only with *Both*): **One after the other** practises all cards of an item in one direction, then in
   the other. **Alternating** asks each card in both directions in turn.
 - **Tenses** (verbs only): choose which tenses to practise.
+- **Answer**: **Flip** the card and grade yourself, or **Type** the answer (see [Typing the answer](#typing-the-answer)).
+  wörds remembers your choice for each language pair.
 
 The sheet shows how many cards that makes and roughly how long it takes. Tap **Start**.
 
@@ -105,6 +110,31 @@ off in the settings.
 
 ![A vocabulary card with a picture](../images/en/10-vocabulary-front.png) ![Its answer side](../images/en/11-vocabulary-answer.png)
 
+## Typing the answer
+
+With **Answer: Type**, a field takes your answer in the language of the back of the card, and the keyboard switches to
+that language where it can. Buttons above the keyboard insert letters it may lack, such as *à* or *è*. Tap **Check**
+(or press Enter).
+
+![Typing an answer](../images/en/23-typed-question.png) ![The check](../images/en/24-typed-verdict.png)
+
+wörds compares your answer with the solution and says what it found:
+
+- **Correct** counts as known.
+- **Almost** – one letter off in a longer word, only the accents (when accepted), the wrong article, or no article
+  (when accepted) – counts as *almost known*: the card comes back sooner than a known one, but later than a
+  forgotten one.
+- **Not quite** counts as not known.
+
+Capital letters, extra spaces and punctuation never matter. Where a solution offers alternatives (*lui/lei è*), each
+of them is right, and a subject pronoun the solution starts with may be left out (*sono* for *io sono*). Under the
+verdict, the solution shows what was missing or different, and your answer shows what was wrong.
+
+If wörds got it wrong, tap **I was right** to count the answer as known. **Show answer** gives up on a card; it then
+counts as not known. What you type is never stored.
+
+Typing works in both directions. For today's review, turn it on in **Settings → Daily review → Type answers**.
+
 ## End of a session
 
 A session is split into groups: one per verb and tense, or a handful of words. After each group wörds shows how it went and what comes
@@ -132,6 +162,17 @@ the same day. A review day starts at 4:00 in the morning, so a late evening sess
 
 Every answer counts towards your schedule: in a normal session as well as in the review.
 
+## Reminder and widget
+
+**Settings → Daily review → Daily reminder** sends a notification at the time you choose (19:00 unless you change it),
+but only on days when today's review still has cards for you. It asks for permission to show notifications when you
+turn it on; the notification names no words.
+
+The **Today's review** widget for your home screen shows how many cards are waiting and starts the review with one
+tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.
+
+![Settings with the reminder](../images/en/25-settings-reminder.png)
+
 ## Progress
 
 The **Progress** tab shows today's review and, for each pack, how far you have got. Tap a pack to see the same
@@ -147,6 +188,32 @@ figures per section; within a section you can show its groups.
 | **Accuracy** | Share of answers marked *Knew it* |
 
 The **Direction** buttons show the figures for one direction or both.
+
+Above the packs, Progress shows:
+
+- **Difficult words**: words you forgot three times or more after you had known them. Tap the card to see them. From
+  the list you can **edit** a word (a word of an installed pack is edited in a copy of the pack, which keeps your
+  progress), or **reset** it to learn it from scratch. A word leaves the list once you remember it for three weeks.
+  In the library, the editor and on the answer side of a card, these words are marked **Difficult**.
+- **Next 7 days**: how many cards are due each day, overdue ones counted today.
+- **Last 12 weeks**: a calendar of the days you studied; the darker a day, the more answers you gave. **Show as list**
+  spells both charts out as a table.
+
+![Outlook and calendar](../images/en/14-progress-insights.png) ![Difficult words](../images/en/26-difficult-words.png)
+
+## Practising articles
+
+**Practise articles** asks only for the article of nouns: *casa* – is it *il*, *lo*, *la* or *l'*? You find it in the
+library (for the selected pack) and in Progress (for all packs of the language pair), once there are at least five
+nouns with their article.
+
+![Practising articles](../images/en/27-articles.png) ![A wrong article](../images/en/28-articles-wrong.png)
+
+A round has up to 20 nouns. After a right answer the next noun follows by itself; after a wrong one, wörds shows the
+right article until you tap **Continue**, and asks that noun once more at the end of the round. The next round starts
+with the nouns you got wrong.
+
+Practising articles does not change your schedule or today's review, but its answers count in the calendar.
 
 ## Language packs
 
@@ -270,11 +337,16 @@ everything read from them. An import left for a day is deleted.
 - **Remember**: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %).
   Higher means more frequent reviews.
 - **New cards per day** and **Reviews per day at most** limit how much each day's review contains.
+- **Type answers** asks you to type each answer in today's review instead of flipping the card.
+- **Accept missing accents** counts an answer that differs only in accents as almost right; turned off, it is wrong.
+- **Accept a missing article** counts a noun without its article as almost right; turned off, it is wrong.
+- **Daily reminder** and its **Time**: see [Reminder and widget](#reminder-and-widget).
 
 ### Data
 
 - **Language packs** opens the [pack management](#language-packs).
-- **Reset learning progress** deletes all answers and sessions. Installed packs stay. This cannot be undone.
+- **Reset learning progress** deletes all answers and sessions, including those of the article practice. Installed
+  packs stay. This cannot be undone.
 
 ### About wörds
 
@@ -290,7 +362,8 @@ light and dark.
 On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of
 the selected source side by side. The pack editor shows the word list and the word you edit side by side, and the
 review of a photo import the rows and the photo. On a half-folded foldable (tabletop posture), the card sits above the fold and the
-grade buttons below it, so you can study with the device standing on a table.
+grade buttons below it, so you can study with the device standing on a table. While the on-screen keyboard is open
+for a typed answer, everything moves above the fold.
 
 ![Library on a tablet](../images/tablet/en_1_library.png)
 

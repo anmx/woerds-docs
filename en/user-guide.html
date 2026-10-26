@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.10.0 (latest) · Earlier versions: <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.11.0 (latest) · Earlier versions: <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
-    <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card, check yourself honestly and grade it. wörds then works out when you should see the card again.</p>
+    <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.10.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.11.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -35,9 +35,12 @@
         <li><a href="#the-library">The library</a></li>
         <li><a href="#starting-a-session">Starting a session</a></li>
         <li><a href="#studying-a-card">Studying a card</a></li>
+        <li><a href="#typing-the-answer">Typing the answer</a></li>
         <li><a href="#end-of-a-session">End of a session</a></li>
         <li><a href="#todays-review">Today's review</a></li>
+        <li><a href="#reminder-and-widget">Reminder and widget</a></li>
         <li><a href="#progress">Progress</a></li>
+        <li><a href="#practising-articles">Practising articles</a></li>
         <li><a href="#language-packs">Language packs</a></li>
         <li><a href="#your-own-packs">Your own packs</a></li>
         <li><a href="#words-from-photos">Words from photos</a></li>
@@ -111,6 +114,7 @@
       <li><strong>Direction</strong>: from your language to the learned one (<em>German → Italian</em>: you are shown "ich bin" and say "io sono"), the other way round, or <strong>Both</strong>.</li>
       <li><strong>Order</strong> (only with <em>Both</em>): <strong>One after the other</strong> practises all cards of an item in one direction, then in the other. <strong>Alternating</strong> asks each card in both directions in turn.</li>
       <li><strong>Tenses</strong> (verbs only): choose which tenses to practise.</li>
+      <li><strong>Answer</strong>: <strong>Flip</strong> the card and grade yourself, or <strong>Type</strong> the answer (see <a href="#typing-the-answer">Typing the answer</a>). wörds remembers your choice for each language pair.</li>
     </ul>
     <p>The sheet shows how many cards that makes and roughly how long it takes. Tap <strong>Start</strong>.</p>
     <h2 id="studying-a-card">Studying a card</h2>
@@ -149,6 +153,27 @@
         <figcaption>Its answer side</figcaption>
       </figure>
     </div>
+    <h2 id="typing-the-answer">Typing the answer</h2>
+    <p>With <strong>Answer: Type</strong>, a field takes your answer in the language of the back of the card, and the keyboard switches to that language where it can. Buttons above the keyboard insert letters it may lack, such as <em>à</em> or <em>è</em>. Tap <strong>Check</strong> (or press Enter).</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/23-typed-question.png" alt="Typing an answer" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Typing an answer</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/24-typed-verdict.png" alt="The check" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The check</figcaption>
+      </figure>
+    </div>
+    <p>wörds compares your answer with the solution and says what it found:</p>
+    <ul>
+      <li><strong>Correct</strong> counts as known.</li>
+      <li><strong>Almost</strong> – one letter off in a longer word, only the accents (when accepted), the wrong article, or no article (when accepted) – counts as <em>almost known</em>: the card comes back sooner than a known one, but later than a forgotten one.</li>
+      <li><strong>Not quite</strong> counts as not known.</li>
+    </ul>
+    <p>Capital letters, extra spaces and punctuation never matter. Where a solution offers alternatives (<em>lui/lei è</em>), each of them is right, and a subject pronoun the solution starts with may be left out (<em>sono</em> for <em>io sono</em>). Under the verdict, the solution shows what was missing or different, and your answer shows what was wrong.</p>
+    <p>If wörds got it wrong, tap <strong>I was right</strong> to count the answer as known. <strong>Show answer</strong> gives up on a card; it then counts as not known. What you type is never stored.</p>
+    <p>Typing works in both directions. For today's review, turn it on in <strong>Settings → Daily review → Type answers</strong>.</p>
     <h2 id="end-of-a-session">End of a session</h2>
     <p>A session is split into groups: one per verb and tense, or a handful of words. After each group wörds shows how it went and what comes next. At the end you see the result of the whole session.</p>
     <div class="figures">
@@ -171,6 +196,15 @@
     </ul>
     <p>You start the review from the top of the library or from the <strong>Progress</strong> tab. A number on the Progress tab shows how many cards are waiting. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued the same day. A review day starts at 4:00 in the morning, so a late evening session still counts for that day.</p>
     <p>Every answer counts towards your schedule: in a normal session as well as in the review.</p>
+    <h2 id="reminder-and-widget">Reminder and widget</h2>
+    <p><strong>Settings → Daily review → Daily reminder</strong> sends a notification at the time you choose (19:00 unless you change it), but only on days when today's review still has cards for you. It asks for permission to show notifications when you turn it on; the notification names no words.</p>
+    <p>The <strong>Today's review</strong> widget for your home screen shows how many cards are waiting and starts the review with one tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/25-settings-reminder.png" alt="Settings with the reminder" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Settings with the reminder</figcaption>
+      </figure>
+    </div>
     <h2 id="progress">Progress</h2>
     <p>The <strong>Progress</strong> tab shows today's review and, for each pack, how far you have got. Tap a pack to see the same figures per section; within a section you can show its groups.</p>
     <div class="figures">
@@ -197,6 +231,36 @@
       </table>
     </div>
     <p>The <strong>Direction</strong> buttons show the figures for one direction or both.</p>
+    <p>Above the packs, Progress shows:</p>
+    <ul>
+      <li><strong>Difficult words</strong>: words you forgot three times or more after you had known them. Tap the card to see them. From the list you can <strong>edit</strong> a word (a word of an installed pack is edited in a copy of the pack, which keeps your progress), or <strong>reset</strong> it to learn it from scratch. A word leaves the list once you remember it for three weeks. In the library, the editor and on the answer side of a card, these words are marked <strong>Difficult</strong>.</li>
+      <li><strong>Next 7 days</strong>: how many cards are due each day, overdue ones counted today.</li>
+      <li><strong>Last 12 weeks</strong>: a calendar of the days you studied; the darker a day, the more answers you gave. <strong>Show as list</strong> spells both charts out as a table.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/14-progress-insights.png" alt="Outlook and calendar" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Outlook and calendar</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/26-difficult-words.png" alt="Difficult words" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Difficult words</figcaption>
+      </figure>
+    </div>
+    <h2 id="practising-articles">Practising articles</h2>
+    <p><strong>Practise articles</strong> asks only for the article of nouns: <em>casa</em> – is it <em>il</em>, <em>lo</em>, <em>la</em> or <em>l'</em>? You find it in the library (for the selected pack) and in Progress (for all packs of the language pair), once there are at least five nouns with their article.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/27-articles.png" alt="Practising articles" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Practising articles</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/28-articles-wrong.png" alt="A wrong article" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A wrong article</figcaption>
+      </figure>
+    </div>
+    <p>A round has up to 20 nouns. After a right answer the next noun follows by itself; after a wrong one, wörds shows the right article until you tap <strong>Continue</strong>, and asks that noun once more at the end of the round. The next round starts with the nouns you got wrong.</p>
+    <p>Practising articles does not change your schedule or today's review, but its answers count in the calendar.</p>
     <h2 id="language-packs">Language packs</h2>
     <p>All content comes in language packs. Open them from the box icon in the library, or via <strong>Settings → Language packs</strong>.</p>
     <div class="figures">
@@ -308,11 +372,15 @@
     <ul>
       <li><strong>Remember</strong>: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %). Higher means more frequent reviews.</li>
       <li><strong>New cards per day</strong> and <strong>Reviews per day at most</strong> limit how much each day's review contains.</li>
+      <li><strong>Type answers</strong> asks you to type each answer in today's review instead of flipping the card.</li>
+      <li><strong>Accept missing accents</strong> counts an answer that differs only in accents as almost right; turned off, it is wrong.</li>
+      <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>
+      <li><strong>Daily reminder</strong> and its <strong>Time</strong>: see <a href="#reminder-and-widget">Reminder and widget</a>.</li>
     </ul>
     <h3 id="data">Data</h3>
     <ul>
       <li><strong>Language packs</strong> opens the <a href="#language-packs">pack management</a>.</li>
-      <li><strong>Reset learning progress</strong> deletes all answers and sessions. Installed packs stay. This cannot be undone.</li>
+      <li><strong>Reset learning progress</strong> deletes all answers and sessions, including those of the article practice. Installed packs stay. This cannot be undone.</li>
     </ul>
     <h3 id="about-wörds">About wörds</h3>
     <ul>
@@ -330,7 +398,7 @@
       </figure>
     </div>
     <h2 id="tablets-and-foldables">Tablets and foldables</h2>
-    <p>On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of the selected source side by side. The pack editor shows the word list and the word you edit side by side, and the review of a photo import the rows and the photo. On a half-folded foldable (tabletop posture), the card sits above the fold and the grade buttons below it, so you can study with the device standing on a table.</p>
+    <p>On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of the selected source side by side. The pack editor shows the word list and the word you edit side by side, and the review of a photo import the rows and the photo. On a half-folded foldable (tabletop posture), the card sits above the fold and the grade buttons below it, so you can study with the device standing on a table. While the on-screen keyboard is open for a typed answer, everything moves above the fold.</p>
     <div class="figures">
       <figure class="wide">
         <img src="../images/tablet/en_1_library.png" alt="Library on a tablet" width="2560" height="1440" loading="lazy" decoding="async">
