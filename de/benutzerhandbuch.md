@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.11.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.11.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -281,14 +281,17 @@ das Paket sofort lernen.
 
 **Lektionen** gruppieren die Wörter wie die Kapitel eines Lehrbuchs. Du kannst eine Lektion allein lernen, und ihre
 Reihenfolge bestimmt, welche neuen Wörter in deiner täglichen Wiederholung zuerst kommen. Mit **Lektionen** oben im
-Editor legst du sie an, benennst sie um, sortierst und löschst sie; die Plus-Taste im Kopf einer Lektion fügt
-direkt dort ein Wort hinzu.
+Editor legst du sie an, benennst sie um, sortierst und löschst sie; **Lektion hinzufügen** im Menü der Plus-Taste
+unten legt ebenfalls eine an, und die Plus-Taste im Kopf einer Lektion fügt direkt dort ein Wort hinzu.
 
-**Wörter ändern.** Tippe auf ein Wort, um es zu bearbeiten; sein Lernfortschritt bleibt erhalten. **Weitere
-Optionen → Fortschritt zurücksetzen** lässt dich es von vorn lernen, **Wort löschen** entfernt es. Ziehe ein Wort am
-Griff, um es innerhalb seiner Lektion umzusortieren. Halte ein Wort gedrückt, um mehrere auszuwählen, und verschiebe
-sie in eine andere Lektion oder lösche sie. Mit TalkBack findest du dieselben Aktionen im Aktionsmenü jedes Worts
-und jeder Lektion.
+**Wörter ändern.** Tippe auf ein Wort, um es zu bearbeiten; sein Lernfortschritt bleibt erhalten. **Weitere Optionen
+→ Fortschritt zurücksetzen** lässt dich es von vorn lernen, **Wort löschen** entfernt es. Ziehe ein Wort am Griff, um
+es umzusortieren, oder über den Kopf einer Lektion hinweg, um es in diese Lektion zu verschieben. Halte ein Wort
+gedrückt, um mehrere auszuwählen; die Leiste unten verschiebt sie dann in eine andere Lektion (**In Lektion
+verschieben**) oder in eine neue (**Neue Lektion**) oder löscht sie (**Löschen**). Mit TalkBack findest du dieselben
+Aktionen im Aktionsmenü jedes Worts und jeder Lektion.
+
+![Ausgewählte Wörter](../images/de/44-editor-selection.png)
 
 **Ein installiertes Paket bearbeiten.** Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet **Zum
 Bearbeiten duplizieren**: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das

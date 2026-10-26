@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.11.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.11.1. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -268,12 +268,16 @@ once.
 
 **Lections** group the words like the chapters of a textbook. You can study one lection at a time, and their order
 decides which new words come first in your daily review. **Lections** in the top bar adds, renames, reorders and
-deletes them; the add button on a lection's header adds a word right there.
+deletes them; **Add lection** in the add button's menu at the bottom adds one too, and the add button on a lection's
+header adds a word right there.
 
 **Change words.** Tap a word to edit it; it keeps its learning progress. **More options → Reset progress** lets you
-learn it from the start, **Delete word** removes it. Drag a word by its handle to reorder it within its lection.
-Touch and hold a word to select several, then move them to another lection or delete them. With TalkBack, the same
-actions are in the actions menu of each word and lection.
+learn it from the start, **Delete word** removes it. Drag a word by its handle to reorder it, or past a lection's
+header to move it into that lection. Touch and hold a word to select several; the bar at the bottom then moves them
+to another lection (**Move to lection**), into a new one (**New lection**), or deletes them (**Delete**). With
+TalkBack, the same actions are in the actions menu of each word and lection.
+
+![Selected words](../images/en/44-editor-selection.png)
 
 **Edit an installed pack.** Installed packs cannot be changed. Their menu (⋮) offers **Duplicate to edit**: wörds
 makes an editable copy that keeps your learning progress, and hides the original, marked *Hidden*. **Show original**
