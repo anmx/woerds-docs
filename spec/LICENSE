@@ -1,0 +1,10 @@
+The wörds language pack specification (the documents in this folder and its subfolders, except the files named
+below) is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You may share and adapt it for any purpose, provided you give appropriate credit, provide a link to the license and
+indicate if changes were made.
+
+License text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Excepted, and dedicated to the public domain under CC0 1.0 instead (see v1/schema/LICENSE):
+v1/schema/, v1/templates/ and v1/conformance/.

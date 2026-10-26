@@ -1,0 +1,40 @@
+{
+  "formatVersion": 1,
+  "id": "org.example.conformance",
+  "version": "1.0.0",
+  "title": "Conformance case",
+  "license": "CC0-1.0",
+  "sourceLanguage": "de",
+  "targetLanguage": "it",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "Teil A",
+      "parentId": "unit"
+    },
+    {
+      "id": "unit",
+      "title": "Lektion 1",
+      "parentId": "book"
+    },
+    {
+      "id": "book",
+      "title": "Band 1"
+    }
+  ],
+  "content": [
+    {
+      "type": "vocabulary",
+      "entries": [
+        {
+          "id": "casa",
+          "term": "la casa",
+          "translation": "das Haus",
+          "sectionIds": [
+            "s1"
+          ]
+        }
+      ]
+    }
+  ]
+}

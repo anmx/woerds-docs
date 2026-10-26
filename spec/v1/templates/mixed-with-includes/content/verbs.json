@@ -1,0 +1,37 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json#/$defs/contentBlock",
+  "type": "conjugation",
+  "persons": [
+    { "id": "1s", "label": "je", "prompt": "I" },
+    { "id": "2s", "label": "tu", "prompt": "you" },
+    { "id": "3s", "label": "il/elle", "prompt": "he/she" },
+    { "id": "1p", "label": "nous", "prompt": "we" },
+    { "id": "2p", "label": "vous", "prompt": "you (pl.)" },
+    { "id": "3p", "label": "ils/elles", "prompt": "they" }
+  ],
+  "tenses": [
+    { "id": "present", "label": "Présent", "sourceLabel": "Present" }
+  ],
+  "verbs": [
+    {
+      "id": "etre",
+      "infinitive": "être",
+      "translation": "to be",
+      "sectionIds": ["unit-2"],
+      "irregular": true,
+      "conjugations": [
+        {
+          "tenseId": "present",
+          "forms": [
+            { "personId": "1s", "prompt": "I am", "answer": "je suis" },
+            { "personId": "2s", "prompt": "you are", "answer": "tu es" },
+            { "personId": "3s", "prompt": "he/she is", "answer": "il/elle est", "tts": "il est" },
+            { "personId": "1p", "prompt": "we are", "answer": "nous sommes" },
+            { "personId": "2p", "prompt": "you (pl.) are", "answer": "vous êtes" },
+            { "personId": "3p", "prompt": "they are", "answer": "ils/elles sont", "tts": "ils sont" }
+          ]
+        }
+      ]
+    }
+  ]
+}

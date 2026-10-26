@@ -23,3 +23,8 @@ jobs:
         # The HTML pages are generated from the Markdown next to them, and the guides must name the version in
         # versions.json; locally: python3 tools/docs/build-manual.py
         run: python3 tools/docs/build-manual.py --check
+
+      - name: Pack specification archives and index are up to date
+        # The template and conformance archives and the template index are generated from the folders next to them,
+        # and cases.json must list every conformance case; locally: python3 tools/spec/build-spec.py
+        run: python3 tools/spec/build-spec.py --check

@@ -1,0 +1,823 @@
+{
+  "formatVersion": 1,
+  "description": "Conformance cases of the wörds language pack format v1. Each case is a pack directory or a .linguapack archive with the issue codes a reader reports for it. The format is described in ../language-pack-format.md, how to use the cases in ../implementers-guide.md.",
+  "cases": [
+    {
+      "path": "valid/archive-valid-stored.linguapack",
+      "stage": "archive",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "A valid pack as an archive whose entries are all stored (not compressed). Readers accept both methods."
+    },
+    {
+      "path": "valid/audio-signatures",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "Audio references of all three types. The files carry only the signature the reader checks (OggS, ftyp, ID3); they are not playable."
+    },
+    {
+      "path": "valid/conjugation",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "A small conjugation block without warnings."
+    },
+    {
+      "path": "valid/conjugation-warnings",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "conjugation.generated-prompt",
+        "conjugation.incomplete-grid",
+        "conjugation.no-section"
+      ],
+      "description": "Every warning a conjugation block can raise."
+    },
+    {
+      "path": "valid/include-with-schema-key",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "A content block in an included file, which names its schema with $schema."
+    },
+    {
+      "path": "valid/max-string-length",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "A string of exactly 1,000 characters."
+    },
+    {
+      "path": "valid/multiline-and-tab",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "Line feeds and tabs are the only control characters allowed in strings."
+    },
+    {
+      "path": "valid/nested-sections",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "Sections nested two levels deep, listed child before parent."
+    },
+    {
+      "path": "valid/nfc-normalization",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "vocabulary.duplicate-term"
+      ],
+      "description": "The second translation spells ä as a + combining diaeresis. After NFC normalization both entries are equal, so the reader warns about a duplicate."
+    },
+    {
+      "path": "valid/one-direction",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "A pack that is studied in one direction only."
+    },
+    {
+      "path": "valid/required-fields-only",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "manifest.missing-license",
+        "vocabulary.no-section"
+      ],
+      "description": "Only the required manifest fields; an entry in no section. Valid, with two warnings."
+    },
+    {
+      "path": "valid/tts-language-mismatch",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "manifest.tts-language-mismatch"
+      ],
+      "description": "A speech locale in another language than the target language only warns."
+    },
+    {
+      "path": "valid/unknown-content-type-skipped",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "content.unknown-type"
+      ],
+      "description": "A block of a type this format version does not define is skipped with a warning; the vocabulary block is used."
+    },
+    {
+      "path": "valid/user-pack-unsectioned-entries",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "description": "Entries of a user. pack may be in no section without a warning."
+    },
+    {
+      "path": "valid/vocabulary-warnings",
+      "stage": "read",
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "vocabulary.description-without-image",
+        "vocabulary.duplicate-term",
+        "vocabulary.no-image-description",
+        "vocabulary.no-section"
+      ],
+      "description": "Every warning a vocabulary block can raise."
+    },
+    {
+      "path": "invalid/archive-absolute-path.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.unsafe-path"
+      ],
+      "warnings": [],
+      "description": "An entry with an absolute path, /pack.json."
+    },
+    {
+      "path": "invalid/archive-compression-ratio.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.compression-ratio"
+      ],
+      "warnings": [],
+      "description": "2 MiB of spaces deflated to a few KiB: a zip bomb by its compression ratio."
+    },
+    {
+      "path": "invalid/archive-duplicate-entry.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.duplicate-entry"
+      ],
+      "warnings": [],
+      "description": "pack.json twice in one archive."
+    },
+    {
+      "path": "invalid/archive-empty.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.empty"
+      ],
+      "warnings": [],
+      "description": "A zip archive without entries."
+    },
+    {
+      "path": "invalid/archive-not-a-zip.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.empty"
+      ],
+      "warnings": [],
+      "description": "A text file with the .linguapack extension: a streaming reader finds no entry in it."
+    },
+    {
+      "path": "invalid/archive-truncated.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.corrupt"
+      ],
+      "warnings": [],
+      "description": "The first half of a valid archive."
+    },
+    {
+      "path": "invalid/archive-unsafe-path.linguapack",
+      "stage": "archive",
+      "valid": false,
+      "errors": [
+        "archive.unsafe-path"
+      ],
+      "warnings": [],
+      "description": "An entry named ../outside.json, which would be written outside the pack (zip slip)."
+    },
+    {
+      "path": "invalid/conjugation-blank",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.blank"
+      ],
+      "warnings": [],
+      "description": "An answer of spaces only."
+    },
+    {
+      "path": "invalid/conjugation-duplicate-form",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.duplicate-form"
+      ],
+      "warnings": [],
+      "description": "Two forms of the same person in one tense."
+    },
+    {
+      "path": "invalid/conjugation-duplicate-id",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.duplicate-id"
+      ],
+      "warnings": [],
+      "description": "Two tenses with the same id."
+    },
+    {
+      "path": "invalid/conjugation-duplicate-tense",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.duplicate-tense"
+      ],
+      "warnings": [],
+      "description": "A verb conjugated twice in the same tense."
+    },
+    {
+      "path": "invalid/conjugation-duplicate-verb",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.duplicate-verb"
+      ],
+      "warnings": [],
+      "description": "Two verbs with the same id."
+    },
+    {
+      "path": "invalid/conjugation-invalid-id",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.invalid-id"
+      ],
+      "warnings": [],
+      "description": "Person ids are lower case."
+    },
+    {
+      "path": "invalid/conjugation-no-forms",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.no-forms"
+      ],
+      "warnings": [],
+      "description": "A verb without conjugations."
+    },
+    {
+      "path": "invalid/conjugation-no-persons",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.no-persons"
+      ],
+      "warnings": [],
+      "description": "A block without persons (and so without forms)."
+    },
+    {
+      "path": "invalid/conjugation-no-tenses",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.no-forms",
+        "conjugation.no-tenses"
+      ],
+      "warnings": [],
+      "description": "A block without tenses; its verb then has no conjugations either."
+    },
+    {
+      "path": "invalid/conjugation-no-verbs",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.no-verbs"
+      ],
+      "warnings": [],
+      "description": "A block without verbs."
+    },
+    {
+      "path": "invalid/conjugation-unknown-person",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.unknown-person"
+      ],
+      "warnings": [],
+      "description": "A form of an undeclared person."
+    },
+    {
+      "path": "invalid/conjugation-unknown-section",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.unknown-section"
+      ],
+      "warnings": [],
+      "description": "A verb in an undeclared section."
+    },
+    {
+      "path": "invalid/conjugation-unknown-tense",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "conjugation.unknown-tense"
+      ],
+      "warnings": [],
+      "description": "A conjugation of an undeclared tense."
+    },
+    {
+      "path": "invalid/content-empty",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.empty"
+      ],
+      "warnings": [],
+      "description": "No content blocks at all."
+    },
+    {
+      "path": "invalid/content-missing-type",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.missing-type"
+      ],
+      "warnings": [],
+      "description": "A block without \"type\"."
+    },
+    {
+      "path": "invalid/content-no-supported-type",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.no-supported-type"
+      ],
+      "warnings": [
+        "content.unknown-type"
+      ],
+      "description": "Only blocks of unknown types: each is skipped, then the pack has nothing left."
+    },
+    {
+      "path": "invalid/files-audio-wrong-kind",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.wrong-kind"
+      ],
+      "warnings": [],
+      "description": "A picture used as audio."
+    },
+    {
+      "path": "invalid/files-content-mismatch",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.content-mismatch"
+      ],
+      "warnings": [],
+      "description": "A .png file whose bytes are not a PNG."
+    },
+    {
+      "path": "invalid/files-disallowed-type",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.disallowed-type"
+      ],
+      "warnings": [],
+      "description": "A .txt file is not allowed in a pack."
+    },
+    {
+      "path": "invalid/files-image-animated",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.image-animated"
+      ],
+      "warnings": [],
+      "description": "An animated PNG (APNG, acTL chunk)."
+    },
+    {
+      "path": "invalid/files-image-dimensions",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.image-dimensions"
+      ],
+      "warnings": [],
+      "description": "A PNG whose header says 4096 × 16 px."
+    },
+    {
+      "path": "invalid/files-include-missing",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.empty",
+        "files.missing"
+      ],
+      "warnings": [],
+      "description": "An include that does not exist. The include adds no block, so the pack has none."
+    },
+    {
+      "path": "invalid/files-include-not-json",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.empty",
+        "files.include-not-json"
+      ],
+      "warnings": [],
+      "description": "Includes must be .json files. The include adds no block, so the pack has none."
+    },
+    {
+      "path": "invalid/files-include-not-object",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.empty",
+        "syntax.schema"
+      ],
+      "warnings": [],
+      "description": "An included file must hold one block object, not an array. The include adds no block, so the pack has none."
+    },
+    {
+      "path": "invalid/files-include-unsafe-path",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "content.empty",
+        "files.unsafe-path"
+      ],
+      "warnings": [],
+      "description": "An include that leaves the pack. The include adds no block, so the pack has none."
+    },
+    {
+      "path": "invalid/files-missing",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.missing"
+      ],
+      "warnings": [],
+      "description": "A picture that is not in the pack."
+    },
+    {
+      "path": "invalid/files-unsafe-path",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.unsafe-path"
+      ],
+      "warnings": [],
+      "description": "A picture path that leaves the pack."
+    },
+    {
+      "path": "invalid/files-wrong-kind",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "files.wrong-kind"
+      ],
+      "warnings": [],
+      "description": "A JPEG picture: pictures are .png or .webp."
+    },
+    {
+      "path": "invalid/format-app-too-old",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "format.app-too-old"
+      ],
+      "warnings": [],
+      "description": "minAppFormatVersion above the reader's version."
+    },
+    {
+      "path": "invalid/format-invalid-version",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "format.invalid-version"
+      ],
+      "warnings": [],
+      "description": "formatVersion 0."
+    },
+    {
+      "path": "invalid/format-unsupported-version",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "format.unsupported-version"
+      ],
+      "warnings": [],
+      "description": "formatVersion 2 needs a newer reader."
+    },
+    {
+      "path": "invalid/manifest-blank-title",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.blank-title"
+      ],
+      "warnings": [],
+      "description": "A title of spaces only."
+    },
+    {
+      "path": "invalid/manifest-invalid-direction",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.invalid-direction"
+      ],
+      "warnings": [],
+      "description": "An unknown direction name."
+    },
+    {
+      "path": "invalid/manifest-invalid-id",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.invalid-id"
+      ],
+      "warnings": [],
+      "description": "Pack ids are lower case."
+    },
+    {
+      "path": "invalid/manifest-invalid-language",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.invalid-language"
+      ],
+      "warnings": [],
+      "description": "A language name instead of a BCP-47 tag."
+    },
+    {
+      "path": "invalid/manifest-invalid-version",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.invalid-version"
+      ],
+      "warnings": [],
+      "description": "Versions have three parts."
+    },
+    {
+      "path": "invalid/manifest-no-directions",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.no-directions"
+      ],
+      "warnings": [],
+      "description": "An empty list of directions."
+    },
+    {
+      "path": "invalid/manifest-same-languages",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "manifest.same-languages"
+      ],
+      "warnings": [],
+      "description": "de and de-AT share the primary language."
+    },
+    {
+      "path": "invalid/sections-blank-title",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "sections.blank-title"
+      ],
+      "warnings": [],
+      "description": "A section title of spaces only."
+    },
+    {
+      "path": "invalid/sections-cycle",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "sections.cycle",
+        "sections.cycle"
+      ],
+      "warnings": [],
+      "description": "Two sections that are each other's parent; both are reported."
+    },
+    {
+      "path": "invalid/sections-duplicate-id",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "sections.duplicate-id"
+      ],
+      "warnings": [],
+      "description": "Two sections with the same id."
+    },
+    {
+      "path": "invalid/sections-invalid-id",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "sections.invalid-id"
+      ],
+      "warnings": [],
+      "description": "A section id with a space."
+    },
+    {
+      "path": "invalid/sections-unknown-parent",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "sections.unknown-parent"
+      ],
+      "warnings": [],
+      "description": "parentId names no section."
+    },
+    {
+      "path": "invalid/syntax-comment",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.invalid-json"
+      ],
+      "warnings": [],
+      "description": "JSON has no comments."
+    },
+    {
+      "path": "invalid/syntax-control-character",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.control-character"
+      ],
+      "warnings": [],
+      "description": "A BEL character (U+0007) in the title."
+    },
+    {
+      "path": "invalid/syntax-invalid-json",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.invalid-json"
+      ],
+      "warnings": [],
+      "description": "A trailing comma: the reader accepts strict JSON only."
+    },
+    {
+      "path": "invalid/syntax-missing-required",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.schema"
+      ],
+      "warnings": [],
+      "description": "A vocabulary entry without its translation."
+    },
+    {
+      "path": "invalid/syntax-string-too-long",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.string-too-long"
+      ],
+      "warnings": [],
+      "description": "A string of 1,001 characters."
+    },
+    {
+      "path": "invalid/syntax-unknown-entry-field",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.schema"
+      ],
+      "warnings": [],
+      "description": "Unknown fields inside a content block are errors too."
+    },
+    {
+      "path": "invalid/syntax-unknown-field",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.schema"
+      ],
+      "warnings": [],
+      "description": "Unknown fields are errors, not ignored."
+    },
+    {
+      "path": "invalid/syntax-utf8-bom",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.invalid-json"
+      ],
+      "warnings": [],
+      "description": "A UTF-8 byte order mark before the JSON."
+    },
+    {
+      "path": "invalid/syntax-wrong-type",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "syntax.schema"
+      ],
+      "warnings": [],
+      "description": "A number where the title string belongs."
+    },
+    {
+      "path": "invalid/vocabulary-blank",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.blank"
+      ],
+      "warnings": [],
+      "description": "A translation of spaces only."
+    },
+    {
+      "path": "invalid/vocabulary-duplicate-entry",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.duplicate-entry"
+      ],
+      "warnings": [],
+      "description": "Two entries with the same id in one block."
+    },
+    {
+      "path": "invalid/vocabulary-invalid-gender",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.invalid-gender"
+      ],
+      "warnings": [],
+      "description": "Genders are m, f, n or mf."
+    },
+    {
+      "path": "invalid/vocabulary-invalid-id",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.invalid-id"
+      ],
+      "warnings": [],
+      "description": "Entry ids are lower case."
+    },
+    {
+      "path": "invalid/vocabulary-invalid-part-of-speech",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.invalid-part-of-speech"
+      ],
+      "warnings": [],
+      "description": "\"substantive\" is not one of the parts of speech."
+    },
+    {
+      "path": "invalid/vocabulary-no-entries",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.no-entries"
+      ],
+      "warnings": [],
+      "description": "A vocabulary block without entries."
+    },
+    {
+      "path": "invalid/vocabulary-unknown-section",
+      "stage": "read",
+      "valid": false,
+      "errors": [
+        "vocabulary.unknown-section"
+      ],
+      "warnings": [],
+      "description": "An entry in a section the manifest does not declare."
+    },
+    {
+      "path": "invalid/import-duplicate-item",
+      "stage": "import",
+      "valid": false,
+      "errors": [
+        "content.duplicate-card",
+        "content.duplicate-item"
+      ],
+      "warnings": [],
+      "description": "Two vocabulary blocks that both define the entry casa. Each block is valid on its own; ids must be unique across all blocks of a type, which is checked when the pack is installed."
+    }
+  ]
+}

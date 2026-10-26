@@ -1,0 +1,623 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "wörds language pack (pack.json)",
+  "description": "Manifest of a wörds language pack. A content block can also live in its own file listed in \"includes\"; such a file can reference \"#/$defs/contentBlock\" of this schema.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "description": "URI of the JSON Schema of this file, for editors. Ignored by the app.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "formatVersion": {
+      "description": "Version of the pack format the pack is written in.",
+      "type": "integer"
+    },
+    "minAppFormatVersion": {
+      "description": "Lowest format version an app must support to use the pack at all.",
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "id": {
+      "description": "Stable, globally unique pack id, e.g. \"io.lingua.de-it.a1\". Progress is keyed by it.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*$"
+    },
+    "version": {
+      "description": "Semantic version; an update must have a higher version than the installed one.",
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "license": {
+      "description": "SPDX license identifier, e.g. \"CC-BY-4.0\".",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sourceLanguage": {
+      "description": "BCP-47 tag of the language the learner knows.",
+      "type": "string",
+      "pattern": "^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$"
+    },
+    "targetLanguage": {
+      "description": "BCP-47 tag of the language being learned.",
+      "type": "string",
+      "pattern": "^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$"
+    },
+    "tts": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/tts"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "supportedDirections": {
+      "description": "Study directions the pack allows: \"source->target\" and/or \"target->source\". Default: both.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/section"
+      }
+    },
+    "content": {
+      "description": "Content blocks, polymorphic on \"type\".",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contentBlock"
+      }
+    },
+    "includes": {
+      "description": "Relative paths of JSON files that each contain one content block.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "formatVersion",
+    "id",
+    "version",
+    "title",
+    "sourceLanguage",
+    "targetLanguage"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "conjugation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "conjugation"
+        },
+        "persons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/person"
+          }
+        },
+        "tenses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tense"
+          }
+        },
+        "verbs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/verb"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "persons",
+        "tenses",
+        "verbs"
+      ],
+      "additionalProperties": false
+    },
+    "vocabulary": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "vocabulary"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/vocabularyEntry"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "entries"
+      ],
+      "additionalProperties": false
+    },
+    "contentBlock": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conjugation"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/conjugation"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "vocabulary"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/vocabulary"
+          }
+        }
+      ]
+    },
+    "example": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "description": "Example sentence in the target language.",
+          "type": "string"
+        },
+        "source": {
+          "description": "Its translation into the source language.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "form": {
+      "type": "object",
+      "properties": {
+        "personId": {
+          "type": "string"
+        },
+        "prompt": {
+          "description": "Source-language form shown on the front, e.g. \"ich mache / tue\".",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "answer": {
+          "description": "Target-language form including the pronoun, e.g. \"io faccio\".",
+          "type": "string"
+        },
+        "audio": {
+          "description": "Recorded pronunciation (.opus, .m4a or .mp3), relative to the pack root.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tts": {
+          "description": "Text for speech synthesis when it should differ from the answer.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceHint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "targetHint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "personId",
+        "answer"
+      ],
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "description": "Target-language pronoun, e.g. \"io\".",
+          "type": "string"
+        },
+        "prompt": {
+          "description": "Source-language pronoun, e.g. \"ich\".",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "prompt"
+      ],
+      "additionalProperties": false
+    },
+    "section": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "parentId": {
+          "description": "Id of the enclosing section, for nested workbook units.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ],
+      "additionalProperties": false
+    },
+    "tense": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "description": "Target-language name of the tense, e.g. \"Presente\".",
+          "type": "string"
+        },
+        "sourceLabel": {
+          "description": "Source-language name of the tense, e.g. \"Präsens\".",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "additionalProperties": false
+    },
+    "tenseConjugation": {
+      "type": "object",
+      "properties": {
+        "tenseId": {
+          "type": "string"
+        },
+        "forms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/form"
+          }
+        }
+      },
+      "required": [
+        "tenseId",
+        "forms"
+      ],
+      "additionalProperties": false
+    },
+    "tts": {
+      "type": "object",
+      "properties": {
+        "locale": {
+          "description": "BCP-47 locale for pronouncing the target language, e.g. \"it-IT\".",
+          "type": "string",
+          "pattern": "^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$"
+        }
+      },
+      "required": [
+        "locale"
+      ],
+      "additionalProperties": false
+    },
+    "verb": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "infinitive": {
+          "type": "string"
+        },
+        "translation": {
+          "type": "string"
+        },
+        "sectionIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "irregular": {
+          "type": "boolean"
+        },
+        "conjugations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tenseConjugation"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "infinitive",
+        "translation",
+        "conjugations"
+      ],
+      "additionalProperties": false
+    },
+    "vocabularyEntry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "term": {
+          "description": "Target-language word or phrase, nouns with their article, e.g. \"la casa\".",
+          "type": "string"
+        },
+        "translation": {
+          "description": "Source-language meaning, e.g. \"das Haus\".",
+          "type": "string"
+        },
+        "partOfSpeech": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "enum": [
+            "noun",
+            "verb",
+            "adjective",
+            "adverb",
+            "pronoun",
+            "preposition",
+            "conjunction",
+            "interjection",
+            "numeral",
+            "article",
+            "phrase",
+            null
+          ]
+        },
+        "gender": {
+          "description": "Grammatical gender of the term: m, f, n, or mf for both.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "enum": [
+            "m",
+            "f",
+            "n",
+            "mf",
+            null
+          ]
+        },
+        "plural": {
+          "description": "Target-language plural with its article, e.g. \"le case\".",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sectionIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/example"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "audio": {
+          "description": "Recorded pronunciation (.opus, .m4a or .mp3), relative to the pack root.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tts": {
+          "description": "Text for speech synthesis when it should differ from the term.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "image": {
+          "description": "Still picture of the meaning (.png or .webp, at most 1 MB and 2048×2048 px), relative to the pack root.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "imageDescription": {
+          "description": "What the picture shows, in the source language; read by screen readers.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceHint": {
+          "description": "Secondary line under the translation, e.g. to disambiguate a meaning.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "targetHint": {
+          "description": "Secondary line under the term; replaces the plural there.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "term",
+        "translation"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

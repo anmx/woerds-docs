@@ -1,0 +1,20 @@
+{
+  "formatVersion": 1,
+  "id": "org.example.conformance",
+  "version": "1.0.0",
+  "title": "Conformance case",
+  "sourceLanguage": "de",
+  "targetLanguage": "it",
+  "content": [
+    {
+      "type": "vocabulary",
+      "entries": [
+        {
+          "id": "casa",
+          "term": "la casa",
+          "translation": "das Haus"
+        }
+      ]
+    }
+  ]
+}

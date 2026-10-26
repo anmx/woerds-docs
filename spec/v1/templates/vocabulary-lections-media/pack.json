@@ -1,0 +1,97 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json",
+  "formatVersion": 1,
+  "id": "org.example.de-it.home",
+  "version": "1.2.0",
+  "title": "Italienisch: Zu Hause",
+  "description": "Wörter rund ums Haus, mit Bildern, Beispielsätzen und Pluralformen.",
+  "license": "CC0-1.0",
+  "authors": ["Example Author"],
+  "sourceLanguage": "de",
+  "targetLanguage": "it",
+  "tts": { "locale": "it-IT" },
+  "supportedDirections": ["source->target", "target->source"],
+  "sections": [
+    { "id": "unit-1", "title": "Lektion 1 – Zu Hause", "order": 1 },
+    { "id": "unit-1-rooms", "title": "Räume und Dinge", "order": 1, "parentId": "unit-1" },
+    { "id": "unit-1-verbs", "title": "Was man zu Hause tut", "order": 2, "parentId": "unit-1" },
+    { "id": "unit-2", "title": "Lektion 2 – Draußen", "order": 2 }
+  ],
+  "content": [
+    {
+      "type": "vocabulary",
+      "entries": [
+        {
+          "id": "casa",
+          "term": "la casa",
+          "translation": "das Haus",
+          "partOfSpeech": "noun",
+          "gender": "f",
+          "plural": "le case",
+          "sectionIds": ["unit-1-rooms"],
+          "example": { "target": "La casa è grande.", "source": "Das Haus ist groß." },
+          "image": "images/house.png",
+          "imageDescription": "Ein kleines Haus mit rotem Dach"
+        },
+        {
+          "id": "libro",
+          "term": "il libro",
+          "translation": "das Buch",
+          "partOfSpeech": "noun",
+          "gender": "m",
+          "plural": "i libri",
+          "sectionIds": ["unit-1-rooms"],
+          "image": "images/book.png",
+          "imageDescription": "Ein geschlossenes blaues Buch"
+        },
+        {
+          "id": "cantante",
+          "term": "il/la cantante",
+          "translation": "der Sänger / die Sängerin",
+          "partOfSpeech": "noun",
+          "gender": "mf",
+          "plural": "i/le cantanti",
+          "sectionIds": ["unit-1-rooms"],
+          "tts": "il cantante, la cantante"
+        },
+        {
+          "id": "abitare",
+          "term": "abitare",
+          "translation": "wohnen",
+          "partOfSpeech": "verb",
+          "sectionIds": ["unit-1-verbs"],
+          "example": { "target": "Abito a Roma.", "source": "Ich wohne in Rom." }
+        },
+        {
+          "id": "banca",
+          "term": "la banca",
+          "translation": "die Bank",
+          "partOfSpeech": "noun",
+          "gender": "f",
+          "plural": "le banche",
+          "sectionIds": ["unit-2"],
+          "sourceHint": "Geldinstitut"
+        },
+        {
+          "id": "sole",
+          "term": "il sole",
+          "translation": "die Sonne",
+          "partOfSpeech": "noun",
+          "gender": "m",
+          "sectionIds": ["unit-2"],
+          "image": "images/sun.png",
+          "imageDescription": "Eine gelbe Sonne mit Strahlen",
+          "targetHint": "nur Singular"
+        },
+        {
+          "id": "bello",
+          "term": "bello",
+          "translation": "schön",
+          "partOfSpeech": "adjective",
+          "sectionIds": ["unit-2"],
+          "targetHint": "bella, belli, belle"
+        }
+      ]
+    }
+  ]
+}

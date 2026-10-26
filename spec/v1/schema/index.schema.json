@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://anmx.github.io/woerds-docs/spec/v1/schema/index.schema.json",
+  "title": "wörds repository index (lingua-index.json)",
+  "description": "Lists the packs a content repository offers. Index version 1. Readers ignore unknown fields; writers do not add any. A missing required field or a value of the wrong type makes the whole file unreadable; an entry that breaks one of the other rules is skipped.",
+  "type": "object",
+  "properties": {
+    "indexVersion": {
+      "description": "Version of the index format.",
+      "const": 1
+    },
+    "packs": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/pack"
+      }
+    }
+  },
+  "required": [
+    "indexVersion",
+    "packs"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "pack": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The pack's id, equal to \"id\" in its pack.json. Listed once per index.",
+          "type": "string",
+          "maxLength": 100,
+          "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*$"
+        },
+        "path": {
+          "description": "Path of the .linguapack archive, relative to the folder of this index. Plain ASCII segments only.",
+          "type": "string",
+          "maxLength": 255,
+          "pattern": "^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*\\.linguapack$",
+          "not": {
+            "pattern": "(^|/)\\.\\.?(/|$)"
+          }
+        },
+        "version": {
+          "description": "The pack's version, equal to \"version\" in its pack.json.",
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "formatVersion": {
+          "description": "The pack's formatVersion. Apps skip packs with a format they do not support.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "description": "Hex SHA-256 of the archive file. Checked after the download.",
+          "type": "string",
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "sourceLanguage": {
+          "description": "The pack's sourceLanguage (BCP-47).",
+          "type": "string",
+          "pattern": "^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$"
+        },
+        "targetLanguage": {
+          "description": "The pack's targetLanguage (BCP-47).",
+          "type": "string",
+          "pattern": "^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$"
+        },
+        "contentTypes": {
+          "description": "The content block types the pack uses, e.g. [\"vocabulary\"].",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "maxLength": 50,
+            "pattern": "^[a-z0-9]+([._-][a-z0-9]+)*$"
+          }
+        },
+        "title": {
+          "description": "The pack's title, shown before the download. No control characters except line feeds.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "sizeBytes": {
+          "description": "Exact size of the archive file in bytes. Checked after the download.",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 104857600
+        },
+        "description": {
+          "description": "The pack's description. No control characters except line feeds.",
+          "type": "string",
+          "maxLength": 1000
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "version",
+        "formatVersion",
+        "sha256",
+        "sourceLanguage",
+        "targetLanguage",
+        "contentTypes",
+        "title",
+        "sizeBytes"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

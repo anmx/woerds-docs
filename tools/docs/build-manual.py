@@ -13,6 +13,10 @@ of that:
 - Dates (YYYY-MM-DD) become <time> elements. Addresses written as "name _at_ host _dot_ tld" become an address with a
   hidden decoy part, so that harvesters copying the text get a wrong address.
 
+The language pack specification for developers lives in spec/: spec/README.md (written as spec/index.html) and
+spec/v<format version>/*.md. It is in English only and versioned by the pack format, not by the app, so it has no
+version bar. Links to folders of the repository point to GitHub, since the site cannot list folders.
+
 The user guide is versioned; the privacy policy is not (it applies to every version and carries its own date).
 en/ and de/ hold the guide of the latest version, so its address never changes. Each earlier version is a frozen copy
 in versions/<version>/ with the screenshots it showed (versions/<version>/images/), listed in versions.json. Guide
@@ -73,6 +77,15 @@ PARTS = {
     "en": (("en/user-guide.md", "User guide"), ("en/privacy-policy.md", "Privacy policy")),
     "de": (("de/benutzerhandbuch.md", "Benutzerhandbuch"), ("de/datenschutz.md", "Datenschutz")),
 }
+# The developer pages of the pack specification: English only, with their own navigation.
+SPEC_DIRECTORY = "spec"
+SPEC_PARTS = (
+    ("spec/README.md", "Pack specification"),
+    ("spec/v1/language-pack-format.md", "Format"),
+    ("spec/v1/issue-codes.md", "Issue codes"),
+    ("spec/v1/implementers-guide.md", "Implementers' guide"),
+)
+REPOSITORY_TREE = "https://github.com/anmx/woerds-docs/tree/main/"
 # --tint in manual.css: the browser's UI color on mobile.
 THEME_COLOR = "#f5f9fd"
 # Search results show about 160 characters of the description.
@@ -98,16 +111,22 @@ def slug(text):
 
 
 def output_name(source):
+    """The HTML page of a Markdown source; a folder's README.md becomes its index.html."""
+    if os.path.basename(source) == "README.md":
+        return os.path.join(os.path.dirname(source), "index.html")
     return source[:-3] + ".html"
 
 
 def link_target(target, source):
     """Links to Markdown files of the site point to their HTML version; everything else stays as it is."""
     path, _, anchor = target.partition("#")
-    if path.endswith(".md") and not re.match(r"^[a-z]+:", path):
+    if path and not re.match(r"^[a-z]+:", path):
         resolved = os.path.normpath(os.path.join(os.path.dirname(source), path))
-        if resolved.startswith(ROOT + os.sep) and os.path.exists(resolved):
+        inside = resolved.startswith(ROOT + os.sep) and os.path.exists(resolved)
+        if inside and path.endswith(".md"):
             path = os.path.relpath(output_name(resolved), os.path.dirname(source))
+        elif inside and os.path.isdir(resolved):
+            path = REPOSITORY_TREE + os.path.relpath(resolved, ROOT).replace(os.sep, "/")
     return path + ("#" + anchor if anchor else "")
 
 
@@ -309,11 +328,12 @@ def href(target, page_path):
 def page(source, versions):
     relative = os.path.relpath(source, ROOT).replace(os.sep, "/")
     version, document = split_version(relative)
-    language = document.split("/")[0]
+    spec = document.split("/")[0] == SPEC_DIRECTORY
+    language = "en" if spec else document.split("/")[0]
     labels = LABELS[language]
     with open(source, encoding="utf-8") as f:
         markdown = f.read()
-    guide = document == GUIDES[language]
+    guide = not spec and document == GUIDES[language]
     if guide:
         named = GUIDE_VERSION[language].search(markdown)
         expected = version or versions["latest"]
@@ -344,7 +364,7 @@ def page(source, versions):
             head.append(f'<link rel="alternate" hreflang="{split_version(alternate)[1].split("/")[0]}" '
                         f'href="{href(output_name(alternate), relative)}">')
     nav = [f'<a href="{href("index.html", relative)}">{labels["home"]}</a>']
-    for target, label in PARTS[language]:
+    for target, label in SPEC_PARTS if spec else PARTS[language]:
         # The guide links stay in the version of the page; the privacy policy has only one.
         target = located(version, target) if target == GUIDES[language] else target
         current = ' aria-current="page"' if target == relative else ""
@@ -384,6 +404,11 @@ def sources(versions):
             if not os.path.exists(source):
                 raise ValueError(f"{VERSIONS_FILE} lists {version}, but {os.path.relpath(source, ROOT)} is missing")
             yield source
+    for base, folders, names in os.walk(os.path.join(ROOT, SPEC_DIRECTORY)):
+        folders[:] = sorted(folder for folder in folders if re.fullmatch(r"v\d+", folder))
+        for name in sorted(names):
+            if name.endswith(".md"):
+                yield os.path.join(base, name)
 
 
 def freeze(versions, new_version):

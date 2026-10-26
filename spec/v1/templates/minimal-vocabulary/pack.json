@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json",
+  "formatVersion": 1,
+  "id": "org.example.en-es.minimal",
+  "version": "1.0.0",
+  "title": "Spanish: first words",
+  "license": "CC0-1.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "sections": [
+    { "id": "greetings", "title": "Greetings" }
+  ],
+  "content": [
+    {
+      "type": "vocabulary",
+      "entries": [
+        { "id": "hola", "term": "hola", "translation": "hello", "sectionIds": ["greetings"] },
+        { "id": "adios", "term": "adiós", "translation": "goodbye", "sectionIds": ["greetings"] },
+        { "id": "gracias", "term": "gracias", "translation": "thank you", "sectionIds": ["greetings"] }
+      ]
+    }
+  ]
+}

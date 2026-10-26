@@ -1,0 +1,85 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json",
+  "formatVersion": 1,
+  "id": "org.example.en-it.verbs",
+  "version": "1.0.0",
+  "title": "Italian verbs: present and perfect",
+  "license": "CC0-1.0",
+  "authors": ["Example Author"],
+  "sourceLanguage": "en",
+  "targetLanguage": "it",
+  "tts": { "locale": "it-IT" },
+  "sections": [
+    { "id": "lesson-1", "title": "Lesson 1 – to be", "order": 1 },
+    { "id": "lesson-2", "title": "Lesson 2 – regular verbs", "order": 2 }
+  ],
+  "content": [
+    {
+      "type": "conjugation",
+      "persons": [
+        { "id": "1s", "label": "io", "prompt": "I" },
+        { "id": "2s", "label": "tu", "prompt": "you" },
+        { "id": "3s", "label": "lui/lei", "prompt": "he/she" },
+        { "id": "1p", "label": "noi", "prompt": "we" },
+        { "id": "2p", "label": "voi", "prompt": "you (pl.)" },
+        { "id": "3p", "label": "loro", "prompt": "they" }
+      ],
+      "tenses": [
+        { "id": "presente", "label": "Presente", "sourceLabel": "Present" },
+        { "id": "passato-prossimo", "label": "Passato prossimo", "sourceLabel": "Present perfect" }
+      ],
+      "verbs": [
+        {
+          "id": "essere",
+          "infinitive": "essere",
+          "translation": "to be",
+          "sectionIds": ["lesson-1"],
+          "irregular": true,
+          "conjugations": [
+            {
+              "tenseId": "presente",
+              "forms": [
+                { "personId": "1s", "prompt": "I am", "answer": "io sono" },
+                { "personId": "2s", "prompt": "you are", "answer": "tu sei" },
+                { "personId": "3s", "prompt": "he/she is", "answer": "lui/lei è", "tts": "lui è" },
+                { "personId": "1p", "prompt": "we are", "answer": "noi siamo" },
+                { "personId": "2p", "prompt": "you (pl.) are", "answer": "voi siete" },
+                { "personId": "3p", "prompt": "they are", "answer": "loro sono" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parlare",
+          "infinitive": "parlare",
+          "translation": "to speak",
+          "sectionIds": ["lesson-2"],
+          "conjugations": [
+            {
+              "tenseId": "presente",
+              "forms": [
+                { "personId": "1s", "prompt": "I speak", "answer": "io parlo" },
+                { "personId": "2s", "prompt": "you speak", "answer": "tu parli" },
+                { "personId": "3s", "prompt": "he/she speaks", "answer": "lui/lei parla", "tts": "lui parla" },
+                { "personId": "1p", "prompt": "we speak", "answer": "noi parliamo" },
+                { "personId": "2p", "prompt": "you (pl.) speak", "answer": "voi parlate" },
+                { "personId": "3p", "prompt": "they speak", "answer": "loro parlano" }
+              ]
+            },
+            {
+              "tenseId": "passato-prossimo",
+              "forms": [
+                { "personId": "1s", "prompt": "I have spoken", "answer": "io ho parlato" },
+                { "personId": "2s", "prompt": "you have spoken", "answer": "tu hai parlato" },
+                { "personId": "3s", "prompt": "he/she has spoken", "answer": "lui/lei ha parlato", "tts": "lui ha parlato" },
+                { "personId": "1p", "prompt": "we have spoken", "answer": "noi abbiamo parlato" },
+                { "personId": "2p", "prompt": "you (pl.) have spoken", "answer": "voi avete parlato" },
+                { "personId": "3p", "prompt": "they have spoken", "answer": "loro hanno parlato" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

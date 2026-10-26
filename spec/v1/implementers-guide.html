@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="Advice for building tools that create and edit wörds language packs: web apps, desktop editors, converters from spreadsheets or other flashcard formats. This…">
+  <title>Implementers&#x27; guide to wörds language packs</title>
+  <link rel="stylesheet" href="../../manual.css">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Manual">
+      <a href="../../index.html">Manual</a>
+      <a href="../index.html">Pack specification</a>
+      <a href="language-pack-format.html">Format</a>
+      <a href="issue-codes.html">Issue codes</a>
+      <a href="implementers-guide.html" aria-current="page">Implementers' guide</a>
+    </nav>
+  </header>
+  <main id="main">
+    <h1 id="implementers-guide-to-wörds-language-packs">Implementers' guide to wörds language packs</h1>
+    <p>Advice for building tools that create and edit wörds language packs: web apps, desktop editors, converters from spreadsheets or other flashcard formats. This guide is informative. Where it repeats a rule, the <a href="language-pack-format.html">format specification</a> is the authority.</p>
+    <h2 id="contents">Contents</h2>
+    <nav aria-labelledby="contents">
+      <ul>
+        <li><a href="#what-an-editor-does">What an editor does</a></li>
+        <li><a href="#data-model">Data model</a></li>
+        <li><a href="#opening-packs">Opening packs</a></li>
+        <li><a href="#editing">Editing</a></li>
+        <li><a href="#validating">Validating</a></li>
+        <li><a href="#writing-archives">Writing archives</a></li>
+        <li><a href="#publishing-in-a-repository">Publishing in a repository</a></li>
+        <li><a href="#testing-with-the-conformance-cases">Testing with the conformance cases</a></li>
+        <li><a href="#checklist-before-a-release">Checklist before a release</a></li>
+      </ul>
+    </nav>
+    <h2 id="what-an-editor-does">What an editor does</h2>
+    <ol>
+      <li><strong>Open</strong> a pack: a <code>.linguapack</code> file, a pack folder, or a new empty pack.</li>
+      <li><strong>Edit</strong> it in a model that holds exactly what the format can express.</li>
+      <li><strong>Validate</strong> while the user types, with the same rules and codes as the app.</li>
+      <li><strong>Save</strong> it as a pack folder or as a deterministic <code>.linguapack</code> archive, with a higher version.</li>
+      <li>Optionally <strong>publish</strong> it in a repository with an index, or hand it to the app as an editable pack.</li>
+    </ol>
+    <h2 id="data-model">Data model</h2>
+    <p>Format version 1 rejects unknown fields, so a model with exactly the fields of the specification loses nothing on a round trip. Keep in it:</p>
+    <ul>
+      <li>the manifest fields, including <code>$schema</code> if the file had one;</li>
+      <li>the sections in their list order, with <code>order</code> and <code>parentId</code> as written;</li>
+      <li>the content blocks in order, and for each block whether it was inline or in which included file, so that saving keeps the file layout the author chose;</li>
+      <li>blocks of types your editor does not know, as raw JSON, written back unchanged;</li>
+      <li>the media files by their paths, and documentation files (<code>LICENSE</code>, <code>NOTICE</code>, <code>README.md</code>) as they are.</li>
+    </ul>
+    <p>Ids are the identity of everything that carries learning progress (section 12 of the specification). Store them as fields of their own that the user does not edit by accident, not as something derived from a word's text on every save.</p>
+    <h2 id="opening-packs">Opening packs</h2>
+    <p>Users open files from anywhere, so an editor should be as careful as a reader:</p>
+    <ul>
+      <li>Extract archives into memory or a fresh folder, refuse unsafe entry names, duplicates and zip bombs, and count the bytes yourself (section 3 of the specification).</li>
+      <li>Accept both stored and deflated entries, and data descriptors on deflated entries.</li>
+      <li>Read JSON strictly and report problems with their issue codes, but still show what could be read, so the user can repair a broken pack.</li>
+      <li>Normalize all text to NFC when you load it. Readers do the same, so a pack that differs only in normalization means the same to them.</li>
+    </ul>
+    <h2 id="editing">Editing</h2>
+    <h3 id="ids">Ids</h3>
+    <ul>
+      <li>Generate ids for new items once, when they are created, and never change them afterwards. Random ids are the safest: the app uses <code>w</code> or <code>l</code> followed by 12 characters from <code>a</code>–<code>z</code> and <code>2</code>–<code>7</code> (60 random bits). Readable ids such as <code>casa</code> are fine for hand-made packs, as long as they stay the same when the word is corrected.</li>
+      <li>Never reuse the id of a deleted item for a different word: if the learner still has progress for it, the new word inherits it.</li>
+      <li>Validate ids against <code>^[a-z0-9]+([._-][a-z0-9]+)*$</code> and at most 100 characters. Ids contain neither <code>|</code> nor <code>/</code>.</li>
+      <li>Choose the pack id once, when the pack is created, with a prefix the author controls, and do not offer to change it for published packs.</li>
+    </ul>
+    <h3 id="versions">Versions</h3>
+    <ul>
+      <li>Raise the version on every save that is meant to be shared, at least the patch number. A pack whose version did not change and whose content did replaces the installed one, which is confusing; one with a lower version is refused.</li>
+      <li>Offer the minor or major number as a choice when items are added or ids change.</li>
+    </ul>
+    <h3 id="text">Text</h3>
+    <ul>
+      <li>Count lengths in UTF-16 code units, as the format does: <code>string.length</code> in JavaScript, <code>string.utf16.count</code> in Swift, <code>string.Length</code> in C#. Count after NFC normalization.</li>
+      <li>Refuse control characters other than tab and line feed. Convert pasted line breaks (<code>\r\n</code>, <code>\r</code>) to <code>\n</code>.</li>
+      <li>Trim white space at both ends of every field, and leave optional fields out instead of writing empty strings.</li>
+      <li>Show which fields appear where on the card, so authors know what to write (sections 9 and 10 of the specification). Hint at the conventions typed answers understand: <code>,</code>, <code>;</code> and <code> / </code> separate alternatives, a slash inside a word offers a choice, parentheses hold notes.</li>
+      <li>Write nouns with their article (<code>la casa</code>, <code>l&#x27;acqua</code>) and fill <code>partOfSpeech</code> and <code>gender</code>, so the article drill can use them.</li>
+    </ul>
+    <h3 id="sections">Sections</h3>
+    <ul>
+      <li>Prevent cycles when the user moves a section under another one.</li>
+      <li>Write an explicit <code>order</code> for every section, numbered among its siblings.</li>
+      <li>Warn about items without a section, unless the pack is meant to be edited in the app (<code>user.</code> id).</li>
+    </ul>
+    <h3 id="pictures-and-recordings">Pictures and recordings</h3>
+    <ul>
+      <li>Convert pictures to PNG or WebP, at most 1,024 pixels on the longer side and at most 1 MiB, without animation and without metadata (camera data, location, text chunks).</li>
+      <li>Ask for a description of each picture in the source language; screen readers read it.</li>
+      <li>Give media files stable, unique names, such as a random id or a content hash, and keep a file's name when it is re-saved unchanged.</li>
+      <li>Remove media that no entry references any more when you save.</li>
+    </ul>
+    <h3 id="editable-packs-for-the-app">Editable packs for the app</h3>
+    <p>To hand a pack to the app for further editing, give it an id starting with <code>user.</code> and follow section 13 of the specification: one vocabulary block, at most one section per entry, titles of at most 100 characters, a description for every picture, and no audio or speech texts (the app drops them). The learner imports the file in the app, and it becomes an editable pack.</p>
+    <h2 id="validating">Validating</h2>
+    <p>Validate in two layers.</p>
+    <p><strong>The JSON Schema</strong> (<a href="schema/pack.schema.json"><code>schema/pack.schema.json</code></a>, draft 2020-12) checks the structure: fields, types, required fields, patterns and allowed values. Use a validator that supports draft 2020-12 and <code>if</code>/<code>then</code>, such as Ajv (with its 2020 build) in JavaScript, JsonSchema.Net in .NET, <code>jsonschema</code> in Python or networknt's validator on the JVM. For an included file, validate against <code>#/$defs/contentBlock</code>. The schemas are published at <code>https://anmx.github.io/woerds-docs/spec/v1/schema/</code>, and the templates name that address in <code>$schema</code>, so text editors such as Visual Studio Code check packs while they are edited.</p>
+    <p><strong>The rules the schema cannot express</strong>, implemented in your code with the codes from the <a href="issue-codes.html">catalogue</a>:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Rule</th><th scope="col">Codes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>NFC normalization, then length and control characters of every string</td><td><code>syntax.string-too-long</code>, <code>syntax.control-character</code></td></tr>
+          <tr><td>Blank titles and texts</td><td><code>manifest.blank-title</code>, <code>sections.blank-title</code>, <code>vocabulary.blank</code>, <code>conjugation.blank</code></td></tr>
+          <tr><td>Primary languages differ; speech locale matches the target language</td><td><code>manifest.same-languages</code>, <code>manifest.tts-language-mismatch</code></td></tr>
+          <tr><td>Section ids unique, parents exist, no cycles</td><td><code>sections.duplicate-id</code>, <code>sections.unknown-parent</code>, <code>sections.cycle</code></td></tr>
+          <tr><td>Item ids unique within a block and across blocks of a type</td><td><code>vocabulary.duplicate-entry</code>, <code>conjugation.duplicate-verb</code>, <code>conjugation.duplicate-id</code>, <code>content.duplicate-item</code></td></tr>
+          <tr><td>References to sections, tenses and persons exist</td><td><code>vocabulary.unknown-section</code>, <code>conjugation.unknown-section</code>, <code>conjugation.unknown-tense</code>, <code>conjugation.unknown-person</code></td></tr>
+          <tr><td>One conjugation per tense, one form per person</td><td><code>conjugation.duplicate-tense</code>, <code>conjugation.duplicate-form</code></td></tr>
+          <tr><td>Warnings that help authors</td><td><code>vocabulary.duplicate-term</code>, <code>vocabulary.no-section</code>, <code>vocabulary.no-image-description</code>, <code>vocabulary.description-without-image</code>, <code>conjugation.no-section</code>, <code>conjugation.generated-prompt</code>, <code>conjugation.incomplete-grid</code>, <code>manifest.missing-license</code></td></tr>
+          <tr><td>Files: allowed names, paths, existence, kind, signature, size, picture headers</td><td><code>files.*</code></td></tr>
+          <tr><td>Archives</td><td><code>archive.*</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Show issues next to the field their path points to, and use the codes, not the English messages, for your own texts. Treat warnings as things to fix before publishing: the app's own packs have none.</p>
+    <h2 id="writing-archives">Writing archives</h2>
+    <p>Write the archive the way the app does, so the same pack always gives the same bytes:</p>
+    <ol>
+      <li>Collect the files: <code>pack.json</code>, the included files, the referenced media, the documentation files. Nothing else.</li>
+      <li>Sort them by path.</li>
+      <li>For each file, write an entry with that path, the date <time datetime="1980-01-01">1980-01-01</time> 00:00, no extra fields and no comment. Deflate <code>.json</code> files at the highest level; store every other file, with its size and CRC-32 in the local header.</li>
+      <li>Write no directory entries and no archive comment.</li>
+    </ol>
+    <p>In Python, with only the standard library:</p>
+    <pre><code>import zipfile
+
+def write_pack(files, target):
+    &quot;&quot;&quot;files: {path: bytes} of the pack; writes a deterministic .linguapack.&quot;&quot;&quot;
+    with zipfile.ZipFile(target, &quot;w&quot;) as archive:
+        for path in sorted(files):
+            info = zipfile.ZipInfo(path, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 0
+            info.external_attr = 0
+            json_file = path.lower().endswith(&quot;.json&quot;)
+            info.compress_type = zipfile.ZIP_DEFLATED if json_file else zipfile.ZIP_STORED
+            archive.writestr(info, files[path], compresslevel=9)</code></pre>
+    <p><a href="https://github.com/anmx/woerds-docs/blob/main/tools/spec/build-spec.py"><code>tools/spec/build-spec.py</code></a> builds the templates this way.</p>
+    <p>Other platforms have zip libraries with different defaults. Whatever you use, check its output:</p>
+    <ul>
+      <li>Stored entries must not use a data descriptor. Writers that stream often set one (bit 3 of the general purpose flags) for every entry; the app's streaming reader rejects it on stored entries. Write to a file or memory buffer that allows seeking, or choose an option that writes sizes up front.</li>
+      <li>Timestamps, permissions and extra fields (such as extended timestamps or Unix ids) make archives differ between machines. Set them to fixed values or turn them off.</li>
+      <li>Deflated bytes may differ between zlib versions and compression libraries. That is fine: the content stays the same, only the checksum in an index changes.</li>
+    </ul>
+    <p>A quick check of an archive's entries, in Python:</p>
+    <pre><code>import zipfile
+
+def archive_problems(path):
+    problems = []
+    for info in zipfile.ZipFile(path).infolist():
+        if info.compress_type not in (zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED):
+            problems.append(f&quot;{info.filename}: compression method {info.compress_type}&quot;)
+        if info.compress_type == zipfile.ZIP_STORED and info.flag_bits &amp; 0x08:
+            problems.append(f&quot;{info.filename}: stored entry with a data descriptor&quot;)
+        if info.flag_bits &amp; 0x01:
+            problems.append(f&quot;{info.filename}: encrypted&quot;)
+    return problems</code></pre>
+    <h2 id="publishing-in-a-repository">Publishing in a repository</h2>
+    <p>A content repository on GitHub holds the archives and a <code>lingua-index.json</code> in one folder (or below it):</p>
+    <pre><code>packs/
+  lingua-index.json
+  de-it/home.linguapack
+  en-es/minimal.linguapack</code></pre>
+    <ol>
+      <li>Validate every pack; publish none with errors, and preferably none with warnings.</li>
+      <li>Write the archives deterministically.</li>
+      <li>Generate the index from the archives as they will be committed: id, path relative to the index, version, format version, SHA-256 and size of the file, languages, sorted content types, title, description. Sort the entries by id.</li>
+      <li>Commit the archives and the index together. The app reads the index from the branch the learner chose; a pack whose checksum does not match the index is refused.</li>
+    </ol>
+    <p>Learners add the repository in the app as a source with owner, repository, branch and folder. The <a href="templates/lingua-index.json">template index</a> and the <a href="schema/index.schema.json">index schema</a> show the format.</p>
+    <h2 id="testing-with-the-conformance-cases">Testing with the conformance cases</h2>
+    <p><a href="conformance/cases.json"><code>conformance/cases.json</code></a> lists small packs, each with the result the app's validator gives for it:</p>
+    <pre><code>{
+  &quot;path&quot;: &quot;invalid/sections-cycle&quot;,
+  &quot;stage&quot;: &quot;read&quot;,
+  &quot;valid&quot;: false,
+  &quot;errors&quot;: [&quot;sections.cycle&quot;, &quot;sections.cycle&quot;],
+  &quot;warnings&quot;: [],
+  &quot;description&quot;: &quot;Two sections that are each other&#x27;s parent; both are reported.&quot;
+}</code></pre>
+    <ul>
+      <li><code>path</code> is a pack folder or a <code>.linguapack</code> file below <code>conformance/</code>.</li>
+      <li><code>errors</code> and <code>warnings</code> are the codes reported, as a sorted list; a code appears once per issue.</li>
+      <li><code>stage</code> says where the codes come from: <code>archive</code> (extracting the archive), <code>read</code> (validating the pack) or <code>import</code> (installing it: ids across blocks). For an <code>import</code> case, validation alone reports no error.</li>
+    </ul>
+    <p>Use them in three ways:</p>
+    <ul>
+      <li><strong>Validator</strong>: for each case, compare the codes your validator reports with the listed ones. Some codes cannot be shown by a small committed file, such as the size and file count limits; test those with generated input.</li>
+      <li><strong>Reader</strong>: every case listed as valid must open without errors; every invalid one must be refused.</li>
+      <li><strong>Writer</strong>: open each valid case and each template, save it without changes, and check that the result is valid and has the same content (compare the parsed JSON, not the bytes).</li>
+    </ul>
+    <p>The cases are kept in step with the app by a test in the app's repository, so their codes are what the app reports.</p>
+    <h2 id="checklist-before-a-release">Checklist before a release</h2>
+    <ul>
+      <li>Every template opens, saves unchanged, and validates without warnings.</li>
+      <li>Your validator gives the listed codes for every conformance case.</li>
+      <li>Saved archives have sorted entries, fixed dates, stored media, deflated JSON, no data descriptors on stored entries, and no files other than the allowed ones (no <code>.DS_Store</code>).</li>
+      <li>Ids of existing items never change on save, and new ids never repeat old ones.</li>
+      <li>Every save meant for sharing raises the version.</li>
+      <li>Strings are NFC, trimmed, at most 1,000 UTF-16 units, without control characters other than tab and line feed.</li>
+      <li>Pictures are at most 1 MiB and 2,048 pixels, still, without metadata, and described.</li>
+      <li>A pack exported from your tool imports in the app: open the language packs (the box icon in the library, or Settings → Language packs) and choose <em>Import file</em> (see the <a href="../../en/user-guide.html#language-packs">user guide</a>).</li>
+    </ul>
+  </main>
+</body>
+</html>

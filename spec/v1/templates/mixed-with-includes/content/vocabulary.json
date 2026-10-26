@@ -1,0 +1,33 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json#/$defs/contentBlock",
+  "type": "vocabulary",
+  "entries": [
+    {
+      "id": "maison",
+      "term": "la maison",
+      "translation": "the house",
+      "partOfSpeech": "noun",
+      "gender": "f",
+      "plural": "les maisons",
+      "sectionIds": ["unit-1"]
+    },
+    {
+      "id": "arbre",
+      "term": "l'arbre",
+      "translation": "the tree",
+      "partOfSpeech": "noun",
+      "gender": "m",
+      "plural": "les arbres",
+      "sectionIds": ["unit-1"],
+      "targetHint": "un arbre"
+    },
+    {
+      "id": "bonjour",
+      "term": "bonjour",
+      "translation": "good morning; hello",
+      "partOfSpeech": "interjection",
+      "sectionIds": ["unit-2"],
+      "example": { "target": "Bonjour, madame !", "source": "Good morning, madam!" }
+    }
+  ]
+}

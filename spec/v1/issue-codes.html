@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="Every problem a reader finds in a pack, an archive or a repository index has a stable code. This page lists all codes of format version 1 with their severity…">
+  <title>Issue codes of the wörds language pack format</title>
+  <link rel="stylesheet" href="../../manual.css">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Manual">
+      <a href="../../index.html">Manual</a>
+      <a href="../index.html">Pack specification</a>
+      <a href="language-pack-format.html">Format</a>
+      <a href="issue-codes.html" aria-current="page">Issue codes</a>
+      <a href="implementers-guide.html">Implementers' guide</a>
+    </nav>
+  </header>
+  <main id="main">
+    <h1 id="issue-codes-of-the-wörds-language-pack-format">Issue codes of the wörds language pack format</h1>
+    <p>Every problem a reader finds in a pack, an archive or a repository index has a stable code. This page lists all codes of format version 1 with their severity and meaning, and how to fix them. The rules behind them are in the <a href="language-pack-format.html">format specification</a>; the <a href="conformance/cases.json">conformance cases</a> show most of them on a small pack.</p>
+    <ul>
+      <li><strong>Error</strong>: the pack (or index) is rejected. <strong>Warning</strong>: it is accepted; strict validation treats warnings as errors.</li>
+      <li>Codes are never renamed or reused. A new reader version may add codes: an app that meets a code it does not know shows the issue's English message instead.</li>
+      <li>The path of an issue names the file and the JSON path of the value, such as <code>pack.json:$.content[0].entries[2].term</code>, or <code>content/verbs.json:$.verbs[1].id</code> for an included file. Archive issues name the archive file; <code>content.duplicate-item</code> and <code>content.duplicate-card</code> name the content type.</li>
+    </ul>
+    <h2 id="contents">Contents</h2>
+    <nav aria-labelledby="contents">
+      <ul>
+        <li><a href="#archive">Archive</a></li>
+        <li><a href="#files">Files</a></li>
+        <li><a href="#syntax">Syntax</a></li>
+        <li><a href="#format-version">Format version</a></li>
+        <li><a href="#manifest">Manifest</a></li>
+        <li><a href="#sections">Sections</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#vocabulary">Vocabulary</a></li>
+        <li><a href="#conjugation">Conjugation</a></li>
+        <li><a href="#repository-index">Repository index</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#import">Import</a></li>
+      </ul>
+    </nav>
+    <h2 id="archive">Archive</h2>
+    <p>Reported while a <code>.linguapack</code> archive is extracted. The first one stops the import.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>archive.corrupt</code></td><td>Error</td><td>The archive cannot be read: it is cut off, encrypted, uses an unsupported compression method, has a stored entry with a data descriptor, or has entry names that are not UTF-8. Write it again with a standard zip writer.</td></tr>
+          <tr><td><code>archive.empty</code></td><td>Error</td><td>The archive has no file entries, or the file is not a zip archive at all.</td></tr>
+          <tr><td><code>archive.unsafe-path</code></td><td>Error</td><td>An entry name is absolute, contains <code>..</code>, <code>.</code>, an empty segment, <code>\</code>, <code>:</code> or NUL, or is longer than 255 characters. Use relative paths with <code>/</code>.</td></tr>
+          <tr><td><code>archive.duplicate-entry</code></td><td>Error</td><td>Two entries have the same name.</td></tr>
+          <tr><td><code>archive.too-many-files</code></td><td>Error</td><td>More than 10,000 entries.</td></tr>
+          <tr><td><code>archive.too-large</code></td><td>Error</td><td>More than 100 MiB uncompressed.</td></tr>
+          <tr><td><code>archive.compression-ratio</code></td><td>Error</td><td>The archive expands to more than 100 times its size (checked after the first MiB): it looks like a zip bomb. Store media instead of compressing them, and keep JSON free of huge repetitive content.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="files">Files</h2>
+    <p>The set of files in the pack, included files and referenced pictures and recordings.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>files.symlink</code></td><td>Error</td><td>The pack folder contains a symbolic link. Replace it with the file.</td></tr>
+          <tr><td><code>files.too-many</code></td><td>Error</td><td>More than 10,000 files.</td></tr>
+          <tr><td><code>files.pack-too-large</code></td><td>Error</td><td>All files together exceed 100 MiB.</td></tr>
+          <tr><td><code>files.disallowed-type</code></td><td>Error</td><td>A file that is not <code>.json</code>, <code>.opus</code>, <code>.m4a</code>, <code>.mp3</code>, <code>.png</code>, <code>.webp</code> or a <code>LICENSE</code>, <code>LICENSE.md</code>, <code>LICENSE.txt</code>, <code>NOTICE</code> or <code>README.md</code>. Often <code>.DS_Store</code> or <code>Thumbs.db</code>: leave them out.</td></tr>
+          <tr><td><code>files.missing</code></td><td>Error</td><td><code>pack.json</code>, an included file or a referenced file does not exist. Paths are case-sensitive and relative to the pack root.</td></tr>
+          <tr><td><code>files.too-large</code></td><td>Error</td><td><code>pack.json</code> or an included file is larger than 5 MiB. Split the content into more included files.</td></tr>
+          <tr><td><code>files.unsafe-path</code></td><td>Error</td><td>An include or a reference is not a safe relative path.</td></tr>
+          <tr><td><code>files.include-not-json</code></td><td>Error</td><td>An entry of <code>includes</code> does not end in <code>.json</code>.</td></tr>
+          <tr><td><code>files.wrong-kind</code></td><td>Error</td><td>A referenced file has the wrong extension for its field: <code>image</code> takes <code>.png</code> or <code>.webp</code>, <code>audio</code> takes <code>.opus</code>, <code>.m4a</code> or <code>.mp3</code>.</td></tr>
+          <tr><td><code>files.content-mismatch</code></td><td>Error</td><td>The file's bytes do not match its extension, or a picture has no readable header. Convert the file instead of renaming it.</td></tr>
+          <tr><td><code>files.image-too-large</code></td><td>Error</td><td>A picture is larger than 1 MiB.</td></tr>
+          <tr><td><code>files.image-dimensions</code></td><td>Error</td><td>A picture is wider or taller than 2,048 pixels.</td></tr>
+          <tr><td><code>files.image-animated</code></td><td>Error</td><td>A picture is animated (APNG or animated WebP). Use a still picture.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="syntax">Syntax</h2>
+    <p>Reading <code>pack.json</code> and included files.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>syntax.invalid-json</code></td><td>Error</td><td>Not valid JSON: a byte order mark, a comment, a trailing comma, single quotes, or broken text.</td></tr>
+          <tr><td><code>syntax.schema</code></td><td>Error</td><td>The JSON does not have the expected structure: an unknown field, a missing required field, a value of the wrong type, or an included file that holds something other than one object. Compare with the schema.</td></tr>
+          <tr><td><code>syntax.string-too-long</code></td><td>Error</td><td>A string is longer than 1,000 characters after NFC normalization.</td></tr>
+          <tr><td><code>syntax.control-character</code></td><td>Error</td><td>A string contains a control character other than line feed or tab, such as a carriage return.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="format-version">Format version</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>format.unsupported-version</code></td><td>Error</td><td><code>formatVersion</code> is higher than the reader supports. Write <code>1</code>.</td></tr>
+          <tr><td><code>format.invalid-version</code></td><td>Error</td><td><code>formatVersion</code> is below 1.</td></tr>
+          <tr><td><code>format.app-too-old</code></td><td>Error</td><td><code>minAppFormatVersion</code> is higher than the reader supports. Leave it out in version 1.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="manifest">Manifest</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>manifest.invalid-id</code></td><td>Error</td><td>The pack id is not lowercase segments of letters and digits joined by <code>.</code>, <code>_</code> or <code>-</code>, or longer than 100 characters.</td></tr>
+          <tr><td><code>manifest.invalid-version</code></td><td>Error</td><td>The version is not a semantic version such as <code>1.0.0</code>.</td></tr>
+          <tr><td><code>manifest.blank-title</code></td><td>Error</td><td>The title is empty or only white space.</td></tr>
+          <tr><td><code>manifest.missing-license</code></td><td>Warning</td><td>No license is declared. Add an SPDX identifier, or <code>NONE</code>.</td></tr>
+          <tr><td><code>manifest.invalid-language</code></td><td>Error</td><td><code>sourceLanguage</code>, <code>targetLanguage</code> or <code>tts.locale</code> is not a language tag such as <code>de</code>, <code>pt-BR</code> or <code>zh-Hant-TW</code>.</td></tr>
+          <tr><td><code>manifest.same-languages</code></td><td>Error</td><td>Source and target language have the same primary language, such as <code>de</code> and <code>de-AT</code>.</td></tr>
+          <tr><td><code>manifest.tts-language-mismatch</code></td><td>Warning</td><td><code>tts.locale</code> is in another language than the target language.</td></tr>
+          <tr><td><code>manifest.no-directions</code></td><td>Error</td><td><code>supportedDirections</code> is an empty list. Leave it out for both directions.</td></tr>
+          <tr><td><code>manifest.invalid-direction</code></td><td>Error</td><td>A direction is neither <code>source-&gt;target</code> nor <code>target-&gt;source</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="sections">Sections</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>sections.invalid-id</code></td><td>Error</td><td>A section id does not match the id pattern, or is longer than 100 characters.</td></tr>
+          <tr><td><code>sections.duplicate-id</code></td><td>Error</td><td>Two sections have the same id.</td></tr>
+          <tr><td><code>sections.blank-title</code></td><td>Error</td><td>A section title is empty or only white space.</td></tr>
+          <tr><td><code>sections.unknown-parent</code></td><td>Error</td><td><code>parentId</code> names no section of the pack.</td></tr>
+          <tr><td><code>sections.cycle</code></td><td>Error</td><td>Following the parents of a section leads back to it. Reported for every section in the cycle.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="content">Content</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>content.empty</code></td><td>Error</td><td>The pack has no content blocks, inline or included.</td></tr>
+          <tr><td><code>content.missing-type</code></td><td>Error</td><td>A content block has no string <code>type</code>.</td></tr>
+          <tr><td><code>content.unknown-type</code></td><td>Warning</td><td>A block has a type the reader does not know; it is skipped.</td></tr>
+          <tr><td><code>content.no-supported-type</code></td><td>Error</td><td>No block of a type the reader knows is left.</td></tr>
+          <tr><td><code>content.duplicate-item</code></td><td>Error</td><td>Two blocks of the same type define an item with the same id. Reported when the pack is installed.</td></tr>
+          <tr><td><code>content.duplicate-card</code></td><td>Error</td><td>Two blocks of the same type define the same card. Reported when the pack is installed, together with <code>content.duplicate-item</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="vocabulary">Vocabulary</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>vocabulary.no-entries</code></td><td>Error</td><td>A vocabulary block has no entries.</td></tr>
+          <tr><td><code>vocabulary.invalid-id</code></td><td>Error</td><td>An entry id does not match the id pattern, or is longer than 100 characters.</td></tr>
+          <tr><td><code>vocabulary.duplicate-entry</code></td><td>Error</td><td>Two entries of one block have the same id.</td></tr>
+          <tr><td><code>vocabulary.duplicate-term</code></td><td>Warning</td><td>The same term with the same translation appears twice.</td></tr>
+          <tr><td><code>vocabulary.blank</code></td><td>Error</td><td>A text field is present but empty or only white space. Leave it out instead.</td></tr>
+          <tr><td><code>vocabulary.no-section</code></td><td>Warning</td><td>An entry belongs to no section. Not reported for packs whose id starts with <code>user.</code>.</td></tr>
+          <tr><td><code>vocabulary.unknown-section</code></td><td>Error</td><td>An id in <code>sectionIds</code> names no section of the pack.</td></tr>
+          <tr><td><code>vocabulary.invalid-part-of-speech</code></td><td>Error</td><td><code>partOfSpeech</code> is not one of the eleven allowed values.</td></tr>
+          <tr><td><code>vocabulary.invalid-gender</code></td><td>Error</td><td><code>gender</code> is not <code>m</code>, <code>f</code>, <code>n</code> or <code>mf</code>.</td></tr>
+          <tr><td><code>vocabulary.no-image-description</code></td><td>Warning</td><td>An entry has a picture without <code>imageDescription</code>; screen readers cannot describe it.</td></tr>
+          <tr><td><code>vocabulary.description-without-image</code></td><td>Warning</td><td>An entry has <code>imageDescription</code> but no picture; the description is ignored.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="conjugation">Conjugation</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>conjugation.no-persons</code></td><td>Error</td><td>A conjugation block has no persons.</td></tr>
+          <tr><td><code>conjugation.no-tenses</code></td><td>Error</td><td>A conjugation block has no tenses.</td></tr>
+          <tr><td><code>conjugation.no-verbs</code></td><td>Error</td><td>A conjugation block has no verbs.</td></tr>
+          <tr><td><code>conjugation.invalid-id</code></td><td>Error</td><td>A person, tense or verb id does not match the id pattern, or is longer than 100 characters.</td></tr>
+          <tr><td><code>conjugation.duplicate-id</code></td><td>Error</td><td>Two persons or two tenses of one block have the same id.</td></tr>
+          <tr><td><code>conjugation.duplicate-verb</code></td><td>Error</td><td>Two verbs of one block have the same id.</td></tr>
+          <tr><td><code>conjugation.blank</code></td><td>Error</td><td>A label, prompt, infinitive, translation, answer or speech text is empty or only white space.</td></tr>
+          <tr><td><code>conjugation.no-section</code></td><td>Warning</td><td>A verb belongs to no section.</td></tr>
+          <tr><td><code>conjugation.unknown-section</code></td><td>Error</td><td>An id in <code>sectionIds</code> names no section of the pack.</td></tr>
+          <tr><td><code>conjugation.no-forms</code></td><td>Error</td><td>A verb has no conjugations.</td></tr>
+          <tr><td><code>conjugation.unknown-tense</code></td><td>Error</td><td>A conjugation names a tense the block does not define.</td></tr>
+          <tr><td><code>conjugation.duplicate-tense</code></td><td>Error</td><td>A verb is conjugated twice in the same tense.</td></tr>
+          <tr><td><code>conjugation.unknown-person</code></td><td>Error</td><td>A form names a person the block does not define.</td></tr>
+          <tr><td><code>conjugation.duplicate-form</code></td><td>Error</td><td>A tense of a verb has two forms of the same person.</td></tr>
+          <tr><td><code>conjugation.generated-prompt</code></td><td>Warning</td><td>A form has no prompt; the app shows the person and the translation instead.</td></tr>
+          <tr><td><code>conjugation.incomplete-grid</code></td><td>Warning</td><td>A tense of a verb lacks forms for some persons.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="repository-index">Repository index</h2>
+    <p>Reading <code>lingua-index.json</code>. The first four reject the whole index; the others skip one entry, so the rest of the repository stays available.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>index.too-large</code></td><td>Error</td><td>The index is larger than 1 MiB.</td></tr>
+          <tr><td><code>index.syntax</code></td><td>Error</td><td>The index is not valid JSON, or a required field is missing or has the wrong type.</td></tr>
+          <tr><td><code>index.unsupported-version</code></td><td>Error</td><td><code>indexVersion</code> is not 1.</td></tr>
+          <tr><td><code>index.too-many-packs</code></td><td>Error</td><td>The index lists more than 1,000 packs.</td></tr>
+          <tr><td><code>index.duplicate-id</code></td><td>Warning</td><td>A pack id is listed more than once; the first entry is used.</td></tr>
+          <tr><td><code>index.invalid-id</code></td><td>Warning</td><td>An entry's id is not a valid pack id.</td></tr>
+          <tr><td><code>index.unsafe-path</code></td><td>Warning</td><td>An entry's path leaves the repository folder.</td></tr>
+          <tr><td><code>index.invalid-extension</code></td><td>Warning</td><td>An entry's path does not end in <code>.linguapack</code>, or has characters other than <code>A</code>–<code>Z</code>, <code>a</code>–<code>z</code>, <code>0</code>–<code>9</code>, <code>.</code>, <code>_</code>, <code>-</code> and <code>/</code>.</td></tr>
+          <tr><td><code>index.invalid-version</code></td><td>Warning</td><td>An entry's version is not a semantic version.</td></tr>
+          <tr><td><code>index.unsupported-format</code></td><td>Warning</td><td>An entry's format version is not supported.</td></tr>
+          <tr><td><code>index.invalid-sha256</code></td><td>Warning</td><td>An entry's checksum is not 64 hex digits.</td></tr>
+          <tr><td><code>index.invalid-language</code></td><td>Warning</td><td>An entry's source or target language is not a language tag.</td></tr>
+          <tr><td><code>index.no-content-types</code></td><td>Warning</td><td>An entry lists no content types.</td></tr>
+          <tr><td><code>index.invalid-content-type</code></td><td>Warning</td><td>A content type is not an id of at most 50 characters.</td></tr>
+          <tr><td><code>index.invalid-title</code></td><td>Warning</td><td>An entry's title is blank, longer than 200 characters, or contains control characters other than line feeds.</td></tr>
+          <tr><td><code>index.invalid-description</code></td><td>Warning</td><td>An entry's description is longer than 1,000 characters or contains control characters other than line feeds.</td></tr>
+          <tr><td><code>index.invalid-size</code></td><td>Warning</td><td>An entry's size is not between 1 byte and 100 MiB.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="download">Download</h2>
+    <p>Checked after a pack is downloaded from a repository, before it is imported.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>download.size-mismatch</code></td><td>Error</td><td>The archive's size differs from <code>sizeBytes</code> in the index. Generate the index from the final archives.</td></tr>
+          <tr><td><code>download.sha256-mismatch</code></td><td>Error</td><td>The archive's SHA-256 differs from <code>sha256</code> in the index.</td></tr>
+          <tr><td><code>download.index-mismatch</code></td><td>Error</td><td>The archive's pack id or version differs from the index entry.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="import">Import</h2>
+    <p>Checks of the app when it installs a pack that is valid in itself.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">Severity</th><th scope="col">Meaning and fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>import.user-pack-conflict</code></td><td>Error</td><td>A pack with a <code>user.</code> id came from a repository, and the learner has an editable pack with that id. Publish packs under ids without the <code>user.</code> prefix.</td></tr>
+          <tr><td><code>import.not-editable</code></td><td>Error</td><td>A local file with a <code>user.</code> id cannot become an editable pack: it has no vocabulary entries, an entry id is used twice, a title is longer than 100 characters, or a picture has no description. See section 13 of the specification.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

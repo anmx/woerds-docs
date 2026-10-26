@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="wörds learns from language packs: words, verb forms and lections in a .linguapack file. This specification describes that format completely, so that packs can…">
+  <title>wörds language pack specification</title>
+  <link rel="stylesheet" href="../manual.css">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Manual">
+      <a href="../index.html">Manual</a>
+      <a href="index.html" aria-current="page">Pack specification</a>
+      <a href="v1/language-pack-format.html">Format</a>
+      <a href="v1/issue-codes.html">Issue codes</a>
+      <a href="v1/implementers-guide.html">Implementers' guide</a>
+    </nav>
+  </header>
+  <main id="main">
+    <h1 id="wörds-language-pack-specification">wörds language pack specification</h1>
+    <p>wörds learns from language packs: words, verb forms and lections in a <code>.linguapack</code> file. This specification describes that format completely, so that packs can be made and edited outside the app, in a web app, a desktop editor or a converter from other formats.</p>
+    <h2 id="contents">Contents</h2>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Document</th><th scope="col">What it is for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="v1/language-pack-format.html">Language pack format, version 1</a></td><td>The specification: archive, files, manifest, content types, rules, updates, editable packs, repository index</td></tr>
+          <tr><td><a href="v1/issue-codes.html">Issue codes</a></td><td>Every validation code with its severity, meaning and fix</td></tr>
+          <tr><td><a href="v1/implementers-guide.html">Implementers' guide</a></td><td>Advice for building an editor: data model, ids, validation, deterministic archives, publishing, testing</td></tr>
+          <tr><td><a href="v1/schema/pack.schema.json"><code>v1/schema/pack.schema.json</code></a></td><td>JSON Schema (draft 2020-12) of <code>pack.json</code> and of included content files</td></tr>
+          <tr><td><a href="v1/schema/index.schema.json"><code>v1/schema/index.schema.json</code></a></td><td>JSON Schema of the repository index <code>lingua-index.json</code></td></tr>
+          <tr><td><a href="https://github.com/anmx/woerds-docs/tree/main/spec/v1/templates"><code>v1/templates/</code></a></td><td>Example packs to start from, as folders and as archives, and an example index</td></tr>
+          <tr><td><a href="https://github.com/anmx/woerds-docs/tree/main/spec/v1/conformance"><code>v1/conformance/</code></a></td><td>Small packs that each test one rule, with the codes a reader reports in <a href="v1/conformance/cases.json"><code>cases.json</code></a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Start with section 2 of the specification for an overview, then copy a template.</p>
+    <h2 id="versions">Versions</h2>
+    <p>The <strong>format version</strong> is the number packs carry in <code>formatVersion</code>. Version 1 is the only one so far, and the folder <code>v1/</code> describes it. A later format version gets a folder of its own, and <code>v1/</code> stays as it is for the packs written in version 1.</p>
+    <p>The specification itself has <strong>revisions</strong>, listed at its end. A revision makes the text clearer or more complete; it never changes what a valid version 1 pack is, unless the app changed, in which case the revision says so.</p>
+    <p>The specification describes what the app actually does. A test in the app's repository checks this repository: the schema copy against the generated schema, the templates and conformance cases against the app's validator, and the issue-code catalogue against the app's codes.</p>
+    <h2 id="building">Building</h2>
+    <p>The archives of the templates and of the archive-level conformance cases, and the template index, are generated from the folders next to them:</p>
+    <pre><code>python3 tools/spec/build-spec.py           # write the archives and the index
+python3 tools/spec/build-spec.py --check   # check that they are up to date (CI)</code></pre>
+    <p>The HTML pages are built with the rest of the site: <code>python3 tools/docs/build-manual.py</code>.</p>
+    <h2 id="licenses">Licenses</h2>
+    <ul>
+      <li>The specification text (the Markdown and HTML pages in <code>spec/</code>) is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> (CC BY 4.0). See <a href="LICENSE">LICENSE</a>.</li>
+      <li>The schemas, the templates (including their pictures) and the conformance cases are dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>: copy them into your own software without conditions. See <a href="v1/schema/LICENSE"><code>v1/schema/LICENSE</code></a>.</li>
+    </ul>
+    <p>Questions and corrections are welcome as issues in <a href="https://github.com/anmx/woerds-docs/issues">anmx/woerds-docs</a>.</p>
+  </main>
+</body>
+</html>

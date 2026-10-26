@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json",
+  "formatVersion": 1,
+  "id": "org.example.en-fr.basics",
+  "version": "2.0.1",
+  "title": "French basics: words and verbs",
+  "description": "A vocabulary block and a conjugation block, each in its own file.",
+  "license": "CC-BY-4.0",
+  "authors": ["Example Author", "Second Author"],
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "tts": { "locale": "fr-FR" },
+  "supportedDirections": ["source->target"],
+  "sections": [
+    { "id": "unit-1", "title": "Unit 1", "order": 1 },
+    { "id": "unit-2", "title": "Unit 2", "order": 2 }
+  ],
+  "includes": [
+    "content/vocabulary.json",
+    "content/verbs.json"
+  ]
+}

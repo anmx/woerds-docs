@@ -1,0 +1,31 @@
+{
+  "formatVersion": 1,
+  "id": "org.example.conformance",
+  "version": "1.0.0",
+  "title": "Conformance case",
+  "license": "CC0-1.0",
+  "sourceLanguage": "de",
+  "targetLanguage": "it",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "Lektion 1"
+    }
+  ],
+  "content": [
+    {
+      "type": "vocabulary",
+      "entries": [
+        {
+          "id": "casa",
+          "term": "la casa",
+          "translation": "das Haus",
+          "sectionIds": [
+            "s1"
+          ],
+          "note": "no notes in v1"
+        }
+      ]
+    }
+  ]
+}

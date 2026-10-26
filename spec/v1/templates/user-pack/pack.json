@@ -1,0 +1,76 @@
+{
+    "formatVersion": 1,
+    "id": "user.k7m2q4xa3bnd5fpe",
+    "version": "1.0.7",
+    "title": "Mein Italienischheft",
+    "description": "Wörter aus dem Kurs, Kapitel 1 und 2",
+    "license": "CC-BY-4.0",
+    "sourceLanguage": "de",
+    "targetLanguage": "it",
+    "supportedDirections": [
+        "source->target",
+        "target->source"
+    ],
+    "sections": [
+        {
+            "id": "lq3vb7ntk2mxa",
+            "title": "Kapitel 1",
+            "order": 0
+        },
+        {
+            "id": "lh5dsa6c2zrwe",
+            "title": "Kapitel 2",
+            "order": 1
+        }
+    ],
+    "content": [
+        {
+            "type": "vocabulary",
+            "entries": [
+                {
+                    "id": "w2ab7kq4mzx3d",
+                    "term": "la casa",
+                    "translation": "das Haus",
+                    "partOfSpeech": "noun",
+                    "gender": "f",
+                    "plural": "le case",
+                    "sectionIds": [
+                        "lq3vb7ntk2mxa"
+                    ],
+                    "image": "images/pf3k7qz2mvb4c.png",
+                    "imageDescription": "Ein kleines Haus mit rotem Dach"
+                },
+                {
+                    "id": "wq6tn3vb5ka2r",
+                    "term": "la finestra",
+                    "translation": "das Fenster",
+                    "partOfSpeech": "noun",
+                    "gender": "f",
+                    "plural": "le finestre",
+                    "sectionIds": [
+                        "lq3vb7ntk2mxa"
+                    ]
+                },
+                {
+                    "id": "wd4hs7c2pk6mz",
+                    "term": "andare",
+                    "translation": "gehen",
+                    "partOfSpeech": "verb",
+                    "sectionIds": [
+                        "lh5dsa6c2zrwe"
+                    ],
+                    "example": {
+                        "target": "Vado a casa.",
+                        "source": "Ich gehe nach Hause."
+                    }
+                },
+                {
+                    "id": "wm3za5kt7xq2b",
+                    "term": "comunque",
+                    "translation": "jedenfalls",
+                    "sourceHint": "noch keiner Lektion zugeordnet"
+                }
+            ]
+        }
+    ]
+}

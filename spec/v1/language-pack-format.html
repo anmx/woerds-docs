@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="This document specifies the language packs that the flashcard app wörds imports: their archive, their files, the manifest pack.json, the content blocks, the…">
+  <title>wörds language pack format, version 1</title>
+  <link rel="stylesheet" href="../../manual.css">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Manual">
+      <a href="../../index.html">Manual</a>
+      <a href="../index.html">Pack specification</a>
+      <a href="language-pack-format.html" aria-current="page">Format</a>
+      <a href="issue-codes.html">Issue codes</a>
+      <a href="implementers-guide.html">Implementers' guide</a>
+    </nav>
+  </header>
+  <main id="main">
+    <h1 id="wörds-language-pack-format-version-1">wörds language pack format, version 1</h1>
+    <p>This document specifies the language packs that the flashcard app wörds imports: their archive, their files, the manifest <code>pack.json</code>, the content blocks, the rules a valid pack follows and the repository index that offers packs for download. It is written for developers of tools that create, convert or edit packs outside the app, for example web, macOS or Windows editors.</p>
+    <p>Specification revision 1.0 of <time datetime="2026-10-26">2026-10-26</time>, for format version 1. It describes the behaviour of wörds 0.11.1. The text is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; the schemas, templates and conformance cases are <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.</p>
+    <h2 id="contents">Contents</h2>
+    <nav aria-labelledby="contents">
+      <ul>
+        <li><a href="#1-introduction">1. Introduction</a></li>
+        <li><a href="#2-overview">2. Overview</a></li>
+        <li><a href="#3-archive">3. Archive</a></li>
+        <li><a href="#4-files-in-a-pack">4. Files in a pack</a></li>
+        <li><a href="#5-json-and-text">5. JSON and text</a></li>
+        <li><a href="#6-manifest">6. Manifest</a></li>
+        <li><a href="#7-sections">7. Sections</a></li>
+        <li><a href="#8-content-blocks">8. Content blocks</a></li>
+        <li><a href="#9-vocabulary-blocks">9. Vocabulary blocks</a></li>
+        <li><a href="#10-conjugation-blocks">10. Conjugation blocks</a></li>
+        <li><a href="#11-media-files">11. Media files</a></li>
+        <li><a href="#12-identity-progress-and-updates">12. Identity, progress and updates</a></li>
+        <li><a href="#13-editable-packs">13. Editable packs</a></li>
+        <li><a href="#14-validation">14. Validation</a></li>
+        <li><a href="#15-repository-index">15. Repository index</a></li>
+        <li><a href="#16-security-considerations">16. Security considerations</a></li>
+        <li><a href="#17-appendix">17. Appendix</a></li>
+      </ul>
+    </nav>
+    <h2 id="1-introduction">1. Introduction</h2>
+    <p>A <strong>language pack</strong> is a set of flashcards for one language pair: words with their translations, verb forms, and the lections (sections) of a course or textbook. Learners install packs from a file, from a GitHub repository, or make their own in the app. The app turns each pack into cards and schedules them with spaced repetition.</p>
+    <p>This specification is accompanied by:</p>
+    <ul>
+      <li><a href="schema/pack.schema.json"><code>schema/pack.schema.json</code></a>: the JSON Schema (draft 2020-12) of <code>pack.json</code> and of included content files. It is generated from the app's code and covers the structure; section 14 lists what it cannot check.</li>
+      <li><a href="schema/index.schema.json"><code>schema/index.schema.json</code></a>: the JSON Schema of the repository index.</li>
+      <li><a href="issue-codes.html">Issue codes</a>: every code a reader reports, with its severity and meaning.</li>
+      <li><a href="implementers-guide.html">Implementers' guide</a>: non-normative advice for building an editor.</li>
+      <li><a href="https://github.com/anmx/woerds-docs/tree/main/spec/v1/templates"><code>templates/</code></a>: example packs, as directories and as <code>.linguapack</code> archives, and an example index.</li>
+      <li><a href="https://github.com/anmx/woerds-docs/tree/main/spec/v1/conformance"><code>conformance/</code></a>: small packs that each break or exercise one rule, listed with the codes a reader reports for them in <a href="conformance/cases.json"><code>conformance/cases.json</code></a>.</li>
+    </ul>
+    <p>The app is the reference reader. Its validator is not distributed on its own; the conformance cases are kept in step with it by a test in the app's repository.</p>
+    <h3 id="conventions">Conventions</h3>
+    <p>The key words MUST, MUST NOT, REQUIRED, SHOULD, SHOULD NOT, RECOMMENDED, MAY and OPTIONAL are to be interpreted as in <a href="https://www.rfc-editor.org/rfc/rfc2119">RFC 2119</a> and <a href="https://www.rfc-editor.org/rfc/rfc8174">RFC 8174</a> when, and only when, they appear in all capitals.</p>
+    <ul>
+      <li>A <strong>reader</strong> is software that imports packs (the app). A <strong>writer</strong> is software that creates or changes packs.</li>
+      <li>The <strong>source language</strong> is the language the learner knows; the <strong>target language</strong> is the one being learned.</li>
+      <li>Issue codes are written like <code>manifest.invalid-id</code>. Their severity is <strong>error</strong> (the pack is rejected) or <strong>warning</strong> (the pack is accepted).</li>
+      <li><strong>Characters</strong> are counted in UTF-16 code units, after Unicode NFC normalization (section 5). Most characters are one unit; characters outside the Basic Multilingual Plane, such as most emoji, are two.</li>
+      <li><strong>MiB</strong> is 1,048,576 bytes.</li>
+    </ul>
+    <h3 id="conformance">Conformance</h3>
+    <ul>
+      <li>A <strong>conforming pack</strong> is one for which a reader reports no error.</li>
+      <li>A <strong>conforming writer</strong> MUST produce only conforming packs and SHOULD produce packs without warnings. The app's own tooling validates packs in strict mode, which treats warnings as errors.</li>
+      <li>A <strong>conforming reader</strong> MUST reject every pack for which this specification names an error, and SHOULD report each problem with the code given here.</li>
+    </ul>
+    <h2 id="2-overview">2. Overview</h2>
+    <p>A pack is distributed as a zip archive with the extension <code>.linguapack</code>. Unpacked, it is a directory:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Path</th><th scope="col">Required</th><th scope="col">Content</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pack.json</code></td><td>yes</td><td>The manifest: id, version, title, languages, sections, and the content blocks or the files that hold them</td></tr>
+          <tr><td><code>content/*.json</code></td><td>no</td><td>Content blocks in their own files, listed in the manifest's <code>includes</code></td></tr>
+          <tr><td><code>images/</code>, <code>audio/</code></td><td>no</td><td>Pictures and recordings referenced from the content</td></tr>
+          <tr><td><code>LICENSE</code>, <code>NOTICE</code>, <code>README.md</code></td><td>no</td><td>Documentation; ignored by the app</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Only <code>pack.json</code> has a fixed place: the root of the archive. The other paths are conventions; any path that follows section 4 works.</p>
+    <p>A complete minimal pack, with one lection and three words:</p>
+    <pre><code>{
+  &quot;formatVersion&quot;: 1,
+  &quot;id&quot;: &quot;org.example.en-es.minimal&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;title&quot;: &quot;Spanish: first words&quot;,
+  &quot;license&quot;: &quot;CC0-1.0&quot;,
+  &quot;sourceLanguage&quot;: &quot;en&quot;,
+  &quot;targetLanguage&quot;: &quot;es&quot;,
+  &quot;sections&quot;: [
+    { &quot;id&quot;: &quot;greetings&quot;, &quot;title&quot;: &quot;Greetings&quot; }
+  ],
+  &quot;content&quot;: [
+    {
+      &quot;type&quot;: &quot;vocabulary&quot;,
+      &quot;entries&quot;: [
+        { &quot;id&quot;: &quot;hola&quot;, &quot;term&quot;: &quot;hola&quot;, &quot;translation&quot;: &quot;hello&quot;, &quot;sectionIds&quot;: [&quot;greetings&quot;] },
+        { &quot;id&quot;: &quot;adios&quot;, &quot;term&quot;: &quot;adiós&quot;, &quot;translation&quot;: &quot;goodbye&quot;, &quot;sectionIds&quot;: [&quot;greetings&quot;] },
+        { &quot;id&quot;: &quot;gracias&quot;, &quot;term&quot;: &quot;gracias&quot;, &quot;translation&quot;: &quot;thank you&quot;, &quot;sectionIds&quot;: [&quot;greetings&quot;] }
+      ]
+    }
+  ]
+}</code></pre>
+    <p>Two content types exist in format version 1: <strong>vocabulary</strong> (words and phrases, section 9) and <strong>conjugation</strong> (verb forms by person and tense, section 10). A pack may contain blocks of both.</p>
+    <h2 id="3-archive">3. Archive</h2>
+    <p>A <code>.linguapack</code> file is a zip archive as specified in PKWARE's <a href="https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT">APPNOTE.TXT</a>. The root of the archive is the root of the pack: <code>pack.json</code> MUST be a top-level entry, not inside a folder.</p>
+    <p>Readers read the archive as a stream, entry by entry from the local file headers; they do not use the central directory. Therefore:</p>
+    <ul>
+      <li>Entries MUST use the compression method <strong>stored</strong> (0) or <strong>deflate</strong> (8). Encryption is not supported.</li>
+      <li>A <strong>stored</strong> entry MUST carry its sizes and CRC-32 in the local file header, without a data descriptor. Deflated entries MAY use a data descriptor. Several zip libraries write data descriptors by default when they write to a stream; check what yours does.</li>
+      <li>Entry names MUST be UTF-8. Directory entries (names ending in <code>/</code>) are allowed and ignored.</li>
+    </ul>
+    <p>Every entry name MUST be a <strong>safe relative path</strong>:</p>
+    <ul>
+      <li>at most 255 characters, separated by <code>/</code>;</li>
+      <li>not starting with <code>/</code>, without empty segments, and without the segments <code>.</code> or <code>..</code>;</li>
+      <li>without <code>\</code>, <code>:</code> or the NUL character.</li>
+    </ul>
+    <p>Readers MUST reject the whole archive at the first entry that breaks a rule, and report:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Code</th><th scope="col">When</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>archive.unsafe-path</code></td><td>An entry name is not a safe relative path</td></tr>
+          <tr><td><code>archive.duplicate-entry</code></td><td>Two entries have the same name</td></tr>
+          <tr><td><code>archive.too-many-files</code></td><td>More than 10,000 entries</td></tr>
+          <tr><td><code>archive.too-large</code></td><td>More than 100 MiB uncompressed in total</td></tr>
+          <tr><td><code>archive.compression-ratio</code></td><td>Once more than 1 MiB has been extracted, the extracted bytes exceed 100 times the archive bytes read so far</td></tr>
+          <tr><td><code>archive.empty</code></td><td>The archive has no file entries (a file that is not a zip archive at all also ends here, since a stream reader finds no entry in it)</td></tr>
+          <tr><td><code>archive.corrupt</code></td><td>The archive cannot be read, for example because it ends early</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Readers measure sizes and the compression ratio on the bytes they actually read and write, never on the sizes the archive declares.</p>
+    <h3 id="deterministic-archives">Deterministic archives</h3>
+    <p>Writers SHOULD write archives so that the same pack always gives the same bytes, as the app does when it exports a pack. The checksum in a repository index (section 15) then only changes when the content changes. The app writes:</p>
+    <ul>
+      <li>entries in ascending order of their path (compared as strings), without directory entries;</li>
+      <li>the modification time <time datetime="1980-01-01">1980-01-01</time> 00:00 on every entry, and no extra fields;</li>
+      <li><code>.json</code> files deflated at the highest compression level; pictures and audio stored, since they are compressed already.</li>
+    </ul>
+    <h3 id="directories">Directories</h3>
+    <p>Where packs are kept in a folder rather than an archive, for example in a content repository, the folder is the pack root. Symbolic links MUST NOT appear in it (<code>files.symlink</code>); readers never follow them.</p>
+    <h2 id="4-files-in-a-pack">4. Files in a pack</h2>
+    <p>A pack MAY contain only these files:</p>
+    <ul>
+      <li>files whose name ends in <code>.json</code>, <code>.opus</code>, <code>.m4a</code>, <code>.mp3</code>, <code>.png</code> or <code>.webp</code> (the extension is compared without regard to case);</li>
+      <li>documentation files named exactly <code>LICENSE</code>, <code>LICENSE.md</code>, <code>LICENSE.txt</code>, <code>NOTICE</code> or <code>README.md</code>, in any folder.</li>
+    </ul>
+    <p>Any other file is an error (<code>files.disallowed-type</code>). This includes files that operating systems create on their own, such as <code>.DS_Store</code>, <code>Thumbs.db</code> or <code>desktop.ini</code>: writers MUST NOT include them. A <code>__MACOSX/</code> folder, which some zip tools add, holds files with the same extensions as the originals; it is not an error, but it is dead weight, and writers SHOULD NOT include it either.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Limit</th><th scope="col">Value</th><th scope="col">Code</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Files in the pack</td><td>at most 10,000</td><td><code>files.too-many</code></td></tr>
+          <tr><td>Total size of all files</td><td>at most 100 MiB</td><td><code>files.pack-too-large</code></td></tr>
+          <tr><td>Size of <code>pack.json</code></td><td>at most 5 MiB</td><td><code>files.too-large</code></td></tr>
+          <tr><td>Size of each included JSON file</td><td>at most 5 MiB</td><td><code>files.too-large</code></td></tr>
+          <tr><td>Size of each picture</td><td>at most 1 MiB</td><td><code>files.image-too-large</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Files that nothing references are allowed, but they are carried along for nothing. Writers SHOULD include only the media that the content references; the app's own exports do.</p>
+    <h2 id="5-json-and-text">5. JSON and text</h2>
+    <p><code>pack.json</code> and every included file MUST be JSON as defined by <a href="https://www.rfc-editor.org/rfc/rfc8259">RFC 8259</a>, encoded in UTF-8 <strong>without</strong> a byte order mark. Readers parse strictly and report <code>syntax.invalid-json</code> for:</p>
+    <ul>
+      <li>a byte order mark, comments, trailing commas, single quotes or unquoted keys;</li>
+      <li><code>NaN</code>, <code>Infinity</code> and other non-standard values.</li>
+    </ul>
+    <p>The structure MUST match the schema (<code>syntax.schema</code>):</p>
+    <ul>
+      <li><strong>Unknown fields are errors</strong>, in the manifest and in every content block. The only exception is <code>$schema</code>, which the manifest and the top level of an included file MAY carry so that text editors can find the schema. Readers ignore it.</li>
+      <li>Required fields MUST be present, and every value MUST have the type the schema gives.</li>
+      <li>An optional field SHOULD be left out when it has no value. <code>null</code> is accepted for the optional fields whose schema allows it, but a list such as <code>authors</code> or <code>sectionIds</code> MUST NOT be <code>null</code>.</li>
+      <li>An object MUST NOT contain the same key twice.</li>
+    </ul>
+    <p>The app's reader is lenient in one respect that is <strong>not</strong> part of the format: it also accepts a number or a boolean written as a string (<code>&quot;formatVersion&quot;: &quot;1&quot;</code>, <code>&quot;irregular&quot;: &quot;true&quot;</code>). Writers MUST NOT rely on this; other readers may reject such packs.</p>
+    <h3 id="strings">Strings</h3>
+    <p>Every string in every JSON file, including ids and paths, follows these rules:</p>
+    <ul>
+      <li>Readers normalize every string to <strong>Unicode NFC</strong> before any other check and before they store it. So <code>ä</code> written as <code>a</code> followed by a combining diaeresis equals the precomposed <code>ä</code>. Writers SHOULD write NFC.</li>
+      <li>After normalization a string MUST NOT be longer than <strong>1,000 characters</strong> (<code>syntax.string-too-long</code>).</li>
+      <li>A string MUST NOT contain control characters (U+0000–U+001F and U+007F–U+009F) except the line feed (U+000A) and the tab (U+0009) (<code>syntax.control-character</code>). The carriage return is not allowed: line breaks inside a value are written as <code>\n</code> alone.</li>
+      <li>Where a value MUST NOT be <strong>blank</strong>, it MUST contain at least one character that is not white space.</li>
+      <li>Readers trim surrounding white space from the pack title, the description, the license and the section titles. They keep the other texts as written, so writers SHOULD trim them.</li>
+    </ul>
+    <h2 id="6-manifest">6. Manifest</h2>
+    <p><code>pack.json</code> is a JSON object with these fields:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>$schema</code></td><td>string</td><td>no</td><td>URI of the schema, for text editors; ignored</td></tr>
+          <tr><td><code>formatVersion</code></td><td>integer</td><td>yes</td><td>The format version the pack is written in; <code>1</code> for this specification</td></tr>
+          <tr><td><code>minAppFormatVersion</code></td><td>integer</td><td>no</td><td>The lowest format version a reader must support to use the pack</td></tr>
+          <tr><td><code>id</code></td><td>string</td><td>yes</td><td>Stable, globally unique id of the pack</td></tr>
+          <tr><td><code>version</code></td><td>string</td><td>yes</td><td>Semantic version of the pack</td></tr>
+          <tr><td><code>title</code></td><td>string</td><td>yes</td><td>Title shown in the app</td></tr>
+          <tr><td><code>description</code></td><td>string</td><td>no</td><td>One or two sentences about the pack</td></tr>
+          <tr><td><code>license</code></td><td>string</td><td>no, but expected</td><td>SPDX license identifier of the content</td></tr>
+          <tr><td><code>authors</code></td><td>array of strings</td><td>no</td><td>Names of the authors</td></tr>
+          <tr><td><code>sourceLanguage</code></td><td>string</td><td>yes</td><td>Language tag of the language the learner knows</td></tr>
+          <tr><td><code>targetLanguage</code></td><td>string</td><td>yes</td><td>Language tag of the language being learned</td></tr>
+          <tr><td><code>tts</code></td><td>object</td><td>no</td><td><code>{ &quot;locale&quot;: &quot;&lt;language tag&gt;&quot; }</code>: the voice for speech synthesis of the target language</td></tr>
+          <tr><td><code>supportedDirections</code></td><td>array of strings</td><td>no</td><td>The study directions the pack allows</td></tr>
+          <tr><td><code>sections</code></td><td>array of objects</td><td>no</td><td>The pack's sections (lections), section 7</td></tr>
+          <tr><td><code>content</code></td><td>array of objects</td><td>no</td><td>Content blocks, section 8</td></tr>
+          <tr><td><code>includes</code></td><td>array of strings</td><td>no</td><td>Paths of JSON files that each hold one content block</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 id="format-version">Format version</h3>
+    <ul>
+      <li><code>formatVersion</code> MUST be <code>1</code>. A reader reports <code>format.unsupported-version</code> for a higher value and <code>format.invalid-version</code> for a value below 1.</li>
+      <li><code>minAppFormatVersion</code> is reserved for later format versions. In version 1 writers SHOULD leave it out; a value above 1 makes readers report <code>format.app-too-old</code>.</li>
+    </ul>
+    <h3 id="id">Id</h3>
+    <ul>
+      <li>The id MUST match <code>^[a-z0-9]+([._-][a-z0-9]+)*$</code> and MUST NOT be longer than 100 characters (<code>manifest.invalid-id</code>): lowercase letters and digits in segments joined by <code>.</code>, <code>_</code> or <code>-</code>.</li>
+      <li>It identifies the pack for good: updates replace the installed pack with the same id, and learning progress is stored by it (section 12). Writers MUST NOT change the id of a published pack.</li>
+      <li>Writers SHOULD make ids globally unique with a reversed domain name or another prefix they control, for example <code>org.example.de-it.a1</code>.</li>
+      <li>Ids starting with <code>user.</code> mark packs that the app imports as editable (section 13). Writers MUST use the prefix only for packs meant to be edited in the app, and MUST NOT use it for packs they publish for installation.</li>
+    </ul>
+    <h3 id="version">Version</h3>
+    <ul>
+      <li>The version MUST be a <a href="https://semver.org/spec/v2.0.0.html">semantic version 2.0.0</a> of three numbers, such as <code>1.4.0</code> or <code>2.0.0-beta.1</code> (<code>manifest.invalid-version</code>).</li>
+      <li>Readers compare versions number by number. A pre-release sorts before its release; two pre-release labels are compared as plain strings, so <code>1.0.0-beta.10</code> sorts before <code>1.0.0-beta.9</code>. Build metadata (<code>+…</code>) is ignored.</li>
+      <li>Every published change MUST raise the version (section 12).</li>
+    </ul>
+    <h3 id="title-description-license-and-authors">Title, description, license and authors</h3>
+    <ul>
+      <li><code>title</code> MUST NOT be blank (<code>manifest.blank-title</code>). Short titles read best in the app's lists; the app's own editor allows at most 100 characters.</li>
+      <li><code>license</code> SHOULD be an <a href="https://spdx.org/licenses/">SPDX license identifier</a> or expression, such as <code>CC-BY-4.0</code>, for the content of the pack. A missing or blank license is a warning (<code>manifest.missing-license</code>). The value <code>NONE</code> states that no license is granted; the app writes it for own packs without a chosen license.</li>
+      <li>The licenses of third-party pictures and recordings SHOULD be named in a <code>NOTICE</code> or <code>LICENSE</code> file in the pack.</li>
+    </ul>
+    <h3 id="languages">Languages</h3>
+    <ul>
+      <li><code>sourceLanguage</code>, <code>targetLanguage</code> and <code>tts.locale</code> MUST be language tags of the form language, optional script, optional region: <code>^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$</code> (<code>manifest.invalid-language</code>). This is a subset of <a href="https://www.rfc-editor.org/info/bcp47">BCP 47</a>: <code>de</code>, <code>pt-BR</code>, <code>zh-Hant-TW</code> and <code>es-419</code> are valid; variants and extensions such as <code>de-CH-1901</code> are not.</li>
+      <li>Writers SHOULD use the canonical case: language in lower case, script in title case, region in upper case.</li>
+      <li>The primary languages (the part before the first <code>-</code>, compared without regard to case) of <code>sourceLanguage</code> and <code>targetLanguage</code> MUST differ (<code>manifest.same-languages</code>).</li>
+      <li><code>tts.locale</code> defaults to <code>targetLanguage</code>. Its primary language SHOULD be that of the target language (<code>manifest.tts-language-mismatch</code>, a warning). Set it to choose a regional voice, such as <code>it-IT</code> for <code>it</code>.</li>
+    </ul>
+    <h3 id="directions">Directions</h3>
+    <ul>
+      <li><code>source-&gt;target</code> is <strong>production</strong>: the card shows the source language and the learner recalls the target language.</li>
+      <li><code>target-&gt;source</code> is <strong>recognition</strong>: the card shows the target language and the learner recalls the meaning.</li>
+      <li>Without <code>supportedDirections</code> (or with <code>null</code>) both directions are allowed. A list MUST contain at least one entry (<code>manifest.no-directions</code>) and only these two values (<code>manifest.invalid-direction</code>).</li>
+      <li>Each card is learned separately in each allowed direction; the learner can narrow the choice in the app.</li>
+    </ul>
+    <h3 id="content-and-includes">Content and includes</h3>
+    <p>The pack MUST contain at least one content block (<code>content.empty</code>), either inline in <code>content</code> or as a file listed in <code>includes</code>. Readers use the blocks of <code>content</code> first, then those of <code>includes</code>, in the listed order. Within a type, that order decides the order in which learners meet new cards (sections 9 and 10).</p>
+    <h2 id="7-sections">7. Sections</h2>
+    <p>Sections structure a pack like the units and chapters of a course. The app calls them lections; learners choose them for a session and see statistics by section.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>id</code></td><td>string</td><td>yes</td><td>Id, unique within the pack; same rules as the pack id</td></tr>
+          <tr><td><code>title</code></td><td>string</td><td>yes</td><td>Title shown in the app; MUST NOT be blank</td></tr>
+          <tr><td><code>order</code></td><td>integer</td><td>no</td><td>Position among its siblings; default <code>0</code></td></tr>
+          <tr><td><code>parentId</code></td><td>string</td><td>no</td><td>Id of the enclosing section, for nested units</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Rules:</p>
+    <ul>
+      <li>Ids MUST match the id pattern and be at most 100 characters (<code>sections.invalid-id</code>), and MUST be unique within the pack (<code>sections.duplicate-id</code>).</li>
+      <li>Titles MUST NOT be blank (<code>sections.blank-title</code>).</li>
+      <li><code>parentId</code> MUST name a section of the pack (<code>sections.unknown-parent</code>), and following the parents MUST NOT lead back to the section itself (<code>sections.cycle</code>). Sections MAY be nested to any depth and listed in any order.</li>
+      <li>The app shows sibling sections ordered by <code>order</code>, then by title. Writers SHOULD give every section an explicit <code>order</code>.</li>
+      <li>A section MAY be empty, for example a unit that only holds sub-sections.</li>
+    </ul>
+    <p>Items (vocabulary entries and verbs) name their sections in <code>sectionIds</code>. An item MAY belong to several sections; the first one that exists in the pack decides the group the item is studied in. An item in no section is a warning, except in editable packs (section 13).</p>
+    <h2 id="8-content-blocks">8. Content blocks</h2>
+    <p>A content block is a JSON object with a <code>type</code> and the fields of that type.</p>
+    <ul>
+      <li>A block without a string <code>type</code> is an error (<code>content.missing-type</code>).</li>
+      <li>A block of a type the reader does not know is skipped with a warning (<code>content.unknown-type</code>). This is the format's extension point: a pack can carry blocks for newer apps next to blocks every app understands. A pack MUST contain at least one block of a known type (<code>content.no-supported-type</code>).</li>
+      <li>Format version 1 defines the types <code>vocabulary</code> (section 9) and <code>conjugation</code> (section 10).</li>
+    </ul>
+    <h3 id="included-files">Included files</h3>
+    <p>Each path in <code>includes</code> names a JSON file with exactly one content block.</p>
+    <ul>
+      <li>The path MUST be a safe relative path, as for archive entries (<code>files.unsafe-path</code>), and end in <code>.json</code> (<code>files.include-not-json</code>).</li>
+      <li>The file MUST exist (<code>files.missing</code>), be at most 5 MiB (<code>files.too-large</code>) and contain one JSON object (<code>syntax.schema</code>). Its top level MAY carry <code>$schema</code>; the schema's definition for it is <code>pack.schema.json#/$defs/contentBlock</code>.</li>
+      <li>An include that fails adds no block. If it was the only one, the pack has no content (<code>content.empty</code>).</li>
+      <li>Paths inside an included block, such as pictures, are relative to the <strong>pack root</strong>, not to the included file.</li>
+    </ul>
+    <h3 id="ids-across-blocks">Ids across blocks</h3>
+    <p>Item ids MUST be unique among all blocks of the same type: two vocabulary blocks MUST NOT both define the entry <code>casa</code>. Each type checks duplicates within one block itself. Duplicates across blocks are found when the pack is installed and reported as <code>content.duplicate-item</code> and <code>content.duplicate-card</code>; the app then installs nothing.</p>
+    <h2 id="9-vocabulary-blocks">9. Vocabulary blocks</h2>
+    <p>A vocabulary block holds words and phrases. Each entry becomes one card.</p>
+    <pre><code>{
+  &quot;type&quot;: &quot;vocabulary&quot;,
+  &quot;entries&quot;: [
+    {
+      &quot;id&quot;: &quot;casa&quot;,
+      &quot;term&quot;: &quot;la casa&quot;,
+      &quot;translation&quot;: &quot;das Haus&quot;,
+      &quot;partOfSpeech&quot;: &quot;noun&quot;,
+      &quot;gender&quot;: &quot;f&quot;,
+      &quot;plural&quot;: &quot;le case&quot;,
+      &quot;sectionIds&quot;: [&quot;unit-1&quot;],
+      &quot;example&quot;: { &quot;target&quot;: &quot;La casa è grande.&quot;, &quot;source&quot;: &quot;Das Haus ist groß.&quot; },
+      &quot;image&quot;: &quot;images/house.png&quot;,
+      &quot;imageDescription&quot;: &quot;Ein kleines Haus mit rotem Dach&quot;
+    }
+  ]
+}</code></pre>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>id</code></td><td>string</td><td>yes</td><td>Id of the entry; same rules as the pack id</td></tr>
+          <tr><td><code>term</code></td><td>string</td><td>yes</td><td>The word or phrase in the target language; nouns with their article, such as <code>la casa</code></td></tr>
+          <tr><td><code>translation</code></td><td>string</td><td>yes</td><td>Its meaning in the source language, such as <code>das Haus</code></td></tr>
+          <tr><td><code>partOfSpeech</code></td><td>string</td><td>no</td><td><code>noun</code>, <code>verb</code>, <code>adjective</code>, <code>adverb</code>, <code>pronoun</code>, <code>preposition</code>, <code>conjunction</code>, <code>interjection</code>, <code>numeral</code>, <code>article</code> or <code>phrase</code></td></tr>
+          <tr><td><code>gender</code></td><td>string</td><td>no</td><td>Grammatical gender of the term: <code>m</code>, <code>f</code>, <code>n</code>, or <code>mf</code> for both (<code>il/la cantante</code>)</td></tr>
+          <tr><td><code>plural</code></td><td>string</td><td>no</td><td>The plural in the target language, with its article, such as <code>le case</code></td></tr>
+          <tr><td><code>sectionIds</code></td><td>array of strings</td><td>no</td><td>The sections the entry belongs to</td></tr>
+          <tr><td><code>example</code></td><td>object</td><td>no</td><td><code>{ &quot;target&quot;: &quot;…&quot;, &quot;source&quot;: &quot;…&quot; }</code>: an example sentence and its translation, both required</td></tr>
+          <tr><td><code>audio</code></td><td>string</td><td>no</td><td>Path of a recording of the term (section 11)</td></tr>
+          <tr><td><code>tts</code></td><td>string</td><td>no</td><td>Text for speech synthesis when it should differ from the term</td></tr>
+          <tr><td><code>image</code></td><td>string</td><td>no</td><td>Path of a still picture of the meaning (section 11)</td></tr>
+          <tr><td><code>imageDescription</code></td><td>string</td><td>no</td><td>What the picture shows, in the source language; read by screen readers</td></tr>
+          <tr><td><code>sourceHint</code></td><td>string</td><td>no</td><td>A second line under the translation, for example to tell meanings apart</td></tr>
+          <tr><td><code>targetHint</code></td><td>string</td><td>no</td><td>A second line under the term; replaces the plural there</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Rules:</p>
+    <ul>
+      <li>A block MUST have at least one entry (<code>vocabulary.no-entries</code>).</li>
+      <li>Entry ids MUST match the id pattern and be at most 100 characters (<code>vocabulary.invalid-id</code>), and MUST be unique in the block (<code>vocabulary.duplicate-entry</code>) and among all vocabulary blocks of the pack (section 8).</li>
+      <li>No text field MAY be blank when present (<code>vocabulary.blank</code>).</li>
+      <li><code>partOfSpeech</code> and <code>gender</code> MUST be one of the listed values (<code>vocabulary.invalid-part-of-speech</code>, <code>vocabulary.invalid-gender</code>).</li>
+      <li>Every id in <code>sectionIds</code> MUST name a section of the pack (<code>vocabulary.unknown-section</code>). An entry without sections is a warning (<code>vocabulary.no-section</code>), except in packs whose id starts with <code>user.</code>.</li>
+      <li>The same term with the same translation twice is a warning (<code>vocabulary.duplicate-term</code>).</li>
+      <li>An <code>image</code> without <code>imageDescription</code> is a warning (<code>vocabulary.no-image-description</code>), and so is an <code>imageDescription</code> without an <code>image</code>, which is ignored (<code>vocabulary.description-without-image</code>).</li>
+    </ul>
+    <h3 id="how-the-app-uses-vocabulary-fields">How the app uses vocabulary fields</h3>
+    <p>This part is informative. It helps writers fill the fields so that the cards work well.</p>
+    <ul>
+      <li>The source side of a card shows <code>translation</code>, with <code>sourceHint</code> below it. The target side shows <code>term</code>, with <code>targetHint</code> below it, or else <code>plural</code>. The library lists the entry by <code>term</code> and <code>translation</code>, with the part of speech as a badge, and the detail pane adds the gender, the plural, the example and the picture. Search covers the term, the translation, the plural and the example.</li>
+      <li>The term is spoken by playing <code>audio</code>, or else by speech synthesis of <code>tts</code>, or else of the term. For speech synthesis, a word with a slash alternative is reduced to its first form: <code>il/la cantante</code> is spoken as <code>il cantante</code>.</li>
+      <li>Typed answers compare what the learner types with the side being asked. Case, spacing, typographic apostrophes and final punctuation do not matter. <code>,</code>, <code>;</code> and a slash between spaces (<code> / </code>) separate alternatives that are each accepted; a slash inside a word offers a choice (<code>stato/a</code>); text in parentheses is a note that need not be typed. A subject pronoun at the start of the answer may be left out; a missing article makes the answer almost right.</li>
+      <li>The article drill asks for the article of nouns. It takes the article from the term as written (<code>la casa</code>, <code>l&#x27;acqua</code>), so nouns SHOULD be written with their definite article. German falls back to <code>gender</code>. Nouns with the gender <code>mf</code> are left out.</li>
+      <li>Entries are grouped by their first section, in the order in which the sections first occur among the entries, and each group is split into sets of ten for sessions. New cards are introduced in that order. Write entries in the order learners should meet them and keep each section's entries together.</li>
+    </ul>
+    <h2 id="10-conjugation-blocks">10. Conjugation blocks</h2>
+    <p>A conjugation block holds verbs with their forms by tense and person. Each form becomes one card. Persons and tenses are defined once per block, so the block works for any language.</p>
+    <pre><code>{
+  &quot;type&quot;: &quot;conjugation&quot;,
+  &quot;persons&quot;: [
+    { &quot;id&quot;: &quot;1s&quot;, &quot;label&quot;: &quot;io&quot;, &quot;prompt&quot;: &quot;I&quot; },
+    { &quot;id&quot;: &quot;2s&quot;, &quot;label&quot;: &quot;tu&quot;, &quot;prompt&quot;: &quot;you&quot; }
+  ],
+  &quot;tenses&quot;: [
+    { &quot;id&quot;: &quot;presente&quot;, &quot;label&quot;: &quot;Presente&quot;, &quot;sourceLabel&quot;: &quot;Present&quot; }
+  ],
+  &quot;verbs&quot;: [
+    {
+      &quot;id&quot;: &quot;essere&quot;,
+      &quot;infinitive&quot;: &quot;essere&quot;,
+      &quot;translation&quot;: &quot;to be&quot;,
+      &quot;sectionIds&quot;: [&quot;lesson-1&quot;],
+      &quot;irregular&quot;: true,
+      &quot;conjugations&quot;: [
+        {
+          &quot;tenseId&quot;: &quot;presente&quot;,
+          &quot;forms&quot;: [
+            { &quot;personId&quot;: &quot;1s&quot;, &quot;prompt&quot;: &quot;I am&quot;, &quot;answer&quot;: &quot;io sono&quot; },
+            { &quot;personId&quot;: &quot;2s&quot;, &quot;prompt&quot;: &quot;you are&quot;, &quot;answer&quot;: &quot;tu sei&quot; }
+          ]
+        }
+      ]
+    }
+  ]
+}</code></pre>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Object</th><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>block</td><td><code>persons</code></td><td>array</td><td>yes</td><td>The grammatical persons, in display order</td></tr>
+          <tr><td>block</td><td><code>tenses</code></td><td>array</td><td>yes</td><td>The tenses, in display order</td></tr>
+          <tr><td>block</td><td><code>verbs</code></td><td>array</td><td>yes</td><td>The verbs</td></tr>
+          <tr><td>person</td><td><code>id</code></td><td>string</td><td>yes</td><td>Id, unique in the block, such as <code>1s</code></td></tr>
+          <tr><td>person</td><td><code>label</code></td><td>string</td><td>yes</td><td>The target-language pronoun, such as <code>io</code></td></tr>
+          <tr><td>person</td><td><code>prompt</code></td><td>string</td><td>yes</td><td>The source-language pronoun, such as <code>I</code></td></tr>
+          <tr><td>tense</td><td><code>id</code></td><td>string</td><td>yes</td><td>Id, unique in the block, such as <code>presente</code></td></tr>
+          <tr><td>tense</td><td><code>label</code></td><td>string</td><td>yes</td><td>The tense's name in the target language, such as <code>Presente</code></td></tr>
+          <tr><td>tense</td><td><code>sourceLabel</code></td><td>string</td><td>no</td><td>Its name in the source language, such as <code>Present</code></td></tr>
+          <tr><td>verb</td><td><code>id</code></td><td>string</td><td>yes</td><td>Id of the verb; unique among all conjugation blocks of the pack</td></tr>
+          <tr><td>verb</td><td><code>infinitive</code></td><td>string</td><td>yes</td><td>The infinitive in the target language</td></tr>
+          <tr><td>verb</td><td><code>translation</code></td><td>string</td><td>yes</td><td>Its meaning in the source language</td></tr>
+          <tr><td>verb</td><td><code>sectionIds</code></td><td>array of strings</td><td>no</td><td>The sections the verb belongs to</td></tr>
+          <tr><td>verb</td><td><code>irregular</code></td><td>boolean</td><td>no</td><td>Marks the verb as irregular; default <code>false</code></td></tr>
+          <tr><td>verb</td><td><code>conjugations</code></td><td>array</td><td>yes</td><td>One object per tense: <code>tenseId</code> and <code>forms</code></td></tr>
+          <tr><td>form</td><td><code>personId</code></td><td>string</td><td>yes</td><td>The person of the form</td></tr>
+          <tr><td>form</td><td><code>prompt</code></td><td>string</td><td>no</td><td>The source-language form shown on the card, such as <code>I am</code></td></tr>
+          <tr><td>form</td><td><code>answer</code></td><td>string</td><td>yes</td><td>The target-language form with its pronoun, such as <code>io sono</code></td></tr>
+          <tr><td>form</td><td><code>audio</code></td><td>string</td><td>no</td><td>Path of a recording of the answer (section 11)</td></tr>
+          <tr><td>form</td><td><code>tts</code></td><td>string</td><td>no</td><td>Text for speech synthesis when it should differ from the answer</td></tr>
+          <tr><td>form</td><td><code>sourceHint</code></td><td>string</td><td>no</td><td>A second line under the prompt</td></tr>
+          <tr><td>form</td><td><code>targetHint</code></td><td>string</td><td>no</td><td>A second line under the answer</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Rules:</p>
+    <ul>
+      <li>A block MUST have at least one person (<code>conjugation.no-persons</code>), one tense (<code>conjugation.no-tenses</code>) and one verb (<code>conjugation.no-verbs</code>).</li>
+      <li>Person, tense and verb ids MUST match the id pattern and be at most 100 characters (<code>conjugation.invalid-id</code>). Person and tense ids MUST be unique in their list (<code>conjugation.duplicate-id</code>), verb ids in the block (<code>conjugation.duplicate-verb</code>) and among all conjugation blocks of the pack (section 8).</li>
+      <li>Labels, prompts, infinitives, translations, answers and <code>tts</code> texts MUST NOT be blank (<code>conjugation.blank</code>).</li>
+      <li>Every id in <code>sectionIds</code> MUST name a section (<code>conjugation.unknown-section</code>). A verb without sections is a warning (<code>conjugation.no-section</code>).</li>
+      <li>A verb MUST have at least one conjugation (<code>conjugation.no-forms</code>). Each <code>tenseId</code> MUST name a tense of the block (<code>conjugation.unknown-tense</code>) and appear once per verb (<code>conjugation.duplicate-tense</code>).</li>
+      <li>Each <code>personId</code> MUST name a person of the block (<code>conjugation.unknown-person</code>) and appear once per tense (<code>conjugation.duplicate-form</code>).</li>
+      <li>A form without <code>prompt</code> is a warning (<code>conjugation.generated-prompt</code>): the app then shows the person's prompt and the verb's translation, such as <code>I (to be)</code>. Writers SHOULD write prompts, especially for inflected source languages.</li>
+      <li>A tense that lacks forms for some persons is a warning (<code>conjugation.incomplete-grid</code>). Leave persons out on purpose only, for example for impersonal verbs.</li>
+    </ul>
+    <h3 id="how-the-app-uses-conjugation-fields">How the app uses conjugation fields</h3>
+    <p>Informative. The card shows the prompt with the tense's <code>sourceLabel</code> (or <code>label</code>) below it, or the form's <code>sourceHint</code> instead; the answer side shows the answer with the infinitive and the tense label below it, or the <code>targetHint</code> instead. Speech uses <code>audio</code>, <code>tts</code> or the answer reduced as for vocabulary. Sessions group forms by verb and tense; tenses and persons follow the order of their lists. The library shows each verb with its full grid and an "irregular" badge.</p>
+    <h2 id="11-media-files">11. Media files</h2>
+    <p>Content refers to pictures and recordings by their path relative to the pack root, such as <code>images/house.png</code>. The same file MAY be referenced several times.</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Kind</th><th scope="col">Extensions</th><th scope="col">Signature the reader checks</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Audio</td><td><code>.opus</code></td><td>Ogg container: the file starts with <code>OggS</code></td></tr>
+          <tr><td>Audio</td><td><code>.m4a</code></td><td>MPEG-4 container: <code>ftyp</code> at byte 4</td></tr>
+          <tr><td>Audio</td><td><code>.mp3</code></td><td>An <code>ID3</code> tag at the start, or an MPEG audio frame sync (11 set bits)</td></tr>
+          <tr><td>Picture</td><td><code>.png</code></td><td>The PNG signature, then an <code>IHDR</code> chunk</td></tr>
+          <tr><td>Picture</td><td><code>.webp</code></td><td><code>RIFF</code>, then <code>WEBP</code> at byte 8, with a <code>VP8</code>, <code>VP8L</code> or <code>VP8X</code> chunk (<code>VP8</code> followed by a space)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Rules, checked for every referenced file:</p>
+    <ul>
+      <li>The path MUST be a safe relative path (<code>files.unsafe-path</code>).</li>
+      <li>The extension MUST fit the field: <code>audio</code> takes audio, <code>image</code> takes pictures (<code>files.wrong-kind</code>).</li>
+      <li>The file MUST exist (<code>files.missing</code>) and start with the signature of its extension (<code>files.content-mismatch</code>).</li>
+      <li>A picture MUST be at most 1 MiB (<code>files.image-too-large</code>) and 2,048 × 2,048 pixels (<code>files.image-dimensions</code>), as its header states, and MUST NOT be animated (<code>files.image-animated</code>): no <code>acTL</code> chunk before the image data of a PNG, no animation flag in a WebP <code>VP8X</code> header.</li>
+    </ul>
+    <p>Readers check signatures and headers only; they do not decode the files before they use them. A file that passes the checks but cannot be decoded fails when it is shown or played. Writers MUST write complete, decodable files.</p>
+    <p>Recommendations:</p>
+    <ul>
+      <li>Pictures: square, 512 to 1,024 pixels, WebP or PNG, without metadata chunks. The app's own editor stores pictures as WebP of at most 1,024 pixels. Every picture SHOULD have an <code>imageDescription</code>.</li>
+      <li>Recordings: short clips of the term or form alone, without leading silence. Opus is the most compact choice.</li>
+    </ul>
+    <h2 id="12-identity-progress-and-updates">12. Identity, progress and updates</h2>
+    <h3 id="card-keys">Card keys</h3>
+    <p>The app stores learning progress by <strong>card key</strong>, without a link to the installed pack, so progress survives updates, removal and reinstalling. A card key is made of four parts, joined by <code>|</code>:</p>
+    <ol>
+      <li>the pack id;</li>
+      <li>the content type, <code>vocabulary</code> or <code>conjugation</code>;</li>
+      <li>the item id: the entry id, or the verb id;</li>
+      <li>the variant: <code>term</code> for a vocabulary entry, <code>&lt;tenseId&gt;/&lt;personId&gt;</code> for a verb form.</li>
+    </ol>
+    <p>For example <code>org.example.de-it.home|vocabulary|casa|term</code> and <code>org.example.en-it.verbs|conjugation|essere|presente/1s</code>. Each card is scheduled separately in each study direction. Ids never contain <code>|</code> or <code>/</code>, so the keys are unambiguous.</p>
+    <p>What happens to progress when a pack changes:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Change</th><th scope="col">Progress</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Edit any text, picture or recording</td><td>Kept</td></tr>
+          <tr><td>Move an item to another section, or reorder items</td><td>Kept</td></tr>
+          <tr><td>Add items</td><td>New cards start fresh</td></tr>
+          <tr><td>Remove an item</td><td>Its card disappears; the progress returns if an item with the same id comes back</td></tr>
+          <tr><td>Change an entry id or a verb id</td><td>Lost for that item: it is a new card</td></tr>
+          <tr><td>Change a tense id or a person id</td><td>Lost for every form of that tense or person</td></tr>
+          <tr><td>Move an item between content types</td><td>Lost</td></tr>
+          <tr><td>Change the pack id</td><td>Lost for the whole pack: it is a different pack</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Therefore writers:</p>
+    <ul>
+      <li>MUST keep the ids of existing packs, sections, items, tenses and persons when they change a pack;</li>
+      <li>MUST give new items ids that no other item of the same type in the pack has, now or earlier, unless the new item is meant to continue that item's progress;</li>
+      <li>SHOULD NOT derive ids from text in a way that makes them change when the text is corrected. Derive an id once when the item is created, then keep it.</li>
+    </ul>
+    <h3 id="updates">Updates</h3>
+    <p>A pack is updated by importing a pack with the same id. The app compares the versions:</p>
+    <ul>
+      <li>a <strong>higher</strong> version replaces the installed pack;</li>
+      <li>the <strong>same</strong> version replaces it if the content differs, and does nothing if it is identical;</li>
+      <li>a <strong>lower</strong> version is refused as a downgrade (only the packs built into the app are silently ignored instead).</li>
+    </ul>
+    <p>Writers MUST raise the version for every change they publish, and SHOULD follow semantic versioning: the patch number for corrections, the minor number for additions, the major number for restructuring that changes ids.</p>
+    <h3 id="evolution-of-the-format">Evolution of the format</h3>
+    <p>Readers reject a higher <code>formatVersion</code> and, in version 1, every unknown field. New fields therefore come with a new format version. New content types do not need one: readers skip types they do not know (section 8).</p>
+    <h2 id="13-editable-packs">13. Editable packs</h2>
+    <p>Packs that learners make in the app have ids starting with <code>user.</code>. Every change in the app publishes the pack again, and learners can export it as a <code>.linguapack</code> file and import it elsewhere. When the app imports a <strong>local file</strong> whose pack id starts with <code>user.</code>, it restores an <strong>editable</strong> pack instead of installing a read-only one. External editors can use this to hand packs to the app for further editing, and to edit packs exported from the app.</p>
+    <h3 id="what-the-app-writes">What the app writes</h3>
+    <p>The <a href="templates/user-pack/pack.json">user pack template</a> shows a pack exported from the app:</p>
+    <ul>
+      <li>the id <code>user.</code> followed by 16 characters from <code>a</code>–<code>z</code> and <code>2</code>–<code>7</code> (80 random bits);</li>
+      <li>the version <code>1.0.&lt;revision&gt;</code>, where the revision counts the changes;</li>
+      <li>a <code>license</code> of <code>CC0-1.0</code>, <code>CC-BY-4.0</code>, <code>CC-BY-SA-4.0</code> or <code>NONE</code>;</li>
+      <li>flat <code>sections</code> with <code>order</code> 0, 1, 2…, and section ids of <code>l</code> followed by 12 such characters;</li>
+      <li>one vocabulary block whose entries have ids of <code>w</code> followed by 12 such characters and at most one section each, in the order of the lections and then of the words in them;</li>
+      <li>pictures at <code>images/p&lt;12 characters&gt;.webp</code>;</li>
+      <li>no <code>authors</code>, <code>tts</code>, <code>audio</code> or <code>tts</code> texts.</li>
+    </ul>
+    <h3 id="requirements-for-an-editable-import">Requirements for an editable import</h3>
+    <p>An import as an editable pack fails with <code>import.not-editable</code> unless:</p>
+    <ul>
+      <li>the pack has at least one vocabulary entry, and no entry id is used twice;</li>
+      <li>the title is at most 100 characters;</li>
+      <li>every section title is at most 100 characters;</li>
+      <li>every entry that has an <code>image</code> also has an <code>imageDescription</code> (for other packs this is only a warning).</li>
+    </ul>
+    <p>The other rules of this specification apply as for every pack.</p>
+    <h3 id="what-an-editable-import-keeps">What an editable import keeps</h3>
+    <p>The app keeps the title, the description, the languages, the directions, the sections and the vocabulary entries with all their text fields and pictures. It drops what the editor cannot edit:</p>
+    <ul>
+      <li>conjugation blocks and blocks of unknown types;</li>
+      <li><code>audio</code> and <code>tts</code> of entries, <code>authors</code>, <code>tts.locale</code> and <code>minAppFormatVersion</code>;</li>
+      <li>every section of an entry but the first one;</li>
+      <li>the nesting of sections: they become flat lections, each parent before its children, ordered by <code>order</code> and then by their position in the list;</li>
+      <li>a license other than the three offered ones.</li>
+    </ul>
+    <h3 id="conflicts">Conflicts</h3>
+    <ul>
+      <li>If an editable pack with the same id exists, the learner chooses: <strong>Replace</strong> keeps the ids and so the progress of every word; <strong>Keep both</strong> imports the pack under a new id, without progress.</li>
+      <li>If a read-only pack with that id is installed, the import gets a new id.</li>
+      <li>A pack with a <code>user.</code> id from a repository installs read-only, and is refused if an editable pack has the same id (<code>import.user-pack-conflict</code>). Writers SHOULD NOT list <code>user.</code> packs in a repository index.</li>
+    </ul>
+    <h3 id="advice-for-external-editors">Advice for external editors</h3>
+    <ul>
+      <li>To round-trip a pack exported from the app, keep its id, every section and entry id and every picture path, keep the version pattern <code>1.0.&lt;n&gt;</code> and raise <code>n</code> with every change. On Replace, the app's next revision is <code>n</code> or its own revision plus one, whichever is higher.</li>
+      <li>Give new sections and entries ids in the app's style (<code>l</code> or <code>w</code> and 12 random characters from <code>a</code>–<code>z</code>, <code>2</code>–<code>7</code>), so they cannot collide with ids the app creates.</li>
+      <li>Fields the app drops are lost when the learner next exports the pack from the app. Keep them out of packs meant for editing in the app, or warn the user.</li>
+      <li>To publish an editable pack for everyone, give it a new id without the <code>user.</code> prefix and a version of its own. Progress made under the <code>user.</code> id does not carry over.</li>
+    </ul>
+    <h2 id="14-validation">14. Validation</h2>
+    <h3 id="issues">Issues</h3>
+    <p>Readers report each problem as an issue with:</p>
+    <ul>
+      <li>a <strong>severity</strong>: error or warning;</li>
+      <li>a <strong>code</strong>, such as <code>manifest.invalid-id</code>;</li>
+      <li>a <strong>path</strong> to the value, written <code>&lt;file&gt;:&lt;JSON path&gt;</code>, such as <code>pack.json:$.content[0].entries[2].term</code>;</li>
+      <li>a <strong>message</strong> in English, for logs and developers.</li>
+    </ul>
+    <p>Codes are stable: a code is never renamed or reused for a different problem. An app shows a translated text for each code it knows and falls back to the message for codes it does not know. The <a href="issue-codes.html">issue codes</a> document lists all of them.</p>
+    <p>A pack with an error is rejected and nothing changes. A pack with warnings only is installed. The app's command-line validator has a strict mode that treats warnings as errors; the packs the app ships pass it.</p>
+    <h3 id="stages">Stages</h3>
+    <p>Readers validate in stages. Some stages stop the validation when they find an error, so fixing one problem can reveal the next:</p>
+    <ol>
+      <li><strong>Archive</strong>: extraction (section 3). The first problem stops the import.</li>
+      <li><strong>Files</strong>: the set of files (section 4). Validation continues.</li>
+      <li><strong>Syntax</strong>: <code>pack.json</code> is read, normalized and decoded (section 5). A syntax or schema error in it stops here.</li>
+      <li><strong>Manifest and sections</strong> (sections 6 and 7). Any error here stops before the content is checked.</li>
+      <li><strong>Content</strong>: included files and each content block, by its type (sections 8 to 10). A block that cannot be decoded is skipped; the others are still checked.</li>
+      <li><strong>Referenced files</strong>: pictures and recordings of the blocks that could be decoded (section 11).</li>
+      <li><strong>Installation</strong>: ids across blocks (section 8), and the app's own checks (versions, editable packs, downloads).</li>
+    </ol>
+    <h3 id="what-the-schema-does-not-check">What the schema does not check</h3>
+    <p>The JSON Schema describes the structure: fields, types, required fields, patterns and allowed values. A writer MUST also check what it cannot express:</p>
+    <ul>
+      <li>uniqueness of ids, within blocks and across blocks of a type;</li>
+      <li>references: <code>parentId</code>, <code>sectionIds</code>, <code>tenseId</code>, <code>personId</code>, and cycles of sections;</li>
+      <li>different source and target languages, and the speech locale's language;</li>
+      <li>NFC normalization, the string length after it (JSON Schema counts code points, not UTF-16 units), control characters and blank values;</li>
+      <li>every file rule: allowed files, sizes, paths, signatures, picture headers;</li>
+      <li>every archive rule.</li>
+    </ul>
+    <p>The <a href="implementers-guide.html">implementers' guide</a> has a checklist of these rules.</p>
+    <h2 id="15-repository-index">15. Repository index</h2>
+    <p>Packs can be offered for download from a GitHub repository. The learner adds the repository as a source (owner, repository, branch and an optional folder), and the app reads <code>lingua-index.json</code> from that folder through the GitHub contents API. It refreshes the index once a day and offers updates when the index lists a higher version of an installed pack.</p>
+    <pre><code>{
+    &quot;indexVersion&quot;: 1,
+    &quot;packs&quot;: [
+        {
+            &quot;id&quot;: &quot;org.example.en-es.minimal&quot;,
+            &quot;path&quot;: &quot;packs/minimal-vocabulary.linguapack&quot;,
+            &quot;version&quot;: &quot;1.0.0&quot;,
+            &quot;formatVersion&quot;: 1,
+            &quot;sha256&quot;: &quot;&lt;64 hex digits&gt;&quot;,
+            &quot;sourceLanguage&quot;: &quot;en&quot;,
+            &quot;targetLanguage&quot;: &quot;es&quot;,
+            &quot;contentTypes&quot;: [&quot;vocabulary&quot;],
+            &quot;title&quot;: &quot;Spanish: first words&quot;,
+            &quot;sizeBytes&quot;: 451
+        }
+    ]
+}</code></pre>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Required</th><th scope="col">Rule</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>indexVersion</code></td><td>integer</td><td>yes</td><td><code>1</code> (<code>index.unsupported-version</code>)</td></tr>
+          <tr><td><code>packs</code></td><td>array</td><td>yes</td><td>At most 1,000 entries (<code>index.too-many-packs</code>)</td></tr>
+          <tr><td><code>id</code></td><td>string</td><td>yes</td><td>The pack's id; id pattern, at most 100 characters (<code>index.invalid-id</code>)</td></tr>
+          <tr><td><code>path</code></td><td>string</td><td>yes</td><td>Path of the archive relative to the index's folder: segments of <code>A</code>–<code>Z</code>, <code>a</code>–<code>z</code>, <code>0</code>–<code>9</code>, <code>.</code>, <code>_</code>, <code>-</code>, ending in <code>.linguapack</code> (<code>index.unsafe-path</code>, <code>index.invalid-extension</code>)</td></tr>
+          <tr><td><code>version</code></td><td>string</td><td>yes</td><td>The pack's version (<code>index.invalid-version</code>)</td></tr>
+          <tr><td><code>formatVersion</code></td><td>integer</td><td>yes</td><td>The pack's format version, 1 (<code>index.unsupported-format</code>)</td></tr>
+          <tr><td><code>sha256</code></td><td>string</td><td>yes</td><td>SHA-256 of the archive file, 64 hex digits (<code>index.invalid-sha256</code>)</td></tr>
+          <tr><td><code>sourceLanguage</code></td><td>string</td><td>yes</td><td>The pack's source language (<code>index.invalid-language</code>)</td></tr>
+          <tr><td><code>targetLanguage</code></td><td>string</td><td>yes</td><td>The pack's target language (<code>index.invalid-language</code>)</td></tr>
+          <tr><td><code>contentTypes</code></td><td>array of strings</td><td>yes</td><td>The content types the pack uses, at least one; ids of at most 50 characters (<code>index.no-content-types</code>, <code>index.invalid-content-type</code>)</td></tr>
+          <tr><td><code>title</code></td><td>string</td><td>yes</td><td>The pack's title: not blank, at most 200 characters, no control characters except line feeds (<code>index.invalid-title</code>)</td></tr>
+          <tr><td><code>description</code></td><td>string</td><td>no</td><td>At most 1,000 characters, no control characters except line feeds (<code>index.invalid-description</code>)</td></tr>
+          <tr><td><code>sizeBytes</code></td><td>integer</td><td>yes</td><td>Exact size of the archive file, 1 byte to 100 MiB (<code>index.invalid-size</code>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Rules:</p>
+    <ul>
+      <li>The file MUST be at most 1 MiB (<code>index.too-large</code>) and valid JSON with all required fields of the right types (<code>index.syntax</code>). These problems reject the whole index.</li>
+      <li>An entry that breaks one of the other rules is skipped with a warning; the others stay available. An id listed twice keeps its first entry (<code>index.duplicate-id</code>).</li>
+      <li>Readers ignore unknown fields in the index, unlike in packs.</li>
+      <li>After the download the app checks the size (<code>download.size-mismatch</code>) and the checksum (<code>download.sha256-mismatch</code>), and that the pack's id and version are those of the index entry (<code>download.index-mismatch</code>). Then the pack goes through the same import as a file.</li>
+      <li>Writers SHOULD sort the entries by id and SHOULD generate the index from the final archives, so the checksums and sizes are right. The <a href="templates/lingua-index.json">template index</a> lists the template archives.</li>
+    </ul>
+    <h2 id="16-security-considerations">16. Security considerations</h2>
+    <p>Packs come from anyone. Readers MUST treat every pack and every index as untrusted input:</p>
+    <ul>
+      <li>Extract archives only into a fresh, empty folder; reject unsafe paths before writing anything, and check after resolving each path that it is still inside that folder.</li>
+      <li>Count extracted bytes while extracting, and stop at the size and ratio limits. Never trust the sizes an archive declares.</li>
+      <li>Never follow symbolic links, and never let a referenced path leave the pack.</li>
+      <li>Check picture headers before decoding pictures, so oversized or animated images are never decoded.</li>
+      <li>Parse JSON strictly, with size limits before parsing.</li>
+      <li>Treat the index checksum as protection against corrupt or swapped downloads, not as proof of who made the pack: whoever controls the repository controls both the index and the archives.</li>
+    </ul>
+    <p>Writers SHOULD keep personal data out of packs: strip metadata such as camera data, locations or text chunks from pictures, and do not write user names or file system paths into packs. Text such as bidirectional control characters (U+202A–U+202E, U+2066–U+2069) is not rejected by readers, but it can make text display misleadingly; writers SHOULD NOT write it.</p>
+    <p>Packs often reproduce material from textbooks. Writers SHOULD remind their users that a pack they share must respect the rights to that material, and SHOULD ask for a license when a pack is created.</p>
+    <h2 id="17-appendix">17. Appendix</h2>
+    <h3 id="limits">Limits</h3>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Limit</th><th scope="col">Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Entries in an archive, files in a pack</td><td>10,000</td></tr>
+          <tr><td>Uncompressed size of a pack</td><td>100 MiB</td></tr>
+          <tr><td>Compression ratio (checked after the first MiB)</td><td>100</td></tr>
+          <tr><td><code>pack.json</code>, each included file</td><td>5 MiB</td></tr>
+          <tr><td>Picture</td><td>1 MiB, 2,048 × 2,048 pixels</td></tr>
+          <tr><td>String (any JSON string)</td><td>1,000 characters</td></tr>
+          <tr><td>Id (pack, section, item, person, tense)</td><td>100 characters</td></tr>
+          <tr><td>Path</td><td>255 characters</td></tr>
+          <tr><td>Repository index</td><td>1 MiB, 1,000 packs</td></tr>
+          <tr><td>Index title</td><td>200 characters</td></tr>
+          <tr><td>Index content type</td><td>50 characters</td></tr>
+          <tr><td>Titles in editable packs (pack and lection)</td><td>100 characters</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 id="patterns">Patterns</h3>
+    <pre><code>Id               ^[a-z0-9]+([._-][a-z0-9]+)*$
+Version          ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$
+Language tag     ^[a-zA-Z]{2,3}(-[a-zA-Z]{4})?(-([a-zA-Z]{2}|[0-9]{3}))?$
+Index path       ^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*\.linguapack$
+SHA-256          ^[0-9a-fA-F]{64}$
+Editable pack id ^user\.[a-z2-7]{16}$   (as the app makes them; any user. id is editable)</code></pre>
+    <h3 id="templates">Templates</h3>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Template</th><th scope="col">Shows</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="templates/minimal-vocabulary/pack.json">minimal-vocabulary</a></td><td>The smallest useful pack: one section, three words</td></tr>
+          <tr><td><a href="templates/vocabulary-lections-media/pack.json">vocabulary-lections-media</a></td><td>Nested sections, pictures with descriptions, examples, gender, plural, hints, speech text</td></tr>
+          <tr><td><a href="templates/conjugation/pack.json">conjugation</a></td><td>Persons, two tenses, a regular and an irregular verb</td></tr>
+          <tr><td><a href="templates/mixed-with-includes/pack.json">mixed-with-includes</a></td><td>Both content types in included files, one direction, documentation files</td></tr>
+          <tr><td><a href="templates/user-pack/pack.json">user-pack</a></td><td>A pack as the app exports it, which imports as an editable pack</td></tr>
+          <tr><td><a href="templates/lingua-index.json">lingua-index.json</a></td><td>A repository index listing the template archives</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Each template folder has a built archive next to it, such as <code>templates/minimal-vocabulary.linguapack</code>.</p>
+    <h3 id="changes">Changes</h3>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Revision</th><th scope="col">Date</th><th scope="col">Changes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1.0</td><td><time datetime="2026-10-26">2026-10-26</time></td><td>First publication, describing format version 1 as read by wörds 0.11.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

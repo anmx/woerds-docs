@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anmx.github.io/woerds-docs/spec/v1/schema/pack.schema.json#/$defs/contentBlock",
+  "type": "vocabulary",
+  "entries": [
+    {
+      "id": "casa",
+      "term": "la casa",
+      "translation": "das Haus",
+      "sectionIds": [
+        "s1"
+      ]
+    }
+  ]
+}

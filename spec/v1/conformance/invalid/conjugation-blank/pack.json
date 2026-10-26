@@ -1,0 +1,66 @@
+{
+  "formatVersion": 1,
+  "id": "org.example.conformance",
+  "version": "1.0.0",
+  "title": "Conformance case",
+  "license": "CC0-1.0",
+  "sourceLanguage": "de",
+  "targetLanguage": "it",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "Lektion 1"
+    }
+  ],
+  "content": [
+    {
+      "type": "conjugation",
+      "persons": [
+        {
+          "id": "1s",
+          "label": "io",
+          "prompt": "ich"
+        },
+        {
+          "id": "2s",
+          "label": "tu",
+          "prompt": "du"
+        }
+      ],
+      "tenses": [
+        {
+          "id": "presente",
+          "label": "Presente",
+          "sourceLabel": "Präsens"
+        }
+      ],
+      "verbs": [
+        {
+          "id": "essere",
+          "infinitive": "essere",
+          "translation": "sein",
+          "sectionIds": [
+            "s1"
+          ],
+          "conjugations": [
+            {
+              "tenseId": "presente",
+              "forms": [
+                {
+                  "personId": "1s",
+                  "prompt": "ich bin",
+                  "answer": " "
+                },
+                {
+                  "personId": "2s",
+                  "prompt": "du bist",
+                  "answer": "tu sei"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

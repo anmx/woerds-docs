@@ -1,0 +1,61 @@
+{
+  "formatVersion": 1,
+  "id": "org.example.conformance",
+  "version": "1.0.0",
+  "title": "Conformance case",
+  "license": "CC0-1.0",
+  "sourceLanguage": "de",
+  "targetLanguage": "it",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "Lektion 1"
+    }
+  ],
+  "content": [
+    {
+      "type": "vocabulary",
+      "entries": [
+        {
+          "id": "casa",
+          "term": "la casa",
+          "translation": "das Haus",
+          "sectionIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "casa-2",
+          "term": "la casa",
+          "translation": "das Haus",
+          "sectionIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "sole",
+          "term": "il sole",
+          "translation": "die Sonne"
+        },
+        {
+          "id": "mare",
+          "term": "il mare",
+          "translation": "das Meer",
+          "sectionIds": [
+            "s1"
+          ],
+          "image": "images/sun.png"
+        },
+        {
+          "id": "luna",
+          "term": "la luna",
+          "translation": "der Mond",
+          "sectionIds": [
+            "s1"
+          ],
+          "imageDescription": "Ein Mond"
+        }
+      ]
+    }
+  ]
+}

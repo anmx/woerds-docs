@@ -1,0 +1,15 @@
+[
+  {
+    "type": "vocabulary",
+    "entries": [
+      {
+        "id": "casa",
+        "term": "la casa",
+        "translation": "das Haus",
+        "sectionIds": [
+          "s1"
+        ]
+      }
+    ]
+  }
+]

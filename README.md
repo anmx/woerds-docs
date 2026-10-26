@@ -8,6 +8,7 @@ wörds ist eine Lernkarten-App zum Sprachenlernen: Vokabeln und Verbformen, mit 
 | --- | --- | --- |
 | **Using the app (latest version)** · **Die App benutzen (aktuelle Version)** | [User guide](en/user-guide.md) | [Benutzerhandbuch](de/benutzerhandbuch.md) |
 | **Privacy** · **Datenschutz** | [Privacy policy](en/privacy-policy.md) | [Datenschutzerklärung](de/datenschutz.md) |
+| **Making language packs** · **Sprachpakete erstellen** | [Language pack specification](spec/README.md) (for developers) | [Sprachpaket-Spezifikation](spec/README.md) (für die Entwicklung, auf Englisch) |
 | **Earlier versions** · **Frühere Versionen** | [User guide 0.11.0](versions/0.11.0/en/user-guide.md) | [Benutzerhandbuch 0.11.0](versions/0.11.0/de/benutzerhandbuch.md) |
 | | [User guide 0.10.0](versions/0.10.0/en/user-guide.md) | [Benutzerhandbuch 0.10.0](versions/0.10.0/de/benutzerhandbuch.md) |
 | | [User guide 0.9.0](versions/0.9.0/en/user-guide.md) | [Benutzerhandbuch 0.9.0](versions/0.9.0/de/benutzerhandbuch.md) |
@@ -26,3 +27,10 @@ guide of the latest version, so its address never changes. Earlier versions are 
 
 `--check` (run by CI) fails when an HTML page is out of date, a guide names a different version than
 `versions.json`, or `index.html` does not link an earlier version.
+
+## Language pack specification
+
+`spec/` holds the specification of the language pack format for developers of other tools (English only). It is
+versioned by the pack format (`spec/v1/`), not by the app, so `--freeze` leaves it alone. Its Markdown pages are built
+with the guides; the template archives, the conformance archives and the template index are built by
+`python3 tools/spec/build-spec.py` (CI runs it with `--check`). See [spec/README.md](spec/README.md).

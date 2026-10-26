@@ -1,0 +1,79 @@
+{
+    "indexVersion": 1,
+    "packs": [
+        {
+            "id": "org.example.de-it.home",
+            "path": "vocabulary-lections-media.linguapack",
+            "version": "1.2.0",
+            "formatVersion": 1,
+            "sha256": "9b3222ea19bf1a9dea33e0a2fe2b4246b172203ad213f6dcade45898818a3446",
+            "sourceLanguage": "de",
+            "targetLanguage": "it",
+            "contentTypes": [
+                "vocabulary"
+            ],
+            "title": "Italienisch: Zu Hause",
+            "sizeBytes": 2362,
+            "description": "Wörter rund ums Haus, mit Bildern, Beispielsätzen und Pluralformen."
+        },
+        {
+            "id": "org.example.en-es.minimal",
+            "path": "minimal-vocabulary.linguapack",
+            "version": "1.0.0",
+            "formatVersion": 1,
+            "sha256": "4c68d5631c760e26c5b4b2b861e7f1d2ae378ba06c59b27c38615dffed409da7",
+            "sourceLanguage": "en",
+            "targetLanguage": "es",
+            "contentTypes": [
+                "vocabulary"
+            ],
+            "title": "Spanish: first words",
+            "sizeBytes": 451
+        },
+        {
+            "id": "org.example.en-fr.basics",
+            "path": "mixed-with-includes.linguapack",
+            "version": "2.0.1",
+            "formatVersion": 1,
+            "sha256": "046cbf348cc138a991926d7e94c1abbcb6c7ec7ed1e971d578eca27577400ad6",
+            "sourceLanguage": "en",
+            "targetLanguage": "fr",
+            "contentTypes": [
+                "conjugation",
+                "vocabulary"
+            ],
+            "title": "French basics: words and verbs",
+            "sizeBytes": 2178,
+            "description": "A vocabulary block and a conjugation block, each in its own file."
+        },
+        {
+            "id": "org.example.en-it.verbs",
+            "path": "conjugation.linguapack",
+            "version": "1.0.0",
+            "formatVersion": 1,
+            "sha256": "9977b380c3a0837839c5555baa874c5d2a8616db253172e9e85f482c802c9f58",
+            "sourceLanguage": "en",
+            "targetLanguage": "it",
+            "contentTypes": [
+                "conjugation"
+            ],
+            "title": "Italian verbs: present and perfect",
+            "sizeBytes": 959
+        },
+        {
+            "id": "user.k7m2q4xa3bnd5fpe",
+            "path": "user-pack.linguapack",
+            "version": "1.0.7",
+            "formatVersion": 1,
+            "sha256": "bf3be8873330faafb69dc7ab5c2a4e4874dfcab045619a0f763e12af9332542e",
+            "sourceLanguage": "de",
+            "targetLanguage": "it",
+            "contentTypes": [
+                "vocabulary"
+            ],
+            "title": "Mein Italienischheft",
+            "sizeBytes": 1182,
+            "description": "Wörter aus dem Kurs, Kapitel 1 und 2"
+        }
+    ]
+}
