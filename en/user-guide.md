@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.11.1. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.12.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -22,6 +22,7 @@ This guide describes wörds 0.11.1. The screenshots show the Terracotta color sc
 - [Reminder and widget](#reminder-and-widget)
 - [Progress](#progress)
 - [Practising articles](#practising-articles)
+- [Kid mode and coins](#kid-mode-and-coins)
 - [Language packs](#language-packs)
 - [Your own packs](#your-own-packs)
 - [Words from photos](#words-from-photos)
@@ -215,6 +216,27 @@ with the nouns you got wrong.
 
 Practising articles does not change your schedule or today's review, but its answers count in the calendar.
 
+## Kid mode and coins
+
+Kid mode makes wörds more motivating for school children. It is off until you turn it on in
+[Settings](#kid-mode) → **Kid mode**.
+
+- **A playful look**: rounder shapes, brighter colors, larger buttons and words, friendlier texts.
+- **Cheers**: whenever your child knows several words in a row (5 unless you choose 3, 10, 15 or 20), a short
+  animation celebrates it: confetti rain, a growing heart, a fist bump, a thumbs up, a star, a flexed arm or a party
+  popper. The next card can be answered right away. With reduced animations the picture only fades in and out.
+- **Coins**: every cheer earns a coin, and finishing today's review earns a bonus coin once a day. Typed answers and
+  practising articles count too. Undoing an answer takes its coin back. Coins are counted per language pair; the
+  top bar shows them.
+- **Trading coins in**: agree with your child beforehand what coins are worth (for example 20 coins for a trip to
+  the ice cream parlour). In Progress, the **Coins** card shows the coins to trade in and the coins per day. Tap
+  **Trade in coins**, choose how many and confirm. Coins already traded in stay in the chart, greyed out, the oldest
+  ones first; the big number always shows what is left.
+
+When you turn kid mode off, wörds asks what should happen to the coins: **Keep coins and statistics** (they come back
+when kid mode is turned on again) or **Delete coins and statistics** for every language pair. Resetting the learning
+progress keeps the coins.
+
 ## Language packs
 
 All content comes in language packs. Open them from the box icon in the library, or via **Settings → Language
@@ -346,11 +368,16 @@ everything read from them. An import left for a day is deleted.
 - **Accept a missing article** counts a noun without its article as almost right; turned off, it is wrong.
 - **Daily reminder** and its **Time**: see [Reminder and widget](#reminder-and-widget).
 
+### Kid mode
+
+- **Kid mode** turns the playful look, the cheers and the coins on or off; see [Kid mode and coins](#kid-mode-and-coins).
+- **Cheer after … words in a row**: 3, 5, 10, 15 or 20 (normally 5).
+
 ### Data
 
 - **Language packs** opens the [pack management](#language-packs).
 - **Reset learning progress** deletes all answers and sessions, including those of the article practice. Installed
-  packs stay. This cannot be undone.
+  packs and kid mode coins stay. This cannot be undone.
 
 ### About wörds
 

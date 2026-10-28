@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.11.1 (aktuell) · Frühere Versionen: <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.12.0 (aktuell) · Frühere Versionen: <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.11.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.12.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -41,6 +41,7 @@
         <li><a href="#erinnerung-und-widget">Erinnerung und Widget</a></li>
         <li><a href="#fortschritt">Fortschritt</a></li>
         <li><a href="#artikel-üben">Artikel üben</a></li>
+        <li><a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a></li>
         <li><a href="#sprachpakete">Sprachpakete</a></li>
         <li><a href="#eigene-pakete">Eigene Pakete</a></li>
         <li><a href="#wörter-aus-fotos">Wörter aus Fotos</a></li>
@@ -261,6 +262,15 @@
     </div>
     <p>Eine Runde hat bis zu 20 Nomen. Nach einer richtigen Antwort folgt das nächste Nomen von selbst; nach einer falschen zeigt wörds den richtigen Artikel, bis du auf <strong>Weiter</strong> tippst, und fragt das Nomen am Ende der Runde noch einmal. Die nächste Runde beginnt mit den Nomen, die falsch waren.</p>
     <p>Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, aber seine Antworten zählen im Kalender.</p>
+    <h2 id="schulkind-modus-und-coins">Schulkind-Modus und Coins</h2>
+    <p>Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis du ihn unter <a href="#schulkind-modus">Einstellungen</a> → <strong>Schulkind-Modus</strong> einschaltest.</p>
+    <ul>
+      <li><strong>Verspieltes Aussehen</strong>: rundere Formen, kräftigere Farben, größere Knöpfe und Wörter, freundlichere Texte.</li>
+      <li><strong>Jubel</strong>: Immer wenn dein Kind mehrere Wörter hintereinander weiß (5, sofern du nicht 3, 10, 15 oder 20 wählst), feiert eine kurze Animation das: Konfettiregen, ein wachsendes Herz, ein Faustgruß, ein Daumen hoch, ein Stern, ein Muskel oder eine Konfettikanone. Die nächste Karte lässt sich sofort beantworten. Mit reduzierten Animationen blendet das Bild nur ein und aus.</li>
+      <li><strong>Coins</strong>: Jeder Jubel bringt einen Coin, und die geschaffte heutige Wiederholung einmal am Tag einen Bonus-Coin. Eingetippte Antworten und das Artikeltraining zählen mit. Wird eine Antwort rückgängig gemacht, ist auch ihr Coin wieder weg. Coins werden pro Sprachpaar gezählt; die obere Leiste zeigt sie.</li>
+      <li><strong>Coins einlösen</strong>: Macht vorher mit deinem Kind aus, was Coins wert sind (zum Beispiel 20 Coins für einen Besuch in der Eisdiele). Im Fortschritt zeigt die Karte <strong>Coins</strong>, wie viele Coins zum Einlösen da sind und wie viele an jedem Tag dazukamen. Tippe auf <strong>Coins einlösen</strong>, wähle die Anzahl und bestätige. Eingelöste Coins bleiben im Diagramm sichtbar, aber grau, die ältesten zuerst; die große Zahl zeigt immer, was noch übrig ist.</li>
+    </ul>
+    <p>Wenn du den Schulkind-Modus ausschaltest, fragt wörds, was mit den Coins passieren soll: <strong>Coins und Statistik behalten</strong> (sie sind wieder da, wenn der Modus wieder eingeschaltet wird) oder <strong>Coins und Statistik löschen</strong> für alle Sprachpaare. Den Lernfortschritt zurückzusetzen behält die Coins.</p>
     <h2 id="sprachpakete">Sprachpakete</h2>
     <p>Alle Inhalte kommen in Sprachpaketen. Du öffnest sie über das Kisten-Symbol in der Bibliothek oder über <strong>Einstellungen → Sprachpakete</strong>.</p>
     <div class="figures">
@@ -383,10 +393,15 @@
       <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
       <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
     </ul>
+    <h3 id="schulkind-modus">Schulkind-Modus</h3>
+    <ul>
+      <li><strong>Schulkind-Modus</strong> schaltet das verspielte Aussehen, den Jubel und die Coins ein oder aus; siehe <a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a>.</li>
+      <li><strong>Jubel nach … Wörtern hintereinander</strong>: 3, 5, 10, 15 oder 20 (normalerweise 5).</li>
+    </ul>
     <h3 id="daten">Daten</h3>
     <ul>
       <li><strong>Sprachpakete</strong> öffnet die <a href="#sprachpakete">Paketverwaltung</a>.</li>
-      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete bleiben. Das lässt sich nicht rückgängig machen.</li>
+      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.</li>
     </ul>
     <h3 id="über-wörds">Über wörds</h3>
     <ul>

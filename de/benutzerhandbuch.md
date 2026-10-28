@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.11.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.12.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -23,6 +23,7 @@ andere Farben haben.
 - [Erinnerung und Widget](#erinnerung-und-widget)
 - [Fortschritt](#fortschritt)
 - [Artikel üben](#artikel-üben)
+- [Schulkind-Modus und Coins](#schulkind-modus-und-coins)
 - [Sprachpakete](#sprachpakete)
 - [Eigene Pakete](#eigene-pakete)
 - [Wörter aus Fotos](#wörter-aus-fotos)
@@ -223,6 +224,28 @@ nächste Runde beginnt mit den Nomen, die falsch waren.
 
 Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, aber seine Antworten zählen im Kalender.
 
+## Schulkind-Modus und Coins
+
+Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis du ihn unter
+[Einstellungen](#schulkind-modus) → **Schulkind-Modus** einschaltest.
+
+- **Verspieltes Aussehen**: rundere Formen, kräftigere Farben, größere Knöpfe und Wörter, freundlichere Texte.
+- **Jubel**: Immer wenn dein Kind mehrere Wörter hintereinander weiß (5, sofern du nicht 3, 10, 15 oder 20 wählst),
+  feiert eine kurze Animation das: Konfettiregen, ein wachsendes Herz, ein Faustgruß, ein Daumen hoch, ein Stern, ein
+  Muskel oder eine Konfettikanone. Die nächste Karte lässt sich sofort beantworten. Mit reduzierten Animationen blendet
+  das Bild nur ein und aus.
+- **Coins**: Jeder Jubel bringt einen Coin, und die geschaffte heutige Wiederholung einmal am Tag einen Bonus-Coin.
+  Eingetippte Antworten und das Artikeltraining zählen mit. Wird eine Antwort rückgängig gemacht, ist auch ihr Coin
+  wieder weg. Coins werden pro Sprachpaar gezählt; die obere Leiste zeigt sie.
+- **Coins einlösen**: Macht vorher mit deinem Kind aus, was Coins wert sind (zum Beispiel 20 Coins für einen Besuch in
+  der Eisdiele). Im Fortschritt zeigt die Karte **Coins**, wie viele Coins zum Einlösen da sind und wie viele an jedem
+  Tag dazukamen. Tippe auf **Coins einlösen**, wähle die Anzahl und bestätige. Eingelöste Coins bleiben im Diagramm
+  sichtbar, aber grau, die ältesten zuerst; die große Zahl zeigt immer, was noch übrig ist.
+
+Wenn du den Schulkind-Modus ausschaltest, fragt wörds, was mit den Coins passieren soll: **Coins und Statistik
+behalten** (sie sind wieder da, wenn der Modus wieder eingeschaltet wird) oder **Coins und Statistik löschen** für alle
+Sprachpaare. Den Lernfortschritt zurückzusetzen behält die Coins.
+
 ## Sprachpakete
 
 Alle Inhalte kommen in Sprachpaketen. Du öffnest sie über das Kisten-Symbol in der Bibliothek oder über
@@ -364,11 +387,17 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
 - **Fehlenden Artikel akzeptieren** lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.
 - **Tägliche Erinnerung** und ihre **Uhrzeit**: siehe [Erinnerung und Widget](#erinnerung-und-widget).
 
+### Schulkind-Modus
+
+- **Schulkind-Modus** schaltet das verspielte Aussehen, den Jubel und die Coins ein oder aus; siehe
+  [Schulkind-Modus und Coins](#schulkind-modus-und-coins).
+- **Jubel nach … Wörtern hintereinander**: 3, 5, 10, 15 oder 20 (normalerweise 5).
+
 ### Daten
 
 - **Sprachpakete** öffnet die [Paketverwaltung](#sprachpakete).
 - **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte
-  Pakete bleiben. Das lässt sich nicht rückgängig machen.
+  Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.
 
 ### Über wörds
 

@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.11.1 (latest) · Earlier versions: <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.12.0 (latest) · Earlier versions: <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.11.1. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.12.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -41,6 +41,7 @@
         <li><a href="#reminder-and-widget">Reminder and widget</a></li>
         <li><a href="#progress">Progress</a></li>
         <li><a href="#practising-articles">Practising articles</a></li>
+        <li><a href="#kid-mode-and-coins">Kid mode and coins</a></li>
         <li><a href="#language-packs">Language packs</a></li>
         <li><a href="#your-own-packs">Your own packs</a></li>
         <li><a href="#words-from-photos">Words from photos</a></li>
@@ -261,6 +262,15 @@
     </div>
     <p>A round has up to 20 nouns. After a right answer the next noun follows by itself; after a wrong one, wörds shows the right article until you tap <strong>Continue</strong>, and asks that noun once more at the end of the round. The next round starts with the nouns you got wrong.</p>
     <p>Practising articles does not change your schedule or today's review, but its answers count in the calendar.</p>
+    <h2 id="kid-mode-and-coins">Kid mode and coins</h2>
+    <p>Kid mode makes wörds more motivating for school children. It is off until you turn it on in <a href="#kid-mode">Settings</a> → <strong>Kid mode</strong>.</p>
+    <ul>
+      <li><strong>A playful look</strong>: rounder shapes, brighter colors, larger buttons and words, friendlier texts.</li>
+      <li><strong>Cheers</strong>: whenever your child knows several words in a row (5 unless you choose 3, 10, 15 or 20), a short animation celebrates it: confetti rain, a growing heart, a fist bump, a thumbs up, a star, a flexed arm or a party popper. The next card can be answered right away. With reduced animations the picture only fades in and out.</li>
+      <li><strong>Coins</strong>: every cheer earns a coin, and finishing today's review earns a bonus coin once a day. Typed answers and practising articles count too. Undoing an answer takes its coin back. Coins are counted per language pair; the top bar shows them.</li>
+      <li><strong>Trading coins in</strong>: agree with your child beforehand what coins are worth (for example 20 coins for a trip to the ice cream parlour). In Progress, the <strong>Coins</strong> card shows the coins to trade in and the coins per day. Tap <strong>Trade in coins</strong>, choose how many and confirm. Coins already traded in stay in the chart, greyed out, the oldest ones first; the big number always shows what is left.</li>
+    </ul>
+    <p>When you turn kid mode off, wörds asks what should happen to the coins: <strong>Keep coins and statistics</strong> (they come back when kid mode is turned on again) or <strong>Delete coins and statistics</strong> for every language pair. Resetting the learning progress keeps the coins.</p>
     <h2 id="language-packs">Language packs</h2>
     <p>All content comes in language packs. Open them from the box icon in the library, or via <strong>Settings → Language packs</strong>.</p>
     <div class="figures">
@@ -383,10 +393,15 @@
       <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>
       <li><strong>Daily reminder</strong> and its <strong>Time</strong>: see <a href="#reminder-and-widget">Reminder and widget</a>.</li>
     </ul>
+    <h3 id="kid-mode">Kid mode</h3>
+    <ul>
+      <li><strong>Kid mode</strong> turns the playful look, the cheers and the coins on or off; see <a href="#kid-mode-and-coins">Kid mode and coins</a>.</li>
+      <li><strong>Cheer after … words in a row</strong>: 3, 5, 10, 15 or 20 (normally 5).</li>
+    </ul>
     <h3 id="data">Data</h3>
     <ul>
       <li><strong>Language packs</strong> opens the <a href="#language-packs">pack management</a>.</li>
-      <li><strong>Reset learning progress</strong> deletes all answers and sessions, including those of the article practice. Installed packs stay. This cannot be undone.</li>
+      <li><strong>Reset learning progress</strong> deletes all answers and sessions, including those of the article practice. Installed packs and kid mode coins stay. This cannot be undone.</li>
     </ul>
     <h3 id="about-wörds">About wörds</h3>
     <ul>
