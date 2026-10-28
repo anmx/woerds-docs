@@ -229,6 +229,8 @@ Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, abe
 Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis du ihn unter
 [Einstellungen](#schulkind-modus) → **Schulkind-Modus** einschaltest.
 
+![Der Schulkind-Modus in den Einstellungen](../images/de/50-kid-settings.png) ![Jubel nach sechs Wörtern hintereinander](../images/de/51-kid-cheer.png)
+
 - **Verspieltes Aussehen**: rundere Formen, kräftigere Farben, größere Knöpfe und Wörter, freundlichere Texte.
 - **Jubel**: Immer wenn dein Kind mehrere Wörter hintereinander weiß (5, sofern du nicht 3, 10, 15 oder 20 wählst),
   feiert eine kurze Animation das: Konfettiregen, ein wachsendes Herz, ein Faustgruß, ein Daumen hoch, ein Stern, ein
@@ -241,6 +243,10 @@ Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis
   der Eisdiele). Im Fortschritt zeigt die Karte **Coins**, wie viele Coins zum Einlösen da sind und wie viele an jedem
   Tag dazukamen. Tippe auf **Coins einlösen**, wähle die Anzahl und bestätige. Eingelöste Coins bleiben im Diagramm
   sichtbar, aber grau, die ältesten zuerst; die große Zahl zeigt immer, was noch übrig ist.
+
+![Das Ende einer Lerneinheit im Schulkind-Modus](../images/de/52-kid-summary.png) ![Coins im Fortschritt](../images/de/53-kid-coins.png)
+
+![Coins einlösen](../images/de/54-kid-redeem.png) ![Den Schulkind-Modus ausschalten](../images/de/55-kid-off.png)
 
 Wenn du den Schulkind-Modus ausschaltest, fragt wörds, was mit den Coins passieren soll: **Coins und Statistik
 behalten** (sie sind wieder da, wenn der Modus wieder eingeschaltet wird) oder **Coins und Statistik löschen** für alle

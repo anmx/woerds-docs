@@ -221,6 +221,8 @@ Practising articles does not change your schedule or today's review, but its ans
 Kid mode makes wörds more motivating for school children. It is off until you turn it on in
 [Settings](#kid-mode) → **Kid mode**.
 
+![Kid mode in the settings](../images/en/50-kid-settings.png) ![A cheer after six words in a row](../images/en/51-kid-cheer.png)
+
 - **A playful look**: rounder shapes, brighter colors, larger buttons and words, friendlier texts.
 - **Cheers**: whenever your child knows several words in a row (5 unless you choose 3, 10, 15 or 20), a short
   animation celebrates it: confetti rain, a growing heart, a fist bump, a thumbs up, a star, a flexed arm or a party
@@ -232,6 +234,10 @@ Kid mode makes wörds more motivating for school children. It is off until you t
   the ice cream parlour). In Progress, the **Coins** card shows the coins to trade in and the coins per day. Tap
   **Trade in coins**, choose how many and confirm. Coins already traded in stay in the chart, greyed out, the oldest
   ones first; the big number always shows what is left.
+
+![The end of a session in kid mode](../images/en/52-kid-summary.png) ![Coins in Progress](../images/en/53-kid-coins.png)
+
+![Trading coins in](../images/en/54-kid-redeem.png) ![Turning kid mode off](../images/en/55-kid-off.png)
 
 When you turn kid mode off, wörds asks what should happen to the coins: **Keep coins and statistics** (they come back
 when kid mode is turned on again) or **Delete coins and statistics** for every language pair. Resetting the learning
