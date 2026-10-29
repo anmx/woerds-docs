@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.12.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.13.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -16,6 +16,7 @@ This guide describes wörds 0.12.0. The screenshots show the Terracotta color sc
 - [The library](#the-library)
 - [Starting a session](#starting-a-session)
 - [Studying a card](#studying-a-card)
+- [Looking back and correcting](#looking-back-and-correcting)
 - [Typing the answer](#typing-the-answer)
 - [End of a session](#end-of-a-session)
 - [Today's review](#todays-review)
@@ -102,6 +103,8 @@ More on the card screen:
 - The **speaker** plays the pronunciation with your device's text-to-speech voice. If the voice for the language is
   missing, wörds offers to install it.
 - **Undo** (the arrow at the top right, or the message at the bottom) takes back the last answer.
+- The **arrows** at the card's sides go back to earlier cards and forward again; see
+  [Looking back and correcting](#looking-back-and-correcting).
 - The tag at the top left shows the direction, for example *DE → IT*.
 - **✕** closes the session. It stays open, and you can continue it later from the library.
 
@@ -110,6 +113,30 @@ pack has one. Many words of the built-in Italian pack also have a picture of the
 off in the settings.
 
 ![A vocabulary card with a picture](../images/en/10-vocabulary-front.png) ![Its answer side](../images/en/11-vocabulary-answer.png)
+
+## Looking back and correcting
+
+Every card has an arrow on its left: **back**. With it you can look at the question of the card you just turned, or
+at the cards before it. Once you have gone back, an arrow on the right goes **forward** again, up to the card that is
+next. A card you have not answered yet never shows the forward arrow.
+
+![An earlier card with its grade](../images/en/17-browse-earlier.png) ![Correcting a typed answer](../images/en/18-browse-typed.png)
+
+- Normally the arrows go **one side at a time**: the answer, then the question, then the answer of the card before,
+  and so on. In [Settings](#daily-review) you can choose **one card at a time** instead; then each tap shows an
+  earlier card's question, and tapping the card turns it.
+- A tap on a turned card also shows its question again.
+- An earlier card shows the number it had in the session and how you graded it. **Graded it wrong?** Tap the other
+  grade (for typed answers: *Wrong*, *Almost* or *Right*). wörds corrects it in your progress; the session stays where
+  it is.
+- Looking back does not change the card that is next: if you said *Didn't know it*, that stays, and text you started
+  typing is kept.
+- After a group and at the end of a session, **Look at the last card** goes back as well.
+- With a keyboard, the left and right arrow keys do the same.
+
+In **kid mode** earlier cards can be looked at, but not changed. **Undo** still takes the last answer back, but it
+cannot turn *Didn't know it* into *Knew it*: once the answer has been seen, a card can only get the same or a lower
+grade again.
 
 ## Typing the answer
 
@@ -228,8 +255,8 @@ Kid mode makes wörds more motivating for school children. It is off until you t
   animation celebrates it: confetti rain, a growing heart, a fist bump, a thumbs up, a star, a flexed arm or a party
   popper. The next card can be answered right away. With reduced animations the picture only fades in and out.
 - **Coins**: every cheer earns a coin, and finishing today's review earns a bonus coin once a day. Typed answers and
-  practising articles count too. Undoing an answer takes its coin back. Coins are counted per language pair; the
-  top bar shows them.
+  practising articles count too. Undoing an answer takes its coin back, and earlier cards cannot be corrected. Coins
+  are counted per language pair; the top bar shows them.
 - **Trading coins in**: agree with your child beforehand what coins are worth (for example 20 coins for a trip to
   the ice cream parlour). In Progress, the **Coins** card shows the coins to trade in and the coins per day. Tap
   **Trade in coins**, choose how many and confirm. Coins already traded in stay in the chart, greyed out, the oldest
@@ -372,6 +399,8 @@ everything read from them. An import left for a day is deleted.
 - **Type answers** asks you to type each answer in today's review instead of flipping the card.
 - **Accept missing accents** counts an answer that differs only in accents as almost right; turned off, it is wrong.
 - **Accept a missing article** counts a noun without its article as almost right; turned off, it is wrong.
+- **Back and forward arrows**: whether the arrows on a card go **one side at a time** or **one card at a time**; see
+  [Looking back and correcting](#looking-back-and-correcting).
 - **Daily reminder** and its **Time**: see [Reminder and widget](#reminder-and-widget).
 
 ### Kid mode

@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.12.0 (aktuell) · Frühere Versionen: <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.13.0 (aktuell) · Frühere Versionen: <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.12.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.13.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -35,6 +35,7 @@
         <li><a href="#die-bibliothek">Die Bibliothek</a></li>
         <li><a href="#eine-sitzung-starten">Eine Sitzung starten</a></li>
         <li><a href="#mit-einer-karte-lernen">Mit einer Karte lernen</a></li>
+        <li><a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a></li>
         <li><a href="#die-antwort-eintippen">Die Antwort eintippen</a></li>
         <li><a href="#ende-einer-sitzung">Ende einer Sitzung</a></li>
         <li><a href="#heutige-wiederholung">Heutige Wiederholung</a></li>
@@ -140,6 +141,7 @@
     <ul>
       <li>Der <strong>Lautsprecher</strong> spielt die Aussprache mit der Sprachausgabe deines Geräts ab. Fehlt die Stimme für die Sprache, bietet wörds an, sie zu installieren.</li>
       <li><strong>Rückgängig</strong> (der Pfeil oben rechts oder die Meldung unten) nimmt die letzte Antwort zurück.</li>
+      <li>Die <strong>Pfeile</strong> an den Seiten der Karte führen zu früheren Karten und wieder vor; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
       <li>Das Schild oben links zeigt die Richtung, zum Beispiel <em>DE → IT</em>.</li>
       <li><strong>✕</strong> schließt die Sitzung. Sie bleibt offen, und du kannst sie später in der Bibliothek fortsetzen.</li>
     </ul>
@@ -154,6 +156,27 @@
         <figcaption>Ihre Antwortseite</figcaption>
       </figure>
     </div>
+    <h2 id="zurückblättern-und-korrigieren">Zurückblättern und korrigieren</h2>
+    <p>Jede Karte hat links einen Pfeil: <strong>zurück</strong>. Damit schaust du dir die Frage der gerade umgedrehten Karte an, oder die Karten davor. Bist du zurückgegangen, führt ein Pfeil rechts wieder <strong>vor</strong>, bis zu der Karte, die als Nächstes dran ist. Eine Karte, die du noch nicht beantwortet hast, zeigt nie den Pfeil nach vorn.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/17-browse-earlier.png" alt="Eine frühere Karte mit ihrer Bewertung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine frühere Karte mit ihrer Bewertung</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/18-browse-typed.png" alt="Eine eingetippte Antwort korrigieren" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine eingetippte Antwort korrigieren</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Normalerweise blättern die Pfeile <strong>Seite für Seite</strong>: die Antwort, dann die Frage, dann die Antwort der Karte davor und so weiter. In den <a href="#tägliche-wiederholung">Einstellungen</a> kannst du stattdessen <strong>Karte für Karte</strong> wählen; dann zeigt jeder Tipp die Frage einer früheren Karte, und ein Tipp auf die Karte dreht sie um.</li>
+      <li>Ein Tipp auf eine umgedrehte Karte zeigt auch wieder ihre Frage.</li>
+      <li>Eine frühere Karte zeigt ihre Nummer in der Sitzung und wie du sie bewertet hast. <strong>Falsch bewertet?</strong> Tippe auf die andere Bewertung (bei eingetippten Antworten: <em>Falsch</em>, <em>Fast</em> oder <em>Richtig</em>). wörds korrigiert sie in deinem Fortschritt; die Sitzung bleibt, wo sie ist.</li>
+      <li>Zurückblättern ändert nichts an der Karte, die dran ist: Hast du <em>Nicht gewusst</em> gesagt, bleibt das so, und schon eingetippter Text bleibt stehen.</li>
+      <li>Nach einer Gruppe und am Ende einer Sitzung geht <strong>Letzte Karte ansehen</strong> ebenfalls zurück.</li>
+      <li>Mit einer Tastatur machen die Pfeiltasten links und rechts dasselbe.</li>
+    </ul>
+    <p>Im <strong>Schulkind-Modus</strong> lassen sich frühere Karten ansehen, aber nicht ändern. <strong>Rückgängig</strong> nimmt die letzte Antwort weiterhin zurück, macht aber aus <em>Nicht gewusst</em> kein <em>Gewusst</em>: Wer die Antwort schon gesehen hat, kann für die Karte nur dieselbe oder eine schlechtere Bewertung geben.</p>
     <h2 id="die-antwort-eintippen">Die Antwort eintippen</h2>
     <p>Mit <strong>Antwort: Eintippen</strong> nimmt ein Feld deine Antwort in der Sprache der Kartenrückseite entgegen, und die Tastatur wechselt nach Möglichkeit in diese Sprache. Tasten über der Tastatur fügen Buchstaben ein, die ihr fehlen können, etwa <em>à</em> oder <em>è</em>. Tippe auf <strong>Prüfen</strong> (oder drücke die Eingabetaste).</p>
     <div class="figures">
@@ -277,7 +300,7 @@
     <ul>
       <li><strong>Verspieltes Aussehen</strong>: rundere Formen, kräftigere Farben, größere Knöpfe und Wörter, freundlichere Texte.</li>
       <li><strong>Jubel</strong>: Immer wenn dein Kind mehrere Wörter hintereinander weiß (5, sofern du nicht 3, 10, 15 oder 20 wählst), feiert eine kurze Animation das: Konfettiregen, ein wachsendes Herz, ein Faustgruß, ein Daumen hoch, ein Stern, ein Muskel oder eine Konfettikanone. Die nächste Karte lässt sich sofort beantworten. Mit reduzierten Animationen blendet das Bild nur ein und aus.</li>
-      <li><strong>Coins</strong>: Jeder Jubel bringt einen Coin, und die geschaffte heutige Wiederholung einmal am Tag einen Bonus-Coin. Eingetippte Antworten und das Artikeltraining zählen mit. Wird eine Antwort rückgängig gemacht, ist auch ihr Coin wieder weg. Coins werden pro Sprachpaar gezählt; die obere Leiste zeigt sie.</li>
+      <li><strong>Coins</strong>: Jeder Jubel bringt einen Coin, und die geschaffte heutige Wiederholung einmal am Tag einen Bonus-Coin. Eingetippte Antworten und das Artikeltraining zählen mit. Wird eine Antwort rückgängig gemacht, ist auch ihr Coin wieder weg, und frühere Karten lassen sich nicht korrigieren. Coins werden pro Sprachpaar gezählt; die obere Leiste zeigt sie.</li>
       <li><strong>Coins einlösen</strong>: Macht vorher mit deinem Kind aus, was Coins wert sind (zum Beispiel 20 Coins für einen Besuch in der Eisdiele). Im Fortschritt zeigt die Karte <strong>Coins</strong>, wie viele Coins zum Einlösen da sind und wie viele an jedem Tag dazukamen. Tippe auf <strong>Coins einlösen</strong>, wähle die Anzahl und bestätige. Eingelöste Coins bleiben im Diagramm sichtbar, aber grau, die ältesten zuerst; die große Zahl zeigt immer, was noch übrig ist.</li>
     </ul>
     <div class="figures">
@@ -421,6 +444,7 @@
       <li><strong>Antworten eintippen</strong>: In der heutigen Wiederholung tippst du jede Antwort ein, statt die Karte umzudrehen.</li>
       <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
       <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
+      <li><strong>Pfeile zurück und vor</strong>: ob die Pfeile auf einer Karte <strong>Seite für Seite</strong> oder <strong>Karte für Karte</strong> blättern; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
       <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
     </ul>
     <h3 id="schulkind-modus">Schulkind-Modus</h3>

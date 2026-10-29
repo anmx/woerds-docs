@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.12.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.13.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -17,6 +17,7 @@ andere Farben haben.
 - [Die Bibliothek](#die-bibliothek)
 - [Eine Sitzung starten](#eine-sitzung-starten)
 - [Mit einer Karte lernen](#mit-einer-karte-lernen)
+- [Zurückblättern und korrigieren](#zurückblättern-und-korrigieren)
 - [Die Antwort eintippen](#die-antwort-eintippen)
 - [Ende einer Sitzung](#ende-einer-sitzung)
 - [Heutige Wiederholung](#heutige-wiederholung)
@@ -105,6 +106,8 @@ Außerdem auf dem Kartenbildschirm:
 - Der **Lautsprecher** spielt die Aussprache mit der Sprachausgabe deines Geräts ab. Fehlt die Stimme für die
   Sprache, bietet wörds an, sie zu installieren.
 - **Rückgängig** (der Pfeil oben rechts oder die Meldung unten) nimmt die letzte Antwort zurück.
+- Die **Pfeile** an den Seiten der Karte führen zu früheren Karten und wieder vor; siehe
+  [Zurückblättern und korrigieren](#zurückblättern-und-korrigieren).
 - Das Schild oben links zeigt die Richtung, zum Beispiel *DE → IT*.
 - **✕** schließt die Sitzung. Sie bleibt offen, und du kannst sie später in der Bibliothek fortsetzen.
 
@@ -113,6 +116,30 @@ Beispielsatz. Viele Wörter des mitgelieferten Italienisch-Pakets haben außerde
 Einstellungen kannst du die Bilder ausschalten.
 
 ![Eine Vokabelkarte mit Bild](../images/de/10-vocabulary-front.png) ![Ihre Antwortseite](../images/de/11-vocabulary-answer.png)
+
+## Zurückblättern und korrigieren
+
+Jede Karte hat links einen Pfeil: **zurück**. Damit schaust du dir die Frage der gerade umgedrehten Karte an, oder
+die Karten davor. Bist du zurückgegangen, führt ein Pfeil rechts wieder **vor**, bis zu der Karte, die als Nächstes
+dran ist. Eine Karte, die du noch nicht beantwortet hast, zeigt nie den Pfeil nach vorn.
+
+![Eine frühere Karte mit ihrer Bewertung](../images/de/17-browse-earlier.png) ![Eine eingetippte Antwort korrigieren](../images/de/18-browse-typed.png)
+
+- Normalerweise blättern die Pfeile **Seite für Seite**: die Antwort, dann die Frage, dann die Antwort der Karte davor
+  und so weiter. In den [Einstellungen](#tägliche-wiederholung) kannst du stattdessen **Karte für Karte** wählen;
+  dann zeigt jeder Tipp die Frage einer früheren Karte, und ein Tipp auf die Karte dreht sie um.
+- Ein Tipp auf eine umgedrehte Karte zeigt auch wieder ihre Frage.
+- Eine frühere Karte zeigt ihre Nummer in der Sitzung und wie du sie bewertet hast. **Falsch bewertet?** Tippe auf die
+  andere Bewertung (bei eingetippten Antworten: *Falsch*, *Fast* oder *Richtig*). wörds korrigiert sie in deinem
+  Fortschritt; die Sitzung bleibt, wo sie ist.
+- Zurückblättern ändert nichts an der Karte, die dran ist: Hast du *Nicht gewusst* gesagt, bleibt das so, und schon
+  eingetippter Text bleibt stehen.
+- Nach einer Gruppe und am Ende einer Sitzung geht **Letzte Karte ansehen** ebenfalls zurück.
+- Mit einer Tastatur machen die Pfeiltasten links und rechts dasselbe.
+
+Im **Schulkind-Modus** lassen sich frühere Karten ansehen, aber nicht ändern. **Rückgängig** nimmt die letzte Antwort
+weiterhin zurück, macht aber aus *Nicht gewusst* kein *Gewusst*: Wer die Antwort schon gesehen hat, kann für die Karte
+nur dieselbe oder eine schlechtere Bewertung geben.
 
 ## Die Antwort eintippen
 
@@ -238,7 +265,8 @@ Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis
   das Bild nur ein und aus.
 - **Coins**: Jeder Jubel bringt einen Coin, und die geschaffte heutige Wiederholung einmal am Tag einen Bonus-Coin.
   Eingetippte Antworten und das Artikeltraining zählen mit. Wird eine Antwort rückgängig gemacht, ist auch ihr Coin
-  wieder weg. Coins werden pro Sprachpaar gezählt; die obere Leiste zeigt sie.
+  wieder weg, und frühere Karten lassen sich nicht korrigieren. Coins werden pro Sprachpaar gezählt; die obere Leiste
+  zeigt sie.
 - **Coins einlösen**: Macht vorher mit deinem Kind aus, was Coins wert sind (zum Beispiel 20 Coins für einen Besuch in
   der Eisdiele). Im Fortschritt zeigt die Karte **Coins**, wie viele Coins zum Einlösen da sind und wie viele an jedem
   Tag dazukamen. Tippe auf **Coins einlösen**, wähle die Anzahl und bestätige. Eingelöste Coins bleiben im Diagramm
@@ -391,6 +419,8 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
 - **Fehlende Akzente akzeptieren** lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig
   gelten; ausgeschaltet ist sie falsch.
 - **Fehlenden Artikel akzeptieren** lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.
+- **Pfeile zurück und vor**: ob die Pfeile auf einer Karte **Seite für Seite** oder **Karte für Karte** blättern; siehe
+  [Zurückblättern und korrigieren](#zurückblättern-und-korrigieren).
 - **Tägliche Erinnerung** und ihre **Uhrzeit**: siehe [Erinnerung und Widget](#erinnerung-und-widget).
 
 ### Schulkind-Modus

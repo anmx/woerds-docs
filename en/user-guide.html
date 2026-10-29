@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.12.0 (latest) · Earlier versions: <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.13.0 (latest) · Earlier versions: <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.12.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.13.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -35,6 +35,7 @@
         <li><a href="#the-library">The library</a></li>
         <li><a href="#starting-a-session">Starting a session</a></li>
         <li><a href="#studying-a-card">Studying a card</a></li>
+        <li><a href="#looking-back-and-correcting">Looking back and correcting</a></li>
         <li><a href="#typing-the-answer">Typing the answer</a></li>
         <li><a href="#end-of-a-session">End of a session</a></li>
         <li><a href="#todays-review">Today's review</a></li>
@@ -140,6 +141,7 @@
     <ul>
       <li>The <strong>speaker</strong> plays the pronunciation with your device's text-to-speech voice. If the voice for the language is missing, wörds offers to install it.</li>
       <li><strong>Undo</strong> (the arrow at the top right, or the message at the bottom) takes back the last answer.</li>
+      <li>The <strong>arrows</strong> at the card's sides go back to earlier cards and forward again; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
       <li>The tag at the top left shows the direction, for example <em>DE → IT</em>.</li>
       <li><strong>✕</strong> closes the session. It stays open, and you can continue it later from the library.</li>
     </ul>
@@ -154,6 +156,27 @@
         <figcaption>Its answer side</figcaption>
       </figure>
     </div>
+    <h2 id="looking-back-and-correcting">Looking back and correcting</h2>
+    <p>Every card has an arrow on its left: <strong>back</strong>. With it you can look at the question of the card you just turned, or at the cards before it. Once you have gone back, an arrow on the right goes <strong>forward</strong> again, up to the card that is next. A card you have not answered yet never shows the forward arrow.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/17-browse-earlier.png" alt="An earlier card with its grade" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>An earlier card with its grade</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/18-browse-typed.png" alt="Correcting a typed answer" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Correcting a typed answer</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Normally the arrows go <strong>one side at a time</strong>: the answer, then the question, then the answer of the card before, and so on. In <a href="#daily-review">Settings</a> you can choose <strong>one card at a time</strong> instead; then each tap shows an earlier card's question, and tapping the card turns it.</li>
+      <li>A tap on a turned card also shows its question again.</li>
+      <li>An earlier card shows the number it had in the session and how you graded it. <strong>Graded it wrong?</strong> Tap the other grade (for typed answers: <em>Wrong</em>, <em>Almost</em> or <em>Right</em>). wörds corrects it in your progress; the session stays where it is.</li>
+      <li>Looking back does not change the card that is next: if you said <em>Didn't know it</em>, that stays, and text you started typing is kept.</li>
+      <li>After a group and at the end of a session, <strong>Look at the last card</strong> goes back as well.</li>
+      <li>With a keyboard, the left and right arrow keys do the same.</li>
+    </ul>
+    <p>In <strong>kid mode</strong> earlier cards can be looked at, but not changed. <strong>Undo</strong> still takes the last answer back, but it cannot turn <em>Didn't know it</em> into <em>Knew it</em>: once the answer has been seen, a card can only get the same or a lower grade again.</p>
     <h2 id="typing-the-answer">Typing the answer</h2>
     <p>With <strong>Answer: Type</strong>, a field takes your answer in the language of the back of the card, and the keyboard switches to that language where it can. Buttons above the keyboard insert letters it may lack, such as <em>à</em> or <em>è</em>. Tap <strong>Check</strong> (or press Enter).</p>
     <div class="figures">
@@ -277,7 +300,7 @@
     <ul>
       <li><strong>A playful look</strong>: rounder shapes, brighter colors, larger buttons and words, friendlier texts.</li>
       <li><strong>Cheers</strong>: whenever your child knows several words in a row (5 unless you choose 3, 10, 15 or 20), a short animation celebrates it: confetti rain, a growing heart, a fist bump, a thumbs up, a star, a flexed arm or a party popper. The next card can be answered right away. With reduced animations the picture only fades in and out.</li>
-      <li><strong>Coins</strong>: every cheer earns a coin, and finishing today's review earns a bonus coin once a day. Typed answers and practising articles count too. Undoing an answer takes its coin back. Coins are counted per language pair; the top bar shows them.</li>
+      <li><strong>Coins</strong>: every cheer earns a coin, and finishing today's review earns a bonus coin once a day. Typed answers and practising articles count too. Undoing an answer takes its coin back, and earlier cards cannot be corrected. Coins are counted per language pair; the top bar shows them.</li>
       <li><strong>Trading coins in</strong>: agree with your child beforehand what coins are worth (for example 20 coins for a trip to the ice cream parlour). In Progress, the <strong>Coins</strong> card shows the coins to trade in and the coins per day. Tap <strong>Trade in coins</strong>, choose how many and confirm. Coins already traded in stay in the chart, greyed out, the oldest ones first; the big number always shows what is left.</li>
     </ul>
     <div class="figures">
@@ -421,6 +444,7 @@
       <li><strong>Type answers</strong> asks you to type each answer in today's review instead of flipping the card.</li>
       <li><strong>Accept missing accents</strong> counts an answer that differs only in accents as almost right; turned off, it is wrong.</li>
       <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>
+      <li><strong>Back and forward arrows</strong>: whether the arrows on a card go <strong>one side at a time</strong> or <strong>one card at a time</strong>; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
       <li><strong>Daily reminder</strong> and its <strong>Time</strong>: see <a href="#reminder-and-widget">Reminder and widget</a>.</li>
     </ul>
     <h3 id="kid-mode">Kid mode</h3>

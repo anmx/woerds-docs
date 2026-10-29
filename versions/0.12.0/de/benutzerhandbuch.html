@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du…">
+  <meta name="robots" content="noindex">
+  <title>wörds – Benutzerhandbuch</title>
+  <link rel="stylesheet" href="../../../manual.css">
+  <link rel="alternate" hreflang="de" href="benutzerhandbuch.html">
+  <link rel="alternate" hreflang="en" href="../en/user-guide.html">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header>
+    <nav aria-label="Handbuch">
+      <a href="../../../index.html">Handbuch</a>
+      <a href="benutzerhandbuch.html" aria-current="page">Benutzerhandbuch</a>
+      <a href="../../../de/datenschutz.html">Datenschutz</a>
+      <a class="lang" href="../en/user-guide.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+  <main id="main">
+    <p class="version archived" role="note">Dieses Handbuch beschreibt wörds 0.12.0, eine frühere Version. <a href="../../../de/benutzerhandbuch.html">Handbuch der aktuellen Version (0.13.0)</a> · Frühere Versionen: <a href="../../0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../../0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../../0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../../0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
+    <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
+    <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.12.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <h2 id="inhalt">Inhalt</h2>
+    <nav aria-labelledby="inhalt">
+      <ul>
+        <li><a href="#erste-schritte">Erste Schritte</a></li>
+        <li><a href="#die-bibliothek">Die Bibliothek</a></li>
+        <li><a href="#eine-sitzung-starten">Eine Sitzung starten</a></li>
+        <li><a href="#mit-einer-karte-lernen">Mit einer Karte lernen</a></li>
+        <li><a href="#die-antwort-eintippen">Die Antwort eintippen</a></li>
+        <li><a href="#ende-einer-sitzung">Ende einer Sitzung</a></li>
+        <li><a href="#heutige-wiederholung">Heutige Wiederholung</a></li>
+        <li><a href="#erinnerung-und-widget">Erinnerung und Widget</a></li>
+        <li><a href="#fortschritt">Fortschritt</a></li>
+        <li><a href="#artikel-üben">Artikel üben</a></li>
+        <li><a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a></li>
+        <li><a href="#sprachpakete">Sprachpakete</a></li>
+        <li><a href="#eigene-pakete">Eigene Pakete</a></li>
+        <li><a href="#wörter-aus-fotos">Wörter aus Fotos</a></li>
+        <li><a href="#einstellungen">Einstellungen</a></li>
+        <li><a href="#tablets-und-foldables">Tablets und Foldables</a></li>
+        <li><a href="#barrierefreiheit-und-datenschutz">Barrierefreiheit und Datenschutz</a></li>
+        <li><a href="#fragen-und-probleme">Fragen und Probleme</a></li>
+      </ul>
+    </nav>
+    <h2 id="erste-schritte">Erste Schritte</h2>
+    <p>Beim ersten Start installiert wörds die mitgelieferten Inhalte und fragt, was du lernen möchtest. Wähle ein Sprachpaar und tippe auf <strong>Los geht's</strong>. Weitere Sprachpaare kannst du später installieren und jederzeit wechseln.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/01-onboarding.png" alt="Der Willkommensbildschirm" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Der Willkommensbildschirm</figcaption>
+      </figure>
+    </div>
+    <p>Die App hat drei Bereiche, die du immer über die Leiste unten erreichst (auf Tablets: an der Seite):</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Bereich</th><th scope="col">Wofür</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Bibliothek</th><td>Inhalte ansehen und eine Sitzung starten</td></tr>
+          <tr><th scope="row">Fortschritt</th><td>Die heutige Wiederholung und was du bisher gelernt hast</td></tr>
+          <tr><th scope="row">Einstellungen</th><td>Sprache, Farben, Aussprache, tägliche Wiederholung, Sprachpakete</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="die-bibliothek">Die Bibliothek</h2>
+    <p>Die Bibliothek zeigt alles, was du im aktuellen Sprachpaar lernen kannst. Mit den Chips oben wechselst du zwischen den installierten Paketen, zum Beispiel <em>Verben</em> (Konjugation) und <em>Wortschatz</em> (Vokabeln). Jedes Paket ist in Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/08-library.png" alt="Die Bibliothek mit der heutigen Wiederholung oben" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Bibliothek mit der heutigen Wiederholung oben</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/09-library-vocabulary.png" alt="Das Vokabelpaket" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Das Vokabelpaket</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Suchen</strong> findet Wörter und Verbformen im ausgewählten Paket.</li>
+      <li><strong>Heutige Wiederholung</strong> oben startet deine tägliche Wiederholung oder setzt sie fort (siehe <a href="#heutige-wiederholung">Heutige Wiederholung</a>).</li>
+      <li><strong>Letzte Sitzung fortsetzen</strong> erscheint, solange eine Sitzung offen ist; sie geht genau dort weiter, wo du aufgehört hast.</li>
+      <li>Die <strong>▶-Taste</strong> neben einem Abschnitt startet den ganzen Abschnitt.</li>
+      <li>Sind zwei oder mehr Sprachpaare installiert, tippst du auf das Sprachpaar unter dem Titel, um zu wechseln.</li>
+      <li>Das <strong>Kisten-Symbol</strong> oben rechts öffnet die <a href="#sprachpakete">Sprachpakete</a>.</li>
+    </ul>
+    <p>Willst du nur einige Einträge lernen, hakst du sie an. <strong>Alle auswählen</strong> hakt einen ganzen Abschnitt an; <strong>Leeren</strong> oben hebt die Auswahl auf. Die Taste unten zeigt, wie viele Einträge du gewählt hast.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/02-library-selection.png" alt="Zwei Verben ausgewählt" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Zwei Verben ausgewählt</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/15-pair-switcher.png" alt="Sprachpaar wechseln" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Sprachpaar wechseln</figcaption>
+      </figure>
+    </div>
+    <h2 id="eine-sitzung-starten">Eine Sitzung starten</h2>
+    <p>Bevor eine Sitzung beginnt, legst du in einem Blatt fest, wie du üben willst:</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/03-session-setup.png" alt="Sitzung einrichten" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Sitzung einrichten</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Richtung</strong>: von deiner Sprache in die Lernsprache (<em>Deutsch → Italienisch</em>: du siehst „ich bin" und sagst „io sono"), umgekehrt oder <strong>Beide</strong>.</li>
+      <li><strong>Reihenfolge</strong> (nur bei <em>Beide</em>): <strong>nacheinander</strong> übt alle Karten eines Eintrags erst in der einen, dann in der anderen Richtung. <strong>abwechselnd</strong> fragt jede Karte im Wechsel in beiden Richtungen ab.</li>
+      <li><strong>Zeiten</strong> (nur bei Verben): welche Zeitformen du üben willst.</li>
+      <li><strong>Antwort</strong>: die Karte <strong>Umdrehen</strong> und dich selbst bewerten, oder die Antwort <strong>Eintippen</strong> (siehe <a href="#die-antwort-eintippen">Die Antwort eintippen</a>). wörds merkt sich deine Wahl für jedes Sprachpaar.</li>
+    </ul>
+    <p>Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf <strong>Starten</strong>.</p>
+    <h2 id="mit-einer-karte-lernen">Mit einer Karte lernen</h2>
+    <p>Eine Karte zeigt eine Aufgabe. Sag oder denk die Antwort, dann tippe auf die Karte, um sie umzudrehen.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/04-card-front.png" alt="Die Vorderseite einer Karte" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Vorderseite einer Karte</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/05-card-answer.png" alt="Die Antwort" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Antwort</figcaption>
+      </figure>
+    </div>
+    <p>Dann bewertest du dich:</p>
+    <ul>
+      <li><strong>Gewusst</strong> – oder die Karte nach rechts wischen.</li>
+      <li><strong>Nicht gewusst</strong> – oder die Karte nach links wischen.</li>
+    </ul>
+    <p>Sei ehrlich: wörds plant deine Wiederholungen nach diesen Antworten. Deshalb ist <strong>Gewusst</strong> auch erst möglich, wenn die Antwort zu sehen ist. Tippst du vor dem Umdrehen auf <strong>Nicht gewusst</strong>, zeigt die Karte zuerst die Antwort; ein zweites Tippen auf <strong>Nicht gewusst</strong> geht weiter.</p>
+    <p>Außerdem auf dem Kartenbildschirm:</p>
+    <ul>
+      <li>Der <strong>Lautsprecher</strong> spielt die Aussprache mit der Sprachausgabe deines Geräts ab. Fehlt die Stimme für die Sprache, bietet wörds an, sie zu installieren.</li>
+      <li><strong>Rückgängig</strong> (der Pfeil oben rechts oder die Meldung unten) nimmt die letzte Antwort zurück.</li>
+      <li>Das Schild oben links zeigt die Richtung, zum Beispiel <em>DE → IT</em>.</li>
+      <li><strong>✕</strong> schließt die Sitzung. Sie bleibt offen, und du kannst sie später in der Bibliothek fortsetzen.</li>
+    </ul>
+    <p><strong>Vokabelkarten</strong> zeigen das Wort und auf der Antwortseite Artikel, Plural und, wenn das Paket einen hat, einen Beispielsatz. Viele Wörter des mitgelieferten Italienisch-Pakets haben außerdem ein Bild ihrer Bedeutung. In den Einstellungen kannst du die Bilder ausschalten.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/10-vocabulary-front.png" alt="Eine Vokabelkarte mit Bild" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine Vokabelkarte mit Bild</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/11-vocabulary-answer.png" alt="Ihre Antwortseite" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ihre Antwortseite</figcaption>
+      </figure>
+    </div>
+    <h2 id="die-antwort-eintippen">Die Antwort eintippen</h2>
+    <p>Mit <strong>Antwort: Eintippen</strong> nimmt ein Feld deine Antwort in der Sprache der Kartenrückseite entgegen, und die Tastatur wechselt nach Möglichkeit in diese Sprache. Tasten über der Tastatur fügen Buchstaben ein, die ihr fehlen können, etwa <em>à</em> oder <em>è</em>. Tippe auf <strong>Prüfen</strong> (oder drücke die Eingabetaste).</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/23-typed-question.png" alt="Eine Antwort eintippen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine Antwort eintippen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/24-typed-verdict.png" alt="Die Prüfung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Prüfung</figcaption>
+      </figure>
+    </div>
+    <p>wörds vergleicht deine Antwort mit der Lösung und sagt, was es gefunden hat:</p>
+    <ul>
+      <li><strong>Richtig</strong> zählt als gewusst.</li>
+      <li><strong>Fast</strong> – ein Buchstabe falsch in einem längeren Wort, nur die Akzente (wenn akzeptiert), der falsche Artikel oder kein Artikel (wenn akzeptiert) – zählt als <em>fast gewusst</em>: Die Karte kommt früher wieder als eine gewusste, aber später als eine vergessene.</li>
+      <li><strong>Nicht ganz</strong> zählt als nicht gewusst.</li>
+    </ul>
+    <p>Groß- und Kleinschreibung, zusätzliche Leerzeichen und Satzzeichen spielen nie eine Rolle. Bietet eine Lösung Alternativen an (<em>lui/lei è</em>), ist jede davon richtig, und ein Subjektpronomen, mit dem die Lösung beginnt, darf fehlen (<em>sono</em> für <em>io sono</em>). Unter dem Ergebnis zeigt die Lösung, was gefehlt hat oder anders war, und deine Eingabe, was falsch war.</p>
+    <p>Liegt wörds daneben, tippe auf <strong>Ich hatte recht</strong>, dann zählt die Antwort als gewusst. <strong>Lösung zeigen</strong> gibt eine Karte auf; sie zählt dann als nicht gewusst. Was du eintippst, wird nie gespeichert.</p>
+    <p>Eintippen geht in beiden Richtungen. Für die heutige Wiederholung schaltest du es unter <strong>Einstellungen → Tägliche Wiederholung → Antworten eintippen</strong> ein.</p>
+    <h2 id="ende-einer-sitzung">Ende einer Sitzung</h2>
+    <p>Eine Sitzung ist in Gruppen aufgeteilt: eine pro Verb und Zeit oder eine Handvoll Wörter. Nach jeder Gruppe zeigt wörds, wie es lief und was als Nächstes kommt. Am Ende siehst du das Ergebnis der ganzen Sitzung.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/06-group-done.png" alt="Eine Gruppe ist geschafft" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine Gruppe ist geschafft</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/07-session-complete.png" alt="Die Zusammenfassung der Sitzung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Zusammenfassung der Sitzung</figcaption>
+      </figure>
+    </div>
+    <p><strong>Unbekannte Karten wiederholen</strong> startet eine kurze Sitzung nur mit den Karten, die du nicht wusstest. <strong>Fertig</strong> führt zurück in die Bibliothek.</p>
+    <h2 id="heutige-wiederholung">Heutige Wiederholung</h2>
+    <p>wörds arbeitet mit <em>verteilter Wiederholung</em>: Eine Karte, die du gut kannst, kommt erst nach langer Pause wieder, eine schwierige bald. Dahinter steckt FSRS, ein modernes Planungsverfahren, das für jede Karte schätzt, wie wahrscheinlich du sie noch weißt.</p>
+    <p>Jeden Tag stellt wörds die <strong>heutige Wiederholung</strong> zusammen:</p>
+    <ul>
+      <li>fällige Karten, zuerst die, die du am ehesten vergisst, und</li>
+      <li>einige <strong>neue Karten</strong> aus Paketen, mit denen du schon angefangen hast (20 am Tag, wenn du nichts änderst).</li>
+    </ul>
+    <p>Du startest die Wiederholung oben in der Bibliothek oder im Bereich <strong>Fortschritt</strong>. Eine Zahl am Bereich Fortschritt zeigt, wie viele Karten warten. Lange Wiederholungen sind in Blöcke zu 20 Karten aufgeteilt. Eine unterbrochene Wiederholung kannst du am selben Tag fortsetzen. Ein Lerntag beginnt um 4 Uhr morgens, damit eine Sitzung spät am Abend noch zu diesem Tag zählt.</p>
+    <p>Jede Antwort fließt in deinen Plan ein: in einer normalen Sitzung genauso wie in der Wiederholung.</p>
+    <h2 id="erinnerung-und-widget">Erinnerung und Widget</h2>
+    <p><strong>Einstellungen → Tägliche Wiederholung → Tägliche Erinnerung</strong> schickt zur gewählten Uhrzeit eine Benachrichtigung (19:00 Uhr, wenn du nichts änderst), aber nur an Tagen, an denen die heutige Wiederholung noch Karten für dich hat. Beim Einschalten fragt sie nach der Erlaubnis für Benachrichtigungen; die Benachrichtigung nennt keine Wörter.</p>
+    <p>Das Widget <strong>Heutige Wiederholung</strong> für den Startbildschirm zeigt, wie viele Karten warten, und startet die Wiederholung mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die Farben der App.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/25-settings-reminder.png" alt="Einstellungen mit der Erinnerung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Einstellungen mit der Erinnerung</figcaption>
+      </figure>
+    </div>
+    <h2 id="fortschritt">Fortschritt</h2>
+    <p>Der Bereich <strong>Fortschritt</strong> zeigt die heutige Wiederholung und für jedes Paket, wie weit du bist. Tippe auf ein Paket, um dieselben Zahlen pro Abschnitt zu sehen; innerhalb eines Abschnitts kannst du seine Gruppen einblenden.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/12-progress.png" alt="Fortschritt" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Fortschritt</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/13-progress-pack.png" alt="Fortschritt eines Pakets" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Fortschritt eines Pakets</figcaption>
+      </figure>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Angabe</th><th scope="col">Bedeutung</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">gelernt</th><td>Karten, die du mindestens einmal beantwortet hast</td></tr>
+          <tr><th scope="row">Gefestigt</th><td>Karten, die du auch nach drei Wochen oder mehr noch wüsstest</td></tr>
+          <tr><th scope="row">Fällig</th><td>Karten, die jetzt zur Wiederholung anstehen</td></tr>
+          <tr><th scope="row">Trefferquote</th><td>Anteil der Antworten mit <em>Gewusst</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Mit den Tasten unter <strong>Richtung</strong> siehst du die Zahlen für eine Richtung oder für beide.</p>
+    <p>Über den Paketen zeigt der Fortschritt:</p>
+    <ul>
+      <li><strong>Schwierige Wörter</strong>: Wörter, die du dreimal oder öfter vergessen hast, nachdem du sie schon konntest. Tippe auf die Karte, um sie zu sehen. In der Liste kannst du ein Wort <strong>bearbeiten</strong> (ein Wort eines installierten Pakets bearbeitest du in einer Kopie des Pakets, die deinen Fortschritt übernimmt) oder <strong>zurücksetzen</strong>, um es von vorn zu lernen. Ein Wort verschwindet aus der Liste, sobald du es drei Wochen lang behältst. In der Bibliothek, im Editor und auf der Antwortseite einer Karte sind diese Wörter als <strong>Schwierig</strong> markiert.</li>
+      <li><strong>Die nächsten 7 Tage</strong>: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.</li>
+      <li><strong>Die letzten 12 Wochen</strong>: ein Kalender der Tage, an denen du gelernt hast; je dunkler ein Tag, desto mehr Antworten. <strong>Als Liste zeigen</strong> schreibt beide Diagramme als Tabelle aus.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/14-progress-insights.png" alt="Ausblick und Kalender" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ausblick und Kalender</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/26-difficult-words.png" alt="Schwierige Wörter" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Schwierige Wörter</figcaption>
+      </figure>
+    </div>
+    <h2 id="artikel-üben">Artikel üben</h2>
+    <p><strong>Artikel üben</strong> fragt nur nach dem Artikel von Nomen: <em>casa</em> – heißt es <em>il</em>, <em>lo</em>, <em>la</em> oder <em>l'</em>? Du findest es in der Bibliothek (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf Nomen mit ihrem Artikel gibt.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/27-articles.png" alt="Artikel üben" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Artikel üben</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/28-articles-wrong.png" alt="Ein falscher Artikel" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ein falscher Artikel</figcaption>
+      </figure>
+    </div>
+    <p>Eine Runde hat bis zu 20 Nomen. Nach einer richtigen Antwort folgt das nächste Nomen von selbst; nach einer falschen zeigt wörds den richtigen Artikel, bis du auf <strong>Weiter</strong> tippst, und fragt das Nomen am Ende der Runde noch einmal. Die nächste Runde beginnt mit den Nomen, die falsch waren.</p>
+    <p>Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, aber seine Antworten zählen im Kalender.</p>
+    <h2 id="schulkind-modus-und-coins">Schulkind-Modus und Coins</h2>
+    <p>Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis du ihn unter <a href="#schulkind-modus">Einstellungen</a> → <strong>Schulkind-Modus</strong> einschaltest.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/50-kid-settings.png" alt="Der Schulkind-Modus in den Einstellungen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Der Schulkind-Modus in den Einstellungen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/51-kid-cheer.png" alt="Jubel nach sechs Wörtern hintereinander" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Jubel nach sechs Wörtern hintereinander</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Verspieltes Aussehen</strong>: rundere Formen, kräftigere Farben, größere Knöpfe und Wörter, freundlichere Texte.</li>
+      <li><strong>Jubel</strong>: Immer wenn dein Kind mehrere Wörter hintereinander weiß (5, sofern du nicht 3, 10, 15 oder 20 wählst), feiert eine kurze Animation das: Konfettiregen, ein wachsendes Herz, ein Faustgruß, ein Daumen hoch, ein Stern, ein Muskel oder eine Konfettikanone. Die nächste Karte lässt sich sofort beantworten. Mit reduzierten Animationen blendet das Bild nur ein und aus.</li>
+      <li><strong>Coins</strong>: Jeder Jubel bringt einen Coin, und die geschaffte heutige Wiederholung einmal am Tag einen Bonus-Coin. Eingetippte Antworten und das Artikeltraining zählen mit. Wird eine Antwort rückgängig gemacht, ist auch ihr Coin wieder weg. Coins werden pro Sprachpaar gezählt; die obere Leiste zeigt sie.</li>
+      <li><strong>Coins einlösen</strong>: Macht vorher mit deinem Kind aus, was Coins wert sind (zum Beispiel 20 Coins für einen Besuch in der Eisdiele). Im Fortschritt zeigt die Karte <strong>Coins</strong>, wie viele Coins zum Einlösen da sind und wie viele an jedem Tag dazukamen. Tippe auf <strong>Coins einlösen</strong>, wähle die Anzahl und bestätige. Eingelöste Coins bleiben im Diagramm sichtbar, aber grau, die ältesten zuerst; die große Zahl zeigt immer, was noch übrig ist.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/52-kid-summary.png" alt="Das Ende einer Lerneinheit im Schulkind-Modus" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Das Ende einer Lerneinheit im Schulkind-Modus</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/53-kid-coins.png" alt="Coins im Fortschritt" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Coins im Fortschritt</figcaption>
+      </figure>
+    </div>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/54-kid-redeem.png" alt="Coins einlösen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Coins einlösen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/55-kid-off.png" alt="Den Schulkind-Modus ausschalten" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Den Schulkind-Modus ausschalten</figcaption>
+      </figure>
+    </div>
+    <p>Wenn du den Schulkind-Modus ausschaltest, fragt wörds, was mit den Coins passieren soll: <strong>Coins und Statistik behalten</strong> (sie sind wieder da, wenn der Modus wieder eingeschaltet wird) oder <strong>Coins und Statistik löschen</strong> für alle Sprachpaare. Den Lernfortschritt zurückzusetzen behält die Coins.</p>
+    <h2 id="sprachpakete">Sprachpakete</h2>
+    <p>Alle Inhalte kommen in Sprachpaketen. Du öffnest sie über das Kisten-Symbol in der Bibliothek oder über <strong>Einstellungen → Sprachpakete</strong>.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/30-packs-installed.png" alt="Installierte Pakete" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Installierte Pakete</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/31-packs-github.png" alt="GitHub-Quellen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>GitHub-Quellen</figcaption>
+      </figure>
+    </div>
+    <p><strong>Installiert</strong> listet deine Pakete nach Sprachpaar, mit Version und Herkunft (<em>Integriert</em>, <em>Importierte Datei</em> oder <em>GitHub</em>).</p>
+    <ul>
+      <li><strong>Datei importieren</strong> installiert oder aktualisiert ein Paket aus einer <code>.linguapack</code>-Datei, zum Beispiel aus deinen Downloads.</li>
+      <li>Das Papierkorb-Symbol entfernt ein Paket. Dein Lernfortschritt bleibt erhalten und ist wieder da, wenn du das Paket erneut installierst. Mitgelieferte Pakete lassen sich nicht entfernen.</li>
+    </ul>
+    <p><strong>GitHub</strong> installiert Pakete aus GitHub-Repositorys, die ein Paketverzeichnis (<code>lingua-index.json</code>) veröffentlichen:</p>
+    <ol>
+      <li>Tippe auf <strong>Quelle hinzufügen</strong> und gib Inhaber und Namen des Repositorys ein. Du kannst auch einen GitHub-Link in das Feld Inhaber einfügen. Branch und Ordner sind optional.</li>
+      <li>Für ein <strong>privates</strong> Repository fügst du ein Fine-grained-Zugriffstoken hinzu, das nur Lesezugriff auf die Inhalte dieses Repositorys hat. wörds speichert es verschlüsselt, mit einem Schlüssel, der dein Gerät nie verlässt. Ein gespeichertes Token anzeigen, ersetzen oder löschen geht nur mit Fingerabdruck, Gesicht oder Displaysperre.</li>
+      <li>Speichere. wörds zeigt die Pakete, die das Repository anbietet. Tippe auf <strong>Installieren</strong>.</li>
+    </ol>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/32-source-editor.png" alt="Eine GitHub-Quelle hinzufügen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine GitHub-Quelle hinzufügen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/33-source-index.png" alt="Die Pakete einer Quelle" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Pakete einer Quelle</figcaption>
+      </figure>
+    </div>
+    <p>Einmal am Tag prüft wörds im WLAN, ob deine Quellen neue Versionen haben, und zeigt dann <strong>Aktualisieren</strong> an. Große Downloads laufen mit einer Benachrichtigung im Hintergrund weiter.</p>
+    <p><strong>Jedes Paket wird geprüft, bevor etwas gespeichert wird.</strong> Eine beschädigte Datei, ein Paket, das nicht zu seiner Prüfsumme passt, oder Inhalt, der gegen die Regeln verstößt, wird abgelehnt, und wörds sagt dir, warum. Auf deinem Gerät ändert sich dann nichts.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/34-pack-rejected.png" alt="Ein manipuliertes Paket wird abgelehnt" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ein manipuliertes Paket wird abgelehnt</figcaption>
+      </figure>
+    </div>
+    <h2 id="eigene-pakete">Eigene Pakete</h2>
+    <p>Erstelle ein Paket mit deinen eigenen Wörtern, zum Beispiel den Vokabeln deines Lehrbuchs, und lerne damit wie mit jedem anderen Paket.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/40-editor.png" alt="Der Paket-Editor" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Der Paket-Editor</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/41-word.png" alt="Ein Wort hinzufügen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ein Wort hinzufügen</figcaption>
+      </figure>
+    </div>
+    <p><strong>Ein Paket erstellen.</strong> Tippe in den <strong>Sprachpaketen</strong> auf die Plus-Taste und wähle <strong>Neues Paket</strong> (oder <strong>Neues Paket aus Foto</strong>, siehe <a href="#wörter-aus-fotos">Wörter aus Fotos</a>). Gib einen Titel ein, die Sprache, die du kannst, und die, die du lernst, in welche Richtungen die Karten gelernt werden können (<strong>Beide</strong>, <strong>Erkennen</strong> oder <strong>Bilden</strong>) und eine Lizenz, dann tippe auf <strong>Erstellen</strong>. Der Editor öffnet sich. Mit <strong>Paket-Einstellungen</strong> oben im Editor änderst du das alles später; die Sprachen stehen fest, sobald das Paket Wörter enthält.</p>
+    <p><strong>Wörter hinzufügen.</strong> Tippe unten auf die Plus-Taste und wähle <strong>Wort hinzufügen</strong>. Ein Wort und seine Übersetzung genügen. <strong>Speichern und nächstes</strong> lässt die Tastatur offen, so tippst du eine ganze Liste ab. <strong>Mehr Angaben</strong> ergänzt Wortart, Genus, Plural, einen Beispielsatz und ein Bild; gib dem Bild eine Beschreibung, die Screenreader vorlesen. wörds weist dich auf ein Wort hin, das schon im Paket ist. Alles wird laufend gespeichert, und du kannst das Paket sofort lernen.</p>
+    <p><strong>Lektionen</strong> gruppieren die Wörter wie die Kapitel eines Lehrbuchs. Du kannst eine Lektion allein lernen, und ihre Reihenfolge bestimmt, welche neuen Wörter in deiner täglichen Wiederholung zuerst kommen. Mit <strong>Lektionen</strong> oben im Editor legst du sie an, benennst sie um, sortierst und löschst sie; <strong>Lektion hinzufügen</strong> im Menü der Plus-Taste unten legt ebenfalls eine an, und die Plus-Taste im Kopf einer Lektion fügt direkt dort ein Wort hinzu.</p>
+    <p><strong>Wörter ändern.</strong> Tippe auf ein Wort, um es zu bearbeiten; sein Lernfortschritt bleibt erhalten. <strong>Weitere Optionen → Fortschritt zurücksetzen</strong> lässt dich es von vorn lernen, <strong>Wort löschen</strong> entfernt es. Ziehe ein Wort am Griff, um es umzusortieren, oder über den Kopf einer Lektion hinweg, um es in diese Lektion zu verschieben. Halte ein Wort gedrückt, um mehrere auszuwählen; die Leiste unten verschiebt sie dann in eine andere Lektion (<strong>In Lektion verschieben</strong>) oder in eine neue (<strong>Neue Lektion</strong>) oder löscht sie (<strong>Löschen</strong>). Mit TalkBack findest du dieselben Aktionen im Aktionsmenü jedes Worts und jeder Lektion.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/44-editor-selection.png" alt="Ausgewählte Wörter" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Ausgewählte Wörter</figcaption>
+      </figure>
+    </div>
+    <p><strong>Ein installiertes Paket bearbeiten.</strong> Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet <strong>Zum Bearbeiten duplizieren</strong>: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das Original aus (<em>Ausgeblendet</em>). <strong>Original einblenden</strong> holt es zurück. Deine eigenen Pakete sind als <em>Bearbeitbar</em> markiert; ihr Menü hat <strong>Bearbeiten</strong>, <strong>Als Datei exportieren</strong>, <strong>Teilen</strong>, <strong>Duplizieren</strong> und <strong>Löschen</strong>.</p>
+    <p><strong>Exportieren und teilen.</strong> <strong>Als Datei exportieren</strong> speichert dein Paket als <code>.linguapack</code>-Datei in einem Ordner deiner Wahl, <strong>Teilen</strong> schickt es an eine App, und <strong>Alle deine Pakete exportieren</strong> (oben in den Sprachpaketen) schreibt alle in einen Ordner. Die Lizenz, die du gewählt hast, geht mit der Datei. Wer wörds hat, öffnet die Datei mit <strong>Datei importieren</strong>; sie kommt als bearbeitbares Paket an. Ist das Paket schon da, wähle <strong>Ersetzen</strong> (Wörter, die in beiden sind, behalten ihren Lernstand) oder <strong>Beide behalten</strong>.</p>
+    <h2 id="wörter-aus-fotos">Wörter aus Fotos</h2>
+    <p>wörds kann eine gedruckte Wortliste aus Fotos lesen, damit du sie nicht abtippen musst. Der Text wird auf deinem Gerät gelesen; deine Fotos werden nie hochgeladen.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/42-import-pages.png" alt="Fotos einer Wortliste" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Fotos einer Wortliste</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/43-import-review.png" alt="Die Wörter prüfen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Wörter prüfen</figcaption>
+      </figure>
+    </div>
+    <ol>
+      <li>Tippe im Editor auf die Plus-Taste und wähle <strong>Aus Foto importieren</strong>. Oder beginne ein Paket mit <strong>Neues Paket aus Foto</strong> in den <strong>Sprachpaketen</strong>.</li>
+      <li><strong>Foto aufnehmen</strong> öffnet deine Kamera-App, <strong>Fotos auswählen</strong> die Fotoauswahl, in der du mehrere Seiten wählen kannst. wörds sieht nur die Fotos, die du wählst, und fragt nach keiner Berechtigung. Nimm eine Seite pro Foto auf, so gerade und scharf wie möglich.</li>
+      <li>Jede Seite wird gelesen, während du weitermachst; ein seitlich aufgenommenes Foto dreht wörds selbst. Liest sich eine Seite schlecht, bietet ihr Menü <strong>Drehen und zuschneiden</strong>: drehe sie und ziehe die Ecken an die Wortliste.</li>
+      <li>Tippe auf <strong><em>n</em> Wörter prüfen</strong>, um sie durchzusehen. Das Foto zeigt einen Rahmen um jedes gefundene Paar; tippe auf einen Rahmen, um seine Zeile zu finden, oder auf eine Zeile, um zu sehen, wo sie gelesen wurde. Zeilen mit <strong>Schreibweise prüfen</strong> waren schwer zu lesen, und Wörter, die schon im Paket sind, bleiben abgewählt. Tippe auf den Stift, um eine Zeile zu berichtigen, wähle ab, was du nicht willst, und tausche mit <strong>Spalten dieser Seite tauschen</strong>, wenn Wort und Übersetzung vertauscht sind. Überschriften auf der Seite werden zu Lektionen; <strong>In Lektion verschieben …</strong> legt Zeilen in eine andere oder neue.</li>
+      <li>Tippe auf <strong><em>n</em> Wörter importieren</strong>, um die ausgewählten Wörter hinzuzufügen. Die Zusammenfassung zeigt, wie viele Wörter in welche Lektionen gingen. <strong>Rückgängig</strong> entfernt sie wieder und bringt dich zurück zur Prüfung.</li>
+    </ol>
+    <p>Du kannst einen Import verlassen und später weitermachen; er wartet, wo du aufgehört hast. <strong>Verwerfen</strong> löscht die Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen bleibt, wird gelöscht.</p>
+    <h2 id="einstellungen">Einstellungen</h2>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/20-settings.png" alt="Einstellungen: Sprache und Darstellung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Einstellungen: Sprache und Darstellung</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/21-settings-review.png" alt="Einstellungen: tägliche Wiederholung" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Einstellungen: tägliche Wiederholung</figcaption>
+      </figure>
+    </div>
+    <h3 id="sprache">Sprache</h3>
+    <ul>
+      <li><strong>App-Sprache</strong>: wie im System, oder immer Deutsch oder Englisch.</li>
+    </ul>
+    <h3 id="darstellung">Darstellung</h3>
+    <ul>
+      <li><strong>Design</strong>: hell, dunkel oder wie auf deinem Gerät eingestellt.</li>
+      <li><strong>Farbschema</strong>: die Farben deines Hintergrundbilds (ab Android 12), eines von sechs Farbschemata oder eine eigene Farbe. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).</li>
+      <li><strong>Bilder auf Karten anzeigen</strong> schaltet die Bilder auf Vokabelkarten ein oder aus.</li>
+      <li><strong>Animationen</strong>: wie auf deinem Gerät eingestellt, reduziert oder vollständig.</li>
+    </ul>
+    <h3 id="aussprache">Aussprache</h3>
+    <ul>
+      <li><strong>Automatisch abspielen</strong> spricht die Antwort, sobald eine Karte umgedreht wird.</li>
+      <li><strong>… beim Anzeigen abspielen</strong> spricht die Lernsprache, sobald eine Karte sie auf der Vorderseite zeigt.</li>
+      <li><strong>Sprechtempo</strong> macht die Stimme langsamer oder schneller.</li>
+    </ul>
+    <h3 id="tägliche-wiederholung">Tägliche Wiederholung</h3>
+    <ul>
+      <li><strong>Behalten</strong>: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise 90 %). Höher heißt häufiger wiederholen.</li>
+      <li><strong>Neue Karten pro Tag</strong> und <strong>Höchstens Wiederholungen pro Tag</strong> begrenzen, wie viel die tägliche Wiederholung enthält.</li>
+      <li><strong>Antworten eintippen</strong>: In der heutigen Wiederholung tippst du jede Antwort ein, statt die Karte umzudrehen.</li>
+      <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
+      <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
+      <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
+    </ul>
+    <h3 id="schulkind-modus">Schulkind-Modus</h3>
+    <ul>
+      <li><strong>Schulkind-Modus</strong> schaltet das verspielte Aussehen, den Jubel und die Coins ein oder aus; siehe <a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a>.</li>
+      <li><strong>Jubel nach … Wörtern hintereinander</strong>: 3, 5, 10, 15 oder 20 (normalerweise 5).</li>
+    </ul>
+    <h3 id="daten">Daten</h3>
+    <ul>
+      <li><strong>Sprachpakete</strong> öffnet die <a href="#sprachpakete">Paketverwaltung</a>.</li>
+      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.</li>
+    </ul>
+    <h3 id="über-wörds">Über wörds</h3>
+    <ul>
+      <li><strong>Open-Source-Lizenzen</strong> listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu lesen.</li>
+    </ul>
+    <p><strong>Eigene Farbe</strong>: Wähle Farbton und Farbigkeit (oder gib einen Hex-Code ein) und einen Stil. Die Vorschau zeigt das Ergebnis hell und dunkel.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/22-custom-color.png" alt="Eine eigene Farbe" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Eine eigene Farbe</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/16-library-dark.png" alt="Dunkles Design" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Dunkles Design</figcaption>
+      </figure>
+    </div>
+    <h2 id="tablets-und-foldables">Tablets und Foldables</h2>
+    <p>Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen. Solange die Bildschirmtastatur für eine eingetippte Antwort offen ist, rückt alles über den Knick.</p>
+    <div class="figures">
+      <figure class="wide">
+        <img src="../images/tablet/de_1_library.png" alt="Die Bibliothek auf einem Tablet" width="2560" height="1440" loading="lazy" decoding="async">
+        <figcaption>Die Bibliothek auf einem Tablet</figcaption>
+      </figure>
+    </div>
+    <h2 id="barrierefreiheit-und-datenschutz">Barrierefreiheit und Datenschutz</h2>
+    <ul>
+      <li>wörds funktioniert mit <strong>TalkBack</strong>, großer Schrift, hohem Kontrast, reduzierten Animationen, Tastatur und D-Pad. Auf einer Hardwaretastatur geht <strong>Esc</strong> zurück.</li>
+      <li>wörds braucht <strong>kein Konto</strong> und funktioniert <strong>offline</strong>. Ins Internet geht es nur, um mit GitHub zu sprechen, und nur, wenn du GitHub-Quellen nutzt. Es gibt keine Werbung und kein Tracking. Fotos von Wortlisten werden auf deinem Gerät gelesen und nie hochgeladen.</li>
+      <li>Dein Fortschritt, deine Einstellungen und deine eigenen Pakete sind Teil der Sicherung deines Geräts. Zugriffstokens nicht: Nach einer Wiederherstellung fragt wörds erneut danach.</li>
+    </ul>
+    <h2 id="fragen-und-probleme">Fragen und Probleme</h2>
+    <p><strong>Eine Karte hat keinen Ton.</strong> Deinem Gerät fehlt die Stimme der Sprachausgabe für diese Sprache. Tippe in der Meldung auf der Karte auf <strong>Installieren</strong> oder füge die Stimme in den Sprachausgabe-Einstellungen deines Geräts hinzu.</p>
+    <p><strong>Ein Paket wurde nicht installiert.</strong> Die Meldung sagt, was damit nicht stimmt. Auf deinem Gerät wurde nichts geändert. Bitte den Autor des Pakets um eine korrigierte Fassung.</p>
+    <p><strong>GitHub meldet einen Fehler.</strong> Prüfe deine Verbindung. Bei einem privaten Repository prüfe, ob das Zugriffstoken noch gültig ist und Lesezugriff auf die Inhalte des Repositorys hat. Ist das Anfragelimit von GitHub erreicht, sagt die Meldung, wann du es wieder versuchen kannst.</p>
+    <p><strong>Wörter aus einem Foto kommen falsch an.</strong> Fotografiere die Seite noch einmal bei gutem Licht, flach und bildfüllend, oder schneide mit <strong>Drehen und zuschneiden</strong> nur die Wortliste aus. Jede Zeile lässt sich in der Prüfung berichtigen, bevor etwas importiert wird.</p>
+    <p><strong>Ich will von vorn anfangen.</strong> <strong>Einstellungen → Lernfortschritt zurücksetzen</strong> löscht alle Antworten; die Pakete bleiben installiert.</p>
+  </main>
+</body>
+</html>
