@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.13.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.14.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -281,8 +281,11 @@ packs**.
 *GitHub*).
 
 - **Import file** installs or updates a pack from a `.linguapack` file, for example from your downloads.
-- The bin icon removes a pack. Your learning progress is kept and comes back if you install the pack again.
-  Built-in packs cannot be removed.
+- **Hide** in a pack's menu (⋮) takes it out of the library, today's review, the progress and the article practice,
+  for example a built-in language you do not want to learn. The pack stays in this list, marked *Hidden*; **Show**
+  brings it back with your progress. A hidden pack stays hidden when wörds or the pack is updated.
+- **Remove** in the menu deletes an imported pack. Your learning progress is kept and comes back if you install the
+  pack again. Built-in packs cannot be removed, since every app update brings them back; hide them instead.
 
 **GitHub** installs packs from GitHub repositories that publish a pack index (`lingua-index.json`):
 
@@ -335,9 +338,9 @@ TalkBack, the same actions are in the actions menu of each word and lection.
 ![Selected words](../images/en/44-editor-selection.png)
 
 **Edit an installed pack.** Installed packs cannot be changed. Their menu (⋮) offers **Duplicate to edit**: wörds
-makes an editable copy that keeps your learning progress, and hides the original, marked *Hidden*. **Show original**
+makes an editable copy that keeps your learning progress, and hides the original, marked *Hidden*. **Show**
 brings it back. Your own packs are marked *Editable*; their menu has **Edit**, **Export to file**, **Share**,
-**Duplicate** and **Delete**.
+**Duplicate**, **Hide** and **Delete**.
 
 **Export and share.** **Export to file** saves your pack as a `.linguapack` file in a folder you choose, **Share**
 sends it to an app, and **Export all your packs** (top bar of the language packs) writes all of them into one folder.
@@ -458,5 +461,8 @@ message says when you can try again.
 **Words from a photo come out wrong.** Take the photo again in good light, with the page flat and filling the
 picture, or use **Rotate and crop** to frame just the word list. Every row can be corrected in the review before
 anything is imported.
+
+**I do not want to learn Italian.** Hide the built-in Italian packs: **Language packs → ⋮ → Hide**. If every pack is
+hidden, the library says so; import or create a pack, or show one again.
 
 **I want to start over.** **Settings → Reset learning progress** deletes all answers; the packs stay installed.

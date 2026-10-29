@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.13.0 (aktuell) · Frühere Versionen: <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.14.0 (aktuell) · Frühere Versionen: <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.13.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.14.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -339,7 +339,8 @@
     <p><strong>Installiert</strong> listet deine Pakete nach Sprachpaar, mit Version und Herkunft (<em>Integriert</em>, <em>Importierte Datei</em> oder <em>GitHub</em>).</p>
     <ul>
       <li><strong>Datei importieren</strong> installiert oder aktualisiert ein Paket aus einer <code>.linguapack</code>-Datei, zum Beispiel aus deinen Downloads.</li>
-      <li>Das Papierkorb-Symbol entfernt ein Paket. Dein Lernfortschritt bleibt erhalten und ist wieder da, wenn du das Paket erneut installierst. Mitgelieferte Pakete lassen sich nicht entfernen.</li>
+      <li><strong>Ausblenden</strong> im Menü eines Pakets (⋮) nimmt es aus der Bibliothek, der heutigen Wiederholung, dem Fortschritt und dem Artikel-Üben, zum Beispiel eine mitgelieferte Sprache, die du nicht lernen willst. Das Paket bleibt in dieser Liste, markiert als <em>Ausgeblendet</em>; <strong>Einblenden</strong> holt es mit deinem Fortschritt zurück. Ein ausgeblendetes Paket bleibt ausgeblendet, wenn wörds oder das Paket aktualisiert wird.</li>
+      <li><strong>Entfernen</strong> im Menü löscht ein importiertes Paket. Dein Lernfortschritt bleibt erhalten und ist wieder da, wenn du das Paket erneut installierst. Mitgelieferte Pakete lassen sich nicht entfernen, weil jedes App-Update sie zurückbringt; blende sie stattdessen aus.</li>
     </ul>
     <p><strong>GitHub</strong> installiert Pakete aus GitHub-Repositorys, die ein Paketverzeichnis (<code>lingua-index.json</code>) veröffentlichen:</p>
     <ol>
@@ -387,7 +388,7 @@
         <figcaption>Ausgewählte Wörter</figcaption>
       </figure>
     </div>
-    <p><strong>Ein installiertes Paket bearbeiten.</strong> Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet <strong>Zum Bearbeiten duplizieren</strong>: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das Original aus (<em>Ausgeblendet</em>). <strong>Original einblenden</strong> holt es zurück. Deine eigenen Pakete sind als <em>Bearbeitbar</em> markiert; ihr Menü hat <strong>Bearbeiten</strong>, <strong>Als Datei exportieren</strong>, <strong>Teilen</strong>, <strong>Duplizieren</strong> und <strong>Löschen</strong>.</p>
+    <p><strong>Ein installiertes Paket bearbeiten.</strong> Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet <strong>Zum Bearbeiten duplizieren</strong>: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das Original aus (<em>Ausgeblendet</em>). <strong>Einblenden</strong> holt es zurück. Deine eigenen Pakete sind als <em>Bearbeitbar</em> markiert; ihr Menü hat <strong>Bearbeiten</strong>, <strong>Als Datei exportieren</strong>, <strong>Teilen</strong>, <strong>Duplizieren</strong>, <strong>Ausblenden</strong> und <strong>Löschen</strong>.</p>
     <p><strong>Exportieren und teilen.</strong> <strong>Als Datei exportieren</strong> speichert dein Paket als <code>.linguapack</code>-Datei in einem Ordner deiner Wahl, <strong>Teilen</strong> schickt es an eine App, und <strong>Alle deine Pakete exportieren</strong> (oben in den Sprachpaketen) schreibt alle in einen Ordner. Die Lizenz, die du gewählt hast, geht mit der Datei. Wer wörds hat, öffnet die Datei mit <strong>Datei importieren</strong>; sie kommt als bearbeitbares Paket an. Ist das Paket schon da, wähle <strong>Ersetzen</strong> (Wörter, die in beiden sind, behalten ihren Lernstand) oder <strong>Beide behalten</strong>.</p>
     <h2 id="wörter-aus-fotos">Wörter aus Fotos</h2>
     <p>wörds kann eine gedruckte Wortliste aus Fotos lesen, damit du sie nicht abtippen musst. Der Text wird auf deinem Gerät gelesen; deine Fotos werden nie hochgeladen.</p>
@@ -491,6 +492,7 @@
     <p><strong>Ein Paket wurde nicht installiert.</strong> Die Meldung sagt, was damit nicht stimmt. Auf deinem Gerät wurde nichts geändert. Bitte den Autor des Pakets um eine korrigierte Fassung.</p>
     <p><strong>GitHub meldet einen Fehler.</strong> Prüfe deine Verbindung. Bei einem privaten Repository prüfe, ob das Zugriffstoken noch gültig ist und Lesezugriff auf die Inhalte des Repositorys hat. Ist das Anfragelimit von GitHub erreicht, sagt die Meldung, wann du es wieder versuchen kannst.</p>
     <p><strong>Wörter aus einem Foto kommen falsch an.</strong> Fotografiere die Seite noch einmal bei gutem Licht, flach und bildfüllend, oder schneide mit <strong>Drehen und zuschneiden</strong> nur die Wortliste aus. Jede Zeile lässt sich in der Prüfung berichtigen, bevor etwas importiert wird.</p>
+    <p><strong>Ich will kein Italienisch lernen.</strong> Blende die mitgelieferten Italienisch-Pakete aus: <strong>Sprachpakete → ⋮ → Ausblenden</strong>. Sind alle Pakete ausgeblendet, sagt die Bibliothek das; importiere oder erstelle ein Paket oder blende eins wieder ein.</p>
     <p><strong>Ich will von vorn anfangen.</strong> <strong>Einstellungen → Lernfortschritt zurücksetzen</strong> löscht alle Antworten; die Pakete bleiben installiert.</p>
   </main>
 </body>

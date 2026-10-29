@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.13.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.14.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -292,8 +292,13 @@ oder *GitHub*).
 
 - **Datei importieren** installiert oder aktualisiert ein Paket aus einer `.linguapack`-Datei, zum Beispiel aus
   deinen Downloads.
-- Das Papierkorb-Symbol entfernt ein Paket. Dein Lernfortschritt bleibt erhalten und ist wieder da, wenn du das
-  Paket erneut installierst. Mitgelieferte Pakete lassen sich nicht entfernen.
+- **Ausblenden** im Menü eines Pakets (⋮) nimmt es aus der Bibliothek, der heutigen Wiederholung, dem Fortschritt und
+  dem Artikel-Üben, zum Beispiel eine mitgelieferte Sprache, die du nicht lernen willst. Das Paket bleibt in dieser
+  Liste, markiert als *Ausgeblendet*; **Einblenden** holt es mit deinem Fortschritt zurück. Ein ausgeblendetes Paket
+  bleibt ausgeblendet, wenn wörds oder das Paket aktualisiert wird.
+- **Entfernen** im Menü löscht ein importiertes Paket. Dein Lernfortschritt bleibt erhalten und ist wieder da, wenn du
+  das Paket erneut installierst. Mitgelieferte Pakete lassen sich nicht entfernen, weil jedes App-Update sie
+  zurückbringt; blende sie stattdessen aus.
 
 **GitHub** installiert Pakete aus GitHub-Repositorys, die ein Paketverzeichnis (`lingua-index.json`)
 veröffentlichen:
@@ -352,8 +357,8 @@ Aktionen im Aktionsmenü jedes Worts und jeder Lektion.
 
 **Ein installiertes Paket bearbeiten.** Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet **Zum
 Bearbeiten duplizieren**: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das
-Original aus (*Ausgeblendet*). **Original einblenden** holt es zurück. Deine eigenen Pakete sind als *Bearbeitbar*
-markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **Duplizieren** und **Löschen**.
+Original aus (*Ausgeblendet*). **Einblenden** holt es zurück. Deine eigenen Pakete sind als *Bearbeitbar*
+markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **Duplizieren**, **Ausblenden** und **Löschen**.
 
 **Exportieren und teilen.** **Als Datei exportieren** speichert dein Paket als `.linguapack`-Datei in einem Ordner
 deiner Wahl, **Teilen** schickt es an eine App, und **Alle deine Pakete exportieren** (oben in den Sprachpaketen)
@@ -481,6 +486,10 @@ sagt die Meldung, wann du es wieder versuchen kannst.
 **Wörter aus einem Foto kommen falsch an.** Fotografiere die Seite noch einmal bei gutem Licht, flach und
 bildfüllend, oder schneide mit **Drehen und zuschneiden** nur die Wortliste aus. Jede Zeile lässt sich in der
 Prüfung berichtigen, bevor etwas importiert wird.
+
+**Ich will kein Italienisch lernen.** Blende die mitgelieferten Italienisch-Pakete aus: **Sprachpakete → ⋮ →
+Ausblenden**. Sind alle Pakete ausgeblendet, sagt die Bibliothek das; importiere oder erstelle ein Paket oder blende
+eins wieder ein.
 
 **Ich will von vorn anfangen.** **Einstellungen → Lernfortschritt zurücksetzen** löscht alle Antworten; die Pakete
 bleiben installiert.

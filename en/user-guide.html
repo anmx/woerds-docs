@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.13.0 (latest) · Earlier versions: <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.14.0 (latest) · Earlier versions: <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.13.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.14.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -339,7 +339,8 @@
     <p><strong>Installed</strong> lists your packs by language pair, with version and origin (<em>Built in</em>, <em>Imported file</em> or <em>GitHub</em>).</p>
     <ul>
       <li><strong>Import file</strong> installs or updates a pack from a <code>.linguapack</code> file, for example from your downloads.</li>
-      <li>The bin icon removes a pack. Your learning progress is kept and comes back if you install the pack again. Built-in packs cannot be removed.</li>
+      <li><strong>Hide</strong> in a pack's menu (⋮) takes it out of the library, today's review, the progress and the article practice, for example a built-in language you do not want to learn. The pack stays in this list, marked <em>Hidden</em>; <strong>Show</strong> brings it back with your progress. A hidden pack stays hidden when wörds or the pack is updated.</li>
+      <li><strong>Remove</strong> in the menu deletes an imported pack. Your learning progress is kept and comes back if you install the pack again. Built-in packs cannot be removed, since every app update brings them back; hide them instead.</li>
     </ul>
     <p><strong>GitHub</strong> installs packs from GitHub repositories that publish a pack index (<code>lingua-index.json</code>):</p>
     <ol>
@@ -387,7 +388,7 @@
         <figcaption>Selected words</figcaption>
       </figure>
     </div>
-    <p><strong>Edit an installed pack.</strong> Installed packs cannot be changed. Their menu (⋮) offers <strong>Duplicate to edit</strong>: wörds makes an editable copy that keeps your learning progress, and hides the original, marked <em>Hidden</em>. <strong>Show original</strong> brings it back. Your own packs are marked <em>Editable</em>; their menu has <strong>Edit</strong>, <strong>Export to file</strong>, <strong>Share</strong>, <strong>Duplicate</strong> and <strong>Delete</strong>.</p>
+    <p><strong>Edit an installed pack.</strong> Installed packs cannot be changed. Their menu (⋮) offers <strong>Duplicate to edit</strong>: wörds makes an editable copy that keeps your learning progress, and hides the original, marked <em>Hidden</em>. <strong>Show</strong> brings it back. Your own packs are marked <em>Editable</em>; their menu has <strong>Edit</strong>, <strong>Export to file</strong>, <strong>Share</strong>, <strong>Duplicate</strong>, <strong>Hide</strong> and <strong>Delete</strong>.</p>
     <p><strong>Export and share.</strong> <strong>Export to file</strong> saves your pack as a <code>.linguapack</code> file in a folder you choose, <strong>Share</strong> sends it to an app, and <strong>Export all your packs</strong> (top bar of the language packs) writes all of them into one folder. The license you chose goes with the file. Anyone with wörds can open the file with <strong>Import file</strong>; it arrives as an editable pack. If that pack is already there, choose <strong>Replace</strong> (words in both keep their progress) or <strong>Keep both</strong>.</p>
     <h2 id="words-from-photos">Words from photos</h2>
     <p>wörds can read a printed word list from photos, so you don't have to type it. The text is read on your device; your photos are never uploaded.</p>
@@ -491,6 +492,7 @@
     <p><strong>A pack was not installed.</strong> The message says what is wrong with it. Nothing has been changed on your device. Ask the author of the pack for a corrected version.</p>
     <p><strong>GitHub reports an error.</strong> Check your connection. For a private repository, check that the access token has not expired and grants read access to the repository's contents. If GitHub's request limit has been reached, the message says when you can try again.</p>
     <p><strong>Words from a photo come out wrong.</strong> Take the photo again in good light, with the page flat and filling the picture, or use <strong>Rotate and crop</strong> to frame just the word list. Every row can be corrected in the review before anything is imported.</p>
+    <p><strong>I do not want to learn Italian.</strong> Hide the built-in Italian packs: <strong>Language packs → ⋮ → Hide</strong>. If every pack is hidden, the library says so; import or create a pack, or show one again.</p>
     <p><strong>I want to start over.</strong> <strong>Settings → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
   </main>
 </body>
