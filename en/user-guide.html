@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.14.0 (latest) · Earlier versions: <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.15.0 (latest) · Earlier versions: <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.14.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.15.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -41,6 +41,8 @@
         <li><a href="#todays-review">Today's review</a></li>
         <li><a href="#reminder-and-widget">Reminder and widget</a></li>
         <li><a href="#progress">Progress</a></li>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#practising-weak-spots">Practising weak spots</a></li>
         <li><a href="#practising-articles">Practising articles</a></li>
         <li><a href="#kid-mode-and-coins">Kid mode and coins</a></li>
         <li><a href="#language-packs">Language packs</a></li>
@@ -74,7 +76,7 @@
       </table>
     </div>
     <h2 id="the-library">The library</h2>
-    <p>The library shows everything you can learn in the current language pair. The row of chips at the top switches between the installed packs, for example <em>Verben</em> (verb conjugation) and <em>Wortschatz</em> (vocabulary). Each pack is divided into sections (lessons), and each section into items: a verb with all its forms, or a word.</p>
+    <p>The library shows everything you can learn in the current language pair. The row of chips at the top switches between the installed packs, for example <em>Wortschatz</em> (vocabulary) and <em>Verben</em> (verb conjugation); packs with vocabulary come first, and the library opens on them. Each pack is divided into sections (lessons), and each section into items: a verb with all its forms, or a word.</p>
     <div class="figures">
       <figure class="shot">
         <img src="../images/en/08-library.png" alt="The library with today&#x27;s review at the top" width="540" height="1200" loading="lazy" decoding="async">
@@ -118,6 +120,9 @@
       <li><strong>Tenses</strong> (verbs only): choose which tenses to practise.</li>
       <li><strong>Answer</strong>: <strong>Flip</strong> the card and grade yourself, or <strong>Type</strong> the answer (see <a href="#typing-the-answer">Typing the answer</a>). wörds remembers your choice for each language pair.</li>
     </ul>
+    <ul>
+      <li><strong>Ask consolidated cards too</strong> appears when some of the chosen cards are <em>consolidated</em>: you have known them for weeks, or marked them <strong>I know this</strong>. A session from the library leaves them out, apart from a few that come up now and then; today's review still asks for them when they are due. Turn the switch on to practise all of them this once. How many are left out is set in <a href="#daily-review">Settings</a> → <strong>Consolidated cards in lessons</strong>.</li>
+    </ul>
     <p>The sheet shows how many cards that makes and roughly how long it takes. Tap <strong>Start</strong>.</p>
     <h2 id="studying-a-card">Studying a card</h2>
     <p>A card shows a prompt. Say or think the answer, then tap the card to flip it.</p>
@@ -140,6 +145,7 @@
     <p>More on the card screen:</p>
     <ul>
       <li>The <strong>speaker</strong> plays the pronunciation with your device's text-to-speech voice. If the voice for the language is missing, wörds offers to install it.</li>
+      <li><strong>I know this – ask rarely</strong>, under the grades once you knew the card (and after a right typed answer), tells wörds that you know this card well: it comes up only now and then from now on. The message at the bottom can undo it.</li>
       <li><strong>Undo</strong> (the arrow at the top right, or the message at the bottom) takes back the last answer.</li>
       <li>The <strong>arrows</strong> at the card's sides go back to earlier cards and forward again; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
       <li>The tag at the top left shows the direction, for example <em>DE → IT</em>.</li>
@@ -258,6 +264,9 @@
     <p>Above the packs, Progress shows:</p>
     <ul>
       <li><strong>Difficult words</strong>: words you forgot three times or more after you had known them. Tap the card to see them. From the list you can <strong>edit</strong> a word (a word of an installed pack is edited in a copy of the pack, which keeps your progress), or <strong>reset</strong> it to learn it from scratch. A word leaves the list once you remember it for three weeks. In the library, the editor and on the answer side of a card, these words are marked <strong>Difficult</strong>.</li>
+      <li><strong>Your week</strong>: from the first day of a week, a recap of the week before – how many answers you gave, how many were right compared with the week before that, and how many cards became consolidated. <strong>✕</strong> puts it away until next week.</li>
+      <li><strong>A lesson goal</strong>, if you set one (see <a href="#statistics">Statistics</a>): how many new cards of the lesson are left, how many a day that needs, and whether your daily limit of new cards makes it in time. Tap it to open the lesson; <strong>✕</strong> removes the goal.</li>
+      <li><strong>Learning state – statistics</strong>: all cards of the language pair by how well you know them; tap it for the <a href="#statistics">statistics</a>.</li>
       <li><strong>Next 7 days</strong>: how many cards are due each day, overdue ones counted today.</li>
       <li><strong>Last 12 weeks</strong>: a calendar of the days you studied; the darker a day, the more answers you gave. <strong>Show as list</strong> spells both charts out as a table.</li>
     </ul>
@@ -271,6 +280,74 @@
         <figcaption>Difficult words</figcaption>
       </figure>
     </div>
+    <h2 id="statistics">Statistics</h2>
+    <p>The statistics show how well you know the cards of the current language pair, and where it pays to practise. Each card counts once per direction, since knowing <em>la casa</em> when you see it is not the same as saying it yourself. A card is in one of these stages:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Stage</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">new</th><td>Not answered yet</td></tr>
+          <tr><th scope="row">learning</th><td>Answered, but not remembered for a week yet</td></tr>
+          <tr><th scope="row">shaky</th><td>Missed the last time, or probably forgotten by now</td></tr>
+          <tr><th scope="row">secure</th><td>Remembered for a week or longer</td></tr>
+          <tr><th scope="row">consolidated</th><td>Remembered for three weeks or longer and known three times in a row, or marked <strong>I know this</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The statistics have three tabs:</p>
+    <ul>
+      <li><strong>Learning state</strong>: all cards as one bar of stages, then each pack with its lessons. A pack also says when all its new cards will have been introduced at your daily limit. Under the packs, <strong>Recognising and producing</strong> compares the two directions, and <strong>Mistakes when typing</strong> shows what went wrong in typed answers of the last 90 days: wrong, typos, accents or articles.</li>
+      <li><strong>Conjugation</strong> (with verb packs): a grid of tenses and persons. Each cell shows how often that form was right; the paler it is, the more it is worth practising. Below it, the verbs answered wrong most often.</li>
+      <li><strong>History</strong>: right answers per week, consolidated cards over time, the calendar of study days and the outlook for the next seven days.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/60-statistics.png" alt="Learning state" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Learning state</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/61-statistics-conjugation.png" alt="Tenses and persons" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Tenses and persons</figcaption>
+      </figure>
+    </div>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/62-statistics-history.png" alt="History" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>History</figcaption>
+      </figure>
+    </div>
+    <p>Every chart has <strong>Show as list</strong> to read its figures as a table; screen readers hear a summary.</p>
+    <p>Tap a <strong>lesson</strong> to see its cards with their stage in each direction. Tap a card for its details: when it comes up next, how likely you still know it today, how long it stays remembered, a <strong>forgetting curve</strong> for the coming two months and every answer it got. There you can mark it <strong>I know this – ask rarely</strong>, <strong>forget its answers</strong> to learn it from scratch, or <strong>edit</strong> it if it is one of your own words.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/64-lesson-cards.png" alt="The cards of a lesson" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The cards of a lesson</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/65-card-detail.png" alt="A card&#x27;s details" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A card&#x27;s details</figcaption>
+      </figure>
+    </div>
+    <p>On a lesson's cards, <strong>Set goal</strong> asks for a date by which all cards of the lesson should be introduced. The goal then appears in Progress. There is one goal per language pair; setting another one replaces it.</p>
+    <h2 id="practising-weak-spots">Practising weak spots</h2>
+    <p><strong>Practise weak spots</strong> starts a session with just the cards that need it. Open it with the button at the bottom of the statistics, with <strong>Practise this lesson</strong> on a lesson's cards, with <strong>Practise these</strong> on the difficult words, or by tapping a verb, a kind of typing mistake or <strong>Practise the weakest forms</strong> in the statistics.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/63-practise-weak-spots.png" alt="Practise weak spots" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Practise weak spots</figcaption>
+      </figure>
+    </div>
+    <p>Choose where the cards come from – each with its number of cards:</p>
+    <ul>
+      <li><strong>Shaky</strong>: missed the last time, or probably forgotten by now.</li>
+      <li><strong>Wrong lately</strong>: answered wrong in the last seven days.</li>
+      <li><strong>Difficult</strong>: the <a href="#progress">difficult words</a>.</li>
+      <li><strong>Slow to answer</strong>: known, but only after eight seconds or more on average.</li>
+      <li>The source you opened it for: a verb, a lesson, a kind of mistake or the weakest forms of the conjugation grid.</li>
+    </ul>
+    <p>Then choose how many cards at most (10, 20 or 40), the direction and whether to flip or type. The cards you are least likely to remember come first. The session works like any other, and its answers count for your reviews.</p>
     <h2 id="practising-articles">Practising articles</h2>
     <p><strong>Practise articles</strong> asks only for the article of nouns: <em>casa</em> – is it <em>il</em>, <em>lo</em>, <em>la</em> or <em>l'</em>? You find it in the library (for the selected pack) and in Progress (for all packs of the language pair), once there are at least five nouns with their article.</p>
     <div class="figures">
@@ -323,6 +400,7 @@
         <figcaption>Turning kid mode off</figcaption>
       </figure>
     </div>
+    <p>In kid mode, the <a href="#statistics">statistics</a> show what your child knows already as one big number, and stars for each lesson; mistakes, the conjugation grid and <strong>I know this</strong> are left out.</p>
     <p>When you turn kid mode off, wörds asks what should happen to the coins: <strong>Keep coins and statistics</strong> (they come back when kid mode is turned on again) or <strong>Delete coins and statistics</strong> for every language pair. Resetting the learning progress keeps the coins.</p>
     <h2 id="language-packs">Language packs</h2>
     <p>All content comes in language packs. Open them from the box icon in the library, or via <strong>Settings → Language packs</strong>.</p>
@@ -446,6 +524,7 @@
       <li><strong>Accept missing accents</strong> counts an answer that differs only in accents as almost right; turned off, it is wrong.</li>
       <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>
       <li><strong>Back and forward arrows</strong>: whether the arrows on a card go <strong>one side at a time</strong> or <strong>one card at a time</strong>; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
+      <li><strong>Consolidated cards in lessons</strong>: whether a session from the library asks consolidated cards <strong>Always</strong>, a <strong>Sample</strong> of a fifth of them (normally), or <strong>Never</strong>. Today's review is not affected; see <a href="#starting-a-session">Starting a session</a>.</li>
       <li><strong>Daily reminder</strong> and its <strong>Time</strong>: see <a href="#reminder-and-widget">Reminder and widget</a>.</li>
     </ul>
     <h3 id="kid-mode">Kid mode</h3>
@@ -493,6 +572,7 @@
     <p><strong>GitHub reports an error.</strong> Check your connection. For a private repository, check that the access token has not expired and grants read access to the repository's contents. If GitHub's request limit has been reached, the message says when you can try again.</p>
     <p><strong>Words from a photo come out wrong.</strong> Take the photo again in good light, with the page flat and filling the picture, or use <strong>Rotate and crop</strong> to frame just the word list. Every row can be corrected in the review before anything is imported.</p>
     <p><strong>I do not want to learn Italian.</strong> Hide the built-in Italian packs: <strong>Language packs → ⋮ → Hide</strong>. If every pack is hidden, the library says so; import or create a pack, or show one again.</p>
+    <p><strong>I keep getting words I know well.</strong> In a session from the library, tap <strong>I know this – ask rarely</strong> under the grades; the card then comes up only now and then. Cards you know for weeks are left out of lesson sessions anyway, apart from a few; <strong>Settings → Consolidated cards in lessons</strong> changes that.</p>
     <p><strong>I want to start over.</strong> <strong>Settings → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
   </main>
 </body>

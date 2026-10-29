@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.14.0 (aktuell) · Frühere Versionen: <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.15.0 (aktuell) · Frühere Versionen: <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.14.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.15.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -41,6 +41,8 @@
         <li><a href="#heutige-wiederholung">Heutige Wiederholung</a></li>
         <li><a href="#erinnerung-und-widget">Erinnerung und Widget</a></li>
         <li><a href="#fortschritt">Fortschritt</a></li>
+        <li><a href="#statistik">Statistik</a></li>
+        <li><a href="#schwachstellen-üben">Schwachstellen üben</a></li>
         <li><a href="#artikel-üben">Artikel üben</a></li>
         <li><a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a></li>
         <li><a href="#sprachpakete">Sprachpakete</a></li>
@@ -74,7 +76,7 @@
       </table>
     </div>
     <h2 id="die-bibliothek">Die Bibliothek</h2>
-    <p>Die Bibliothek zeigt alles, was du im aktuellen Sprachpaar lernen kannst. Mit den Chips oben wechselst du zwischen den installierten Paketen, zum Beispiel <em>Verben</em> (Konjugation) und <em>Wortschatz</em> (Vokabeln). Jedes Paket ist in Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.</p>
+    <p>Die Bibliothek zeigt alles, was du im aktuellen Sprachpaar lernen kannst. Mit den Chips oben wechselst du zwischen den installierten Paketen, zum Beispiel <em>Wortschatz</em> (Vokabeln) und <em>Verben</em> (Konjugation); Pakete mit Vokabeln stehen vorn, und die Bibliothek öffnet sich mit ihnen. Jedes Paket ist in Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.</p>
     <div class="figures">
       <figure class="shot">
         <img src="../images/de/08-library.png" alt="Die Bibliothek mit der heutigen Wiederholung oben" width="540" height="1200" loading="lazy" decoding="async">
@@ -118,6 +120,9 @@
       <li><strong>Zeiten</strong> (nur bei Verben): welche Zeitformen du üben willst.</li>
       <li><strong>Antwort</strong>: die Karte <strong>Umdrehen</strong> und dich selbst bewerten, oder die Antwort <strong>Eintippen</strong> (siehe <a href="#die-antwort-eintippen">Die Antwort eintippen</a>). wörds merkt sich deine Wahl für jedes Sprachpaar.</li>
     </ul>
+    <ul>
+      <li><strong>Gefestigte Karten auch abfragen</strong> erscheint, wenn einige der gewählten Karten <em>gefestigt</em> sind: Du weißt sie seit Wochen sicher oder hast sie mit <strong>Kann ich</strong> markiert. Eine Sitzung aus der Bibliothek lässt sie aus, bis auf wenige, die ab und an drankommen; die heutige Wiederholung fragt sie weiter ab, wenn sie fällig sind. Mit dem Schalter übst du dieses eine Mal alle. Wie viele ausgelassen werden, legst du unter <a href="#tägliche-wiederholung">Einstellungen</a> → <strong>Gefestigte Karten in Lektionen</strong> fest.</li>
+    </ul>
     <p>Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf <strong>Starten</strong>.</p>
     <h2 id="mit-einer-karte-lernen">Mit einer Karte lernen</h2>
     <p>Eine Karte zeigt eine Aufgabe. Sag oder denk die Antwort, dann tippe auf die Karte, um sie umzudrehen.</p>
@@ -140,6 +145,7 @@
     <p>Außerdem auf dem Kartenbildschirm:</p>
     <ul>
       <li>Der <strong>Lautsprecher</strong> spielt die Aussprache mit der Sprachausgabe deines Geräts ab. Fehlt die Stimme für die Sprache, bietet wörds an, sie zu installieren.</li>
+      <li><strong>Kann ich – seltener abfragen</strong> steht unter den Bewertungen, sobald du die Karte gewusst hast (und nach einer richtig getippten Antwort). Damit sagst du wörds, dass du die Karte sicher kannst: Sie kommt ab jetzt nur noch ab und an. Die Meldung unten macht das rückgängig.</li>
       <li><strong>Rückgängig</strong> (der Pfeil oben rechts oder die Meldung unten) nimmt die letzte Antwort zurück.</li>
       <li>Die <strong>Pfeile</strong> an den Seiten der Karte führen zu früheren Karten und wieder vor; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
       <li>Das Schild oben links zeigt die Richtung, zum Beispiel <em>DE → IT</em>.</li>
@@ -258,6 +264,9 @@
     <p>Über den Paketen zeigt der Fortschritt:</p>
     <ul>
       <li><strong>Schwierige Wörter</strong>: Wörter, die du dreimal oder öfter vergessen hast, nachdem du sie schon konntest. Tippe auf die Karte, um sie zu sehen. In der Liste kannst du ein Wort <strong>bearbeiten</strong> (ein Wort eines installierten Pakets bearbeitest du in einer Kopie des Pakets, die deinen Fortschritt übernimmt) oder <strong>zurücksetzen</strong>, um es von vorn zu lernen. Ein Wort verschwindet aus der Liste, sobald du es drei Wochen lang behältst. In der Bibliothek, im Editor und auf der Antwortseite einer Karte sind diese Wörter als <strong>Schwierig</strong> markiert.</li>
+      <li><strong>Deine Woche</strong>: ab dem ersten Tag einer Woche ein Rückblick auf die Woche davor – wie viele Antworten du gegeben hast, wie viele davon richtig waren im Vergleich zur Woche davor und wie viele Karten gefestigt wurden. <strong>✕</strong> blendet ihn bis zur nächsten Woche aus.</li>
+      <li><strong>Ein Lektionsziel</strong>, wenn du eins gesetzt hast (siehe <a href="#statistik">Statistik</a>): wie viele neue Karten der Lektion noch fehlen, wie viele das pro Tag sind und ob dein Tageslimit für neue Karten dafür reicht. Ein Tipp öffnet die Lektion; <strong>✕</strong> entfernt das Ziel.</li>
+      <li><strong>Lernstand – Statistik</strong>: alle Karten des Sprachpaars danach, wie gut du sie kannst; ein Tipp öffnet die <a href="#statistik">Statistik</a>.</li>
       <li><strong>Die nächsten 7 Tage</strong>: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.</li>
       <li><strong>Die letzten 12 Wochen</strong>: ein Kalender der Tage, an denen du gelernt hast; je dunkler ein Tag, desto mehr Antworten. <strong>Als Liste zeigen</strong> schreibt beide Diagramme als Tabelle aus.</li>
     </ul>
@@ -271,6 +280,74 @@
         <figcaption>Schwierige Wörter</figcaption>
       </figure>
     </div>
+    <h2 id="statistik">Statistik</h2>
+    <p>Die Statistik zeigt, wie gut du die Karten des aktuellen Sprachpaars kannst und wo sich Üben lohnt. Jede Karte zählt einmal pro Richtung, denn <em>la casa</em> zu erkennen ist etwas anderes, als es selbst zu sagen. Eine Karte steht auf einer dieser Stufen:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Stufe</th><th scope="col">Bedeutung</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">neu</th><td>Noch nicht abgefragt</td></tr>
+          <tr><th scope="row">lernend</th><td>Abgefragt, aber noch keine Woche sicher</td></tr>
+          <tr><th scope="row">wackelig</th><td>Zuletzt nicht gewusst oder inzwischen wohl vergessen</td></tr>
+          <tr><th scope="row">sicher</th><td>Seit einer Woche oder länger sicher</td></tr>
+          <tr><th scope="row">gefestigt</th><td>Seit drei Wochen oder länger sicher und dreimal hintereinander gewusst, oder mit <strong>Kann ich</strong> markiert</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die Statistik hat drei Reiter:</p>
+    <ul>
+      <li><strong>Lernstand</strong>: alle Karten als ein Balken der Stufen, darunter jedes Paket mit seinen Lektionen. Ein Paket sagt auch, wann bei deinem Tageslimit alle neuen Karten eingeführt sind. Unter den Paketen vergleicht <strong>Erkennen und selbst sagen</strong> die beiden Richtungen, und <strong>Fehler beim Eintippen</strong> zeigt, was bei getippten Antworten der letzten 90 Tage nicht stimmte: falsch, Tippfehler, Akzente oder Artikel.</li>
+      <li><strong>Konjugation</strong> (mit Verb-Paketen): ein Raster aus Zeiten und Personen. Jedes Feld zeigt, wie oft diese Form richtig war; je blasser es ist, desto mehr lohnt sich Üben. Darunter die Verben, die am häufigsten falsch waren.</li>
+      <li><strong>Verlauf</strong>: richtige Antworten pro Woche, gefestigte Karten im Lauf der Zeit, der Kalender der Lerntage und der Ausblick auf die nächsten sieben Tage.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/60-statistics.png" alt="Lernstand" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Lernstand</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/61-statistics-conjugation.png" alt="Zeiten und Personen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Zeiten und Personen</figcaption>
+      </figure>
+    </div>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/62-statistics-history.png" alt="Verlauf" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Verlauf</figcaption>
+      </figure>
+    </div>
+    <p>Jedes Diagramm hat <strong>Als Liste zeigen</strong>, um seine Zahlen als Tabelle zu lesen; Screenreader hören eine Zusammenfassung.</p>
+    <p>Ein Tipp auf eine <strong>Lektion</strong> zeigt ihre Karten mit der Stufe in jeder Richtung. Ein Tipp auf eine Karte zeigt ihre Details: wann sie wieder drankommt, wie wahrscheinlich du sie heute noch weißt, wie lange sie sitzt, eine <strong>Vergessenskurve</strong> für die nächsten zwei Monate und jede Antwort, die sie bekommen hat. Dort kannst du sie mit <strong>Kann ich – seltener abfragen</strong> markieren, ihre <strong>Antworten vergessen</strong>, um sie neu zu lernen, oder sie <strong>bearbeiten</strong>, wenn sie eins deiner eigenen Wörter ist.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/64-lesson-cards.png" alt="Die Karten einer Lektion" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Karten einer Lektion</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/de/65-card-detail.png" alt="Die Details einer Karte" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Die Details einer Karte</figcaption>
+      </figure>
+    </div>
+    <p>Bei den Karten einer Lektion fragt <strong>Ziel setzen</strong> nach einem Datum, bis zu dem alle Karten der Lektion eingeführt sein sollen. Das Ziel erscheint dann im Fortschritt. Es gibt ein Ziel pro Sprachpaar; ein neues ersetzt das alte.</p>
+    <h2 id="schwachstellen-üben">Schwachstellen üben</h2>
+    <p><strong>Schwachstellen üben</strong> startet eine Sitzung nur mit den Karten, die es nötig haben. Du öffnest es mit dem Knopf unten in der Statistik, mit <strong>Lektion üben</strong> bei den Karten einer Lektion, mit <strong>Diese üben</strong> bei den schwierigen Wörtern oder mit einem Tipp auf ein Verb, eine Fehlerart oder <strong>Schwächste Formen üben</strong> in der Statistik.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/de/63-practise-weak-spots.png" alt="Schwachstellen üben" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Schwachstellen üben</figcaption>
+      </figure>
+    </div>
+    <p>Wähle, woher die Karten kommen – jeweils mit der Zahl der Karten:</p>
+    <ul>
+      <li><strong>Wackelig</strong>: zuletzt nicht gewusst oder inzwischen wohl vergessen.</li>
+      <li><strong>Zuletzt falsch</strong>: in den letzten sieben Tagen falsch beantwortet.</li>
+      <li><strong>Schwierig</strong>: die <a href="#fortschritt">schwierigen Wörter</a>.</li>
+      <li><strong>Zögerlich</strong>: gewusst, aber im Schnitt erst nach acht Sekunden oder mehr.</li>
+      <li>Die Quelle, für die du es geöffnet hast: ein Verb, eine Lektion, eine Fehlerart oder die schwächsten Formen des Konjugationsrasters.</li>
+    </ul>
+    <p>Dann wählst du, wie viele Karten höchstens (10, 20 oder 40), die Richtung und ob du umdrehst oder eintippst. Die Karten, die du am ehesten vergessen hast, kommen zuerst. Die Sitzung läuft wie jede andere, und ihre Antworten zählen für deine Wiederholungen.</p>
     <h2 id="artikel-üben">Artikel üben</h2>
     <p><strong>Artikel üben</strong> fragt nur nach dem Artikel von Nomen: <em>casa</em> – heißt es <em>il</em>, <em>lo</em>, <em>la</em> oder <em>l'</em>? Du findest es in der Bibliothek (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf Nomen mit ihrem Artikel gibt.</p>
     <div class="figures">
@@ -323,6 +400,7 @@
         <figcaption>Den Schulkind-Modus ausschalten</figcaption>
       </figure>
     </div>
+    <p>Im Schulkind-Modus zeigt die <a href="#statistik">Statistik</a>, was dein Kind schon kann, als eine große Zahl und Sterne für jede Lektion; Fehler, das Konjugationsraster und <strong>Kann ich</strong> bleiben weg.</p>
     <p>Wenn du den Schulkind-Modus ausschaltest, fragt wörds, was mit den Coins passieren soll: <strong>Coins und Statistik behalten</strong> (sie sind wieder da, wenn der Modus wieder eingeschaltet wird) oder <strong>Coins und Statistik löschen</strong> für alle Sprachpaare. Den Lernfortschritt zurückzusetzen behält die Coins.</p>
     <h2 id="sprachpakete">Sprachpakete</h2>
     <p>Alle Inhalte kommen in Sprachpaketen. Du öffnest sie über das Kisten-Symbol in der Bibliothek oder über <strong>Einstellungen → Sprachpakete</strong>.</p>
@@ -446,6 +524,7 @@
       <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
       <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
       <li><strong>Pfeile zurück und vor</strong>: ob die Pfeile auf einer Karte <strong>Seite für Seite</strong> oder <strong>Karte für Karte</strong> blättern; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
+      <li><strong>Gefestigte Karten in Lektionen</strong>: ob eine Sitzung aus der Bibliothek gefestigte Karten <strong>Immer</strong>, als <strong>Stichprobe</strong> von einem Fünftel (normal) oder <strong>Nie</strong> abfragt. Die heutige Wiederholung betrifft das nicht; siehe <a href="#eine-sitzung-starten">Eine Sitzung starten</a>.</li>
       <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
     </ul>
     <h3 id="schulkind-modus">Schulkind-Modus</h3>
@@ -493,6 +572,7 @@
     <p><strong>GitHub meldet einen Fehler.</strong> Prüfe deine Verbindung. Bei einem privaten Repository prüfe, ob das Zugriffstoken noch gültig ist und Lesezugriff auf die Inhalte des Repositorys hat. Ist das Anfragelimit von GitHub erreicht, sagt die Meldung, wann du es wieder versuchen kannst.</p>
     <p><strong>Wörter aus einem Foto kommen falsch an.</strong> Fotografiere die Seite noch einmal bei gutem Licht, flach und bildfüllend, oder schneide mit <strong>Drehen und zuschneiden</strong> nur die Wortliste aus. Jede Zeile lässt sich in der Prüfung berichtigen, bevor etwas importiert wird.</p>
     <p><strong>Ich will kein Italienisch lernen.</strong> Blende die mitgelieferten Italienisch-Pakete aus: <strong>Sprachpakete → ⋮ → Ausblenden</strong>. Sind alle Pakete ausgeblendet, sagt die Bibliothek das; importiere oder erstelle ein Paket oder blende eins wieder ein.</p>
+    <p><strong>Mir kommen Wörter, die ich sicher kann.</strong> Tippe in einer Sitzung aus der Bibliothek unter den Bewertungen auf <strong>Kann ich – seltener abfragen</strong>; die Karte kommt dann nur noch ab und an. Karten, die du seit Wochen sicher weißt, lassen Lektionssitzungen ohnehin bis auf wenige aus; <strong>Einstellungen → Gefestigte Karten in Lektionen</strong> ändert das.</p>
     <p><strong>Ich will von vorn anfangen.</strong> <strong>Einstellungen → Lernfortschritt zurücksetzen</strong> löscht alle Antworten; die Pakete bleiben installiert.</p>
   </main>
 </body>

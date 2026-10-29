@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.14.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.15.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -23,6 +23,8 @@ andere Farben haben.
 - [Heutige Wiederholung](#heutige-wiederholung)
 - [Erinnerung und Widget](#erinnerung-und-widget)
 - [Fortschritt](#fortschritt)
+- [Statistik](#statistik)
+- [Schwachstellen üben](#schwachstellen-üben)
 - [Artikel üben](#artikel-üben)
 - [Schulkind-Modus und Coins](#schulkind-modus-und-coins)
 - [Sprachpakete](#sprachpakete)
@@ -51,7 +53,8 @@ Die App hat drei Bereiche, die du immer über die Leiste unten erreichst (auf Ta
 ## Die Bibliothek
 
 Die Bibliothek zeigt alles, was du im aktuellen Sprachpaar lernen kannst. Mit den Chips oben wechselst du zwischen
-den installierten Paketen, zum Beispiel *Verben* (Konjugation) und *Wortschatz* (Vokabeln). Jedes Paket ist in
+den installierten Paketen, zum Beispiel *Wortschatz* (Vokabeln) und *Verben* (Konjugation); Pakete mit Vokabeln
+stehen vorn, und die Bibliothek öffnet sich mit ihnen. Jedes Paket ist in
 Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.
 
 ![Die Bibliothek mit der heutigen Wiederholung oben](../images/de/08-library.png) ![Das Vokabelpaket](../images/de/09-library-vocabulary.png)
@@ -84,6 +87,12 @@ Bevor eine Sitzung beginnt, legst du in einem Blatt fest, wie du üben willst:
 - **Antwort**: die Karte **Umdrehen** und dich selbst bewerten, oder die Antwort **Eintippen** (siehe
   [Die Antwort eintippen](#die-antwort-eintippen)). wörds merkt sich deine Wahl für jedes Sprachpaar.
 
+- **Gefestigte Karten auch abfragen** erscheint, wenn einige der gewählten Karten *gefestigt* sind: Du weißt sie seit
+  Wochen sicher oder hast sie mit **Kann ich** markiert. Eine Sitzung aus der Bibliothek lässt sie aus, bis auf
+  wenige, die ab und an drankommen; die heutige Wiederholung fragt sie weiter ab, wenn sie fällig sind. Mit dem
+  Schalter übst du dieses eine Mal alle. Wie viele ausgelassen werden, legst du unter
+  [Einstellungen](#tägliche-wiederholung) → **Gefestigte Karten in Lektionen** fest.
+
 Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf **Starten**.
 
 ## Mit einer Karte lernen
@@ -105,6 +114,9 @@ Außerdem auf dem Kartenbildschirm:
 
 - Der **Lautsprecher** spielt die Aussprache mit der Sprachausgabe deines Geräts ab. Fehlt die Stimme für die
   Sprache, bietet wörds an, sie zu installieren.
+- **Kann ich – seltener abfragen** steht unter den Bewertungen, sobald du die Karte gewusst hast (und nach einer
+  richtig getippten Antwort). Damit sagst du wörds, dass du die Karte sicher kannst: Sie kommt ab jetzt nur noch ab
+  und an. Die Meldung unten macht das rückgängig.
 - **Rückgängig** (der Pfeil oben rechts oder die Meldung unten) nimmt die letzte Antwort zurück.
 - Die **Pfeile** an den Seiten der Karte führen zu früheren Karten und wieder vor; siehe
   [Zurückblättern und korrigieren](#zurückblättern-und-korrigieren).
@@ -231,11 +243,82 @@ Mit den Tasten unter **Richtung** siehst du die Zahlen für eine Richtung oder f
   bearbeitest du in einer Kopie des Pakets, die deinen Fortschritt übernimmt) oder **zurücksetzen**, um es von vorn
   zu lernen. Ein Wort verschwindet aus der Liste, sobald du es drei Wochen lang behältst. In der Bibliothek, im Editor
   und auf der Antwortseite einer Karte sind diese Wörter als **Schwierig** markiert.
+- **Deine Woche**: ab dem ersten Tag einer Woche ein Rückblick auf die Woche davor – wie viele Antworten du gegeben
+  hast, wie viele davon richtig waren im Vergleich zur Woche davor und wie viele Karten gefestigt wurden. **✕** blendet
+  ihn bis zur nächsten Woche aus.
+- **Ein Lektionsziel**, wenn du eins gesetzt hast (siehe [Statistik](#statistik)): wie viele neue Karten der Lektion
+  noch fehlen, wie viele das pro Tag sind und ob dein Tageslimit für neue Karten dafür reicht. Ein Tipp öffnet die
+  Lektion; **✕** entfernt das Ziel.
+- **Lernstand – Statistik**: alle Karten des Sprachpaars danach, wie gut du sie kannst; ein Tipp öffnet die
+  [Statistik](#statistik).
 - **Die nächsten 7 Tage**: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.
 - **Die letzten 12 Wochen**: ein Kalender der Tage, an denen du gelernt hast; je dunkler ein Tag, desto mehr Antworten.
   **Als Liste zeigen** schreibt beide Diagramme als Tabelle aus.
 
 ![Ausblick und Kalender](../images/de/14-progress-insights.png) ![Schwierige Wörter](../images/de/26-difficult-words.png)
+
+## Statistik
+
+Die Statistik zeigt, wie gut du die Karten des aktuellen Sprachpaars kannst und wo sich Üben lohnt. Jede Karte zählt
+einmal pro Richtung, denn *la casa* zu erkennen ist etwas anderes, als es selbst zu sagen. Eine Karte steht auf einer
+dieser Stufen:
+
+| Stufe | Bedeutung |
+|---|---|
+| **neu** | Noch nicht abgefragt |
+| **lernend** | Abgefragt, aber noch keine Woche sicher |
+| **wackelig** | Zuletzt nicht gewusst oder inzwischen wohl vergessen |
+| **sicher** | Seit einer Woche oder länger sicher |
+| **gefestigt** | Seit drei Wochen oder länger sicher und dreimal hintereinander gewusst, oder mit **Kann ich** markiert |
+
+Die Statistik hat drei Reiter:
+
+- **Lernstand**: alle Karten als ein Balken der Stufen, darunter jedes Paket mit seinen Lektionen. Ein Paket sagt
+  auch, wann bei deinem Tageslimit alle neuen Karten eingeführt sind. Unter den Paketen vergleicht **Erkennen und
+  selbst sagen** die beiden Richtungen, und **Fehler beim Eintippen** zeigt, was bei getippten Antworten der letzten
+  90 Tage nicht stimmte: falsch, Tippfehler, Akzente oder Artikel.
+- **Konjugation** (mit Verb-Paketen): ein Raster aus Zeiten und Personen. Jedes Feld zeigt, wie oft diese Form
+  richtig war; je blasser es ist, desto mehr lohnt sich Üben. Darunter die Verben, die am häufigsten falsch waren.
+- **Verlauf**: richtige Antworten pro Woche, gefestigte Karten im Lauf der Zeit, der Kalender der Lerntage und der
+  Ausblick auf die nächsten sieben Tage.
+
+![Lernstand](../images/de/60-statistics.png) ![Zeiten und Personen](../images/de/61-statistics-conjugation.png)
+
+![Verlauf](../images/de/62-statistics-history.png)
+
+Jedes Diagramm hat **Als Liste zeigen**, um seine Zahlen als Tabelle zu lesen; Screenreader hören eine Zusammenfassung.
+
+Ein Tipp auf eine **Lektion** zeigt ihre Karten mit der Stufe in jeder Richtung. Ein Tipp auf eine Karte zeigt ihre
+Details: wann sie wieder drankommt, wie wahrscheinlich du sie heute noch weißt, wie lange sie sitzt, eine
+**Vergessenskurve** für die nächsten zwei Monate und jede Antwort, die sie bekommen hat. Dort kannst du sie mit
+**Kann ich – seltener abfragen** markieren, ihre **Antworten vergessen**, um sie neu zu lernen, oder sie
+**bearbeiten**, wenn sie eins deiner eigenen Wörter ist.
+
+![Die Karten einer Lektion](../images/de/64-lesson-cards.png) ![Die Details einer Karte](../images/de/65-card-detail.png)
+
+Bei den Karten einer Lektion fragt **Ziel setzen** nach einem Datum, bis zu dem alle Karten der Lektion eingeführt
+sein sollen. Das Ziel erscheint dann im Fortschritt. Es gibt ein Ziel pro Sprachpaar; ein neues ersetzt das alte.
+
+## Schwachstellen üben
+
+**Schwachstellen üben** startet eine Sitzung nur mit den Karten, die es nötig haben. Du öffnest es mit dem Knopf unten
+in der Statistik, mit **Lektion üben** bei den Karten einer Lektion, mit **Diese üben** bei den schwierigen Wörtern
+oder mit einem Tipp auf ein Verb, eine Fehlerart oder **Schwächste Formen üben** in der Statistik.
+
+![Schwachstellen üben](../images/de/63-practise-weak-spots.png)
+
+Wähle, woher die Karten kommen – jeweils mit der Zahl der Karten:
+
+- **Wackelig**: zuletzt nicht gewusst oder inzwischen wohl vergessen.
+- **Zuletzt falsch**: in den letzten sieben Tagen falsch beantwortet.
+- **Schwierig**: die [schwierigen Wörter](#fortschritt).
+- **Zögerlich**: gewusst, aber im Schnitt erst nach acht Sekunden oder mehr.
+- Die Quelle, für die du es geöffnet hast: ein Verb, eine Lektion, eine Fehlerart oder die schwächsten Formen des
+  Konjugationsrasters.
+
+Dann wählst du, wie viele Karten höchstens (10, 20 oder 40), die Richtung und ob du umdrehst oder eintippst. Die Karten,
+die du am ehesten vergessen hast, kommen zuerst. Die Sitzung läuft wie jede andere, und ihre Antworten zählen für deine
+Wiederholungen.
 
 ## Artikel üben
 
@@ -275,6 +358,9 @@ Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis
 ![Das Ende einer Lerneinheit im Schulkind-Modus](../images/de/52-kid-summary.png) ![Coins im Fortschritt](../images/de/53-kid-coins.png)
 
 ![Coins einlösen](../images/de/54-kid-redeem.png) ![Den Schulkind-Modus ausschalten](../images/de/55-kid-off.png)
+
+Im Schulkind-Modus zeigt die [Statistik](#statistik), was dein Kind schon kann, als eine große Zahl und Sterne für jede
+Lektion; Fehler, das Konjugationsraster und **Kann ich** bleiben weg.
 
 Wenn du den Schulkind-Modus ausschaltest, fragt wörds, was mit den Coins passieren soll: **Coins und Statistik
 behalten** (sie sind wieder da, wenn der Modus wieder eingeschaltet wird) oder **Coins und Statistik löschen** für alle
@@ -426,6 +512,9 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
 - **Fehlenden Artikel akzeptieren** lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.
 - **Pfeile zurück und vor**: ob die Pfeile auf einer Karte **Seite für Seite** oder **Karte für Karte** blättern; siehe
   [Zurückblättern und korrigieren](#zurückblättern-und-korrigieren).
+- **Gefestigte Karten in Lektionen**: ob eine Sitzung aus der Bibliothek gefestigte Karten **Immer**, als
+  **Stichprobe** von einem Fünftel (normal) oder **Nie** abfragt. Die heutige Wiederholung betrifft das nicht; siehe
+  [Eine Sitzung starten](#eine-sitzung-starten).
 - **Tägliche Erinnerung** und ihre **Uhrzeit**: siehe [Erinnerung und Widget](#erinnerung-und-widget).
 
 ### Schulkind-Modus
@@ -490,6 +579,10 @@ Prüfung berichtigen, bevor etwas importiert wird.
 **Ich will kein Italienisch lernen.** Blende die mitgelieferten Italienisch-Pakete aus: **Sprachpakete → ⋮ →
 Ausblenden**. Sind alle Pakete ausgeblendet, sagt die Bibliothek das; importiere oder erstelle ein Paket oder blende
 eins wieder ein.
+
+**Mir kommen Wörter, die ich sicher kann.** Tippe in einer Sitzung aus der Bibliothek unter den Bewertungen auf **Kann
+ich – seltener abfragen**; die Karte kommt dann nur noch ab und an. Karten, die du seit Wochen sicher weißt, lassen
+Lektionssitzungen ohnehin bis auf wenige aus; **Einstellungen → Gefestigte Karten in Lektionen** ändert das.
 
 **Ich will von vorn anfangen.** **Einstellungen → Lernfortschritt zurücksetzen** löscht alle Antworten; die Pakete
 bleiben installiert.

@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.14.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.15.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -22,6 +22,8 @@ This guide describes wörds 0.14.0. The screenshots show the Terracotta color sc
 - [Today's review](#todays-review)
 - [Reminder and widget](#reminder-and-widget)
 - [Progress](#progress)
+- [Statistics](#statistics)
+- [Practising weak spots](#practising-weak-spots)
 - [Practising articles](#practising-articles)
 - [Kid mode and coins](#kid-mode-and-coins)
 - [Language packs](#language-packs)
@@ -50,7 +52,8 @@ The app has three areas, always reachable from the bar at the bottom (on tablets
 ## The library
 
 The library shows everything you can learn in the current language pair. The row of chips at the top switches
-between the installed packs, for example *Verben* (verb conjugation) and *Wortschatz* (vocabulary). Each pack is
+between the installed packs, for example *Wortschatz* (vocabulary) and *Verben* (verb conjugation); packs with
+vocabulary come first, and the library opens on them. Each pack is
 divided into sections (lessons), and each section into items: a verb with all its forms, or a word.
 
 ![The library with today's review at the top](../images/en/08-library.png) ![The vocabulary pack](../images/en/09-library-vocabulary.png)
@@ -81,6 +84,11 @@ Before a session starts, a sheet lets you decide how to practise:
 - **Answer**: **Flip** the card and grade yourself, or **Type** the answer (see [Typing the answer](#typing-the-answer)).
   wörds remembers your choice for each language pair.
 
+- **Ask consolidated cards too** appears when some of the chosen cards are *consolidated*: you have known them for
+  weeks, or marked them **I know this**. A session from the library leaves them out, apart from a few that come up
+  now and then; today's review still asks for them when they are due. Turn the switch on to practise all of them
+  this once. How many are left out is set in [Settings](#daily-review) → **Consolidated cards in lessons**.
+
 The sheet shows how many cards that makes and roughly how long it takes. Tap **Start**.
 
 ## Studying a card
@@ -102,6 +110,8 @@ More on the card screen:
 
 - The **speaker** plays the pronunciation with your device's text-to-speech voice. If the voice for the language is
   missing, wörds offers to install it.
+- **I know this – ask rarely**, under the grades once you knew the card (and after a right typed answer), tells wörds
+  that you know this card well: it comes up only now and then from now on. The message at the bottom can undo it.
 - **Undo** (the arrow at the top right, or the message at the bottom) takes back the last answer.
 - The **arrows** at the card's sides go back to earlier cards and forward again; see
   [Looking back and correcting](#looking-back-and-correcting).
@@ -223,11 +233,79 @@ Above the packs, Progress shows:
   the list you can **edit** a word (a word of an installed pack is edited in a copy of the pack, which keeps your
   progress), or **reset** it to learn it from scratch. A word leaves the list once you remember it for three weeks.
   In the library, the editor and on the answer side of a card, these words are marked **Difficult**.
+- **Your week**: from the first day of a week, a recap of the week before – how many answers you gave, how many were
+  right compared with the week before that, and how many cards became consolidated. **✕** puts it away until next
+  week.
+- **A lesson goal**, if you set one (see [Statistics](#statistics)): how many new cards of the lesson are left, how
+  many a day that needs, and whether your daily limit of new cards makes it in time. Tap it to open the lesson;
+  **✕** removes the goal.
+- **Learning state – statistics**: all cards of the language pair by how well you know them; tap it for the
+  [statistics](#statistics).
 - **Next 7 days**: how many cards are due each day, overdue ones counted today.
 - **Last 12 weeks**: a calendar of the days you studied; the darker a day, the more answers you gave. **Show as list**
   spells both charts out as a table.
 
 ![Outlook and calendar](../images/en/14-progress-insights.png) ![Difficult words](../images/en/26-difficult-words.png)
+
+## Statistics
+
+The statistics show how well you know the cards of the current language pair, and where it pays to practise. Each
+card counts once per direction, since knowing *la casa* when you see it is not the same as saying it yourself. A card
+is in one of these stages:
+
+| Stage | Meaning |
+|---|---|
+| **new** | Not answered yet |
+| **learning** | Answered, but not remembered for a week yet |
+| **shaky** | Missed the last time, or probably forgotten by now |
+| **secure** | Remembered for a week or longer |
+| **consolidated** | Remembered for three weeks or longer and known three times in a row, or marked **I know this** |
+
+The statistics have three tabs:
+
+- **Learning state**: all cards as one bar of stages, then each pack with its lessons. A pack also says when all its
+  new cards will have been introduced at your daily limit. Under the packs, **Recognising and producing** compares
+  the two directions, and **Mistakes when typing** shows what went wrong in typed answers of the last 90 days:
+  wrong, typos, accents or articles.
+- **Conjugation** (with verb packs): a grid of tenses and persons. Each cell shows how often that form was right; the
+  paler it is, the more it is worth practising. Below it, the verbs answered wrong most often.
+- **History**: right answers per week, consolidated cards over time, the calendar of study days and the outlook for
+  the next seven days.
+
+![Learning state](../images/en/60-statistics.png) ![Tenses and persons](../images/en/61-statistics-conjugation.png)
+
+![History](../images/en/62-statistics-history.png)
+
+Every chart has **Show as list** to read its figures as a table; screen readers hear a summary.
+
+Tap a **lesson** to see its cards with their stage in each direction. Tap a card for its details: when it comes up
+next, how likely you still know it today, how long it stays remembered, a **forgetting curve** for the coming two
+months and every answer it got. There you can mark it **I know this – ask rarely**, **forget its answers** to learn it
+from scratch, or **edit** it if it is one of your own words.
+
+![The cards of a lesson](../images/en/64-lesson-cards.png) ![A card's details](../images/en/65-card-detail.png)
+
+On a lesson's cards, **Set goal** asks for a date by which all cards of the lesson should be introduced. The goal then
+appears in Progress. There is one goal per language pair; setting another one replaces it.
+
+## Practising weak spots
+
+**Practise weak spots** starts a session with just the cards that need it. Open it with the button at the bottom of
+the statistics, with **Practise this lesson** on a lesson's cards, with **Practise these** on the difficult words, or by
+tapping a verb, a kind of typing mistake or **Practise the weakest forms** in the statistics.
+
+![Practise weak spots](../images/en/63-practise-weak-spots.png)
+
+Choose where the cards come from – each with its number of cards:
+
+- **Shaky**: missed the last time, or probably forgotten by now.
+- **Wrong lately**: answered wrong in the last seven days.
+- **Difficult**: the [difficult words](#progress).
+- **Slow to answer**: known, but only after eight seconds or more on average.
+- The source you opened it for: a verb, a lesson, a kind of mistake or the weakest forms of the conjugation grid.
+
+Then choose how many cards at most (10, 20 or 40), the direction and whether to flip or type. The cards you are least
+likely to remember come first. The session works like any other, and its answers count for your reviews.
 
 ## Practising articles
 
@@ -265,6 +343,9 @@ Kid mode makes wörds more motivating for school children. It is off until you t
 ![The end of a session in kid mode](../images/en/52-kid-summary.png) ![Coins in Progress](../images/en/53-kid-coins.png)
 
 ![Trading coins in](../images/en/54-kid-redeem.png) ![Turning kid mode off](../images/en/55-kid-off.png)
+
+In kid mode, the [statistics](#statistics) show what your child knows already as one big number, and stars for each
+lesson; mistakes, the conjugation grid and **I know this** are left out.
 
 When you turn kid mode off, wörds asks what should happen to the coins: **Keep coins and statistics** (they come back
 when kid mode is turned on again) or **Delete coins and statistics** for every language pair. Resetting the learning
@@ -404,6 +485,9 @@ everything read from them. An import left for a day is deleted.
 - **Accept a missing article** counts a noun without its article as almost right; turned off, it is wrong.
 - **Back and forward arrows**: whether the arrows on a card go **one side at a time** or **one card at a time**; see
   [Looking back and correcting](#looking-back-and-correcting).
+- **Consolidated cards in lessons**: whether a session from the library asks consolidated cards **Always**, a
+  **Sample** of a fifth of them (normally), or **Never**. Today's review is not affected; see
+  [Starting a session](#starting-a-session).
 - **Daily reminder** and its **Time**: see [Reminder and widget](#reminder-and-widget).
 
 ### Kid mode
@@ -464,5 +548,9 @@ anything is imported.
 
 **I do not want to learn Italian.** Hide the built-in Italian packs: **Language packs → ⋮ → Hide**. If every pack is
 hidden, the library says so; import or create a pack, or show one again.
+
+**I keep getting words I know well.** In a session from the library, tap **I know this – ask rarely** under the
+grades; the card then comes up only now and then. Cards you know for weeks are left out of lesson sessions anyway,
+apart from a few; **Settings → Consolidated cards in lessons** changes that.
 
 **I want to start over.** **Settings → Reset learning progress** deletes all answers; the packs stay installed.
