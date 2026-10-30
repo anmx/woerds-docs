@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.15.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.16.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -56,17 +56,28 @@ between the installed packs, for example *Wortschatz* (vocabulary) and *Verben* 
 vocabulary come first, and the library opens on them. Each pack is
 divided into sections (lessons), and each section into items: a verb with all its forms, or a word.
 
-![The library with today's review at the top](../images/en/08-library.png) ![The vocabulary pack](../images/en/09-library-vocabulary.png)
+![The library with today's review at the top](../images/en/08-library.png) ![The Articles mode](../images/en/09-library-articles.png)
 
 - **Search** finds words and verb forms in the selected pack.
-- **Today's review** at the top starts or continues your daily review (see [Today's review](#todays-review)).
-- **Continue last session** appears when a session is still open; it picks up exactly where you left off.
-- The **▶ button** next to a section starts that whole section.
+- A second row of chips appears when a pack holds more than one kind of content: *Wortschatz* (vocabulary),
+  *Verbkonjugation* (verbs) and **Articles** once the pack has at least five nouns with their article. The library
+  remembers the last one per pack.
+- The **button under the chips** follows that choice: **Continue …** when a session of it is still open (it picks up
+  exactly where you left off), **Study …** for all its entries otherwise, or **Practise articles** (see
+  [Practising articles](#practising-articles)).
+- **Today's review** starts or continues your daily review (see [Today's review](#todays-review)).
+- Lessons start **collapsed**: tap a lesson's name to open or close it. wörds remembers which lessons you left open.
+  A search opens every lesson with a match.
+- The **▶ button** next to a lesson starts that whole lesson, open or not.
 - With two or more language pairs installed, tap the pair under the title to switch between them.
 - The **box icon** at the top right opens the [language packs](#language-packs).
 
-To study only some items, tick them. **Select all** ticks a whole section; **Clear** at the top removes the
+To study only some items, tick them. **Select all** ticks a whole lesson; **Clear** at the top removes the
 selection. The button at the bottom shows how many items you have chosen.
+
+One session per pack and kind stays open. If you start a lesson while another session of it is open, wörds asks
+first: **Continue** the open one, **Start again** (or **Start anyway** for another lesson), or **Cancel**. Your answers
+so far are saved either way.
 
 ![Two verbs selected](../images/en/02-library-selection.png) ![Switching the language pair](../images/en/15-pair-switcher.png)
 
@@ -87,7 +98,7 @@ Before a session starts, a sheet lets you decide how to practise:
 - **Ask consolidated cards too** appears when some of the chosen cards are *consolidated*: you have known them for
   weeks, or marked them **I know this**. A session from the library leaves them out, apart from a few that come up
   now and then; today's review still asks for them when they are due. Turn the switch on to practise all of them
-  this once. How many are left out is set in [Settings](#daily-review) → **Consolidated cards in lessons**.
+  this once. How many are left out is set in [Settings](#learning) → **Consolidated cards in lessons**.
 
 The sheet shows how many cards that makes and roughly how long it takes. Tap **Start**.
 
@@ -133,7 +144,7 @@ next. A card you have not answered yet never shows the forward arrow.
 ![An earlier card with its grade](../images/en/17-browse-earlier.png) ![Correcting a typed answer](../images/en/18-browse-typed.png)
 
 - Normally the arrows go **one side at a time**: the answer, then the question, then the answer of the card before,
-  and so on. In [Settings](#daily-review) you can choose **one card at a time** instead; then each tap shows an
+  and so on. In [Settings](#learning) you can choose **one card at a time** instead; then each tap shows an
   earlier card's question, and tapping the card turns it.
 - A tap on a turned card also shows its question again.
 - An earlier card shows the number it had in the session and how you graded it. **Graded it wrong?** Tap the other
@@ -310,8 +321,9 @@ likely to remember come first. The session works like any other, and its answers
 ## Practising articles
 
 **Practise articles** asks only for the article of nouns: *casa* – is it *il*, *lo*, *la* or *l'*? You find it in the
-library (for the selected pack) and in Progress (for all packs of the language pair), once there are at least five
-nouns with their article.
+library under the **Articles** chip (for the selected pack) and in Progress (for all packs of the language pair), once
+there are at least five nouns with their article. Under **Articles** the library lists those nouns by lesson: the
+button practises all of them, a lesson's **▶** that lesson, and ticked nouns just those.
 
 ![Practising articles](../images/en/27-articles.png) ![A wrong article](../images/en/28-articles-wrong.png)
 
@@ -455,32 +467,29 @@ everything read from them. An import left for a day is deleted.
 
 ## Settings
 
-![Settings: language and appearance](../images/en/20-settings.png) ![Settings: daily review](../images/en/21-settings-review.png)
+The settings open on an overview: each row shows how an area is set and opens it with a tap. On a tablet or an
+unfolded foldable, the open area shows next to the overview. Every setting applies to all language pairs.
 
-### Language
+![Settings: the overview](../images/en/20-settings.png) ![Settings: learning](../images/en/21-settings-learning.png)
+
+### Appearance and language
 
 - **App language**: follow the system, or always German or English.
-
-### Appearance
-
 - **Theme**: light, dark, or as set on your device.
 - **Color scheme**: the colors of your wallpaper (Android 12 and later), one of six schemes, or a color of your
   own. Colors follow the system's contrast setting (Android 14 and later).
 - **Show pictures on cards** turns the pictures on vocabulary cards on or off.
 - **Animations**: as set on your device, reduced, or full.
 
-### Pronunciation
+**Custom color**: pick a hue and colorfulness (or enter a hex code) and a style. The preview shows the result in
+light and dark.
 
-- **Play automatically** speaks the answer when a card is flipped.
-- **Play … when shown** speaks the learned language as soon as a card appears with it on the front.
-- **Speech rate** makes the voice slower or faster.
+![Your own color](../images/en/22-custom-color.png) ![Dark theme](../images/en/16-library-dark.png)
 
-### Daily review
+### Learning
 
-- **Remember**: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %).
-  Higher means more frequent reviews.
-- **New cards per day** and **Reviews per day at most** limit how much each day's review contains.
-- **Type answers** asks you to type each answer in today's review instead of flipping the card.
+- **Type answers**: in the daily review and when [practising weak spots](#practising-weak-spots), you type each answer
+  instead of flipping the card. Lessons ask when they start.
 - **Accept missing accents** counts an answer that differs only in accents as almost right; turned off, it is wrong.
 - **Accept a missing article** counts a noun without its article as almost right; turned off, it is wrong.
 - **Back and forward arrows**: whether the arrows on a card go **one side at a time** or **one card at a time**; see
@@ -488,27 +497,32 @@ everything read from them. An import left for a day is deleted.
 - **Consolidated cards in lessons**: whether a session from the library asks consolidated cards **Always**, a
   **Sample** of a fifth of them (normally), or **Never**. Today's review is not affected; see
   [Starting a session](#starting-a-session).
+
+### Daily review
+
+- **Remember**: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %).
+  Higher means more frequent reviews.
+- **New cards per day** and **Reviews per day at most** limit how much each day's review contains.
 - **Daily reminder** and its **Time**: see [Reminder and widget](#reminder-and-widget).
+
+### Pronunciation
+
+- **Play automatically** speaks the answer when a card is flipped.
+- **Play the learned language when shown** speaks it as soon as a card appears with it on the front.
+- **Speech rate** makes the voice slower or faster.
 
 ### Kid mode
 
 - **Kid mode** turns the playful look, the cheers and the coins on or off; see [Kid mode and coins](#kid-mode-and-coins).
 - **Cheer after … words in a row**: 3, 5, 10, 15 or 20 (normally 5).
 
-### Data
+### Data and info
 
 - **Language packs** opens the [pack management](#language-packs).
 - **Reset learning progress** deletes all answers and sessions, including those of the article practice. Installed
   packs and kid mode coins stay. This cannot be undone.
-
-### About wörds
-
 - **Open-source licenses** lists the libraries wörds is built with; tap one to read its license.
-
-**Custom color**: pick a hue and colorfulness (or enter a hex code) and a style. The preview shows the result in
-light and dark.
-
-![Your own color](../images/en/22-custom-color.png) ![Dark theme](../images/en/16-library-dark.png)
+- **Version** shows which version of wörds is installed.
 
 ## Tablets and foldables
 

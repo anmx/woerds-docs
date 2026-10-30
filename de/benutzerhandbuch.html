@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.15.0 (aktuell) · Frühere Versionen: <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.16.0 (aktuell) · Frühere Versionen: <a href="../versions/0.15.0/de/benutzerhandbuch.html">0.15.0</a>, <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.15.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.16.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -79,30 +79,33 @@
     <p>Die Bibliothek zeigt alles, was du im aktuellen Sprachpaar lernen kannst. Mit den Chips oben wechselst du zwischen den installierten Paketen, zum Beispiel <em>Wortschatz</em> (Vokabeln) und <em>Verben</em> (Konjugation); Pakete mit Vokabeln stehen vorn, und die Bibliothek öffnet sich mit ihnen. Jedes Paket ist in Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/08-library.png" alt="Die Bibliothek mit der heutigen Wiederholung oben" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/08-library.png" alt="Die Bibliothek mit der heutigen Wiederholung oben" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Die Bibliothek mit der heutigen Wiederholung oben</figcaption>
       </figure>
       <figure class="shot">
-        <img src="../images/de/09-library-vocabulary.png" alt="Das Vokabelpaket" width="540" height="1200" loading="lazy" decoding="async">
-        <figcaption>Das Vokabelpaket</figcaption>
+        <img src="../images/de/09-library-articles.png" alt="Der Modus Artikel" width="1080" height="2400" loading="lazy" decoding="async">
+        <figcaption>Der Modus Artikel</figcaption>
       </figure>
     </div>
     <ul>
       <li><strong>Suchen</strong> findet Wörter und Verbformen im ausgewählten Paket.</li>
-      <li><strong>Heutige Wiederholung</strong> oben startet deine tägliche Wiederholung oder setzt sie fort (siehe <a href="#heutige-wiederholung">Heutige Wiederholung</a>).</li>
-      <li><strong>Letzte Sitzung fortsetzen</strong> erscheint, solange eine Sitzung offen ist; sie geht genau dort weiter, wo du aufgehört hast.</li>
-      <li>Die <strong>▶-Taste</strong> neben einem Abschnitt startet den ganzen Abschnitt.</li>
+      <li>Eine zweite Reihe Chips erscheint, wenn ein Paket mehrere Arten von Inhalten hat: <em>Wortschatz</em>, <em>Verbkonjugation</em> und <strong>Artikel</strong>, sobald das Paket mindestens fünf Nomen mit Artikel hat. Die Bibliothek merkt sich die letzte Wahl pro Paket.</li>
+      <li>Der <strong>Knopf unter den Chips</strong> folgt dieser Wahl: <strong>… fortsetzen</strong>, solange eine Sitzung davon offen ist (sie geht genau dort weiter, wo du aufgehört hast), sonst <strong>… lernen</strong> für alle Einträge, oder <strong>Artikel üben</strong> (siehe <a href="#artikel-üben">Artikel üben</a>).</li>
+      <li><strong>Heutige Wiederholung</strong> startet deine tägliche Wiederholung oder setzt sie fort (siehe <a href="#heutige-wiederholung">Heutige Wiederholung</a>).</li>
+      <li>Lektionen sind anfangs <strong>zugeklappt</strong>: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt sich, welche Lektionen du offen gelassen hast. Eine Suche klappt alle Lektionen mit Treffern auf.</li>
+      <li>Die <strong>▶-Taste</strong> neben einer Lektion startet die ganze Lektion, ob auf- oder zugeklappt.</li>
       <li>Sind zwei oder mehr Sprachpaare installiert, tippst du auf das Sprachpaar unter dem Titel, um zu wechseln.</li>
       <li>Das <strong>Kisten-Symbol</strong> oben rechts öffnet die <a href="#sprachpakete">Sprachpakete</a>.</li>
     </ul>
-    <p>Willst du nur einige Einträge lernen, hakst du sie an. <strong>Alle auswählen</strong> hakt einen ganzen Abschnitt an; <strong>Leeren</strong> oben hebt die Auswahl auf. Die Taste unten zeigt, wie viele Einträge du gewählt hast.</p>
+    <p>Willst du nur einige Einträge lernen, hakst du sie an. <strong>Alle auswählen</strong> hakt eine ganze Lektion an; <strong>Leeren</strong> oben hebt die Auswahl auf. Die Taste unten zeigt, wie viele Einträge du gewählt hast.</p>
+    <p>Pro Paket und Art bleibt eine Sitzung offen. Startest du eine Lektion, während davon noch eine Sitzung offen ist, fragt wörds zuerst: die offene <strong>Fortsetzen</strong>, <strong>Neu beginnen</strong> (bei einer anderen Lektion <strong>Trotzdem starten</strong>) oder <strong>Abbrechen</strong>. Deine bisherigen Antworten sind so oder so gespeichert.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/02-library-selection.png" alt="Zwei Verben ausgewählt" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/02-library-selection.png" alt="Zwei Verben ausgewählt" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Zwei Verben ausgewählt</figcaption>
       </figure>
       <figure class="shot">
-        <img src="../images/de/15-pair-switcher.png" alt="Sprachpaar wechseln" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/15-pair-switcher.png" alt="Sprachpaar wechseln" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Sprachpaar wechseln</figcaption>
       </figure>
     </div>
@@ -121,7 +124,7 @@
       <li><strong>Antwort</strong>: die Karte <strong>Umdrehen</strong> und dich selbst bewerten, oder die Antwort <strong>Eintippen</strong> (siehe <a href="#die-antwort-eintippen">Die Antwort eintippen</a>). wörds merkt sich deine Wahl für jedes Sprachpaar.</li>
     </ul>
     <ul>
-      <li><strong>Gefestigte Karten auch abfragen</strong> erscheint, wenn einige der gewählten Karten <em>gefestigt</em> sind: Du weißt sie seit Wochen sicher oder hast sie mit <strong>Kann ich</strong> markiert. Eine Sitzung aus der Bibliothek lässt sie aus, bis auf wenige, die ab und an drankommen; die heutige Wiederholung fragt sie weiter ab, wenn sie fällig sind. Mit dem Schalter übst du dieses eine Mal alle. Wie viele ausgelassen werden, legst du unter <a href="#tägliche-wiederholung">Einstellungen</a> → <strong>Gefestigte Karten in Lektionen</strong> fest.</li>
+      <li><strong>Gefestigte Karten auch abfragen</strong> erscheint, wenn einige der gewählten Karten <em>gefestigt</em> sind: Du weißt sie seit Wochen sicher oder hast sie mit <strong>Kann ich</strong> markiert. Eine Sitzung aus der Bibliothek lässt sie aus, bis auf wenige, die ab und an drankommen; die heutige Wiederholung fragt sie weiter ab, wenn sie fällig sind. Mit dem Schalter übst du dieses eine Mal alle. Wie viele ausgelassen werden, legst du unter <a href="#lernen">Einstellungen</a> → <strong>Gefestigte Karten in Lektionen</strong> fest.</li>
     </ul>
     <p>Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf <strong>Starten</strong>.</p>
     <h2 id="mit-einer-karte-lernen">Mit einer Karte lernen</h2>
@@ -175,7 +178,7 @@
       </figure>
     </div>
     <ul>
-      <li>Normalerweise blättern die Pfeile <strong>Seite für Seite</strong>: die Antwort, dann die Frage, dann die Antwort der Karte davor und so weiter. In den <a href="#tägliche-wiederholung">Einstellungen</a> kannst du stattdessen <strong>Karte für Karte</strong> wählen; dann zeigt jeder Tipp die Frage einer früheren Karte, und ein Tipp auf die Karte dreht sie um.</li>
+      <li>Normalerweise blättern die Pfeile <strong>Seite für Seite</strong>: die Antwort, dann die Frage, dann die Antwort der Karte davor und so weiter. In den <a href="#lernen">Einstellungen</a> kannst du stattdessen <strong>Karte für Karte</strong> wählen; dann zeigt jeder Tipp die Frage einer früheren Karte, und ein Tipp auf die Karte dreht sie um.</li>
       <li>Ein Tipp auf eine umgedrehte Karte zeigt auch wieder ihre Frage.</li>
       <li>Eine frühere Karte zeigt ihre Nummer in der Sitzung und wie du sie bewertet hast. <strong>Falsch bewertet?</strong> Tippe auf die andere Bewertung (bei eingetippten Antworten: <em>Falsch</em>, <em>Fast</em> oder <em>Richtig</em>). wörds korrigiert sie in deinem Fortschritt; die Sitzung bleibt, wo sie ist.</li>
       <li>Zurückblättern ändert nichts an der Karte, die dran ist: Hast du <em>Nicht gewusst</em> gesagt, bleibt das so, und schon eingetippter Text bleibt stehen.</li>
@@ -231,7 +234,7 @@
     <p>Das Widget <strong>Heutige Wiederholung</strong> für den Startbildschirm zeigt, wie viele Karten warten, und startet die Wiederholung mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die Farben der App.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/25-settings-reminder.png" alt="Einstellungen mit der Erinnerung" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/25-settings-reminder.png" alt="Einstellungen mit der Erinnerung" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Einstellungen mit der Erinnerung</figcaption>
       </figure>
     </div>
@@ -349,7 +352,7 @@
     </ul>
     <p>Dann wählst du, wie viele Karten höchstens (10, 20 oder 40), die Richtung und ob du umdrehst oder eintippst. Die Karten, die du am ehesten vergessen hast, kommen zuerst. Die Sitzung läuft wie jede andere, und ihre Antworten zählen für deine Wiederholungen.</p>
     <h2 id="artikel-üben">Artikel üben</h2>
-    <p><strong>Artikel üben</strong> fragt nur nach dem Artikel von Nomen: <em>casa</em> – heißt es <em>il</em>, <em>lo</em>, <em>la</em> oder <em>l'</em>? Du findest es in der Bibliothek (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf Nomen mit ihrem Artikel gibt.</p>
+    <p><strong>Artikel üben</strong> fragt nur nach dem Artikel von Nomen: <em>casa</em> – heißt es <em>il</em>, <em>lo</em>, <em>la</em> oder <em>l'</em>? Du findest es in der Bibliothek unter dem Chip <strong>Artikel</strong> (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf Nomen mit ihrem Artikel gibt. Unter <strong>Artikel</strong> listet die Bibliothek diese Nomen nach Lektionen: Der Knopf übt alle, das <strong>▶</strong> einer Lektion diese Lektion und angehakte Nomen nur diese.</p>
     <div class="figures">
       <figure class="shot">
         <img src="../images/de/27-articles.png" alt="Artikel üben" width="540" height="1200" loading="lazy" decoding="async">
@@ -366,7 +369,7 @@
     <p>Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis du ihn unter <a href="#schulkind-modus">Einstellungen</a> → <strong>Schulkind-Modus</strong> einschaltest.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/50-kid-settings.png" alt="Der Schulkind-Modus in den Einstellungen" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/50-kid-settings.png" alt="Der Schulkind-Modus in den Einstellungen" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Der Schulkind-Modus in den Einstellungen</figcaption>
       </figure>
       <figure class="shot">
@@ -396,7 +399,7 @@
         <figcaption>Coins einlösen</figcaption>
       </figure>
       <figure class="shot">
-        <img src="../images/de/55-kid-off.png" alt="Den Schulkind-Modus ausschalten" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/55-kid-off.png" alt="Den Schulkind-Modus ausschalten" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Den Schulkind-Modus ausschalten</figcaption>
       </figure>
     </div>
@@ -489,57 +492,24 @@
     </ol>
     <p>Du kannst einen Import verlassen und später weitermachen; er wartet, wo du aufgehört hast. <strong>Verwerfen</strong> löscht die Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen bleibt, wird gelöscht.</p>
     <h2 id="einstellungen">Einstellungen</h2>
+    <p>Die Einstellungen öffnen mit einer Übersicht: Jede Zeile zeigt, wie ein Bereich gerade eingestellt ist, und öffnet ihn mit einem Tipp. Auf einem Tablet oder aufgeklappten Foldable steht der geöffnete Bereich neben der Übersicht. Alle Einstellungen gelten für jedes Sprachpaar.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/20-settings.png" alt="Einstellungen: Sprache und Darstellung" width="540" height="1200" loading="lazy" decoding="async">
-        <figcaption>Einstellungen: Sprache und Darstellung</figcaption>
+        <img src="../images/de/20-settings.png" alt="Einstellungen: die Übersicht" width="1080" height="2400" loading="lazy" decoding="async">
+        <figcaption>Einstellungen: die Übersicht</figcaption>
       </figure>
       <figure class="shot">
-        <img src="../images/de/21-settings-review.png" alt="Einstellungen: tägliche Wiederholung" width="540" height="1200" loading="lazy" decoding="async">
-        <figcaption>Einstellungen: tägliche Wiederholung</figcaption>
+        <img src="../images/de/21-settings-learning.png" alt="Einstellungen: Lernen" width="1080" height="2400" loading="lazy" decoding="async">
+        <figcaption>Einstellungen: Lernen</figcaption>
       </figure>
     </div>
-    <h3 id="sprache">Sprache</h3>
+    <h3 id="darstellung-und-sprache">Darstellung und Sprache</h3>
     <ul>
       <li><strong>App-Sprache</strong>: wie im System, oder immer Deutsch oder Englisch.</li>
-    </ul>
-    <h3 id="darstellung">Darstellung</h3>
-    <ul>
       <li><strong>Design</strong>: hell, dunkel oder wie auf deinem Gerät eingestellt.</li>
       <li><strong>Farbschema</strong>: die Farben deines Hintergrundbilds (ab Android 12), eines von sechs Farbschemata oder eine eigene Farbe. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).</li>
       <li><strong>Bilder auf Karten anzeigen</strong> schaltet die Bilder auf Vokabelkarten ein oder aus.</li>
       <li><strong>Animationen</strong>: wie auf deinem Gerät eingestellt, reduziert oder vollständig.</li>
-    </ul>
-    <h3 id="aussprache">Aussprache</h3>
-    <ul>
-      <li><strong>Automatisch abspielen</strong> spricht die Antwort, sobald eine Karte umgedreht wird.</li>
-      <li><strong>… beim Anzeigen abspielen</strong> spricht die Lernsprache, sobald eine Karte sie auf der Vorderseite zeigt.</li>
-      <li><strong>Sprechtempo</strong> macht die Stimme langsamer oder schneller.</li>
-    </ul>
-    <h3 id="tägliche-wiederholung">Tägliche Wiederholung</h3>
-    <ul>
-      <li><strong>Behalten</strong>: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise 90 %). Höher heißt häufiger wiederholen.</li>
-      <li><strong>Neue Karten pro Tag</strong> und <strong>Höchstens Wiederholungen pro Tag</strong> begrenzen, wie viel die tägliche Wiederholung enthält.</li>
-      <li><strong>Antworten eintippen</strong>: In der heutigen Wiederholung tippst du jede Antwort ein, statt die Karte umzudrehen.</li>
-      <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
-      <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
-      <li><strong>Pfeile zurück und vor</strong>: ob die Pfeile auf einer Karte <strong>Seite für Seite</strong> oder <strong>Karte für Karte</strong> blättern; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
-      <li><strong>Gefestigte Karten in Lektionen</strong>: ob eine Sitzung aus der Bibliothek gefestigte Karten <strong>Immer</strong>, als <strong>Stichprobe</strong> von einem Fünftel (normal) oder <strong>Nie</strong> abfragt. Die heutige Wiederholung betrifft das nicht; siehe <a href="#eine-sitzung-starten">Eine Sitzung starten</a>.</li>
-      <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
-    </ul>
-    <h3 id="schulkind-modus">Schulkind-Modus</h3>
-    <ul>
-      <li><strong>Schulkind-Modus</strong> schaltet das verspielte Aussehen, den Jubel und die Coins ein oder aus; siehe <a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a>.</li>
-      <li><strong>Jubel nach … Wörtern hintereinander</strong>: 3, 5, 10, 15 oder 20 (normalerweise 5).</li>
-    </ul>
-    <h3 id="daten">Daten</h3>
-    <ul>
-      <li><strong>Sprachpakete</strong> öffnet die <a href="#sprachpakete">Paketverwaltung</a>.</li>
-      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.</li>
-    </ul>
-    <h3 id="über-wörds">Über wörds</h3>
-    <ul>
-      <li><strong>Open-Source-Lizenzen</strong> listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu lesen.</li>
     </ul>
     <p><strong>Eigene Farbe</strong>: Wähle Farbton und Farbigkeit (oder gib einen Hex-Code ein) und einen Stil. Die Vorschau zeigt das Ergebnis hell und dunkel.</p>
     <div class="figures">
@@ -548,10 +518,42 @@
         <figcaption>Eine eigene Farbe</figcaption>
       </figure>
       <figure class="shot">
-        <img src="../images/de/16-library-dark.png" alt="Dunkles Design" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/16-library-dark.png" alt="Dunkles Design" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Dunkles Design</figcaption>
       </figure>
     </div>
+    <h3 id="lernen">Lernen</h3>
+    <ul>
+      <li><strong>Antworten eintippen</strong>: In der täglichen Wiederholung und beim <a href="#schwachstellen-üben">Üben von Schwachstellen</a> tippst du jede Antwort ein, statt die Karte umzudrehen. Lektionen fragen das beim Start.</li>
+      <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
+      <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
+      <li><strong>Pfeile zurück und vor</strong>: ob die Pfeile auf einer Karte <strong>Seite für Seite</strong> oder <strong>Karte für Karte</strong> blättern; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
+      <li><strong>Gefestigte Karten in Lektionen</strong>: ob eine Sitzung aus der Bibliothek gefestigte Karten <strong>Immer</strong>, als <strong>Stichprobe</strong> von einem Fünftel (normal) oder <strong>Nie</strong> abfragt. Die heutige Wiederholung betrifft das nicht; siehe <a href="#eine-sitzung-starten">Eine Sitzung starten</a>.</li>
+    </ul>
+    <h3 id="tägliche-wiederholung">Tägliche Wiederholung</h3>
+    <ul>
+      <li><strong>Behalten</strong>: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise 90 %). Höher heißt häufiger wiederholen.</li>
+      <li><strong>Neue Karten pro Tag</strong> und <strong>Höchstens Wiederholungen pro Tag</strong> begrenzen, wie viel die tägliche Wiederholung enthält.</li>
+      <li><strong>Tägliche Erinnerung</strong> und ihre <strong>Uhrzeit</strong>: siehe <a href="#erinnerung-und-widget">Erinnerung und Widget</a>.</li>
+    </ul>
+    <h3 id="aussprache">Aussprache</h3>
+    <ul>
+      <li><strong>Automatisch abspielen</strong> spricht die Antwort, sobald eine Karte umgedreht wird.</li>
+      <li><strong>Lernsprache beim Anzeigen abspielen</strong> spricht die Lernsprache, sobald eine Karte sie auf der Vorderseite zeigt.</li>
+      <li><strong>Sprechtempo</strong> macht die Stimme langsamer oder schneller.</li>
+    </ul>
+    <h3 id="schulkind-modus">Schulkind-Modus</h3>
+    <ul>
+      <li><strong>Schulkind-Modus</strong> schaltet das verspielte Aussehen, den Jubel und die Coins ein oder aus; siehe <a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a>.</li>
+      <li><strong>Jubel nach … Wörtern hintereinander</strong>: 3, 5, 10, 15 oder 20 (normalerweise 5).</li>
+    </ul>
+    <h3 id="daten-und-infos">Daten und Infos</h3>
+    <ul>
+      <li><strong>Sprachpakete</strong> öffnet die <a href="#sprachpakete">Paketverwaltung</a>.</li>
+      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.</li>
+      <li><strong>Open-Source-Lizenzen</strong> listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu lesen.</li>
+      <li><strong>Version</strong> zeigt, welche Version von wörds installiert ist.</li>
+    </ul>
     <h2 id="tablets-und-foldables">Tablets und Foldables</h2>
     <p>Auf großen Bildschirmen wandert die Navigation an die Seite, und die GitHub-Quellen zeigen die Liste der Quellen und die Pakete der gewählten Quelle nebeneinander. Der Paket-Editor zeigt die Wortliste und das Wort, das du bearbeitest, nebeneinander, die Prüfung eines Foto-Imports die Zeilen und das Foto. Auf einem halb geöffneten Foldable (Tischmodus) liegt die Karte über dem Knick und die Bewertungstasten darunter – so kannst du mit dem Gerät auf dem Tisch lernen. Solange die Bildschirmtastatur für eine eingetippte Antwort offen ist, rückt alles über den Knick.</p>
     <div class="figures">

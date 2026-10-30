@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f5f9fd">
+  <meta name="description" content="wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your…">
+  <meta name="robots" content="noindex">
+  <title>wörds user guide</title>
+  <link rel="stylesheet" href="../../../manual.css">
+  <link rel="alternate" hreflang="de" href="../de/benutzerhandbuch.html">
+  <link rel="alternate" hreflang="en" href="user-guide.html">
+</head>
+<body>
+  <!-- Generated from the Markdown next to this file by tools/docs/build-manual.py; edit the Markdown. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav aria-label="Manual">
+      <a href="../../../index.html">Manual</a>
+      <a href="user-guide.html" aria-current="page">User guide</a>
+      <a href="../../../en/privacy-policy.html">Privacy policy</a>
+      <a class="lang" href="../de/benutzerhandbuch.html" hreflang="de" lang="de">Deutsch</a>
+    </nav>
+  </header>
+  <main id="main">
+    <p class="version archived" role="note">This guide describes wörds 0.15.0, an earlier version. <a href="../../../en/user-guide.html">Guide for the latest version (0.16.0)</a> · Earlier versions: <a href="../../0.14.0/en/user-guide.html">0.14.0</a>, <a href="../../0.13.0/en/user-guide.html">0.13.0</a>, <a href="../../0.12.0/en/user-guide.html">0.12.0</a>, <a href="../../0.11.1/en/user-guide.html">0.11.1</a>, <a href="../../0.11.0/en/user-guide.html">0.11.0</a>, <a href="../../0.10.0/en/user-guide.html">0.10.0</a>, <a href="../../0.9.0/en/user-guide.html">0.9.0</a></p>
+    <h1 id="wörds-user-guide">wörds user guide</h1>
+    <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
+    <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
+    <p>This guide describes wörds 0.15.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <h2 id="contents">Contents</h2>
+    <nav aria-labelledby="contents">
+      <ul>
+        <li><a href="#getting-started">Getting started</a></li>
+        <li><a href="#the-library">The library</a></li>
+        <li><a href="#starting-a-session">Starting a session</a></li>
+        <li><a href="#studying-a-card">Studying a card</a></li>
+        <li><a href="#looking-back-and-correcting">Looking back and correcting</a></li>
+        <li><a href="#typing-the-answer">Typing the answer</a></li>
+        <li><a href="#end-of-a-session">End of a session</a></li>
+        <li><a href="#todays-review">Today's review</a></li>
+        <li><a href="#reminder-and-widget">Reminder and widget</a></li>
+        <li><a href="#progress">Progress</a></li>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#practising-weak-spots">Practising weak spots</a></li>
+        <li><a href="#practising-articles">Practising articles</a></li>
+        <li><a href="#kid-mode-and-coins">Kid mode and coins</a></li>
+        <li><a href="#language-packs">Language packs</a></li>
+        <li><a href="#your-own-packs">Your own packs</a></li>
+        <li><a href="#words-from-photos">Words from photos</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#tablets-and-foldables">Tablets and foldables</a></li>
+        <li><a href="#accessibility-and-privacy">Accessibility and privacy</a></li>
+        <li><a href="#questions-and-problems">Questions and problems</a></li>
+      </ul>
+    </nav>
+    <h2 id="getting-started">Getting started</h2>
+    <p>On first start wörds installs its built-in content and asks what you want to learn. Choose a language pair and tap <strong>Let's go</strong>. You can install more pairs later and switch between them at any time.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/01-onboarding.png" alt="The welcome screen" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The welcome screen</figcaption>
+      </figure>
+    </div>
+    <p>The app has three areas, always reachable from the bar at the bottom (on tablets: at the side):</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Area</th><th scope="col">What it is for</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Library</th><td>Browse the content and start a session</td></tr>
+          <tr><th scope="row">Progress</th><td>Today's review and what you have learned so far</td></tr>
+          <tr><th scope="row">Settings</th><td>Language, colors, pronunciation, daily review, language packs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="the-library">The library</h2>
+    <p>The library shows everything you can learn in the current language pair. The row of chips at the top switches between the installed packs, for example <em>Wortschatz</em> (vocabulary) and <em>Verben</em> (verb conjugation); packs with vocabulary come first, and the library opens on them. Each pack is divided into sections (lessons), and each section into items: a verb with all its forms, or a word.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/08-library.png" alt="The library with today&#x27;s review at the top" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The library with today&#x27;s review at the top</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/09-library-vocabulary.png" alt="The vocabulary pack" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The vocabulary pack</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Search</strong> finds words and verb forms in the selected pack.</li>
+      <li><strong>Today's review</strong> at the top starts or continues your daily review (see <a href="#todays-review">Today's review</a>).</li>
+      <li><strong>Continue last session</strong> appears when a session is still open; it picks up exactly where you left off.</li>
+      <li>The <strong>▶ button</strong> next to a section starts that whole section.</li>
+      <li>With two or more language pairs installed, tap the pair under the title to switch between them.</li>
+      <li>The <strong>box icon</strong> at the top right opens the <a href="#language-packs">language packs</a>.</li>
+    </ul>
+    <p>To study only some items, tick them. <strong>Select all</strong> ticks a whole section; <strong>Clear</strong> at the top removes the selection. The button at the bottom shows how many items you have chosen.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/02-library-selection.png" alt="Two verbs selected" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Two verbs selected</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/15-pair-switcher.png" alt="Switching the language pair" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Switching the language pair</figcaption>
+      </figure>
+    </div>
+    <h2 id="starting-a-session">Starting a session</h2>
+    <p>Before a session starts, a sheet lets you decide how to practise:</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/03-session-setup.png" alt="The session setup" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The session setup</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>Direction</strong>: from your language to the learned one (<em>German → Italian</em>: you are shown "ich bin" and say "io sono"), the other way round, or <strong>Both</strong>.</li>
+      <li><strong>Order</strong> (only with <em>Both</em>): <strong>One after the other</strong> practises all cards of an item in one direction, then in the other. <strong>Alternating</strong> asks each card in both directions in turn.</li>
+      <li><strong>Tenses</strong> (verbs only): choose which tenses to practise.</li>
+      <li><strong>Answer</strong>: <strong>Flip</strong> the card and grade yourself, or <strong>Type</strong> the answer (see <a href="#typing-the-answer">Typing the answer</a>). wörds remembers your choice for each language pair.</li>
+    </ul>
+    <ul>
+      <li><strong>Ask consolidated cards too</strong> appears when some of the chosen cards are <em>consolidated</em>: you have known them for weeks, or marked them <strong>I know this</strong>. A session from the library leaves them out, apart from a few that come up now and then; today's review still asks for them when they are due. Turn the switch on to practise all of them this once. How many are left out is set in <a href="#daily-review">Settings</a> → <strong>Consolidated cards in lessons</strong>.</li>
+    </ul>
+    <p>The sheet shows how many cards that makes and roughly how long it takes. Tap <strong>Start</strong>.</p>
+    <h2 id="studying-a-card">Studying a card</h2>
+    <p>A card shows a prompt. Say or think the answer, then tap the card to flip it.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/04-card-front.png" alt="The front of a card" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The front of a card</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/05-card-answer.png" alt="The answer" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The answer</figcaption>
+      </figure>
+    </div>
+    <p>Then grade yourself:</p>
+    <ul>
+      <li><strong>Knew it</strong>, or swipe the card to the right.</li>
+      <li><strong>Didn't know it</strong>, or swipe the card to the left.</li>
+    </ul>
+    <p>Be honest: wörds plans your reviews from these answers. That is also why <strong>Knew it</strong> only becomes available once the answer is visible. If you tap <strong>Didn't know it</strong> before flipping, the card shows its answer first; tap <strong>Didn't know it</strong> again to move on.</p>
+    <p>More on the card screen:</p>
+    <ul>
+      <li>The <strong>speaker</strong> plays the pronunciation with your device's text-to-speech voice. If the voice for the language is missing, wörds offers to install it.</li>
+      <li><strong>I know this – ask rarely</strong>, under the grades once you knew the card (and after a right typed answer), tells wörds that you know this card well: it comes up only now and then from now on. The message at the bottom can undo it.</li>
+      <li><strong>Undo</strong> (the arrow at the top right, or the message at the bottom) takes back the last answer.</li>
+      <li>The <strong>arrows</strong> at the card's sides go back to earlier cards and forward again; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
+      <li>The tag at the top left shows the direction, for example <em>DE → IT</em>.</li>
+      <li><strong>✕</strong> closes the session. It stays open, and you can continue it later from the library.</li>
+    </ul>
+    <p><strong>Vocabulary cards</strong> show the word, and on the answer side its article, plural and an example sentence where the pack has one. Many words of the built-in Italian pack also have a picture of their meaning. You can turn pictures off in the settings.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/10-vocabulary-front.png" alt="A vocabulary card with a picture" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A vocabulary card with a picture</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/11-vocabulary-answer.png" alt="Its answer side" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Its answer side</figcaption>
+      </figure>
+    </div>
+    <h2 id="looking-back-and-correcting">Looking back and correcting</h2>
+    <p>Every card has an arrow on its left: <strong>back</strong>. With it you can look at the question of the card you just turned, or at the cards before it. Once you have gone back, an arrow on the right goes <strong>forward</strong> again, up to the card that is next. A card you have not answered yet never shows the forward arrow.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/17-browse-earlier.png" alt="An earlier card with its grade" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>An earlier card with its grade</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/18-browse-typed.png" alt="Correcting a typed answer" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Correcting a typed answer</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li>Normally the arrows go <strong>one side at a time</strong>: the answer, then the question, then the answer of the card before, and so on. In <a href="#daily-review">Settings</a> you can choose <strong>one card at a time</strong> instead; then each tap shows an earlier card's question, and tapping the card turns it.</li>
+      <li>A tap on a turned card also shows its question again.</li>
+      <li>An earlier card shows the number it had in the session and how you graded it. <strong>Graded it wrong?</strong> Tap the other grade (for typed answers: <em>Wrong</em>, <em>Almost</em> or <em>Right</em>). wörds corrects it in your progress; the session stays where it is.</li>
+      <li>Looking back does not change the card that is next: if you said <em>Didn't know it</em>, that stays, and text you started typing is kept.</li>
+      <li>After a group and at the end of a session, <strong>Look at the last card</strong> goes back as well.</li>
+      <li>With a keyboard, the left and right arrow keys do the same.</li>
+    </ul>
+    <p>In <strong>kid mode</strong> earlier cards can be looked at, but not changed. <strong>Undo</strong> still takes the last answer back, but it cannot turn <em>Didn't know it</em> into <em>Knew it</em>: once the answer has been seen, a card can only get the same or a lower grade again.</p>
+    <h2 id="typing-the-answer">Typing the answer</h2>
+    <p>With <strong>Answer: Type</strong>, a field takes your answer in the language of the back of the card, and the keyboard switches to that language where it can. Buttons above the keyboard insert letters it may lack, such as <em>à</em> or <em>è</em>. Tap <strong>Check</strong> (or press Enter).</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/23-typed-question.png" alt="Typing an answer" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Typing an answer</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/24-typed-verdict.png" alt="The check" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The check</figcaption>
+      </figure>
+    </div>
+    <p>wörds compares your answer with the solution and says what it found:</p>
+    <ul>
+      <li><strong>Correct</strong> counts as known.</li>
+      <li><strong>Almost</strong> – one letter off in a longer word, only the accents (when accepted), the wrong article, or no article (when accepted) – counts as <em>almost known</em>: the card comes back sooner than a known one, but later than a forgotten one.</li>
+      <li><strong>Not quite</strong> counts as not known.</li>
+    </ul>
+    <p>Capital letters, extra spaces and punctuation never matter. Where a solution offers alternatives (<em>lui/lei è</em>), each of them is right, and a subject pronoun the solution starts with may be left out (<em>sono</em> for <em>io sono</em>). Under the verdict, the solution shows what was missing or different, and your answer shows what was wrong.</p>
+    <p>If wörds got it wrong, tap <strong>I was right</strong> to count the answer as known. <strong>Show answer</strong> gives up on a card; it then counts as not known. What you type is never stored.</p>
+    <p>Typing works in both directions. For today's review, turn it on in <strong>Settings → Daily review → Type answers</strong>.</p>
+    <h2 id="end-of-a-session">End of a session</h2>
+    <p>A session is split into groups: one per verb and tense, or a handful of words. After each group wörds shows how it went and what comes next. At the end you see the result of the whole session.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/06-group-done.png" alt="A finished group" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A finished group</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/07-session-complete.png" alt="The session summary" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The session summary</figcaption>
+      </figure>
+    </div>
+    <p><strong>Repeat unknown cards</strong> starts a short session with just the cards you did not know. <strong>Done</strong> returns to the library.</p>
+    <h2 id="todays-review">Today's review</h2>
+    <p>wörds uses <em>spaced repetition</em>: a card you know well comes back after a long break, a card you struggle with comes back soon. Behind this is FSRS, a modern scheduling method that estimates for each card how likely you are to still remember it.</p>
+    <p>Every day wörds puts together <strong>today's review</strong>:</p>
+    <ul>
+      <li>cards that are due, the ones you are most likely to forget first, and</li>
+      <li>a few <strong>new cards</strong> from packs you have already started (20 a day unless you change it).</li>
+    </ul>
+    <p>You start the review from the top of the library or from the <strong>Progress</strong> tab. A number on the Progress tab shows how many cards are waiting. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued the same day. A review day starts at 4:00 in the morning, so a late evening session still counts for that day.</p>
+    <p>Every answer counts towards your schedule: in a normal session as well as in the review.</p>
+    <h2 id="reminder-and-widget">Reminder and widget</h2>
+    <p><strong>Settings → Daily review → Daily reminder</strong> sends a notification at the time you choose (19:00 unless you change it), but only on days when today's review still has cards for you. It asks for permission to show notifications when you turn it on; the notification names no words.</p>
+    <p>The <strong>Today's review</strong> widget for your home screen shows how many cards are waiting and starts the review with one tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/25-settings-reminder.png" alt="Settings with the reminder" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Settings with the reminder</figcaption>
+      </figure>
+    </div>
+    <h2 id="progress">Progress</h2>
+    <p>The <strong>Progress</strong> tab shows today's review and, for each pack, how far you have got. Tap a pack to see the same figures per section; within a section you can show its groups.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/12-progress.png" alt="Progress" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Progress</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/13-progress-pack.png" alt="Progress of one pack" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Progress of one pack</figcaption>
+      </figure>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Figure</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">learned</th><td>Cards you have answered at least once</td></tr>
+          <tr><th scope="row">Remembered</th><td>Cards you would still know after three weeks or more</td></tr>
+          <tr><th scope="row">Due</th><td>Cards that are due for review now</td></tr>
+          <tr><th scope="row">Accuracy</th><td>Share of answers marked <em>Knew it</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The <strong>Direction</strong> buttons show the figures for one direction or both.</p>
+    <p>Above the packs, Progress shows:</p>
+    <ul>
+      <li><strong>Difficult words</strong>: words you forgot three times or more after you had known them. Tap the card to see them. From the list you can <strong>edit</strong> a word (a word of an installed pack is edited in a copy of the pack, which keeps your progress), or <strong>reset</strong> it to learn it from scratch. A word leaves the list once you remember it for three weeks. In the library, the editor and on the answer side of a card, these words are marked <strong>Difficult</strong>.</li>
+      <li><strong>Your week</strong>: from the first day of a week, a recap of the week before – how many answers you gave, how many were right compared with the week before that, and how many cards became consolidated. <strong>✕</strong> puts it away until next week.</li>
+      <li><strong>A lesson goal</strong>, if you set one (see <a href="#statistics">Statistics</a>): how many new cards of the lesson are left, how many a day that needs, and whether your daily limit of new cards makes it in time. Tap it to open the lesson; <strong>✕</strong> removes the goal.</li>
+      <li><strong>Learning state – statistics</strong>: all cards of the language pair by how well you know them; tap it for the <a href="#statistics">statistics</a>.</li>
+      <li><strong>Next 7 days</strong>: how many cards are due each day, overdue ones counted today.</li>
+      <li><strong>Last 12 weeks</strong>: a calendar of the days you studied; the darker a day, the more answers you gave. <strong>Show as list</strong> spells both charts out as a table.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/14-progress-insights.png" alt="Outlook and calendar" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Outlook and calendar</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/26-difficult-words.png" alt="Difficult words" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Difficult words</figcaption>
+      </figure>
+    </div>
+    <h2 id="statistics">Statistics</h2>
+    <p>The statistics show how well you know the cards of the current language pair, and where it pays to practise. Each card counts once per direction, since knowing <em>la casa</em> when you see it is not the same as saying it yourself. A card is in one of these stages:</p>
+    <div class="table">
+      <table>
+        <thead>
+          <tr><th scope="col">Stage</th><th scope="col">Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">new</th><td>Not answered yet</td></tr>
+          <tr><th scope="row">learning</th><td>Answered, but not remembered for a week yet</td></tr>
+          <tr><th scope="row">shaky</th><td>Missed the last time, or probably forgotten by now</td></tr>
+          <tr><th scope="row">secure</th><td>Remembered for a week or longer</td></tr>
+          <tr><th scope="row">consolidated</th><td>Remembered for three weeks or longer and known three times in a row, or marked <strong>I know this</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The statistics have three tabs:</p>
+    <ul>
+      <li><strong>Learning state</strong>: all cards as one bar of stages, then each pack with its lessons. A pack also says when all its new cards will have been introduced at your daily limit. Under the packs, <strong>Recognising and producing</strong> compares the two directions, and <strong>Mistakes when typing</strong> shows what went wrong in typed answers of the last 90 days: wrong, typos, accents or articles.</li>
+      <li><strong>Conjugation</strong> (with verb packs): a grid of tenses and persons. Each cell shows how often that form was right; the paler it is, the more it is worth practising. Below it, the verbs answered wrong most often.</li>
+      <li><strong>History</strong>: right answers per week, consolidated cards over time, the calendar of study days and the outlook for the next seven days.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/60-statistics.png" alt="Learning state" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Learning state</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/61-statistics-conjugation.png" alt="Tenses and persons" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Tenses and persons</figcaption>
+      </figure>
+    </div>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/62-statistics-history.png" alt="History" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>History</figcaption>
+      </figure>
+    </div>
+    <p>Every chart has <strong>Show as list</strong> to read its figures as a table; screen readers hear a summary.</p>
+    <p>Tap a <strong>lesson</strong> to see its cards with their stage in each direction. Tap a card for its details: when it comes up next, how likely you still know it today, how long it stays remembered, a <strong>forgetting curve</strong> for the coming two months and every answer it got. There you can mark it <strong>I know this – ask rarely</strong>, <strong>forget its answers</strong> to learn it from scratch, or <strong>edit</strong> it if it is one of your own words.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/64-lesson-cards.png" alt="The cards of a lesson" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The cards of a lesson</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/65-card-detail.png" alt="A card&#x27;s details" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A card&#x27;s details</figcaption>
+      </figure>
+    </div>
+    <p>On a lesson's cards, <strong>Set goal</strong> asks for a date by which all cards of the lesson should be introduced. The goal then appears in Progress. There is one goal per language pair; setting another one replaces it.</p>
+    <h2 id="practising-weak-spots">Practising weak spots</h2>
+    <p><strong>Practise weak spots</strong> starts a session with just the cards that need it. Open it with the button at the bottom of the statistics, with <strong>Practise this lesson</strong> on a lesson's cards, with <strong>Practise these</strong> on the difficult words, or by tapping a verb, a kind of typing mistake or <strong>Practise the weakest forms</strong> in the statistics.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/63-practise-weak-spots.png" alt="Practise weak spots" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Practise weak spots</figcaption>
+      </figure>
+    </div>
+    <p>Choose where the cards come from – each with its number of cards:</p>
+    <ul>
+      <li><strong>Shaky</strong>: missed the last time, or probably forgotten by now.</li>
+      <li><strong>Wrong lately</strong>: answered wrong in the last seven days.</li>
+      <li><strong>Difficult</strong>: the <a href="#progress">difficult words</a>.</li>
+      <li><strong>Slow to answer</strong>: known, but only after eight seconds or more on average.</li>
+      <li>The source you opened it for: a verb, a lesson, a kind of mistake or the weakest forms of the conjugation grid.</li>
+    </ul>
+    <p>Then choose how many cards at most (10, 20 or 40), the direction and whether to flip or type. The cards you are least likely to remember come first. The session works like any other, and its answers count for your reviews.</p>
+    <h2 id="practising-articles">Practising articles</h2>
+    <p><strong>Practise articles</strong> asks only for the article of nouns: <em>casa</em> – is it <em>il</em>, <em>lo</em>, <em>la</em> or <em>l'</em>? You find it in the library (for the selected pack) and in Progress (for all packs of the language pair), once there are at least five nouns with their article.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/27-articles.png" alt="Practising articles" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Practising articles</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/28-articles-wrong.png" alt="A wrong article" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A wrong article</figcaption>
+      </figure>
+    </div>
+    <p>A round has up to 20 nouns. After a right answer the next noun follows by itself; after a wrong one, wörds shows the right article until you tap <strong>Continue</strong>, and asks that noun once more at the end of the round. The next round starts with the nouns you got wrong.</p>
+    <p>Practising articles does not change your schedule or today's review, but its answers count in the calendar.</p>
+    <h2 id="kid-mode-and-coins">Kid mode and coins</h2>
+    <p>Kid mode makes wörds more motivating for school children. It is off until you turn it on in <a href="#kid-mode">Settings</a> → <strong>Kid mode</strong>.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/50-kid-settings.png" alt="Kid mode in the settings" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Kid mode in the settings</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/51-kid-cheer.png" alt="A cheer after six words in a row" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A cheer after six words in a row</figcaption>
+      </figure>
+    </div>
+    <ul>
+      <li><strong>A playful look</strong>: rounder shapes, brighter colors, larger buttons and words, friendlier texts.</li>
+      <li><strong>Cheers</strong>: whenever your child knows several words in a row (5 unless you choose 3, 10, 15 or 20), a short animation celebrates it: confetti rain, a growing heart, a fist bump, a thumbs up, a star, a flexed arm or a party popper. The next card can be answered right away. With reduced animations the picture only fades in and out.</li>
+      <li><strong>Coins</strong>: every cheer earns a coin, and finishing today's review earns a bonus coin once a day. Typed answers and practising articles count too. Undoing an answer takes its coin back, and earlier cards cannot be corrected. Coins are counted per language pair; the top bar shows them.</li>
+      <li><strong>Trading coins in</strong>: agree with your child beforehand what coins are worth (for example 20 coins for a trip to the ice cream parlour). In Progress, the <strong>Coins</strong> card shows the coins to trade in and the coins per day. Tap <strong>Trade in coins</strong>, choose how many and confirm. Coins already traded in stay in the chart, greyed out, the oldest ones first; the big number always shows what is left.</li>
+    </ul>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/52-kid-summary.png" alt="The end of a session in kid mode" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The end of a session in kid mode</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/53-kid-coins.png" alt="Coins in Progress" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Coins in Progress</figcaption>
+      </figure>
+    </div>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/54-kid-redeem.png" alt="Trading coins in" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Trading coins in</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/55-kid-off.png" alt="Turning kid mode off" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Turning kid mode off</figcaption>
+      </figure>
+    </div>
+    <p>In kid mode, the <a href="#statistics">statistics</a> show what your child knows already as one big number, and stars for each lesson; mistakes, the conjugation grid and <strong>I know this</strong> are left out.</p>
+    <p>When you turn kid mode off, wörds asks what should happen to the coins: <strong>Keep coins and statistics</strong> (they come back when kid mode is turned on again) or <strong>Delete coins and statistics</strong> for every language pair. Resetting the learning progress keeps the coins.</p>
+    <h2 id="language-packs">Language packs</h2>
+    <p>All content comes in language packs. Open them from the box icon in the library, or via <strong>Settings → Language packs</strong>.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/30-packs-installed.png" alt="Installed packs" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Installed packs</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/31-packs-github.png" alt="GitHub sources" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>GitHub sources</figcaption>
+      </figure>
+    </div>
+    <p><strong>Installed</strong> lists your packs by language pair, with version and origin (<em>Built in</em>, <em>Imported file</em> or <em>GitHub</em>).</p>
+    <ul>
+      <li><strong>Import file</strong> installs or updates a pack from a <code>.linguapack</code> file, for example from your downloads.</li>
+      <li><strong>Hide</strong> in a pack's menu (⋮) takes it out of the library, today's review, the progress and the article practice, for example a built-in language you do not want to learn. The pack stays in this list, marked <em>Hidden</em>; <strong>Show</strong> brings it back with your progress. A hidden pack stays hidden when wörds or the pack is updated.</li>
+      <li><strong>Remove</strong> in the menu deletes an imported pack. Your learning progress is kept and comes back if you install the pack again. Built-in packs cannot be removed, since every app update brings them back; hide them instead.</li>
+    </ul>
+    <p><strong>GitHub</strong> installs packs from GitHub repositories that publish a pack index (<code>lingua-index.json</code>):</p>
+    <ol>
+      <li>Tap <strong>Add source</strong> and enter the owner and name of the repository. You can also paste a GitHub link into the owner field. Branch and folder are optional.</li>
+      <li>For a <strong>private</strong> repository, add a fine-grained access token with read-only access to that repository's contents. wörds stores it encrypted, with a key that never leaves your device. Showing, replacing or deleting a saved token requires your fingerprint, face or screen lock.</li>
+      <li>Save. wörds shows the packs the repository offers. Tap <strong>Install</strong>.</li>
+    </ol>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/32-source-editor.png" alt="Adding a GitHub source" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Adding a GitHub source</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/33-source-index.png" alt="The packs of a source" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The packs of a source</figcaption>
+      </figure>
+    </div>
+    <p>wörds checks once a day, on Wi-Fi, whether your sources have new versions, and shows <strong>Update</strong> where one is available. Large downloads continue in the background with a notification.</p>
+    <p><strong>Every pack is checked before anything is stored.</strong> A damaged file, a pack that does not match its checksum or content that breaks the rules is rejected, and wörds tells you why. Nothing on your device changes in that case.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/34-pack-rejected.png" alt="A manipulated pack is rejected" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A manipulated pack is rejected</figcaption>
+      </figure>
+    </div>
+    <h2 id="your-own-packs">Your own packs</h2>
+    <p>Make a pack of your own words, for example the vocabulary of your textbook, and study it like any other pack.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/40-editor.png" alt="The pack editor" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>The pack editor</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/41-word.png" alt="Adding a word" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Adding a word</figcaption>
+      </figure>
+    </div>
+    <p><strong>Create a pack.</strong> In <strong>Language packs</strong>, tap the add button and choose <strong>New pack</strong> (or <strong>New pack from photo</strong>, see <a href="#words-from-photos">Words from photos</a>). Enter a title, the language you know and the one you are learning, which way the cards can be studied (<strong>Both</strong>, <strong>Recognize</strong> or <strong>Produce</strong>) and a license, then tap <strong>Create</strong>. The editor opens. <strong>Pack settings</strong> in the editor's top bar changes all of this later; the languages are fixed once the pack has words.</p>
+    <p><strong>Add words.</strong> Tap the add button at the bottom and choose <strong>Add word</strong>. A word and its translation are enough. <strong>Save and add next</strong> keeps the keyboard open, so you can type a whole list. <strong>More details</strong> adds the part of speech, gender, plural, an example sentence and a picture; give the picture a description, which screen readers read aloud. wörds points out a word that is already in the pack. Everything is saved as you go, and the pack can be studied at once.</p>
+    <p><strong>Lections</strong> group the words like the chapters of a textbook. You can study one lection at a time, and their order decides which new words come first in your daily review. <strong>Lections</strong> in the top bar adds, renames, reorders and deletes them; <strong>Add lection</strong> in the add button's menu at the bottom adds one too, and the add button on a lection's header adds a word right there.</p>
+    <p><strong>Change words.</strong> Tap a word to edit it; it keeps its learning progress. <strong>More options → Reset progress</strong> lets you learn it from the start, <strong>Delete word</strong> removes it. Drag a word by its handle to reorder it, or past a lection's header to move it into that lection. Touch and hold a word to select several; the bar at the bottom then moves them to another lection (<strong>Move to lection</strong>), into a new one (<strong>New lection</strong>), or deletes them (<strong>Delete</strong>). With TalkBack, the same actions are in the actions menu of each word and lection.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/44-editor-selection.png" alt="Selected words" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Selected words</figcaption>
+      </figure>
+    </div>
+    <p><strong>Edit an installed pack.</strong> Installed packs cannot be changed. Their menu (⋮) offers <strong>Duplicate to edit</strong>: wörds makes an editable copy that keeps your learning progress, and hides the original, marked <em>Hidden</em>. <strong>Show</strong> brings it back. Your own packs are marked <em>Editable</em>; their menu has <strong>Edit</strong>, <strong>Export to file</strong>, <strong>Share</strong>, <strong>Duplicate</strong>, <strong>Hide</strong> and <strong>Delete</strong>.</p>
+    <p><strong>Export and share.</strong> <strong>Export to file</strong> saves your pack as a <code>.linguapack</code> file in a folder you choose, <strong>Share</strong> sends it to an app, and <strong>Export all your packs</strong> (top bar of the language packs) writes all of them into one folder. The license you chose goes with the file. Anyone with wörds can open the file with <strong>Import file</strong>; it arrives as an editable pack. If that pack is already there, choose <strong>Replace</strong> (words in both keep their progress) or <strong>Keep both</strong>.</p>
+    <h2 id="words-from-photos">Words from photos</h2>
+    <p>wörds can read a printed word list from photos, so you don't have to type it. The text is read on your device; your photos are never uploaded.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/42-import-pages.png" alt="Photos of a word list" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Photos of a word list</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/43-import-review.png" alt="Checking the words" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Checking the words</figcaption>
+      </figure>
+    </div>
+    <ol>
+      <li>In the editor, tap the add button and choose <strong>Import from photo</strong>. Or start a pack with <strong>New pack from photo</strong> in <strong>Language packs</strong>.</li>
+      <li><strong>Take photo</strong> opens your camera app; <strong>Choose photos</strong> opens the photo picker, where you can pick several pages. wörds sees only the photos you choose and asks for no permission. Take one page per photo, as straight and sharp as you can.</li>
+      <li>Each page is read while you go on: a photo that came sideways is turned by itself. If a page reads badly, its menu offers <strong>Rotate and crop</strong>: turn it and drag the corners to the word list.</li>
+      <li>Tap <strong>Review <em>n</em> words</strong> to check them. The photo shows a frame around each pair found; tap a frame to find its row, or a row to see where it was read. Rows marked <strong>Check the spelling</strong> were hard to read, and words already in the pack are left unchecked. Tap the pencil to correct a row, uncheck what you don't want, and use <strong>Swap the columns of this page</strong> if word and translation came out the wrong way round. Headings found on the page become lections; <strong>Move to lection…</strong> puts rows into another or a new one.</li>
+      <li>Tap <strong>Import <em>n</em> words</strong> to add the checked words. The summary says how many words went into which lections. <strong>Undo</strong> removes them again and takes you back to the review.</li>
+    </ol>
+    <p>You can leave an import and come back later; it waits where you left it. <strong>Discard</strong> deletes the photos and everything read from them. An import left for a day is deleted.</p>
+    <h2 id="settings">Settings</h2>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/20-settings.png" alt="Settings: language and appearance" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Settings: language and appearance</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/21-settings-review.png" alt="Settings: daily review" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Settings: daily review</figcaption>
+      </figure>
+    </div>
+    <h3 id="language">Language</h3>
+    <ul>
+      <li><strong>App language</strong>: follow the system, or always German or English.</li>
+    </ul>
+    <h3 id="appearance">Appearance</h3>
+    <ul>
+      <li><strong>Theme</strong>: light, dark, or as set on your device.</li>
+      <li><strong>Color scheme</strong>: the colors of your wallpaper (Android 12 and later), one of six schemes, or a color of your own. Colors follow the system's contrast setting (Android 14 and later).</li>
+      <li><strong>Show pictures on cards</strong> turns the pictures on vocabulary cards on or off.</li>
+      <li><strong>Animations</strong>: as set on your device, reduced, or full.</li>
+    </ul>
+    <h3 id="pronunciation">Pronunciation</h3>
+    <ul>
+      <li><strong>Play automatically</strong> speaks the answer when a card is flipped.</li>
+      <li><strong>Play … when shown</strong> speaks the learned language as soon as a card appears with it on the front.</li>
+      <li><strong>Speech rate</strong> makes the voice slower or faster.</li>
+    </ul>
+    <h3 id="daily-review">Daily review</h3>
+    <ul>
+      <li><strong>Remember</strong>: how sure you want to be that you still know a card when it comes back (80 to 97 %, normally 90 %). Higher means more frequent reviews.</li>
+      <li><strong>New cards per day</strong> and <strong>Reviews per day at most</strong> limit how much each day's review contains.</li>
+      <li><strong>Type answers</strong> asks you to type each answer in today's review instead of flipping the card.</li>
+      <li><strong>Accept missing accents</strong> counts an answer that differs only in accents as almost right; turned off, it is wrong.</li>
+      <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>
+      <li><strong>Back and forward arrows</strong>: whether the arrows on a card go <strong>one side at a time</strong> or <strong>one card at a time</strong>; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
+      <li><strong>Consolidated cards in lessons</strong>: whether a session from the library asks consolidated cards <strong>Always</strong>, a <strong>Sample</strong> of a fifth of them (normally), or <strong>Never</strong>. Today's review is not affected; see <a href="#starting-a-session">Starting a session</a>.</li>
+      <li><strong>Daily reminder</strong> and its <strong>Time</strong>: see <a href="#reminder-and-widget">Reminder and widget</a>.</li>
+    </ul>
+    <h3 id="kid-mode">Kid mode</h3>
+    <ul>
+      <li><strong>Kid mode</strong> turns the playful look, the cheers and the coins on or off; see <a href="#kid-mode-and-coins">Kid mode and coins</a>.</li>
+      <li><strong>Cheer after … words in a row</strong>: 3, 5, 10, 15 or 20 (normally 5).</li>
+    </ul>
+    <h3 id="data">Data</h3>
+    <ul>
+      <li><strong>Language packs</strong> opens the <a href="#language-packs">pack management</a>.</li>
+      <li><strong>Reset learning progress</strong> deletes all answers and sessions, including those of the article practice. Installed packs and kid mode coins stay. This cannot be undone.</li>
+    </ul>
+    <h3 id="about-wörds">About wörds</h3>
+    <ul>
+      <li><strong>Open-source licenses</strong> lists the libraries wörds is built with; tap one to read its license.</li>
+    </ul>
+    <p><strong>Custom color</strong>: pick a hue and colorfulness (or enter a hex code) and a style. The preview shows the result in light and dark.</p>
+    <div class="figures">
+      <figure class="shot">
+        <img src="../images/en/22-custom-color.png" alt="Your own color" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Your own color</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../images/en/16-library-dark.png" alt="Dark theme" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>Dark theme</figcaption>
+      </figure>
+    </div>
+    <h2 id="tablets-and-foldables">Tablets and foldables</h2>
+    <p>On large screens the navigation moves to the side, and the GitHub sources show the list of sources and the packs of the selected source side by side. The pack editor shows the word list and the word you edit side by side, and the review of a photo import the rows and the photo. On a half-folded foldable (tabletop posture), the card sits above the fold and the grade buttons below it, so you can study with the device standing on a table. While the on-screen keyboard is open for a typed answer, everything moves above the fold.</p>
+    <div class="figures">
+      <figure class="wide">
+        <img src="../images/tablet/en_1_library.png" alt="Library on a tablet" width="2560" height="1440" loading="lazy" decoding="async">
+        <figcaption>Library on a tablet</figcaption>
+      </figure>
+    </div>
+    <h2 id="accessibility-and-privacy">Accessibility and privacy</h2>
+    <ul>
+      <li>wörds works with <strong>TalkBack</strong>, large text, high contrast, reduced motion, keyboards and D-pads. On a hardware keyboard, <strong>Esc</strong> goes back.</li>
+      <li>wörds needs <strong>no account</strong> and works <strong>offline</strong>. It only goes online to talk to GitHub, and only when you use GitHub sources. There are no ads and no tracking. Photos of word lists are read on your device and never uploaded.</li>
+      <li>Your progress, settings and own packs are part of your device's backup. Access tokens are not: after a restore, wörds asks for them again.</li>
+    </ul>
+    <h2 id="questions-and-problems">Questions and problems</h2>
+    <p><strong>A card has no sound.</strong> Your device lacks the text-to-speech voice for the language. Tap <strong>Install</strong> in the message on the card, or add the voice in your device's speech settings.</p>
+    <p><strong>A pack was not installed.</strong> The message says what is wrong with it. Nothing has been changed on your device. Ask the author of the pack for a corrected version.</p>
+    <p><strong>GitHub reports an error.</strong> Check your connection. For a private repository, check that the access token has not expired and grants read access to the repository's contents. If GitHub's request limit has been reached, the message says when you can try again.</p>
+    <p><strong>Words from a photo come out wrong.</strong> Take the photo again in good light, with the page flat and filling the picture, or use <strong>Rotate and crop</strong> to frame just the word list. Every row can be corrected in the review before anything is imported.</p>
+    <p><strong>I do not want to learn Italian.</strong> Hide the built-in Italian packs: <strong>Language packs → ⋮ → Hide</strong>. If every pack is hidden, the library says so; import or create a pack, or show one again.</p>
+    <p><strong>I keep getting words I know well.</strong> In a session from the library, tap <strong>I know this – ask rarely</strong> under the grades; the card then comes up only now and then. Cards you know for weeks are left out of lesson sessions anyway, apart from a few; <strong>Settings → Consolidated cards in lessons</strong> changes that.</p>
+    <p><strong>I want to start over.</strong> <strong>Settings → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
+  </main>
+</body>
+</html>

@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.15.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.16.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -57,19 +57,29 @@ den installierten Paketen, zum Beispiel *Wortschatz* (Vokabeln) und *Verben* (Ko
 stehen vorn, und die Bibliothek öffnet sich mit ihnen. Jedes Paket ist in
 Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.
 
-![Die Bibliothek mit der heutigen Wiederholung oben](../images/de/08-library.png) ![Das Vokabelpaket](../images/de/09-library-vocabulary.png)
+![Die Bibliothek mit der heutigen Wiederholung oben](../images/de/08-library.png) ![Der Modus Artikel](../images/de/09-library-articles.png)
 
 - **Suchen** findet Wörter und Verbformen im ausgewählten Paket.
-- **Heutige Wiederholung** oben startet deine tägliche Wiederholung oder setzt sie fort (siehe
+- Eine zweite Reihe Chips erscheint, wenn ein Paket mehrere Arten von Inhalten hat: *Wortschatz*, *Verbkonjugation*
+  und **Artikel**, sobald das Paket mindestens fünf Nomen mit Artikel hat. Die Bibliothek merkt sich die letzte Wahl
+  pro Paket.
+- Der **Knopf unter den Chips** folgt dieser Wahl: **… fortsetzen**, solange eine Sitzung davon offen ist (sie geht
+  genau dort weiter, wo du aufgehört hast), sonst **… lernen** für alle Einträge, oder **Artikel üben** (siehe
+  [Artikel üben](#artikel-üben)).
+- **Heutige Wiederholung** startet deine tägliche Wiederholung oder setzt sie fort (siehe
   [Heutige Wiederholung](#heutige-wiederholung)).
-- **Letzte Sitzung fortsetzen** erscheint, solange eine Sitzung offen ist; sie geht genau dort weiter, wo du
-  aufgehört hast.
-- Die **▶-Taste** neben einem Abschnitt startet den ganzen Abschnitt.
+- Lektionen sind anfangs **zugeklappt**: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt
+  sich, welche Lektionen du offen gelassen hast. Eine Suche klappt alle Lektionen mit Treffern auf.
+- Die **▶-Taste** neben einer Lektion startet die ganze Lektion, ob auf- oder zugeklappt.
 - Sind zwei oder mehr Sprachpaare installiert, tippst du auf das Sprachpaar unter dem Titel, um zu wechseln.
 - Das **Kisten-Symbol** oben rechts öffnet die [Sprachpakete](#sprachpakete).
 
-Willst du nur einige Einträge lernen, hakst du sie an. **Alle auswählen** hakt einen ganzen Abschnitt an;
+Willst du nur einige Einträge lernen, hakst du sie an. **Alle auswählen** hakt eine ganze Lektion an;
 **Leeren** oben hebt die Auswahl auf. Die Taste unten zeigt, wie viele Einträge du gewählt hast.
+
+Pro Paket und Art bleibt eine Sitzung offen. Startest du eine Lektion, während davon noch eine Sitzung offen ist, fragt
+wörds zuerst: die offene **Fortsetzen**, **Neu beginnen** (bei einer anderen Lektion **Trotzdem starten**) oder
+**Abbrechen**. Deine bisherigen Antworten sind so oder so gespeichert.
 
 ![Zwei Verben ausgewählt](../images/de/02-library-selection.png) ![Sprachpaar wechseln](../images/de/15-pair-switcher.png)
 
@@ -91,7 +101,7 @@ Bevor eine Sitzung beginnt, legst du in einem Blatt fest, wie du üben willst:
   Wochen sicher oder hast sie mit **Kann ich** markiert. Eine Sitzung aus der Bibliothek lässt sie aus, bis auf
   wenige, die ab und an drankommen; die heutige Wiederholung fragt sie weiter ab, wenn sie fällig sind. Mit dem
   Schalter übst du dieses eine Mal alle. Wie viele ausgelassen werden, legst du unter
-  [Einstellungen](#tägliche-wiederholung) → **Gefestigte Karten in Lektionen** fest.
+  [Einstellungen](#lernen) → **Gefestigte Karten in Lektionen** fest.
 
 Das Blatt zeigt, wie viele Karten das sind und wie lange es ungefähr dauert. Tippe auf **Starten**.
 
@@ -138,7 +148,7 @@ dran ist. Eine Karte, die du noch nicht beantwortet hast, zeigt nie den Pfeil na
 ![Eine frühere Karte mit ihrer Bewertung](../images/de/17-browse-earlier.png) ![Eine eingetippte Antwort korrigieren](../images/de/18-browse-typed.png)
 
 - Normalerweise blättern die Pfeile **Seite für Seite**: die Antwort, dann die Frage, dann die Antwort der Karte davor
-  und so weiter. In den [Einstellungen](#tägliche-wiederholung) kannst du stattdessen **Karte für Karte** wählen;
+  und so weiter. In den [Einstellungen](#lernen) kannst du stattdessen **Karte für Karte** wählen;
   dann zeigt jeder Tipp die Frage einer früheren Karte, und ein Tipp auf die Karte dreht sie um.
 - Ein Tipp auf eine umgedrehte Karte zeigt auch wieder ihre Frage.
 - Eine frühere Karte zeigt ihre Nummer in der Sitzung und wie du sie bewertet hast. **Falsch bewertet?** Tippe auf die
@@ -323,8 +333,9 @@ Wiederholungen.
 ## Artikel üben
 
 **Artikel üben** fragt nur nach dem Artikel von Nomen: *casa* – heißt es *il*, *lo*, *la* oder *l'*? Du findest es in
-der Bibliothek (für das gewählte Paket) und im Fortschritt (für alle Pakete des Sprachpaars), sobald es mindestens fünf
-Nomen mit ihrem Artikel gibt.
+der Bibliothek unter dem Chip **Artikel** (für das gewählte Paket) und im Fortschritt (für alle Pakete des
+Sprachpaars), sobald es mindestens fünf Nomen mit ihrem Artikel gibt. Unter **Artikel** listet die Bibliothek diese
+Nomen nach Lektionen: Der Knopf übt alle, das **▶** einer Lektion diese Lektion und angehakte Nomen nur diese.
 
 ![Artikel üben](../images/de/27-articles.png) ![Ein falscher Artikel](../images/de/28-articles-wrong.png)
 
@@ -480,33 +491,30 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
 
 ## Einstellungen
 
-![Einstellungen: Sprache und Darstellung](../images/de/20-settings.png) ![Einstellungen: tägliche Wiederholung](../images/de/21-settings-review.png)
+Die Einstellungen öffnen mit einer Übersicht: Jede Zeile zeigt, wie ein Bereich gerade eingestellt ist, und öffnet ihn
+mit einem Tipp. Auf einem Tablet oder aufgeklappten Foldable steht der geöffnete Bereich neben der Übersicht. Alle
+Einstellungen gelten für jedes Sprachpaar.
 
-### Sprache
+![Einstellungen: die Übersicht](../images/de/20-settings.png) ![Einstellungen: Lernen](../images/de/21-settings-learning.png)
+
+### Darstellung und Sprache
 
 - **App-Sprache**: wie im System, oder immer Deutsch oder Englisch.
-
-### Darstellung
-
 - **Design**: hell, dunkel oder wie auf deinem Gerät eingestellt.
 - **Farbschema**: die Farben deines Hintergrundbilds (ab Android 12), eines von sechs Farbschemata oder eine eigene
   Farbe. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).
 - **Bilder auf Karten anzeigen** schaltet die Bilder auf Vokabelkarten ein oder aus.
 - **Animationen**: wie auf deinem Gerät eingestellt, reduziert oder vollständig.
 
-### Aussprache
+**Eigene Farbe**: Wähle Farbton und Farbigkeit (oder gib einen Hex-Code ein) und einen Stil. Die Vorschau zeigt das
+Ergebnis hell und dunkel.
 
-- **Automatisch abspielen** spricht die Antwort, sobald eine Karte umgedreht wird.
-- **… beim Anzeigen abspielen** spricht die Lernsprache, sobald eine Karte sie auf der Vorderseite zeigt.
-- **Sprechtempo** macht die Stimme langsamer oder schneller.
+![Eine eigene Farbe](../images/de/22-custom-color.png) ![Dunkles Design](../images/de/16-library-dark.png)
 
-### Tägliche Wiederholung
+### Lernen
 
-- **Behalten**: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise
-  90 %). Höher heißt häufiger wiederholen.
-- **Neue Karten pro Tag** und **Höchstens Wiederholungen pro Tag** begrenzen, wie viel die tägliche Wiederholung
-  enthält.
-- **Antworten eintippen**: In der heutigen Wiederholung tippst du jede Antwort ein, statt die Karte umzudrehen.
+- **Antworten eintippen**: In der täglichen Wiederholung und beim [Üben von Schwachstellen](#schwachstellen-üben)
+  tippst du jede Antwort ein, statt die Karte umzudrehen. Lektionen fragen das beim Start.
 - **Fehlende Akzente akzeptieren** lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig
   gelten; ausgeschaltet ist sie falsch.
 - **Fehlenden Artikel akzeptieren** lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.
@@ -515,7 +523,20 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
 - **Gefestigte Karten in Lektionen**: ob eine Sitzung aus der Bibliothek gefestigte Karten **Immer**, als
   **Stichprobe** von einem Fünftel (normal) oder **Nie** abfragt. Die heutige Wiederholung betrifft das nicht; siehe
   [Eine Sitzung starten](#eine-sitzung-starten).
+
+### Tägliche Wiederholung
+
+- **Behalten**: wie sicher du eine Karte noch können sollst, wenn sie wiederkommt (80 bis 97 %, normalerweise
+  90 %). Höher heißt häufiger wiederholen.
+- **Neue Karten pro Tag** und **Höchstens Wiederholungen pro Tag** begrenzen, wie viel die tägliche Wiederholung
+  enthält.
 - **Tägliche Erinnerung** und ihre **Uhrzeit**: siehe [Erinnerung und Widget](#erinnerung-und-widget).
+
+### Aussprache
+
+- **Automatisch abspielen** spricht die Antwort, sobald eine Karte umgedreht wird.
+- **Lernsprache beim Anzeigen abspielen** spricht die Lernsprache, sobald eine Karte sie auf der Vorderseite zeigt.
+- **Sprechtempo** macht die Stimme langsamer oder schneller.
 
 ### Schulkind-Modus
 
@@ -523,21 +544,14 @@ Fotos und alles, was daraus gelesen wurde. Ein Import, der einen Tag liegen blei
   [Schulkind-Modus und Coins](#schulkind-modus-und-coins).
 - **Jubel nach … Wörtern hintereinander**: 3, 5, 10, 15 oder 20 (normalerweise 5).
 
-### Daten
+### Daten und Infos
 
 - **Sprachpakete** öffnet die [Paketverwaltung](#sprachpakete).
 - **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte
   Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.
-
-### Über wörds
-
 - **Open-Source-Lizenzen** listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu
   lesen.
-
-**Eigene Farbe**: Wähle Farbton und Farbigkeit (oder gib einen Hex-Code ein) und einen Stil. Die Vorschau zeigt das
-Ergebnis hell und dunkel.
-
-![Eine eigene Farbe](../images/de/22-custom-color.png) ![Dunkles Design](../images/de/16-library-dark.png)
+- **Version** zeigt, welche Version von wörds installiert ist.
 
 ## Tablets und Foldables
 
