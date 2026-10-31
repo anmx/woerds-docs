@@ -40,6 +40,10 @@ App. Kopien zum Teilen werden nach einem Tag aus dem temporären Speicher der Ap
 
 ## Ein Paket mit jemandem in der Nähe tauschen
 
+Diese experimentelle Funktion ist aus, bis du sie in den Einstellungen einschaltest und einwilligst; wörds fragt bei jedem
+Einschalten erneut. Solange sie aus ist, nutzt wörds kein
+Bluetooth.
+
 Wenn du und jemand neben dir es möchtet, kann ein selbst erstelltes Paket über Bluetooth direkt von einem Handy zum
 anderen gehen. Das geht nur bei geöffneter App, nachdem eine Person einen QR-Code auf dem Bildschirm der anderen
 fotografiert hat und ihr beide bestätigt. Die Übertragung ist Ende-zu-Ende-verschlüsselt und läuft über keinen Server,

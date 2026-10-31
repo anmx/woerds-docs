@@ -9,7 +9,7 @@ wörds ist eine Lernkarten-App zum Sprachenlernen: Vokabeln und Verbformen, mit 
 | **Using the app (latest version)** · **Die App benutzen (aktuelle Version)** | [User guide](en/user-guide.md) | [Benutzerhandbuch](de/benutzerhandbuch.md) |
 | **Privacy** · **Datenschutz** | [Privacy policy](en/privacy-policy.md) | [Datenschutzerklärung](de/datenschutz.md) |
 | **Making language packs** · **Sprachpakete erstellen** | [Language pack specification](spec/README.md) (for developers) | [Sprachpaket-Spezifikation](spec/README.md) (für die Entwicklung, auf Englisch) |
-| **Earlier versions** · **Frühere Versionen** | [User guide 0.17.0](versions/0.17.0/en/user-guide.md)<br>[User guide 0.16.0](versions/0.16.0/en/user-guide.md) | [Benutzerhandbuch 0.17.0](versions/0.17.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.16.0](versions/0.16.0/de/benutzerhandbuch.md) |
+| **Earlier versions** · **Frühere Versionen** | [User guide 0.18.0](versions/0.18.0/en/user-guide.md)<br>[User guide 0.17.0](versions/0.17.0/en/user-guide.md)<br>[User guide 0.16.0](versions/0.16.0/en/user-guide.md) | [Benutzerhandbuch 0.18.0](versions/0.18.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.17.0](versions/0.17.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.16.0](versions/0.16.0/de/benutzerhandbuch.md) |
 | | [User guide 0.15.0](versions/0.15.0/en/user-guide.md) | [Benutzerhandbuch 0.15.0](versions/0.15.0/de/benutzerhandbuch.md) |
 | | [User guide 0.14.0](versions/0.14.0/en/user-guide.md) | [Benutzerhandbuch 0.14.0](versions/0.14.0/de/benutzerhandbuch.md) |
 | | [User guide 0.13.0](versions/0.13.0/en/user-guide.md) | [Benutzerhandbuch 0.13.0](versions/0.13.0/de/benutzerhandbuch.md) |
@@ -18,6 +18,19 @@ wörds ist eine Lernkarten-App zum Sprachenlernen: Vokabeln und Verbformen, mit 
 | | [User guide 0.11.0](versions/0.11.0/en/user-guide.md) | [Benutzerhandbuch 0.11.0](versions/0.11.0/de/benutzerhandbuch.md) |
 | | [User guide 0.10.0](versions/0.10.0/en/user-guide.md) | [Benutzerhandbuch 0.10.0](versions/0.10.0/de/benutzerhandbuch.md) |
 | | [User guide 0.9.0](versions/0.9.0/en/user-guide.md) | [Benutzerhandbuch 0.9.0](versions/0.9.0/de/benutzerhandbuch.md) |
+
+## About this project · Über dieses Projekt
+
+wörds is an open-source hobby project under the Apache License 2.0. It is provided without warranty: there is no promise that the app is free of
+errors, secure or will stay available, and its security has not been independently reviewed, including the exchange
+of packs nearby. Using it, and the risks that come with that, are solely your responsibility; this includes packs you
+accept from files, from GitHub or from other people. Rights that cannot be excluded by law are not affected.
+
+wörds ist ein Hobbyprojekt mit offenem Quellcode unter der Apache-Lizenz 2.0. Es wird ohne Gewähr angeboten: Es gibt keine Zusage, dass die App
+fehlerfrei, sicher oder dauerhaft verfügbar ist, und ihre Sicherheit wurde nicht unabhängig geprüft, auch nicht der
+Austausch von Paketen in der Nähe. Die Nutzung und die damit verbundenen Risiken liegen in deiner alleinigen
+Verantwortung; das gilt auch für Pakete, die du aus Dateien, von GitHub oder von anderen Personen annimmst. Rechte,
+die gesetzlich nicht ausgeschlossen werden können, bleiben unberührt.
 
 ## Versions
 

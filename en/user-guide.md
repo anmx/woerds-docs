@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.18.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.18.1. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -33,6 +33,7 @@ This guide describes wörds 0.18.0. The screenshots show the Terracotta color sc
 - [Tablets and foldables](#tablets-and-foldables)
 - [Accessibility and privacy](#accessibility-and-privacy)
 - [Questions and problems](#questions-and-problems)
+- [About this project](#about-this-project)
 
 ## Getting started
 
@@ -436,7 +437,7 @@ TalkBack, the same actions are in the actions menu of each word and lection.
 
 **Edit an installed pack.** Installed packs cannot be changed. Their menu (⋮) offers **Duplicate to edit**: wörds
 makes an editable copy that keeps your learning progress, and hides the original, marked *Hidden*. **Show**
-brings it back. Your own packs are marked *Editable*; their menu has **Edit**, **Export to file**, **Share**, **Share nearby**,
+brings it back. Your own packs are marked *Editable*; their menu has **Edit**, **Export to file**, **Share**, **Share nearby (experimental)**,
 **Duplicate**, **Hide** and **Delete**.
 
 **Export and share.** **Export to file** saves your pack as a `.linguapack` file in a folder you choose, **Share**
@@ -444,12 +445,14 @@ sends it to an app, and **Export all your packs** (top bar of the language packs
 The license you chose goes with the file. Anyone with wörds can open the file with **Import file**; it arrives as an
 editable pack. If that pack is already there, choose **Replace** (words in both keep their progress) or **Keep both**.
 
-**Share with someone next to you.** You can pass a pack you made directly to someone standing next to you, without
+**Share with someone next to you (experimental).** This is off at first. You both turn it on under **Settings → Experimental → Share packs nearby** and agree: your device can then make connections with other devices,
+and the risks that come with that are yours alone. wörds asks each time you turn it on. While it is off, there is
+no way to it and wörds does not use Bluetooth. You can pass a pack you made directly to someone standing next to you, without
 internet or an account. Both phones need Android 12 or later and wörds open. The kid mode does not offer this.
 
-1. The person receiving opens the language packs, taps **+** and chooses **Receive nearby**. A QR code appears for one
+1. The person receiving opens the language packs, taps **+** and chooses **Receive nearby (experimental)**. A QR code appears for one
    minute. wörds asks for the permission for nearby devices and to turn on Bluetooth if needed.
-2. The person sharing opens the menu (⋮) of the pack, chooses **Share nearby**, checks what would be sent and taps
+2. The person sharing opens the menu (⋮) of the pack, chooses **Share nearby (experimental)**, checks what would be sent and taps
    **Photograph code**. The camera app opens: photograph the code on the other screen and confirm the photo.
 3. Both phones connect. The person receiving sees what the other phone says it offers. Each of you taps **Send** or
    **Receive**; nothing of the pack moves until both have.
@@ -460,6 +463,10 @@ Show the code only to the person you want a pack from. It works once. Your learn
 phone. Leaving the screen or the app ends the exchange, and nothing is kept. If a photo cannot be read, avoid reflections
 and try again. The exchange goes directly from phone to phone, end-to-end encrypted; only your own packs can be shared
 this way, and a pack can have at most 20 MB. Larger packs take several minutes.
+
+wörds uses Bluetooth only on these two screens, and on the sharing side only once the photo has been read. Otherwise
+the app neither searches nor can be found. If you turned Bluetooth on for this, it stays on until you turn it off,
+because Android does not let apps do that themselves.
 
 ## Words from photos
 
@@ -543,10 +550,23 @@ light and dark.
 
 This row opens the [pack management](#language-packs) directly.
 
+### Experimental
+
+**Share packs nearby** turns on [sharing a pack with someone next to you](#your-own-packs). It is off by default. Turning
+it on shows what that means: your device can then make connections with other devices over Bluetooth, and the risks that
+come with it are yours alone. It only turns on if you agree, and wörds asks again each time you turn it on after turning
+it off.
+
+![Settings: the Experimental page](../images/en/70-settings-experimental.png) ![The question before it turns on](../images/en/71-nearby-consent.png)
+
 ### About
 
+- **About this project** says what wörds is: an open-source hobby project under the Apache License 2.0, provided without
+  warranty, used at your own risk. See [About this project](#about-this-project).
 - **Open-source licenses** lists the libraries wörds is built with; tap one to read its license.
 - **Version** shows which version of wörds is installed.
+
+![Settings: the About page](../images/en/72-settings-about.png)
 
 ## Tablets and foldables
 
@@ -592,3 +612,10 @@ grades; the card then comes up only now and then. Cards you know for weeks are l
 apart from a few; **Settings → Consolidated cards in lessons** changes that.
 
 **I want to start over.** **Settings → Learning → Reset learning progress** deletes all answers; the packs stay installed.
+
+## About this project
+
+wörds is an open-source hobby project under the Apache License 2.0. It is provided without warranty: there is no promise that the app is free of
+errors, secure or will stay available, and its security has not been independently reviewed, including the exchange
+of packs nearby. Using it, and the risks that come with that, are solely your responsibility; this includes packs you
+accept from files, from GitHub or from other people. Rights that cannot be excluded by law are not affected.

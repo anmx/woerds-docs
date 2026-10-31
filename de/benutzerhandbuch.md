@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.18.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.18.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -34,6 +34,7 @@ andere Farben haben.
 - [Tablets und Foldables](#tablets-und-foldables)
 - [Barrierefreiheit und Datenschutz](#barrierefreiheit-und-datenschutz)
 - [Fragen und Probleme](#fragen-und-probleme)
+- [Über dieses Projekt](#über-dieses-projekt)
 
 ## Erste Schritte
 
@@ -458,7 +459,7 @@ Aktionen im Aktionsmenü jedes Worts und jeder Lektion.
 **Ein installiertes Paket bearbeiten.** Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet **Zum
 Bearbeiten duplizieren**: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das
 Original aus (*Ausgeblendet*). **Einblenden** holt es zurück. Deine eigenen Pakete sind als *Bearbeitbar*
-markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **In der Nähe teilen**, **Duplizieren**, **Ausblenden** und **Löschen**.
+markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **In der Nähe teilen (experimentell)**, **Duplizieren**, **Ausblenden** und **Löschen**.
 
 **Exportieren und teilen.** **Als Datei exportieren** speichert dein Paket als `.linguapack`-Datei in einem Ordner
 deiner Wahl, **Teilen** schickt es an eine App, und **Alle deine Pakete exportieren** (oben in den Sprachpaketen)
@@ -466,14 +467,17 @@ schreibt alle in einen Ordner. Die Lizenz, die du gewählt hast, geht mit der Da
 mit **Datei importieren**; sie kommt als bearbeitbares Paket an. Ist das Paket schon da, wähle **Ersetzen** (Wörter,
 die in beiden sind, behalten ihren Lernstand) oder **Beide behalten**.
 
-**Mit jemandem neben dir teilen.** Du kannst ein selbst erstelltes Paket direkt an jemanden weitergeben, der neben dir
+**Mit jemandem neben dir teilen (experimentell).** Das ist anfangs ausgeschaltet. Beide schalten es unter **Einstellungen →
+Experimentell → Pakete in der Nähe teilen** ein und willigen dabei ein: Das Gerät kann dann Verbindungen mit anderen
+Geräten aufbauen, und die damit verbundenen Risiken liegen allein bei dir. wörds fragt bei jedem Einschalten erneut. Ist es aus, gibt es keinen Zugang dazu, und wörds nutzt kein Bluetooth.
+Du kannst ein selbst erstelltes Paket direkt an jemanden weitergeben, der neben dir
 steht, ohne Internet und ohne Konto. Beide Handys brauchen Android 12 oder neuer und eine geöffnete wörds-App. Im
 Kindermodus gibt es das nicht.
 
-1. Die empfangende Person öffnet die Sprachpakete, tippt auf **+** und wählt **In der Nähe empfangen**. Ein QR-Code
+1. Die empfangende Person öffnet die Sprachpakete, tippt auf **+** und wählt **In der Nähe empfangen (experimentell)**. Ein QR-Code
    erscheint für eine Minute. wörds fragt nach der Berechtigung für Geräte in der Nähe und, falls nötig, danach,
    Bluetooth einzuschalten.
-2. Die teilende Person öffnet das Menü (⋮) des Pakets, wählt **In der Nähe teilen**, prüft, was gesendet würde, und tippt
+2. Die teilende Person öffnet das Menü (⋮) des Pakets, wählt **In der Nähe teilen (experimentell)**, prüft, was gesendet würde, und tippt
    auf **Code fotografieren**. Die Kamera-App öffnet sich: den Code auf dem anderen Bildschirm fotografieren und das Foto
    bestätigen.
 3. Die Handys verbinden sich. Die empfangende Person sieht, was das andere Handy anbietet. Jede tippt auf **Senden** oder
@@ -487,6 +491,10 @@ bleiben auf deinem Handy. Verlässt du den Bildschirm oder die App, endet der Au
 sich ein Foto nicht lesen, vermeide Spiegelungen und versuche es noch einmal. Der Austausch läuft direkt von Handy zu
 Handy und Ende-zu-Ende-verschlüsselt; so lassen sich nur deine eigenen Pakete teilen, und ein Paket darf höchstens 20 MB
 groß sein. Größere Pakete dauern einige Minuten.
+
+Bluetooth nutzt wörds nur auf diesen beiden Bildschirmen, und auf der teilenden Seite erst, wenn das Foto gelesen ist.
+Sonst sucht die App nicht und ist auch nicht auffindbar. Hast du Bluetooth dafür eingeschaltet, bleibt es danach an, bis
+du es selbst ausschaltest, denn Android lässt Apps das nicht selbst tun.
 
 ## Wörter aus Fotos
 
@@ -575,11 +583,24 @@ Ergebnis hell und dunkel.
 
 Diese Zeile öffnet direkt die [Paketverwaltung](#sprachpakete).
 
+### Experimentell
+
+**Pakete in der Nähe teilen** schaltet das [Teilen mit jemandem neben dir](#eigene-pakete) ein. Es ist anfangs aus. Beim
+Einschalten sagt wörds, was das bedeutet: Dein Gerät kann dann über Bluetooth Verbindungen mit anderen Geräten aufbauen,
+und die damit verbundenen Risiken liegen allein bei dir. Eingeschaltet wird es nur, wenn du einwilligst, und nach jedem
+Ausschalten fragt wörds beim Einschalten erneut.
+
+![Einstellungen: die Seite Experimentell](../images/de/70-settings-experimental.png) ![Die Frage vor dem Einschalten](../images/de/71-nearby-consent.png)
+
 ### Infos
 
+- **Über dieses Projekt** sagt, was wörds ist: ein Hobbyprojekt mit offenem Quellcode unter der Apache-Lizenz 2.0, ohne
+  Gewähr und auf eigene Verantwortung. Siehe [Über dieses Projekt](#über-dieses-projekt).
 - **Open-Source-Lizenzen** listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu
   lesen.
 - **Version** zeigt, welche Version von wörds installiert ist.
+
+![Einstellungen: die Seite Infos](../images/de/72-settings-about.png)
 
 ## Tablets und Foldables
 
@@ -628,3 +649,11 @@ Lektionssitzungen ohnehin bis auf wenige aus; **Einstellungen → Gefestigte Kar
 
 **Ich will von vorn anfangen.** **Einstellungen → Lernen → Lernfortschritt zurücksetzen** löscht alle Antworten; die Pakete
 bleiben installiert.
+
+## Über dieses Projekt
+
+wörds ist ein Hobbyprojekt mit offenem Quellcode unter der Apache-Lizenz 2.0. Es wird ohne Gewähr angeboten: Es gibt keine Zusage, dass die App
+fehlerfrei, sicher oder dauerhaft verfügbar ist, und ihre Sicherheit wurde nicht unabhängig geprüft, auch nicht der
+Austausch von Paketen in der Nähe. Die Nutzung und die damit verbundenen Risiken liegen in deiner alleinigen
+Verantwortung; das gilt auch für Pakete, die du aus Dateien, von GitHub oder von anderen Personen annimmst. Rechte,
+die gesetzlich nicht ausgeschlossen werden können, bleiben unberührt.

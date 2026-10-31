@@ -40,6 +40,8 @@ from the app's temporary storage after a day.
 
 ## Exchanging a pack with someone nearby
 
+This experimental feature is off unless you turn it on in the settings and agree; wörds asks each time you turn it on. While it is off, wörds does not use Bluetooth.
+
 If you and someone next to you choose to, a pack you made can go directly from one phone to the other over Bluetooth.
 It works only while the app is open, after one of you photographs a QR code on the other's screen and both of you
 confirm. The transfer is end-to-end encrypted and no server is involved, so we receive nothing. The person receiving
