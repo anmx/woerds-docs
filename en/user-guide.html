@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.18.2 (latest) · Earlier versions: <a href="../versions/0.18.1/en/user-guide.html">0.18.1</a>, <a href="../versions/0.18.0/en/user-guide.html">0.18.0</a>, <a href="../versions/0.17.0/en/user-guide.html">0.17.0</a>, <a href="../versions/0.16.0/en/user-guide.html">0.16.0</a>, <a href="../versions/0.15.0/en/user-guide.html">0.15.0</a>, <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.19.0 (latest) · Earlier versions: <a href="../versions/0.18.2/en/user-guide.html">0.18.2</a>, <a href="../versions/0.18.1/en/user-guide.html">0.18.1</a>, <a href="../versions/0.18.0/en/user-guide.html">0.18.0</a>, <a href="../versions/0.17.0/en/user-guide.html">0.17.0</a>, <a href="../versions/0.16.0/en/user-guide.html">0.16.0</a>, <a href="../versions/0.15.0/en/user-guide.html">0.15.0</a>, <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.18.2. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.19.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -148,6 +148,7 @@
     <p>Be honest: wörds plans your reviews from these answers. That is also why <strong>Knew it</strong> only becomes available once the answer is visible. If you tap <strong>Didn't know it</strong> before flipping, the card shows its answer first; tap <strong>Didn't know it</strong> again to move on.</p>
     <p>More on the card screen:</p>
     <ul>
+      <li>The <strong>top</strong> shows the lesson and which card of the whole session you are on, for example <em>Card 12 of 47</em>. The bar below it shows how many you have graded.</li>
       <li>The <strong>speaker</strong> plays the pronunciation with your device's text-to-speech voice. If the voice for the language is missing, wörds offers to install it.</li>
       <li><strong>I know this – ask rarely</strong>, under the grades once you knew the card (and after a right typed answer), tells wörds that you know this card well: it comes up only now and then from now on. The message at the bottom can undo it.</li>
       <li><strong>Undo</strong> (the arrow at the top right, or the message at the bottom) takes back the last answer.</li>
@@ -181,7 +182,7 @@
     <ul>
       <li>Normally the arrows go <strong>one side at a time</strong>: the answer, then the question, then the answer of the card before, and so on. In <a href="#learning">Settings</a> you can choose <strong>one card at a time</strong> instead; then each tap shows an earlier card's question, and tapping the card turns it.</li>
       <li>A tap on a turned card also shows its question again.</li>
-      <li>An earlier card shows the number it had in the session and how you graded it. <strong>Graded it wrong?</strong> Tap the other grade (for typed answers: <em>Wrong</em>, <em>Almost</em> or <em>Right</em>). wörds corrects it in your progress; the session stays where it is.</li>
+      <li>The top shows the number the earlier card had in the session, the card how you graded it. <strong>Graded it wrong?</strong> Tap the other grade (for typed answers: <em>Wrong</em>, <em>Almost</em> or <em>Right</em>). wörds corrects it in your progress; the session stays where it is.</li>
       <li>Looking back does not change the card that is next: if you said <em>Didn't know it</em>, that stays, and text you started typing is kept.</li>
       <li>After a group and at the end of a session, <strong>Look at the last card</strong> goes back as well.</li>
       <li>With a keyboard, the left and right arrow keys do the same.</li>
@@ -374,8 +375,8 @@
         <figcaption>Kid mode in the settings</figcaption>
       </figure>
       <figure class="shot">
-        <img src="../images/en/51-kid-cheer.png" alt="A cheer after six words in a row" width="540" height="1200" loading="lazy" decoding="async">
-        <figcaption>A cheer after six words in a row</figcaption>
+        <img src="../images/en/51-kid-cheer.png" alt="A cheer after five words in a row" width="540" height="1200" loading="lazy" decoding="async">
+        <figcaption>A cheer after five words in a row</figcaption>
       </figure>
     </div>
     <ul>
@@ -418,7 +419,7 @@
         <figcaption>GitHub sources</figcaption>
       </figure>
     </div>
-    <p><strong>Installed</strong> lists your packs by language pair, with version and origin (<em>Built in</em>, <em>Imported file</em> or <em>GitHub</em>).</p>
+    <p><strong>Installed</strong> lists your packs by language pair, with version (your own packs have none; one received nearby shows the other side's version until you change it) and origin (<em>Built in</em>, <em>Imported file</em> or <em>GitHub</em>).</p>
     <ul>
       <li><strong>Import file</strong> installs or updates a pack from a <code>.linguapack</code> file, for example from your downloads.</li>
       <li><strong>Hide</strong> in a pack's menu (⋮) takes it out of the library, today's review, the progress and the article practice, for example a built-in language you do not want to learn. The pack stays in this list, marked <em>Hidden</em>; <strong>Show</strong> brings it back with your progress. A hidden pack stays hidden when wörds or the pack is updated.</li>
@@ -562,6 +563,7 @@
     <p>This row opens the <a href="#language-packs">pack management</a> directly.</p>
     <h3 id="experimental">Experimental</h3>
     <p><strong>Share packs nearby</strong> turns on <a href="#your-own-packs">sharing a pack with someone next to you</a>. It is off by default. Turning it on shows what that means: your device can then make connections with other devices over Bluetooth, and the risks that come with it are yours alone. It only turns on if you agree, and wörds asks again each time you turn it on after turning it off.</p>
+    <p><strong>Turn off automatically after</strong> sets when sharing turns itself off: after <strong>10</strong>, <strong>30</strong> or <strong>60 minutes</strong> (10 by default) or <strong>Never</strong>. The time counts from turning it on and starts again when you change it. An exchange in progress finishes first.</p>
     <div class="figures">
       <figure class="shot">
         <img src="../images/en/70-settings-experimental.png" alt="Settings: the Experimental page" width="1080" height="2400" loading="lazy" decoding="async">

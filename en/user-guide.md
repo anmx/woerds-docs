@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.18.2. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.19.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -121,6 +121,8 @@ the answer is visible. If you tap **Didn't know it** before flipping, the card s
 
 More on the card screen:
 
+- The **top** shows the lesson and which card of the whole session you are on, for example *Card 12 of 47*. The bar
+  below it shows how many you have graded.
 - The **speaker** plays the pronunciation with your device's text-to-speech voice. If the voice for the language is
   missing, wörds offers to install it.
 - **I know this – ask rarely**, under the grades once you knew the card (and after a right typed answer), tells wörds
@@ -149,7 +151,7 @@ next. A card you have not answered yet never shows the forward arrow.
   and so on. In [Settings](#learning) you can choose **one card at a time** instead; then each tap shows an
   earlier card's question, and tapping the card turns it.
 - A tap on a turned card also shows its question again.
-- An earlier card shows the number it had in the session and how you graded it. **Graded it wrong?** Tap the other
+- The top shows the number the earlier card had in the session, the card how you graded it. **Graded it wrong?** Tap the other
   grade (for typed answers: *Wrong*, *Almost* or *Right*). wörds corrects it in your progress; the session stays where
   it is.
 - Looking back does not change the card that is next: if you said *Didn't know it*, that stays, and text you started
@@ -343,7 +345,7 @@ Practising articles does not change your schedule or today's review, but its ans
 Kid mode makes wörds more motivating for school children. It is off until you turn it on in
 [Settings](#kid-mode) → **Kid mode**.
 
-![Kid mode in the settings](../images/en/50-kid-settings.png) ![A cheer after six words in a row](../images/en/51-kid-cheer.png)
+![Kid mode in the settings](../images/en/50-kid-settings.png) ![A cheer after five words in a row](../images/en/51-kid-cheer.png)
 
 - **A playful look**: rounder shapes, brighter colors, larger buttons and words, friendlier texts.
 - **Cheers**: whenever your child knows several words in a row (5 unless you choose 3, 10, 15 or 20), a short
@@ -375,7 +377,7 @@ packs**.
 
 ![Installed packs](../images/en/30-packs-installed.png) ![GitHub sources](../images/en/31-packs-github.png)
 
-**Installed** lists your packs by language pair, with version and origin (*Built in*, *Imported file* or
+**Installed** lists your packs by language pair, with version (your own packs have none; one received nearby shows the other side's version until you change it) and origin (*Built in*, *Imported file* or
 *GitHub*).
 
 - **Import file** installs or updates a pack from a `.linguapack` file, for example from your downloads.
@@ -556,6 +558,10 @@ This row opens the [pack management](#language-packs) directly.
 it on shows what that means: your device can then make connections with other devices over Bluetooth, and the risks that
 come with it are yours alone. It only turns on if you agree, and wörds asks again each time you turn it on after turning
 it off.
+
+**Turn off automatically after** sets when sharing turns itself off: after **10**, **30** or **60 minutes** (10 by
+default) or **Never**. The time counts from turning it on and starts again when you change it. An exchange in progress
+finishes first.
 
 ![Settings: the Experimental page](../images/en/70-settings-experimental.png) ![The question before it turns on](../images/en/71-nearby-consent.png)
 

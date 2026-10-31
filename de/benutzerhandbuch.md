@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.18.2. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.19.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -123,6 +123,8 @@ Antwort; ein zweites Tippen auf **Nicht gewusst** geht weiter.
 
 Außerdem auf dem Kartenbildschirm:
 
+- **Oben** stehen die Lektion und die wievielte Karte der ganzen Sitzung gerade dran ist, zum Beispiel *Karte 12 von
+  47*. Der Balken darunter zeigt, wie viele du schon bewertet hast.
 - Der **Lautsprecher** spielt die Aussprache mit der Sprachausgabe deines Geräts ab. Fehlt die Stimme für die
   Sprache, bietet wörds an, sie zu installieren.
 - **Kann ich – seltener abfragen** steht unter den Bewertungen, sobald du die Karte gewusst hast (und nach einer
@@ -152,7 +154,7 @@ dran ist. Eine Karte, die du noch nicht beantwortet hast, zeigt nie den Pfeil na
   und so weiter. In den [Einstellungen](#lernen) kannst du stattdessen **Karte für Karte** wählen;
   dann zeigt jeder Tipp die Frage einer früheren Karte, und ein Tipp auf die Karte dreht sie um.
 - Ein Tipp auf eine umgedrehte Karte zeigt auch wieder ihre Frage.
-- Eine frühere Karte zeigt ihre Nummer in der Sitzung und wie du sie bewertet hast. **Falsch bewertet?** Tippe auf die
+- Oben steht die Nummer der früheren Karte in der Sitzung, auf der Karte, wie du sie bewertet hast. **Falsch bewertet?** Tippe auf die
   andere Bewertung (bei eingetippten Antworten: *Falsch*, *Fast* oder *Richtig*). wörds korrigiert sie in deinem
   Fortschritt; die Sitzung bleibt, wo sie ist.
 - Zurückblättern ändert nichts an der Karte, die dran ist: Hast du *Nicht gewusst* gesagt, bleibt das so, und schon
@@ -354,7 +356,7 @@ Das Artikeltraining ändert weder deinen Plan noch die heutige Wiederholung, abe
 Der Schulkind-Modus macht wörds für Schulkinder motivierender. Er ist aus, bis du ihn unter
 [Einstellungen](#schulkind-modus) → **Schulkind-Modus** einschaltest.
 
-![Der Schulkind-Modus in den Einstellungen](../images/de/50-kid-settings.png) ![Jubel nach sechs Wörtern hintereinander](../images/de/51-kid-cheer.png)
+![Der Schulkind-Modus in den Einstellungen](../images/de/50-kid-settings.png) ![Jubel nach fünf Wörtern hintereinander](../images/de/51-kid-cheer.png)
 
 - **Verspieltes Aussehen**: rundere Formen, kräftigere Farben, größere Knöpfe und Wörter, freundlichere Texte.
 - **Jubel**: Immer wenn dein Kind mehrere Wörter hintereinander weiß (5, sofern du nicht 3, 10, 15 oder 20 wählst),
@@ -388,7 +390,7 @@ Alle Inhalte kommen in Sprachpaketen. Du öffnest sie über das Kisten-Symbol in
 
 ![Installierte Pakete](../images/de/30-packs-installed.png) ![GitHub-Quellen](../images/de/31-packs-github.png)
 
-**Installiert** listet deine Pakete nach Sprachpaar, mit Version und Herkunft (*Integriert*, *Importierte Datei*
+**Installiert** listet deine Pakete nach Sprachpaar, mit Version (eigene Pakete haben keine, in der Nähe empfangene zeigen die Version der anderen Seite, bis du sie änderst) und Herkunft (*Integriert*, *Importierte Datei*
 oder *GitHub*).
 
 - **Datei importieren** installiert oder aktualisiert ein Paket aus einer `.linguapack`-Datei, zum Beispiel aus
@@ -589,6 +591,10 @@ Diese Zeile öffnet direkt die [Paketverwaltung](#sprachpakete).
 Einschalten sagt wörds, was das bedeutet: Dein Gerät kann dann über Bluetooth Verbindungen mit anderen Geräten aufbauen,
 und die damit verbundenen Risiken liegen allein bei dir. Eingeschaltet wird es nur, wenn du einwilligst, und nach jedem
 Ausschalten fragt wörds beim Einschalten erneut.
+
+**Automatisch ausschalten nach** legt fest, wann sich das Teilen von selbst ausschaltet: nach **10**, **30** oder **60
+Minuten** (voreingestellt sind 10) oder **Nie**. Die Zeit läuft ab dem Einschalten und beginnt neu, wenn du sie änderst.
+Ein laufender Austausch wird noch beendet.
 
 ![Einstellungen: die Seite Experimentell](../images/de/70-settings-experimental.png) ![Die Frage vor dem Einschalten](../images/de/71-nearby-consent.png)
 
