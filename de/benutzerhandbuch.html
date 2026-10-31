@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.16.0 (aktuell) · Frühere Versionen: <a href="../versions/0.15.0/de/benutzerhandbuch.html">0.15.0</a>, <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.17.0 (aktuell) · Frühere Versionen: <a href="../versions/0.16.0/de/benutzerhandbuch.html">0.16.0</a>, <a href="../versions/0.15.0/de/benutzerhandbuch.html">0.15.0</a>, <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.16.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.17.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
@@ -79,8 +79,8 @@
     <p>Die Bibliothek zeigt alles, was du im aktuellen Sprachpaar lernen kannst. Mit den Chips oben wechselst du zwischen den installierten Paketen, zum Beispiel <em>Wortschatz</em> (Vokabeln) und <em>Verben</em> (Konjugation); Pakete mit Vokabeln stehen vorn, und die Bibliothek öffnet sich mit ihnen. Jedes Paket ist in Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/08-library.png" alt="Die Bibliothek mit der heutigen Wiederholung oben" width="1080" height="2400" loading="lazy" decoding="async">
-        <figcaption>Die Bibliothek mit der heutigen Wiederholung oben</figcaption>
+        <img src="../images/de/08-library.png" alt="Die Bibliothek mit der heutigen Wiederholung" width="1080" height="2400" loading="lazy" decoding="async">
+        <figcaption>Die Bibliothek mit der heutigen Wiederholung</figcaption>
       </figure>
       <figure class="shot">
         <img src="../images/de/09-library-articles.png" alt="Der Modus Artikel" width="1080" height="2400" loading="lazy" decoding="async">
@@ -91,7 +91,7 @@
       <li><strong>Suchen</strong> findet Wörter und Verbformen im ausgewählten Paket.</li>
       <li>Eine zweite Reihe Chips erscheint, wenn ein Paket mehrere Arten von Inhalten hat: <em>Wortschatz</em>, <em>Verbkonjugation</em> und <strong>Artikel</strong>, sobald das Paket mindestens fünf Nomen mit Artikel hat. Die Bibliothek merkt sich die letzte Wahl pro Paket.</li>
       <li>Der <strong>Knopf unter den Chips</strong> folgt dieser Wahl: <strong>… fortsetzen</strong>, solange eine Sitzung davon offen ist (sie geht genau dort weiter, wo du aufgehört hast), sonst <strong>… lernen</strong> für alle Einträge, oder <strong>Artikel üben</strong> (siehe <a href="#artikel-üben">Artikel üben</a>).</li>
-      <li><strong>Heutige Wiederholung</strong> startet deine tägliche Wiederholung oder setzt sie fort (siehe <a href="#heutige-wiederholung">Heutige Wiederholung</a>).</li>
+      <li><strong>Heutige Wiederholung</strong> startet die Wiederholung des gewählten Pakets und Chips oder setzt sie fort. Sie erscheint nur, wenn dort Karten warten, und nie bei Artikel (siehe <a href="#heutige-wiederholung">Heutige Wiederholung</a>).</li>
       <li>Lektionen sind anfangs <strong>zugeklappt</strong>: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt sich, welche Lektionen du offen gelassen hast. Eine Suche klappt alle Lektionen mit Treffern auf.</li>
       <li>Die <strong>▶-Taste</strong> neben einer Lektion startet die ganze Lektion, ob auf- oder zugeklappt.</li>
       <li>Sind zwei oder mehr Sprachpaare installiert, tippst du auf das Sprachpaar unter dem Titel, um zu wechseln.</li>
@@ -227,11 +227,11 @@
       <li>fällige Karten, zuerst die, die du am ehesten vergisst, und</li>
       <li>einige <strong>neue Karten</strong> aus Paketen, mit denen du schon angefangen hast (20 am Tag, wenn du nichts änderst).</li>
     </ul>
-    <p>Du startest die Wiederholung oben in der Bibliothek oder im Bereich <strong>Fortschritt</strong>. Eine Zahl am Bereich Fortschritt zeigt, wie viele Karten warten. Lange Wiederholungen sind in Blöcke zu 20 Karten aufgeteilt. Eine unterbrochene Wiederholung kannst du am selben Tag fortsetzen. Ein Lerntag beginnt um 4 Uhr morgens, damit eine Sitzung spät am Abend noch zu diesem Tag zählt.</p>
+    <p>Du startest eine Wiederholung in der Bibliothek, für das gewählte Paket und den Chip, oder im Bereich <strong>Fortschritt</strong>, für eine Art von Inhalt über alle Pakete, etwa <em>Wortschatz</em> oder <em>Verbkonjugation</em>. Wiederholungen verschiedener Arten können nebeneinander offen bleiben, und die Tagesgrenzen gelten für alle zusammen. Das Artikeltraining hat keine eigene Wiederholung. Eine Zahl am Bereich Fortschritt zeigt, wie viele Karten insgesamt warten. Lange Wiederholungen sind in Blöcke zu 20 Karten aufgeteilt. Eine unterbrochene Wiederholung kannst du am selben Tag fortsetzen. Ein Lerntag beginnt um 4 Uhr morgens, damit eine Sitzung spät am Abend noch zu diesem Tag zählt.</p>
     <p>Jede Antwort fließt in deinen Plan ein: in einer normalen Sitzung genauso wie in der Wiederholung.</p>
     <h2 id="erinnerung-und-widget">Erinnerung und Widget</h2>
     <p><strong>Einstellungen → Tägliche Wiederholung → Tägliche Erinnerung</strong> schickt zur gewählten Uhrzeit eine Benachrichtigung (19:00 Uhr, wenn du nichts änderst), aber nur an Tagen, an denen die heutige Wiederholung noch Karten für dich hat. Beim Einschalten fragt sie nach der Erlaubnis für Benachrichtigungen; die Benachrichtigung nennt keine Wörter.</p>
-    <p>Das Widget <strong>Heutige Wiederholung</strong> für den Startbildschirm zeigt, wie viele Karten warten, und startet die Wiederholung mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die Farben der App.</p>
+    <p>Das Widget <strong>Heutige Wiederholung</strong> für den Startbildschirm zeigt, wie viele Karten über alle Arten warten, und startet eine Wiederholung davon mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die Farben der App.</p>
     <div class="figures">
       <figure class="shot">
         <img src="../images/de/25-settings-reminder.png" alt="Einstellungen mit der Erinnerung" width="1080" height="2400" loading="lazy" decoding="async">
@@ -239,10 +239,10 @@
       </figure>
     </div>
     <h2 id="fortschritt">Fortschritt</h2>
-    <p>Der Bereich <strong>Fortschritt</strong> zeigt die heutige Wiederholung und für jedes Paket, wie weit du bist. Tippe auf ein Paket, um dieselben Zahlen pro Abschnitt zu sehen; innerhalb eines Abschnitts kannst du seine Gruppen einblenden.</p>
+    <p>Der Bereich <strong>Fortschritt</strong> zeigt die heutige Wiederholung, je eine Zeile mit eigenem Knopf für jede Art von Inhalt mit wartenden Karten, und für jedes Paket, wie weit du bist. Tippe auf ein Paket, um dieselben Zahlen pro Abschnitt zu sehen; innerhalb eines Abschnitts kannst du seine Gruppen einblenden.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/de/12-progress.png" alt="Fortschritt" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/de/12-progress.png" alt="Fortschritt" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Fortschritt</figcaption>
       </figure>
       <figure class="shot">
@@ -529,6 +529,7 @@
       <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>
       <li><strong>Pfeile zurück und vor</strong>: ob die Pfeile auf einer Karte <strong>Seite für Seite</strong> oder <strong>Karte für Karte</strong> blättern; siehe <a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a>.</li>
       <li><strong>Gefestigte Karten in Lektionen</strong>: ob eine Sitzung aus der Bibliothek gefestigte Karten <strong>Immer</strong>, als <strong>Stichprobe</strong> von einem Fünftel (normal) oder <strong>Nie</strong> abfragt. Die heutige Wiederholung betrifft das nicht; siehe <a href="#eine-sitzung-starten">Eine Sitzung starten</a>.</li>
+      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.</li>
     </ul>
     <h3 id="tägliche-wiederholung">Tägliche Wiederholung</h3>
     <ul>
@@ -547,10 +548,10 @@
       <li><strong>Schulkind-Modus</strong> schaltet das verspielte Aussehen, den Jubel und die Coins ein oder aus; siehe <a href="#schulkind-modus-und-coins">Schulkind-Modus und Coins</a>.</li>
       <li><strong>Jubel nach … Wörtern hintereinander</strong>: 3, 5, 10, 15 oder 20 (normalerweise 5).</li>
     </ul>
-    <h3 id="daten-und-infos">Daten und Infos</h3>
+    <h3 id="sprachpakete">Sprachpakete</h3>
+    <p>Diese Zeile öffnet direkt die <a href="#sprachpakete">Paketverwaltung</a>.</p>
+    <h3 id="infos">Infos</h3>
     <ul>
-      <li><strong>Sprachpakete</strong> öffnet die <a href="#sprachpakete">Paketverwaltung</a>.</li>
-      <li><strong>Lernfortschritt zurücksetzen</strong> löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.</li>
       <li><strong>Open-Source-Lizenzen</strong> listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu lesen.</li>
       <li><strong>Version</strong> zeigt, welche Version von wörds installiert ist.</li>
     </ul>
@@ -575,7 +576,7 @@
     <p><strong>Wörter aus einem Foto kommen falsch an.</strong> Fotografiere die Seite noch einmal bei gutem Licht, flach und bildfüllend, oder schneide mit <strong>Drehen und zuschneiden</strong> nur die Wortliste aus. Jede Zeile lässt sich in der Prüfung berichtigen, bevor etwas importiert wird.</p>
     <p><strong>Ich will kein Italienisch lernen.</strong> Blende die mitgelieferten Italienisch-Pakete aus: <strong>Sprachpakete → ⋮ → Ausblenden</strong>. Sind alle Pakete ausgeblendet, sagt die Bibliothek das; importiere oder erstelle ein Paket oder blende eins wieder ein.</p>
     <p><strong>Mir kommen Wörter, die ich sicher kann.</strong> Tippe in einer Sitzung aus der Bibliothek unter den Bewertungen auf <strong>Kann ich – seltener abfragen</strong>; die Karte kommt dann nur noch ab und an. Karten, die du seit Wochen sicher weißt, lassen Lektionssitzungen ohnehin bis auf wenige aus; <strong>Einstellungen → Gefestigte Karten in Lektionen</strong> ändert das.</p>
-    <p><strong>Ich will von vorn anfangen.</strong> <strong>Einstellungen → Lernfortschritt zurücksetzen</strong> löscht alle Antworten; die Pakete bleiben installiert.</p>
+    <p><strong>Ich will von vorn anfangen.</strong> <strong>Einstellungen → Lernen → Lernfortschritt zurücksetzen</strong> löscht alle Antworten; die Pakete bleiben installiert.</p>
   </main>
 </body>
 </html>

@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.16.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.17.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -56,7 +56,7 @@ between the installed packs, for example *Wortschatz* (vocabulary) and *Verben* 
 vocabulary come first, and the library opens on them. Each pack is
 divided into sections (lessons), and each section into items: a verb with all its forms, or a word.
 
-![The library with today's review at the top](../images/en/08-library.png) ![The Articles mode](../images/en/09-library-articles.png)
+![The library with today's review](../images/en/08-library.png) ![The Articles mode](../images/en/09-library-articles.png)
 
 - **Search** finds words and verb forms in the selected pack.
 - A second row of chips appears when a pack holds more than one kind of content: *Wortschatz* (vocabulary),
@@ -65,7 +65,8 @@ divided into sections (lessons), and each section into items: a verb with all it
 - The **button under the chips** follows that choice: **Continue …** when a session of it is still open (it picks up
   exactly where you left off), **Study …** for all its entries otherwise, or **Practise articles** (see
   [Practising articles](#practising-articles)).
-- **Today's review** starts or continues your daily review (see [Today's review](#todays-review)).
+- **Today's review** starts or continues the review of the selected pack and chip; it shows only when that has cards
+  to review, and never for Articles (see [Today's review](#todays-review)).
 - Lessons start **collapsed**: tap a lesson's name to open or close it. wörds remembers which lessons you left open.
   A search opens every lesson with a match.
 - The **▶ button** next to a lesson starts that whole lesson, open or not.
@@ -205,8 +206,10 @@ Every day wörds puts together **today's review**:
 - cards that are due, the ones you are most likely to forget first, and
 - a few **new cards** from packs you have already started (20 a day unless you change it).
 
-You start the review from the top of the library or from the **Progress** tab. A number on the Progress tab shows
-how many cards are waiting. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued
+You start a review in the library, for the selected pack and chip, or on the **Progress** tab, for one kind of content
+across all packs, such as *Wortschatz* or *Verbkonjugation*. Reviews of different kinds can stay open side by side, and
+the daily limits count for all of them together. The article practice has no review of its own. A number on the
+Progress tab shows how many cards are waiting in total. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued
 the same day. A review day starts at 4:00 in the morning, so a late evening session still counts for that day.
 
 Every answer counts towards your schedule: in a normal session as well as in the review.
@@ -217,14 +220,15 @@ Every answer counts towards your schedule: in a normal session as well as in the
 but only on days when today's review still has cards for you. It asks for permission to show notifications when you
 turn it on; the notification names no words.
 
-The **Today's review** widget for your home screen shows how many cards are waiting and starts the review with one
-tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.
+The **Today's review** widget for your home screen shows how many cards are waiting across all kinds and starts a
+review of them with one tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.
 
 ![Settings with the reminder](../images/en/25-settings-reminder.png)
 
 ## Progress
 
-The **Progress** tab shows today's review and, for each pack, how far you have got. Tap a pack to see the same
+The **Progress** tab shows today's review, one row with its own button for each kind of content that has cards
+waiting, and, for each pack, how far you have got. Tap a pack to see the same
 figures per section; within a section you can show its groups.
 
 ![Progress](../images/en/12-progress.png) ![Progress of one pack](../images/en/13-progress-pack.png)
@@ -497,6 +501,8 @@ light and dark.
 - **Consolidated cards in lessons**: whether a session from the library asks consolidated cards **Always**, a
   **Sample** of a fifth of them (normally), or **Never**. Today's review is not affected; see
   [Starting a session](#starting-a-session).
+- **Reset learning progress** deletes all answers and sessions, including those of the article practice. Installed
+  packs and kid mode coins stay. This cannot be undone.
 
 ### Daily review
 
@@ -516,11 +522,12 @@ light and dark.
 - **Kid mode** turns the playful look, the cheers and the coins on or off; see [Kid mode and coins](#kid-mode-and-coins).
 - **Cheer after … words in a row**: 3, 5, 10, 15 or 20 (normally 5).
 
-### Data and info
+### Language packs
 
-- **Language packs** opens the [pack management](#language-packs).
-- **Reset learning progress** deletes all answers and sessions, including those of the article practice. Installed
-  packs and kid mode coins stay. This cannot be undone.
+This row opens the [pack management](#language-packs) directly.
+
+### About
+
 - **Open-source licenses** lists the libraries wörds is built with; tap one to read its license.
 - **Version** shows which version of wörds is installed.
 
@@ -567,4 +574,4 @@ hidden, the library says so; import or create a pack, or show one again.
 grades; the card then comes up only now and then. Cards you know for weeks are left out of lesson sessions anyway,
 apart from a few; **Settings → Consolidated cards in lessons** changes that.
 
-**I want to start over.** **Settings → Reset learning progress** deletes all answers; the packs stay installed.
+**I want to start over.** **Settings → Learning → Reset learning progress** deletes all answers; the packs stay installed.

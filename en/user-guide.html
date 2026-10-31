@@ -23,11 +23,11 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.16.0 (latest) · Earlier versions: <a href="../versions/0.15.0/en/user-guide.html">0.15.0</a>, <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.17.0 (latest) · Earlier versions: <a href="../versions/0.16.0/en/user-guide.html">0.16.0</a>, <a href="../versions/0.15.0/en/user-guide.html">0.15.0</a>, <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.16.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.17.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
@@ -79,8 +79,8 @@
     <p>The library shows everything you can learn in the current language pair. The row of chips at the top switches between the installed packs, for example <em>Wortschatz</em> (vocabulary) and <em>Verben</em> (verb conjugation); packs with vocabulary come first, and the library opens on them. Each pack is divided into sections (lessons), and each section into items: a verb with all its forms, or a word.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/en/08-library.png" alt="The library with today&#x27;s review at the top" width="1080" height="2400" loading="lazy" decoding="async">
-        <figcaption>The library with today&#x27;s review at the top</figcaption>
+        <img src="../images/en/08-library.png" alt="The library with today&#x27;s review" width="1080" height="2400" loading="lazy" decoding="async">
+        <figcaption>The library with today&#x27;s review</figcaption>
       </figure>
       <figure class="shot">
         <img src="../images/en/09-library-articles.png" alt="The Articles mode" width="1080" height="2400" loading="lazy" decoding="async">
@@ -91,7 +91,7 @@
       <li><strong>Search</strong> finds words and verb forms in the selected pack.</li>
       <li>A second row of chips appears when a pack holds more than one kind of content: <em>Wortschatz</em> (vocabulary), <em>Verbkonjugation</em> (verbs) and <strong>Articles</strong> once the pack has at least five nouns with their article. The library remembers the last one per pack.</li>
       <li>The <strong>button under the chips</strong> follows that choice: <strong>Continue …</strong> when a session of it is still open (it picks up exactly where you left off), <strong>Study …</strong> for all its entries otherwise, or <strong>Practise articles</strong> (see <a href="#practising-articles">Practising articles</a>).</li>
-      <li><strong>Today's review</strong> starts or continues your daily review (see <a href="#todays-review">Today's review</a>).</li>
+      <li><strong>Today's review</strong> starts or continues the review of the selected pack and chip; it shows only when that has cards to review, and never for Articles (see <a href="#todays-review">Today's review</a>).</li>
       <li>Lessons start <strong>collapsed</strong>: tap a lesson's name to open or close it. wörds remembers which lessons you left open. A search opens every lesson with a match.</li>
       <li>The <strong>▶ button</strong> next to a lesson starts that whole lesson, open or not.</li>
       <li>With two or more language pairs installed, tap the pair under the title to switch between them.</li>
@@ -227,11 +227,11 @@
       <li>cards that are due, the ones you are most likely to forget first, and</li>
       <li>a few <strong>new cards</strong> from packs you have already started (20 a day unless you change it).</li>
     </ul>
-    <p>You start the review from the top of the library or from the <strong>Progress</strong> tab. A number on the Progress tab shows how many cards are waiting. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued the same day. A review day starts at 4:00 in the morning, so a late evening session still counts for that day.</p>
+    <p>You start a review in the library, for the selected pack and chip, or on the <strong>Progress</strong> tab, for one kind of content across all packs, such as <em>Wortschatz</em> or <em>Verbkonjugation</em>. Reviews of different kinds can stay open side by side, and the daily limits count for all of them together. The article practice has no review of its own. A number on the Progress tab shows how many cards are waiting in total. Long reviews are split into blocks of 20 cards. A review you interrupt can be continued the same day. A review day starts at 4:00 in the morning, so a late evening session still counts for that day.</p>
     <p>Every answer counts towards your schedule: in a normal session as well as in the review.</p>
     <h2 id="reminder-and-widget">Reminder and widget</h2>
     <p><strong>Settings → Daily review → Daily reminder</strong> sends a notification at the time you choose (19:00 unless you change it), but only on days when today's review still has cards for you. It asks for permission to show notifications when you turn it on; the notification names no words.</p>
-    <p>The <strong>Today's review</strong> widget for your home screen shows how many cards are waiting and starts the review with one tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.</p>
+    <p>The <strong>Today's review</strong> widget for your home screen shows how many cards are waiting across all kinds and starts a review of them with one tap. When you are done for the day, it says so and opens Progress. It follows the app's colors.</p>
     <div class="figures">
       <figure class="shot">
         <img src="../images/en/25-settings-reminder.png" alt="Settings with the reminder" width="1080" height="2400" loading="lazy" decoding="async">
@@ -239,10 +239,10 @@
       </figure>
     </div>
     <h2 id="progress">Progress</h2>
-    <p>The <strong>Progress</strong> tab shows today's review and, for each pack, how far you have got. Tap a pack to see the same figures per section; within a section you can show its groups.</p>
+    <p>The <strong>Progress</strong> tab shows today's review, one row with its own button for each kind of content that has cards waiting, and, for each pack, how far you have got. Tap a pack to see the same figures per section; within a section you can show its groups.</p>
     <div class="figures">
       <figure class="shot">
-        <img src="../images/en/12-progress.png" alt="Progress" width="540" height="1200" loading="lazy" decoding="async">
+        <img src="../images/en/12-progress.png" alt="Progress" width="1080" height="2400" loading="lazy" decoding="async">
         <figcaption>Progress</figcaption>
       </figure>
       <figure class="shot">
@@ -529,6 +529,7 @@
       <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>
       <li><strong>Back and forward arrows</strong>: whether the arrows on a card go <strong>one side at a time</strong> or <strong>one card at a time</strong>; see <a href="#looking-back-and-correcting">Looking back and correcting</a>.</li>
       <li><strong>Consolidated cards in lessons</strong>: whether a session from the library asks consolidated cards <strong>Always</strong>, a <strong>Sample</strong> of a fifth of them (normally), or <strong>Never</strong>. Today's review is not affected; see <a href="#starting-a-session">Starting a session</a>.</li>
+      <li><strong>Reset learning progress</strong> deletes all answers and sessions, including those of the article practice. Installed packs and kid mode coins stay. This cannot be undone.</li>
     </ul>
     <h3 id="daily-review">Daily review</h3>
     <ul>
@@ -547,10 +548,10 @@
       <li><strong>Kid mode</strong> turns the playful look, the cheers and the coins on or off; see <a href="#kid-mode-and-coins">Kid mode and coins</a>.</li>
       <li><strong>Cheer after … words in a row</strong>: 3, 5, 10, 15 or 20 (normally 5).</li>
     </ul>
-    <h3 id="data-and-info">Data and info</h3>
+    <h3 id="language-packs">Language packs</h3>
+    <p>This row opens the <a href="#language-packs">pack management</a> directly.</p>
+    <h3 id="about">About</h3>
     <ul>
-      <li><strong>Language packs</strong> opens the <a href="#language-packs">pack management</a>.</li>
-      <li><strong>Reset learning progress</strong> deletes all answers and sessions, including those of the article practice. Installed packs and kid mode coins stay. This cannot be undone.</li>
       <li><strong>Open-source licenses</strong> lists the libraries wörds is built with; tap one to read its license.</li>
       <li><strong>Version</strong> shows which version of wörds is installed.</li>
     </ul>
@@ -575,7 +576,7 @@
     <p><strong>Words from a photo come out wrong.</strong> Take the photo again in good light, with the page flat and filling the picture, or use <strong>Rotate and crop</strong> to frame just the word list. Every row can be corrected in the review before anything is imported.</p>
     <p><strong>I do not want to learn Italian.</strong> Hide the built-in Italian packs: <strong>Language packs → ⋮ → Hide</strong>. If every pack is hidden, the library says so; import or create a pack, or show one again.</p>
     <p><strong>I keep getting words I know well.</strong> In a session from the library, tap <strong>I know this – ask rarely</strong> under the grades; the card then comes up only now and then. Cards you know for weeks are left out of lesson sessions anyway, apart from a few; <strong>Settings → Consolidated cards in lessons</strong> changes that.</p>
-    <p><strong>I want to start over.</strong> <strong>Settings → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
+    <p><strong>I want to start over.</strong> <strong>Settings → Learning → Reset learning progress</strong> deletes all answers; the packs stay installed.</p>
   </main>
 </body>
 </html>

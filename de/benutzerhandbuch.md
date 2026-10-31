@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.16.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.17.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -57,7 +57,7 @@ den installierten Paketen, zum Beispiel *Wortschatz* (Vokabeln) und *Verben* (Ko
 stehen vorn, und die Bibliothek öffnet sich mit ihnen. Jedes Paket ist in
 Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit all seinen Formen oder ein Wort.
 
-![Die Bibliothek mit der heutigen Wiederholung oben](../images/de/08-library.png) ![Der Modus Artikel](../images/de/09-library-articles.png)
+![Die Bibliothek mit der heutigen Wiederholung](../images/de/08-library.png) ![Der Modus Artikel](../images/de/09-library-articles.png)
 
 - **Suchen** findet Wörter und Verbformen im ausgewählten Paket.
 - Eine zweite Reihe Chips erscheint, wenn ein Paket mehrere Arten von Inhalten hat: *Wortschatz*, *Verbkonjugation*
@@ -66,8 +66,8 @@ Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit al
 - Der **Knopf unter den Chips** folgt dieser Wahl: **… fortsetzen**, solange eine Sitzung davon offen ist (sie geht
   genau dort weiter, wo du aufgehört hast), sonst **… lernen** für alle Einträge, oder **Artikel üben** (siehe
   [Artikel üben](#artikel-üben)).
-- **Heutige Wiederholung** startet deine tägliche Wiederholung oder setzt sie fort (siehe
-  [Heutige Wiederholung](#heutige-wiederholung)).
+- **Heutige Wiederholung** startet die Wiederholung des gewählten Pakets und Chips oder setzt sie fort. Sie erscheint
+  nur, wenn dort Karten warten, und nie bei Artikel (siehe [Heutige Wiederholung](#heutige-wiederholung)).
 - Lektionen sind anfangs **zugeklappt**: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt
   sich, welche Lektionen du offen gelassen hast. Eine Suche klappt alle Lektionen mit Treffern auf.
 - Die **▶-Taste** neben einer Lektion startet die ganze Lektion, ob auf- oder zugeklappt.
@@ -211,8 +211,10 @@ Jeden Tag stellt wörds die **heutige Wiederholung** zusammen:
 - fällige Karten, zuerst die, die du am ehesten vergisst, und
 - einige **neue Karten** aus Paketen, mit denen du schon angefangen hast (20 am Tag, wenn du nichts änderst).
 
-Du startest die Wiederholung oben in der Bibliothek oder im Bereich **Fortschritt**. Eine Zahl am Bereich
-Fortschritt zeigt, wie viele Karten warten. Lange Wiederholungen sind in Blöcke zu 20 Karten aufgeteilt. Eine
+Du startest eine Wiederholung in der Bibliothek, für das gewählte Paket und den Chip, oder im Bereich **Fortschritt**,
+für eine Art von Inhalt über alle Pakete, etwa *Wortschatz* oder *Verbkonjugation*. Wiederholungen verschiedener Arten
+können nebeneinander offen bleiben, und die Tagesgrenzen gelten für alle zusammen. Das Artikeltraining hat keine eigene
+Wiederholung. Eine Zahl am Bereich Fortschritt zeigt, wie viele Karten insgesamt warten. Lange Wiederholungen sind in Blöcke zu 20 Karten aufgeteilt. Eine
 unterbrochene Wiederholung kannst du am selben Tag fortsetzen. Ein Lerntag beginnt um 4 Uhr morgens, damit eine
 Sitzung spät am Abend noch zu diesem Tag zählt.
 
@@ -224,15 +226,16 @@ Jede Antwort fließt in deinen Plan ein: in einer normalen Sitzung genauso wie i
 (19:00 Uhr, wenn du nichts änderst), aber nur an Tagen, an denen die heutige Wiederholung noch Karten für dich hat.
 Beim Einschalten fragt sie nach der Erlaubnis für Benachrichtigungen; die Benachrichtigung nennt keine Wörter.
 
-Das Widget **Heutige Wiederholung** für den Startbildschirm zeigt, wie viele Karten warten, und startet die
-Wiederholung mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die
+Das Widget **Heutige Wiederholung** für den Startbildschirm zeigt, wie viele Karten über alle Arten warten, und startet
+eine Wiederholung davon mit einem Tipp. Wenn du für heute fertig bist, sagt es das und öffnet den Fortschritt. Es übernimmt die
 Farben der App.
 
 ![Einstellungen mit der Erinnerung](../images/de/25-settings-reminder.png)
 
 ## Fortschritt
 
-Der Bereich **Fortschritt** zeigt die heutige Wiederholung und für jedes Paket, wie weit du bist. Tippe auf ein
+Der Bereich **Fortschritt** zeigt die heutige Wiederholung, je eine Zeile mit eigenem Knopf für jede Art von Inhalt
+mit wartenden Karten, und für jedes Paket, wie weit du bist. Tippe auf ein
 Paket, um dieselben Zahlen pro Abschnitt zu sehen; innerhalb eines Abschnitts kannst du seine Gruppen einblenden.
 
 ![Fortschritt](../images/de/12-progress.png) ![Fortschritt eines Pakets](../images/de/13-progress-pack.png)
@@ -523,6 +526,8 @@ Ergebnis hell und dunkel.
 - **Gefestigte Karten in Lektionen**: ob eine Sitzung aus der Bibliothek gefestigte Karten **Immer**, als
   **Stichprobe** von einem Fünftel (normal) oder **Nie** abfragt. Die heutige Wiederholung betrifft das nicht; siehe
   [Eine Sitzung starten](#eine-sitzung-starten).
+- **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte
+  Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.
 
 ### Tägliche Wiederholung
 
@@ -544,11 +549,12 @@ Ergebnis hell und dunkel.
   [Schulkind-Modus und Coins](#schulkind-modus-und-coins).
 - **Jubel nach … Wörtern hintereinander**: 3, 5, 10, 15 oder 20 (normalerweise 5).
 
-### Daten und Infos
+### Sprachpakete
 
-- **Sprachpakete** öffnet die [Paketverwaltung](#sprachpakete).
-- **Lernfortschritt zurücksetzen** löscht alle Antworten und Sitzungen, auch die des Artikeltrainings. Installierte
-  Pakete und die Coins des Schulkind-Modus bleiben. Das lässt sich nicht rückgängig machen.
+Diese Zeile öffnet direkt die [Paketverwaltung](#sprachpakete).
+
+### Infos
+
 - **Open-Source-Lizenzen** listet die Bibliotheken, mit denen wörds gebaut ist; tippe auf eine, um ihre Lizenz zu
   lesen.
 - **Version** zeigt, welche Version von wörds installiert ist.
@@ -598,5 +604,5 @@ eins wieder ein.
 ich – seltener abfragen**; die Karte kommt dann nur noch ab und an. Karten, die du seit Wochen sicher weißt, lassen
 Lektionssitzungen ohnehin bis auf wenige aus; **Einstellungen → Gefestigte Karten in Lektionen** ändert das.
 
-**Ich will von vorn anfangen.** **Einstellungen → Lernfortschritt zurücksetzen** löscht alle Antworten; die Pakete
+**Ich will von vorn anfangen.** **Einstellungen → Lernen → Lernfortschritt zurücksetzen** löscht alle Antworten; die Pakete
 bleiben installiert.

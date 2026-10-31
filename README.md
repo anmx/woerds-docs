@@ -9,7 +9,8 @@ wörds ist eine Lernkarten-App zum Sprachenlernen: Vokabeln und Verbformen, mit 
 | **Using the app (latest version)** · **Die App benutzen (aktuelle Version)** | [User guide](en/user-guide.md) | [Benutzerhandbuch](de/benutzerhandbuch.md) |
 | **Privacy** · **Datenschutz** | [Privacy policy](en/privacy-policy.md) | [Datenschutzerklärung](de/datenschutz.md) |
 | **Making language packs** · **Sprachpakete erstellen** | [Language pack specification](spec/README.md) (for developers) | [Sprachpaket-Spezifikation](spec/README.md) (für die Entwicklung, auf Englisch) |
-| **Earlier versions** · **Frühere Versionen** | [User guide 0.15.0](versions/0.15.0/en/user-guide.md) | [Benutzerhandbuch 0.15.0](versions/0.15.0/de/benutzerhandbuch.md) |
+| **Earlier versions** · **Frühere Versionen** | [User guide 0.16.0](versions/0.16.0/en/user-guide.md) | [Benutzerhandbuch 0.16.0](versions/0.16.0/de/benutzerhandbuch.md) |
+| | [User guide 0.15.0](versions/0.15.0/en/user-guide.md) | [Benutzerhandbuch 0.15.0](versions/0.15.0/de/benutzerhandbuch.md) |
 | | [User guide 0.14.0](versions/0.14.0/en/user-guide.md) | [Benutzerhandbuch 0.14.0](versions/0.14.0/de/benutzerhandbuch.md) |
 | | [User guide 0.13.0](versions/0.13.0/en/user-guide.md) | [Benutzerhandbuch 0.13.0](versions/0.13.0/de/benutzerhandbuch.md) |
 | | [User guide 0.12.0](versions/0.12.0/en/user-guide.md) | [Benutzerhandbuch 0.12.0](versions/0.12.0/de/benutzerhandbuch.md) |
