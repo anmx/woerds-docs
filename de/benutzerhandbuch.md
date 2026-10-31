@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.17.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.18.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -458,13 +458,35 @@ Aktionen im Aktionsmenü jedes Worts und jeder Lektion.
 **Ein installiertes Paket bearbeiten.** Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet **Zum
 Bearbeiten duplizieren**: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das
 Original aus (*Ausgeblendet*). **Einblenden** holt es zurück. Deine eigenen Pakete sind als *Bearbeitbar*
-markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **Duplizieren**, **Ausblenden** und **Löschen**.
+markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **In der Nähe teilen**, **Duplizieren**, **Ausblenden** und **Löschen**.
 
 **Exportieren und teilen.** **Als Datei exportieren** speichert dein Paket als `.linguapack`-Datei in einem Ordner
 deiner Wahl, **Teilen** schickt es an eine App, und **Alle deine Pakete exportieren** (oben in den Sprachpaketen)
 schreibt alle in einen Ordner. Die Lizenz, die du gewählt hast, geht mit der Datei. Wer wörds hat, öffnet die Datei
 mit **Datei importieren**; sie kommt als bearbeitbares Paket an. Ist das Paket schon da, wähle **Ersetzen** (Wörter,
 die in beiden sind, behalten ihren Lernstand) oder **Beide behalten**.
+
+**Mit jemandem neben dir teilen.** Du kannst ein selbst erstelltes Paket direkt an jemanden weitergeben, der neben dir
+steht, ohne Internet und ohne Konto. Beide Handys brauchen Android 12 oder neuer und eine geöffnete wörds-App. Im
+Kindermodus gibt es das nicht.
+
+1. Die empfangende Person öffnet die Sprachpakete, tippt auf **+** und wählt **In der Nähe empfangen**. Ein QR-Code
+   erscheint für eine Minute. wörds fragt nach der Berechtigung für Geräte in der Nähe und, falls nötig, danach,
+   Bluetooth einzuschalten.
+2. Die teilende Person öffnet das Menü (⋮) des Pakets, wählt **In der Nähe teilen**, prüft, was gesendet würde, und tippt
+   auf **Code fotografieren**. Die Kamera-App öffnet sich: den Code auf dem anderen Bildschirm fotografieren und das Foto
+   bestätigen.
+3. Die Handys verbinden sich. Die empfangende Person sieht, was das andere Handy anbietet. Jede tippt auf **Senden** oder
+   **Empfangen**; vom Paket fließt nichts, bevor beide das getan haben.
+4. Die empfangende Person sieht, was wirklich angekommen ist, und wählt **Paket behalten** oder **Verwerfen**. Ein
+   behaltenes Paket ist immer ein neues, bearbeitbares Paket: Es ersetzt keines, das du hast, und dasselbe Paket zweimal
+   zu empfangen ergibt zwei Kopien.
+
+Zeige den Code nur der Person, von der du ein Paket möchtest. Er funktioniert einmal. Dein Lernfortschritt und dein Name
+bleiben auf deinem Handy. Verlässt du den Bildschirm oder die App, endet der Austausch, und nichts wird behalten. Lässt
+sich ein Foto nicht lesen, vermeide Spiegelungen und versuche es noch einmal. Der Austausch läuft direkt von Handy zu
+Handy und Ende-zu-Ende-verschlüsselt; so lassen sich nur deine eigenen Pakete teilen, und ein Paket darf höchstens 20 MB
+groß sein. Größere Pakete dauern einige Minuten.
 
 ## Wörter aus Fotos
 

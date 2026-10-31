@@ -1,6 +1,6 @@
 # Datenschutzerklärung für wörds
 
-Stand: 2026-10-25
+Stand: 2026-10-31
 
 wörds ist eine Lernkarten-App zum Sprachenlernen, angeboten von anmx, anmx-dev _at_ pm _dot_ me („wir“).
 
@@ -38,6 +38,17 @@ Wenn du ein selbst erstelltes Paket exportierst oder teilst, schreibt wörds ein
 Ort, den du wählst (einen Ordner oder eine App im Teilen-Menü). Was dort damit geschieht, liegt bei dir und dieser
 App. Kopien zum Teilen werden nach einem Tag aus dem temporären Speicher der App gelöscht.
 
+## Ein Paket mit jemandem in der Nähe tauschen
+
+Wenn du und jemand neben dir es möchtet, kann ein selbst erstelltes Paket über Bluetooth direkt von einem Handy zum
+anderen gehen. Das geht nur bei geöffneter App, nachdem eine Person einen QR-Code auf dem Bildschirm der anderen
+fotografiert hat und ihr beide bestätigt. Die Übertragung ist Ende-zu-Ende-verschlüsselt und läuft über keinen Server,
+wir erhalten also nichts. Die empfangende Person bekommt Text und Bilder des Pakets, nicht deinen Lernfortschritt und
+nicht deinen Namen. Das Foto des Codes wird auf dem Gerät gelesen und sofort gelöscht. Dafür fragt wörds nach der
+Berechtigung für Geräte in der Nähe, und erst, wenn ein Austausch beginnt; dein Standort wird nicht genutzt. Während ein
+Code angezeigt wird, sendet das Handy ein Bluetooth-Signal mit einer Kennung, die jedes Mal neu ist und nichts über dich
+verrät.
+
 ## Verbindungen zu GitHub
 
 wörds verbindet sich nur mit dem Internet, um Sprachpakete aus GitHub-Repositorys zu lesen, die du selbst
@@ -45,7 +56,7 @@ hinzufügst. Die App sendet dann Anfragen an GitHub (api.github.com), bei privat
 Zugriffstoken. GitHub erhält dabei die technischen Daten dieser Anfragen, etwa deine IP-Adresse. Für deren
 Verarbeitung gilt das GitHub Privacy Statement
 (https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement). Wir erhalten diese Daten
-nicht. Wenn du keine GitHub-Quelle hinzufügst, baut die App keine Netzwerkverbindungen auf.
+nicht. Wenn du keine GitHub-Quelle hinzufügst, baut die App keine Internetverbindungen auf.
 
 ## Sicherung
 

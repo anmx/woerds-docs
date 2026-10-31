@@ -1,6 +1,6 @@
 # Privacy policy for wörds
 
-Last updated: 2026-10-25
+Last updated: 2026-10-31
 
 wörds is a flashcard app for learning languages, provided by anmx, anmx-dev _at_ pm _dot_ me ("we").
 
@@ -38,13 +38,23 @@ When you export or share a pack you made, wörds writes a pack file and hands it
 an app in the share menu). What happens to it there is up to you and that app. Copies made for sharing are deleted
 from the app's temporary storage after a day.
 
+## Exchanging a pack with someone nearby
+
+If you and someone next to you choose to, a pack you made can go directly from one phone to the other over Bluetooth.
+It works only while the app is open, after one of you photographs a QR code on the other's screen and both of you
+confirm. The transfer is end-to-end encrypted and no server is involved, so we receive nothing. The person receiving
+gets the pack's text and pictures, not your learning progress or your name. The photo of the code is read on the
+device and deleted at once. For this, wörds asks for the permission for nearby devices, and only when an exchange
+starts; it does not use your location. While a code is shown, the phone sends out a Bluetooth signal with an identifier
+that is new every time and tells nothing about you.
+
 ## Connections to GitHub
 
 wörds connects to the internet only to read language packs from GitHub repositories that you add yourself. The app
 then sends requests to GitHub (api.github.com), with your access token for private repositories. GitHub receives the
 technical data of these requests, such as your IP address. Its handling is governed by the GitHub Privacy Statement
 (<https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement>). We receive none of this data.
-If you add no GitHub source, the app makes no network connections at all.
+If you add no GitHub source, the app makes no internet connections at all.
 
 ## Backup
 
