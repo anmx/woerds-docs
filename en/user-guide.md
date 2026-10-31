@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.18.1. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.18.2. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -65,7 +65,7 @@ divided into sections (lessons), and each section into items: a verb with all it
   remembers the last one per pack.
 - The **button under the chips** follows that choice: **Continue …** when a session of it is still open (it picks up
   exactly where you left off), **Study …** for all its entries otherwise, or **Practise articles** (see
-  [Practising articles](#practising-articles)).
+  [Practising articles](#practising-articles)). The **stop** square next to **Continue …** discards the open session after you confirm: it can no longer be continued, and your answers so far stay saved.
 - **Today's review** starts or continues the review of the selected pack and chip; it shows only when that has cards
   to review, and never for Articles (see [Today's review](#todays-review)).
 - Lessons start **collapsed**: tap a lesson's name to open or close it. wörds remembers which lessons you left open.
@@ -438,7 +438,7 @@ TalkBack, the same actions are in the actions menu of each word and lection.
 **Edit an installed pack.** Installed packs cannot be changed. Their menu (⋮) offers **Duplicate to edit**: wörds
 makes an editable copy that keeps your learning progress, and hides the original, marked *Hidden*. **Show**
 brings it back. Your own packs are marked *Editable*; their menu has **Edit**, **Export to file**, **Share**, **Share nearby (experimental)**,
-**Duplicate**, **Hide** and **Delete**.
+**Duplicate**, **Hide** and **Delete**. Imported packs also have **Share nearby (experimental)** if they contain words.
 
 **Export and share.** **Export to file** saves your pack as a `.linguapack` file in a folder you choose, **Share**
 sends it to an app, and **Export all your packs** (top bar of the language packs) writes all of them into one folder.
@@ -447,7 +447,7 @@ editable pack. If that pack is already there, choose **Replace** (words in both 
 
 **Share with someone next to you (experimental).** This is off at first. You both turn it on under **Settings → Experimental → Share packs nearby** and agree: your device can then make connections with other devices,
 and the risks that come with that are yours alone. wörds asks each time you turn it on. While it is off, there is
-no way to it and wörds does not use Bluetooth. You can pass a pack you made directly to someone standing next to you, without
+no way to it and wörds does not use Bluetooth. You can pass a pack you made or imported directly to someone standing next to you, without
 internet or an account. Both phones need Android 12 or later and wörds open. The kid mode does not offer this.
 
 1. The person receiving opens the language packs, taps **+** and chooses **Receive nearby (experimental)**. A QR code appears for one
@@ -461,8 +461,8 @@ internet or an account. Both phones need Android 12 or later and wörds open. Th
 
 Show the code only to the person you want a pack from. It works once. Your learning progress and your name stay on your
 phone. Leaving the screen or the app ends the exchange, and nothing is kept. If a photo cannot be read, avoid reflections
-and try again. The exchange goes directly from phone to phone, end-to-end encrypted; only your own packs can be shared
-this way, and a pack can have at most 20 MB. Larger packs take several minutes.
+and try again. The exchange goes directly from phone to phone, end-to-end encrypted; your own and imported packs can be shared
+this way, not built-in ones. Only the words of a pack go along, and they arrive as a new, editable pack; pass a pack on only if its license allows that. A pack can have at most 20 MB. Larger packs take several minutes.
 
 wörds uses Bluetooth only on these two screens, and on the sharing side only once the photo has been read. Otherwise
 the app neither searches nor can be found. If you turned Bluetooth on for this, it stays on until you turn it off,

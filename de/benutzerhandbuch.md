@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.18.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.18.2. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -66,7 +66,7 @@ Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit al
   pro Paket.
 - Der **Knopf unter den Chips** folgt dieser Wahl: **… fortsetzen**, solange eine Sitzung davon offen ist (sie geht
   genau dort weiter, wo du aufgehört hast), sonst **… lernen** für alle Einträge, oder **Artikel üben** (siehe
-  [Artikel üben](#artikel-üben)).
+  [Artikel üben](#artikel-üben)). Das **Stopp**-Quadrat neben **… fortsetzen** verwirft die offene Sitzung, nachdem du bestätigt hast: Sie lässt sich nicht mehr fortsetzen, und deine bisherigen Antworten bleiben gespeichert.
 - **Heutige Wiederholung** startet die Wiederholung des gewählten Pakets und Chips oder setzt sie fort. Sie erscheint
   nur, wenn dort Karten warten, und nie bei Artikel (siehe [Heutige Wiederholung](#heutige-wiederholung)).
 - Lektionen sind anfangs **zugeklappt**: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt
@@ -459,7 +459,7 @@ Aktionen im Aktionsmenü jedes Worts und jeder Lektion.
 **Ein installiertes Paket bearbeiten.** Installierte Pakete lassen sich nicht ändern. Ihr Menü (⋮) bietet **Zum
 Bearbeiten duplizieren**: wörds legt eine bearbeitbare Kopie an, die deinen Lernfortschritt behält, und blendet das
 Original aus (*Ausgeblendet*). **Einblenden** holt es zurück. Deine eigenen Pakete sind als *Bearbeitbar*
-markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **In der Nähe teilen (experimentell)**, **Duplizieren**, **Ausblenden** und **Löschen**.
+markiert; ihr Menü hat **Bearbeiten**, **Als Datei exportieren**, **Teilen**, **In der Nähe teilen (experimentell)**, **Duplizieren**, **Ausblenden** und **Löschen**. Importierte Pakete haben außerdem **In der Nähe teilen (experimentell)**, wenn sie Wörter enthalten.
 
 **Exportieren und teilen.** **Als Datei exportieren** speichert dein Paket als `.linguapack`-Datei in einem Ordner
 deiner Wahl, **Teilen** schickt es an eine App, und **Alle deine Pakete exportieren** (oben in den Sprachpaketen)
@@ -470,7 +470,7 @@ die in beiden sind, behalten ihren Lernstand) oder **Beide behalten**.
 **Mit jemandem neben dir teilen (experimentell).** Das ist anfangs ausgeschaltet. Beide schalten es unter **Einstellungen →
 Experimentell → Pakete in der Nähe teilen** ein und willigen dabei ein: Das Gerät kann dann Verbindungen mit anderen
 Geräten aufbauen, und die damit verbundenen Risiken liegen allein bei dir. wörds fragt bei jedem Einschalten erneut. Ist es aus, gibt es keinen Zugang dazu, und wörds nutzt kein Bluetooth.
-Du kannst ein selbst erstelltes Paket direkt an jemanden weitergeben, der neben dir
+Du kannst ein selbst erstelltes oder importiertes Paket direkt an jemanden weitergeben, der neben dir
 steht, ohne Internet und ohne Konto. Beide Handys brauchen Android 12 oder neuer und eine geöffnete wörds-App. Im
 Kindermodus gibt es das nicht.
 
@@ -489,7 +489,7 @@ Kindermodus gibt es das nicht.
 Zeige den Code nur der Person, von der du ein Paket möchtest. Er funktioniert einmal. Dein Lernfortschritt und dein Name
 bleiben auf deinem Handy. Verlässt du den Bildschirm oder die App, endet der Austausch, und nichts wird behalten. Lässt
 sich ein Foto nicht lesen, vermeide Spiegelungen und versuche es noch einmal. Der Austausch läuft direkt von Handy zu
-Handy und Ende-zu-Ende-verschlüsselt; so lassen sich nur deine eigenen Pakete teilen, und ein Paket darf höchstens 20 MB
+Handy und Ende-zu-Ende-verschlüsselt; so lassen sich eigene und importierte Pakete teilen, keine mitgelieferten. Nur die Wörter eines Pakets gehen mit, und sie kommen als neues, bearbeitbares Paket an; gib ein Paket nur weiter, wenn seine Lizenz das erlaubt. Ein Paket darf höchstens 20 MB
 groß sein. Größere Pakete dauern einige Minuten.
 
 Bluetooth nutzt wörds nur auf diesen beiden Bildschirmen, und auf der teilenden Seite erst, wenn das Foto gelesen ist.

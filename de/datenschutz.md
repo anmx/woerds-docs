@@ -44,7 +44,7 @@ Diese experimentelle Funktion ist aus, bis du sie in den Einstellungen einschalt
 Einschalten erneut. Solange sie aus ist, nutzt wörds kein
 Bluetooth.
 
-Wenn du und jemand neben dir es möchtet, kann ein selbst erstelltes Paket über Bluetooth direkt von einem Handy zum
+Wenn du und jemand neben dir es möchtet, kann ein selbst erstelltes oder importiertes Paket über Bluetooth direkt von einem Handy zum
 anderen gehen. Das geht nur bei geöffneter App, nachdem eine Person einen QR-Code auf dem Bildschirm der anderen
 fotografiert hat und ihr beide bestätigt. Die Übertragung ist Ende-zu-Ende-verschlüsselt und läuft über keinen Server,
 wir erhalten also nichts. Die empfangende Person bekommt Text und Bilder des Pakets, nicht deinen Lernfortschritt und
