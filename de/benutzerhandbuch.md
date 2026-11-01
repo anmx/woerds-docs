@@ -573,9 +573,8 @@ Einstellungen gelten für jedes Sprachpaar.
 
 - **App-Sprache**: wie im System, oder immer Deutsch oder Englisch.
 - **Design**: hell, dunkel oder wie auf deinem Gerät eingestellt.
-- **Farbschema**: die Farben deines Hintergrundbilds (ab Android 12), eines von acht Farbschemata oder eine eigene
-  Farbe. Regenbogen und Pastell bringen ein Farbband mit: eine dünne Linie oben auf jedem Bildschirm und den Titel
-  der Bibliothek. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).
+- **Farbschema**: die Farben deines Hintergrundbilds (ab Android 12), eines von sechs Farbschemata oder eine eigene
+  Farbe. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).
 - **Bilder auf Karten anzeigen** schaltet die Bilder auf Vokabelkarten ein oder aus.
 - **Animationen**: wie auf deinem Gerät eingestellt, reduziert oder vollständig.
 
