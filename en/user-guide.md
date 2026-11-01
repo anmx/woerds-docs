@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.20.1. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.21.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -506,8 +506,9 @@ unfolded foldable, the open area shows next to the overview. Every setting appli
 
 - **App language**: follow the system, or always German or English.
 - **Theme**: light, dark, or as set on your device.
-- **Color scheme**: the colors of your wallpaper (Android 12 and later), one of six schemes, or a color of your
-  own. Colors follow the system's contrast setting (Android 14 and later).
+- **Color scheme**: the colors of your wallpaper (Android 12 and later), one of eight schemes, or a color of your
+  own. Rainbow and Pastel add a band of colors: a thin line at the top of every screen and the Library title.
+  Colors follow the system's contrast setting (Android 14 and later).
 - **Show pictures on cards** turns the pictures on vocabulary cards on or off.
 - **Animations**: as set on your device, reduced, or full.
 

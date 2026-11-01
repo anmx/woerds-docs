@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.20.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.21.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -536,8 +536,9 @@ Einstellungen gelten für jedes Sprachpaar.
 
 - **App-Sprache**: wie im System, oder immer Deutsch oder Englisch.
 - **Design**: hell, dunkel oder wie auf deinem Gerät eingestellt.
-- **Farbschema**: die Farben deines Hintergrundbilds (ab Android 12), eines von sechs Farbschemata oder eine eigene
-  Farbe. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).
+- **Farbschema**: die Farben deines Hintergrundbilds (ab Android 12), eines von acht Farbschemata oder eine eigene
+  Farbe. Regenbogen und Pastell bringen ein Farbband mit: eine dünne Linie oben auf jedem Bildschirm und den Titel
+  der Bibliothek. Die Farben folgen der Kontrasteinstellung des Systems (ab Android 14).
 - **Bilder auf Karten anzeigen** schaltet die Bilder auf Vokabelkarten ein oder aus.
 - **Animationen**: wie auf deinem Gerät eingestellt, reduziert oder vollständig.
 
