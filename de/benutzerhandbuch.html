@@ -23,16 +23,17 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.21.0 (aktuell) · Frühere Versionen: <a href="../versions/0.20.1/de/benutzerhandbuch.html">0.20.1</a>, <a href="../versions/0.20.0/de/benutzerhandbuch.html">0.20.0</a>, <a href="../versions/0.19.0/de/benutzerhandbuch.html">0.19.0</a>, <a href="../versions/0.18.2/de/benutzerhandbuch.html">0.18.2</a>, <a href="../versions/0.18.1/de/benutzerhandbuch.html">0.18.1</a>, <a href="../versions/0.18.0/de/benutzerhandbuch.html">0.18.0</a>, <a href="../versions/0.17.0/de/benutzerhandbuch.html">0.17.0</a>, <a href="../versions/0.16.0/de/benutzerhandbuch.html">0.16.0</a>, <a href="../versions/0.15.0/de/benutzerhandbuch.html">0.15.0</a>, <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
+    <p class="version">Version 0.22.0 (aktuell) · Frühere Versionen: <a href="../versions/0.21.0/de/benutzerhandbuch.html">0.21.0</a>, <a href="../versions/0.20.1/de/benutzerhandbuch.html">0.20.1</a>, <a href="../versions/0.20.0/de/benutzerhandbuch.html">0.20.0</a>, <a href="../versions/0.19.0/de/benutzerhandbuch.html">0.19.0</a>, <a href="../versions/0.18.2/de/benutzerhandbuch.html">0.18.2</a>, <a href="../versions/0.18.1/de/benutzerhandbuch.html">0.18.1</a>, <a href="../versions/0.18.0/de/benutzerhandbuch.html">0.18.0</a>, <a href="../versions/0.17.0/de/benutzerhandbuch.html">0.17.0</a>, <a href="../versions/0.16.0/de/benutzerhandbuch.html">0.16.0</a>, <a href="../versions/0.15.0/de/benutzerhandbuch.html">0.15.0</a>, <a href="../versions/0.14.0/de/benutzerhandbuch.html">0.14.0</a>, <a href="../versions/0.13.0/de/benutzerhandbuch.html">0.13.0</a>, <a href="../versions/0.12.0/de/benutzerhandbuch.html">0.12.0</a>, <a href="../versions/0.11.1/de/benutzerhandbuch.html">0.11.1</a>, <a href="../versions/0.11.0/de/benutzerhandbuch.html">0.11.0</a>, <a href="../versions/0.10.0/de/benutzerhandbuch.html">0.10.0</a>, <a href="../versions/0.9.0/de/benutzerhandbuch.html">0.9.0</a></p>
     <h1 id="wörds--benutzerhandbuch">wörds – Benutzerhandbuch</h1>
     <p>wörds ist eine Karteikarten-App für das, was man in einer Sprache täglich üben muss: Verbformen und Wörter des Alltags. Jede Karte zeigt eine Seite. Du antwortest im Kopf, drehst die Karte um und bewertest dich ehrlich – oder du tippst die Antwort ein, und wörds prüft sie. wörds berechnet dann, wann du die Karte wiedersehen solltest.</p>
     <p>wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeliefert wird Italienisch für Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.</p>
-    <p>Dieses Handbuch beschreibt wörds 0.21.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
+    <p>Dieses Handbuch beschreibt wörds 0.22.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann andere Farben haben.</p>
     <h2 id="inhalt">Inhalt</h2>
     <nav aria-labelledby="inhalt">
       <ul>
         <li><a href="#erste-schritte">Erste Schritte</a></li>
         <li><a href="#die-bibliothek">Die Bibliothek</a></li>
+        <li><a href="#lernpläne">Lernpläne</a></li>
         <li><a href="#eine-sitzung-starten">Eine Sitzung starten</a></li>
         <li><a href="#mit-einer-karte-lernen">Mit einer Karte lernen</a></li>
         <li><a href="#zurückblättern-und-korrigieren">Zurückblättern und korrigieren</a></li>
@@ -91,10 +92,11 @@
     <ul>
       <li><strong>Suchen</strong> findet Wörter und Verbformen im ausgewählten Paket.</li>
       <li>Eine zweite Reihe Chips erscheint, wenn ein Paket mehrere Arten von Inhalten hat: <em>Wortschatz</em>, <em>Verbkonjugation</em> und <strong>Artikel</strong>, sobald das Paket mindestens fünf Nomen mit Artikel hat. Die Bibliothek merkt sich die letzte Wahl pro Paket.</li>
-      <li>Der <strong>Knopf unter den Chips</strong> folgt dieser Wahl: <strong>… fortsetzen</strong>, solange eine Sitzung davon offen ist (sie geht genau dort weiter, wo du aufgehört hast), sonst <strong>… lernen</strong> für alle Einträge, oder <strong>Artikel üben</strong> (siehe <a href="#artikel-üben">Artikel üben</a>). Das <strong>Stopp</strong>-Quadrat neben <strong>… fortsetzen</strong> verwirft die offene Sitzung, nachdem du bestätigt hast: Sie lässt sich nicht mehr fortsetzen, und deine bisherigen Antworten bleiben gespeichert.</li>
+      <li>Der <strong>Knopf unter den Chips</strong> folgt dieser Wahl: <strong>… fortsetzen</strong>, solange eine Sitzung davon offen ist (sie geht genau dort weiter, wo du aufgehört hast), <strong>Nächste Karten</strong> für bis zu 20 Karten, die du noch nicht gelernt hast, die Tagesportion, wenn du einen <a href="#lernpläne">Lernplan</a> hast, oder <strong>Artikel üben</strong> (siehe <a href="#artikel-üben">Artikel üben</a>). Das <strong>Stopp</strong>-Quadrat neben <strong>… fortsetzen</strong> verwirft die offene Sitzung, nachdem du bestätigt hast: Sie lässt sich nicht mehr fortsetzen, und deine bisherigen Antworten bleiben gespeichert.</li>
       <li><strong>Heutige Wiederholung</strong> startet die Wiederholung des gewählten Pakets und Chips oder setzt sie fort. Sie erscheint nur, wenn dort Karten warten, und nie bei Artikel (siehe <a href="#heutige-wiederholung">Heutige Wiederholung</a>).</li>
       <li>Lektionen sind anfangs <strong>zugeklappt</strong>: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt sich, welche Lektionen du offen gelassen hast. Eine Suche klappt alle Lektionen mit Treffern auf.</li>
       <li>Die <strong>▶-Taste</strong> neben einer Lektion startet die ganze Lektion, ob auf- oder zugeklappt.</li>
+      <li><strong>Lernplan erstellen</strong> unter dem Knopf plant das gewählte Paket und den Chip über die nächsten Wochen; siehe <a href="#lernpläne">Lernpläne</a>.</li>
       <li>Sind zwei oder mehr Sprachpaare installiert, tippst du auf das Sprachpaar unter dem Titel, um zu wechseln.</li>
       <li>Das <strong>Kisten-Symbol</strong> oben rechts öffnet die <a href="#sprachpakete">Sprachpakete</a>.</li>
     </ul>
@@ -110,6 +112,23 @@
         <figcaption>Sprachpaar wechseln</figcaption>
       </figure>
     </div>
+    <h2 id="lernpläne">Lernpläne</h2>
+    <p>Ein Lernplan verteilt ein Paket über die Wochen, sodass jeder Tag eine Portion hat, die du schaffen kannst. Es gibt einen Plan pro Paket und Chip (<em>Wortschatz</em>, <em>Verbkonjugation</em>); mehrere können nebeneinander laufen. Artikel haben keinen Plan.</p>
+    <p>Tippe in der Bibliothek auf <strong>Lernplan erstellen</strong> oder bei den Karten einer Lektion auf <strong>Plan</strong>:</p>
+    <ol>
+      <li><strong>Was</strong>: Wähle die Lektionen und ihre Reihenfolge. Eine Karte ist eine Frage, ein Wort in beide Richtungen sind also zwei Karten.</li>
+      <li><strong>Wie schnell</strong>: Wähle deine Zeit pro Tag, die Karten pro Tag oder ein Datum, bis zu dem du fertig sein willst, und deine Lerntage.</li>
+      <li><strong>Dein Plan</strong>: wörds zeigt, wann du fertig bist, wie lange der vollste Tag jeder Woche dauert und wann welche Lektion beginnt, und nennt den Plan <strong>Realistisch</strong>, <strong>Sportlich</strong> oder <strong>Zu viel</strong>. Dabei zählt deine Zeit und auch, wie viele neue Karten du durchhalten kannst, denn jede neue Karte kommt immer wieder. Das sind Schätzungen: Wie viel du behältst, verändert die Wiederholungen.</li>
+    </ol>
+    <p>Brauchen deine Pläne zusammen mehr als dein Tageslimit für neue Karten, bietet der letzte Schritt an, es anzuheben.</p>
+    <p>Mit einem Plan zeigt der Knopf in der Bibliothek, was heute dran ist:</p>
+    <ul>
+      <li><strong>Heute lernen</strong>: die neuen Karten und Wiederholungen von heute in einer Sitzung.</li>
+      <li><strong>Heute frei</strong>: An einem Tag, der kein Lerntag ist, kommen keine neuen Karten; Wiederholungen bleiben möglich, wenn du möchtest.</li>
+      <li><strong>Geschafft für heute</strong>: Die Tagesportion ist erledigt. Du kannst gezielt noch ein paar mehr lernen.</li>
+    </ul>
+    <p>Lässt du einen Tag aus, staut sich nichts: Die Portion bleibt gleich, das Enddatum rückt nach hinten. Ist ein gewähltes Datum nicht mehr erreichbar, sagt der Plan das, und du entscheidest, ob du schneller lernst oder ein neues Datum wählst. Karten, die du in einer Lektion lernst, zählen für den Plan mit.</p>
+    <p>Tippe auf die Zeile unter dem Knopf oder auf den Plan im Fortschritt, um ihn zu ändern, zu pausieren oder zu löschen. Pausieren stoppt neue Karten, Wiederholungen laufen weiter; beim Löschen bleibt, was du gelernt hast. Möchtest du gar keine Pläne, schalte <strong>Lernpläne</strong> unter <a href="#lernen">Einstellungen – Lernen</a> aus: Neue Karten kommen dann wieder in Paketreihenfolge, und deine Pläne warten, bis du es wieder einschaltest.</p>
     <h2 id="eine-sitzung-starten">Eine Sitzung starten</h2>
     <p>Bevor eine Sitzung beginnt, legst du in einem Blatt fest, wie du üben willst:</p>
     <div class="figures">
@@ -270,7 +289,7 @@
     <ul>
       <li><strong>Schwierige Wörter</strong>: Wörter, die du dreimal oder öfter vergessen hast, nachdem du sie schon konntest. Tippe auf die Karte, um sie zu sehen. In der Liste kannst du ein Wort <strong>bearbeiten</strong> (ein Wort eines installierten Pakets bearbeitest du in einer Kopie des Pakets, die deinen Fortschritt übernimmt) oder <strong>zurücksetzen</strong>, um es von vorn zu lernen. Ein Wort verschwindet aus der Liste, sobald du es drei Wochen lang behältst. In der Bibliothek, im Editor und auf der Antwortseite einer Karte sind diese Wörter als <strong>Schwierig</strong> markiert.</li>
       <li><strong>Deine Woche</strong>: ab dem ersten Tag einer Woche ein Rückblick auf die Woche davor – wie viele Antworten du gegeben hast, wie viele davon richtig waren im Vergleich zur Woche davor und wie viele Karten gefestigt wurden. <strong>✕</strong> blendet ihn bis zur nächsten Woche aus.</li>
-      <li><strong>Ein Lektionsziel</strong>, wenn du eins gesetzt hast (siehe <a href="#statistik">Statistik</a>): wie viele neue Karten der Lektion noch fehlen, wie viele das pro Tag sind und ob dein Tageslimit für neue Karten dafür reicht. Ein Tipp öffnet die Lektion; <strong>✕</strong> entfernt das Ziel.</li>
+      <li><strong>Lernpläne</strong>, wenn du welche hast: wie viele neue Karten jeder noch hat und wann er fertig ist. Ein Tipp öffnet den Plan (siehe <a href="#lernpläne">Lernpläne</a>).</li>
       <li><strong>Lernstand – Statistik</strong>: alle Karten des Sprachpaars danach, wie gut du sie kannst; ein Tipp öffnet die <a href="#statistik">Statistik</a>.</li>
       <li><strong>Die nächsten 7 Tage</strong>: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.</li>
       <li><strong>Die letzten 12 Wochen</strong>: ein Kalender der Tage, an denen du gelernt hast; je dunkler ein Tag, desto mehr Antworten. <strong>Als Liste zeigen</strong> schreibt beide Diagramme als Tabelle aus.</li>
@@ -335,7 +354,7 @@
         <figcaption>Die Details einer Karte</figcaption>
       </figure>
     </div>
-    <p>Bei den Karten einer Lektion fragt <strong>Ziel setzen</strong> nach einem Datum, bis zu dem alle Karten der Lektion eingeführt sein sollen. Das Ziel erscheint dann im Fortschritt. Es gibt ein Ziel pro Sprachpaar; ein neues ersetzt das alte.</p>
+    <p>Bei den Karten einer Lektion beginnt <strong>Plan</strong> einen <a href="#lernpläne">Lernplan</a> mit dieser Lektion. Ein Lektionsziel aus einer früheren Version ist zu so einem Plan geworden.</p>
     <h2 id="schwachstellen-üben">Schwachstellen üben</h2>
     <p><strong>Schwachstellen üben</strong> startet eine Sitzung nur mit den Karten, die es nötig haben. Du öffnest es mit dem Knopf unten in der Statistik, mit <strong>Lektion üben</strong> bei den Karten einer Lektion, mit <strong>Diese üben</strong> bei den schwierigen Wörtern oder mit einem Tipp auf ein Verb, eine Fehlerart oder <strong>Schwächste Formen üben</strong> in der Statistik.</p>
     <div class="figures">
@@ -535,6 +554,7 @@
     </div>
     <h3 id="lernen">Lernen</h3>
     <ul>
+      <li><strong>Lernpläne</strong>: normalerweise an. Ausgeschaltet bietet die Bibliothek keine Pläne an, neue Karten kommen in Paketreihenfolge, und deine Pläne warten, bis du es wieder einschaltest. Siehe <a href="#lernpläne">Lernpläne</a>.</li>
       <li><strong>Antworten eintippen</strong>: In der täglichen Wiederholung und beim <a href="#schwachstellen-üben">Üben von Schwachstellen</a> tippst du jede Antwort ein, statt die Karte umzudrehen. Lektionen fragen das beim Start.</li>
       <li><strong>Fehlende Akzente akzeptieren</strong> lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig gelten; ausgeschaltet ist sie falsch.</li>
       <li><strong>Fehlenden Artikel akzeptieren</strong> lässt ein Nomen ohne Artikel als fast richtig gelten; ausgeschaltet ist es falsch.</li>

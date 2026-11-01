@@ -8,13 +8,14 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.21.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.22.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
 
 - [Erste Schritte](#erste-schritte)
 - [Die Bibliothek](#die-bibliothek)
+- [Lernpläne](#lernpläne)
 - [Eine Sitzung starten](#eine-sitzung-starten)
 - [Mit einer Karte lernen](#mit-einer-karte-lernen)
 - [Zurückblättern und korrigieren](#zurückblättern-und-korrigieren)
@@ -65,13 +66,16 @@ Abschnitte (Lektionen) gegliedert, jeder Abschnitt in Einträge: ein Verb mit al
   und **Artikel**, sobald das Paket mindestens fünf Nomen mit Artikel hat. Die Bibliothek merkt sich die letzte Wahl
   pro Paket.
 - Der **Knopf unter den Chips** folgt dieser Wahl: **… fortsetzen**, solange eine Sitzung davon offen ist (sie geht
-  genau dort weiter, wo du aufgehört hast), sonst **… lernen** für alle Einträge, oder **Artikel üben** (siehe
+  genau dort weiter, wo du aufgehört hast), **Nächste Karten** für bis zu 20 Karten, die du noch nicht gelernt hast, die
+  Tagesportion, wenn du einen [Lernplan](#lernpläne) hast, oder **Artikel üben** (siehe
   [Artikel üben](#artikel-üben)). Das **Stopp**-Quadrat neben **… fortsetzen** verwirft die offene Sitzung, nachdem du bestätigt hast: Sie lässt sich nicht mehr fortsetzen, und deine bisherigen Antworten bleiben gespeichert.
 - **Heutige Wiederholung** startet die Wiederholung des gewählten Pakets und Chips oder setzt sie fort. Sie erscheint
   nur, wenn dort Karten warten, und nie bei Artikel (siehe [Heutige Wiederholung](#heutige-wiederholung)).
 - Lektionen sind anfangs **zugeklappt**: Tippe auf den Namen einer Lektion, um sie auf- oder zuzuklappen. wörds merkt
   sich, welche Lektionen du offen gelassen hast. Eine Suche klappt alle Lektionen mit Treffern auf.
 - Die **▶-Taste** neben einer Lektion startet die ganze Lektion, ob auf- oder zugeklappt.
+- **Lernplan erstellen** unter dem Knopf plant das gewählte Paket und den Chip über die nächsten Wochen; siehe
+  [Lernpläne](#lernpläne).
 - Sind zwei oder mehr Sprachpaare installiert, tippst du auf das Sprachpaar unter dem Titel, um zu wechseln.
 - Das **Kisten-Symbol** oben rechts öffnet die [Sprachpakete](#sprachpakete).
 
@@ -83,6 +87,40 @@ wörds zuerst: die offene **Fortsetzen**, **Neu beginnen** (bei einer anderen Le
 **Abbrechen**. Deine bisherigen Antworten sind so oder so gespeichert.
 
 ![Zwei Verben ausgewählt](../images/de/02-library-selection.png) ![Sprachpaar wechseln](../images/de/15-pair-switcher.png)
+
+## Lernpläne
+
+Ein Lernplan verteilt ein Paket über die Wochen, sodass jeder Tag eine Portion hat, die du schaffen kannst. Es gibt einen
+Plan pro Paket und Chip (*Wortschatz*, *Verbkonjugation*); mehrere können nebeneinander laufen. Artikel haben keinen Plan.
+
+Tippe in der Bibliothek auf **Lernplan erstellen** oder bei den Karten einer Lektion auf **Plan**:
+
+1. **Was**: Wähle die Lektionen und ihre Reihenfolge. Eine Karte ist eine Frage, ein Wort in beide Richtungen sind also
+   zwei Karten.
+2. **Wie schnell**: Wähle deine Zeit pro Tag, die Karten pro Tag oder ein Datum, bis zu dem du fertig sein willst, und
+   deine Lerntage.
+3. **Dein Plan**: wörds zeigt, wann du fertig bist, wie lange der vollste Tag jeder Woche dauert und wann welche Lektion
+   beginnt, und nennt den Plan **Realistisch**, **Sportlich** oder **Zu viel**. Dabei zählt deine Zeit und auch, wie viele
+   neue Karten du durchhalten kannst, denn jede neue Karte kommt immer wieder. Das sind Schätzungen: Wie viel du behältst,
+   verändert die Wiederholungen.
+
+Brauchen deine Pläne zusammen mehr als dein Tageslimit für neue Karten, bietet der letzte Schritt an, es anzuheben.
+
+Mit einem Plan zeigt der Knopf in der Bibliothek, was heute dran ist:
+
+- **Heute lernen**: die neuen Karten und Wiederholungen von heute in einer Sitzung.
+- **Heute frei**: An einem Tag, der kein Lerntag ist, kommen keine neuen Karten; Wiederholungen bleiben möglich, wenn du
+  möchtest.
+- **Geschafft für heute**: Die Tagesportion ist erledigt. Du kannst gezielt noch ein paar mehr lernen.
+
+Lässt du einen Tag aus, staut sich nichts: Die Portion bleibt gleich, das Enddatum rückt nach hinten. Ist ein gewähltes
+Datum nicht mehr erreichbar, sagt der Plan das, und du entscheidest, ob du schneller lernst oder ein neues Datum wählst.
+Karten, die du in einer Lektion lernst, zählen für den Plan mit.
+
+Tippe auf die Zeile unter dem Knopf oder auf den Plan im Fortschritt, um ihn zu ändern, zu pausieren oder zu löschen.
+Pausieren stoppt neue Karten, Wiederholungen laufen weiter; beim Löschen bleibt, was du gelernt hast. Möchtest du gar
+keine Pläne, schalte **Lernpläne** unter [Einstellungen – Lernen](#lernen) aus: Neue Karten kommen dann wieder in
+Paketreihenfolge, und deine Pläne warten, bis du es wieder einschaltest.
 
 ## Eine Sitzung starten
 
@@ -262,9 +300,8 @@ Mit den Tasten unter **Richtung** siehst du die Zahlen für eine Richtung oder f
 - **Deine Woche**: ab dem ersten Tag einer Woche ein Rückblick auf die Woche davor – wie viele Antworten du gegeben
   hast, wie viele davon richtig waren im Vergleich zur Woche davor und wie viele Karten gefestigt wurden. **✕** blendet
   ihn bis zur nächsten Woche aus.
-- **Ein Lektionsziel**, wenn du eins gesetzt hast (siehe [Statistik](#statistik)): wie viele neue Karten der Lektion
-  noch fehlen, wie viele das pro Tag sind und ob dein Tageslimit für neue Karten dafür reicht. Ein Tipp öffnet die
-  Lektion; **✕** entfernt das Ziel.
+- **Lernpläne**, wenn du welche hast: wie viele neue Karten jeder noch hat und wann er fertig ist. Ein Tipp öffnet den
+  Plan (siehe [Lernpläne](#lernpläne)).
 - **Lernstand – Statistik**: alle Karten des Sprachpaars danach, wie gut du sie kannst; ein Tipp öffnet die
   [Statistik](#statistik).
 - **Die nächsten 7 Tage**: wie viele Karten an jedem Tag fällig sind; überfällige zählen für heute.
@@ -312,8 +349,8 @@ Details: wann sie wieder drankommt, wie wahrscheinlich du sie heute noch weißt,
 
 ![Die Karten einer Lektion](../images/de/64-lesson-cards.png) ![Die Details einer Karte](../images/de/65-card-detail.png)
 
-Bei den Karten einer Lektion fragt **Ziel setzen** nach einem Datum, bis zu dem alle Karten der Lektion eingeführt
-sein sollen. Das Ziel erscheint dann im Fortschritt. Es gibt ein Ziel pro Sprachpaar; ein neues ersetzt das alte.
+Bei den Karten einer Lektion beginnt **Plan** einen [Lernplan](#lernpläne) mit dieser Lektion. Ein Lektionsziel aus einer
+früheren Version ist zu so einem Plan geworden.
 
 ## Schwachstellen üben
 
@@ -549,6 +586,8 @@ Ergebnis hell und dunkel.
 
 ### Lernen
 
+- **Lernpläne**: normalerweise an. Ausgeschaltet bietet die Bibliothek keine Pläne an, neue Karten kommen in
+  Paketreihenfolge, und deine Pläne warten, bis du es wieder einschaltest. Siehe [Lernpläne](#lernpläne).
 - **Antworten eintippen**: In der täglichen Wiederholung und beim [Üben von Schwachstellen](#schwachstellen-üben)
   tippst du jede Antwort ein, statt die Karte umzudrehen. Lektionen fragen das beim Start.
 - **Fehlende Akzente akzeptieren** lässt eine Antwort, die sich nur in Akzenten unterscheidet, als fast richtig

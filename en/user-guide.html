@@ -23,16 +23,17 @@
     </nav>
   </header>
   <main id="main">
-    <p class="version">Version 0.21.0 (latest) · Earlier versions: <a href="../versions/0.20.1/en/user-guide.html">0.20.1</a>, <a href="../versions/0.20.0/en/user-guide.html">0.20.0</a>, <a href="../versions/0.19.0/en/user-guide.html">0.19.0</a>, <a href="../versions/0.18.2/en/user-guide.html">0.18.2</a>, <a href="../versions/0.18.1/en/user-guide.html">0.18.1</a>, <a href="../versions/0.18.0/en/user-guide.html">0.18.0</a>, <a href="../versions/0.17.0/en/user-guide.html">0.17.0</a>, <a href="../versions/0.16.0/en/user-guide.html">0.16.0</a>, <a href="../versions/0.15.0/en/user-guide.html">0.15.0</a>, <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
+    <p class="version">Version 0.22.0 (latest) · Earlier versions: <a href="../versions/0.21.0/en/user-guide.html">0.21.0</a>, <a href="../versions/0.20.1/en/user-guide.html">0.20.1</a>, <a href="../versions/0.20.0/en/user-guide.html">0.20.0</a>, <a href="../versions/0.19.0/en/user-guide.html">0.19.0</a>, <a href="../versions/0.18.2/en/user-guide.html">0.18.2</a>, <a href="../versions/0.18.1/en/user-guide.html">0.18.1</a>, <a href="../versions/0.18.0/en/user-guide.html">0.18.0</a>, <a href="../versions/0.17.0/en/user-guide.html">0.17.0</a>, <a href="../versions/0.16.0/en/user-guide.html">0.16.0</a>, <a href="../versions/0.15.0/en/user-guide.html">0.15.0</a>, <a href="../versions/0.14.0/en/user-guide.html">0.14.0</a>, <a href="../versions/0.13.0/en/user-guide.html">0.13.0</a>, <a href="../versions/0.12.0/en/user-guide.html">0.12.0</a>, <a href="../versions/0.11.1/en/user-guide.html">0.11.1</a>, <a href="../versions/0.11.0/en/user-guide.html">0.11.0</a>, <a href="../versions/0.10.0/en/user-guide.html">0.10.0</a>, <a href="../versions/0.9.0/en/user-guide.html">0.9.0</a></p>
     <h1 id="wörds-user-guide">wörds user guide</h1>
     <p>wörds is a flashcard app for the parts of a language that need daily practice: verb forms and everyday words. Each card shows one side. You answer in your head, flip the card and grade yourself honestly – or you type the answer and wörds checks it. wörds then works out when you should see the card again.</p>
     <p>wörds works offline, needs no account and shows no ads. It comes with Italian for German speakers (A1 verbs and 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own, also from photos of a word list.</p>
-    <p>This guide describes wörds 0.21.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
+    <p>This guide describes wörds 0.22.0. The screenshots show the Terracotta color scheme; your app may use other colors.</p>
     <h2 id="contents">Contents</h2>
     <nav aria-labelledby="contents">
       <ul>
         <li><a href="#getting-started">Getting started</a></li>
         <li><a href="#the-library">The library</a></li>
+        <li><a href="#study-plans">Study plans</a></li>
         <li><a href="#starting-a-session">Starting a session</a></li>
         <li><a href="#studying-a-card">Studying a card</a></li>
         <li><a href="#looking-back-and-correcting">Looking back and correcting</a></li>
@@ -91,10 +92,11 @@
     <ul>
       <li><strong>Search</strong> finds words and verb forms in the selected pack.</li>
       <li>A second row of chips appears when a pack holds more than one kind of content: <em>Wortschatz</em> (vocabulary), <em>Verbkonjugation</em> (verbs) and <strong>Articles</strong> once the pack has at least five nouns with their article. The library remembers the last one per pack.</li>
-      <li>The <strong>button under the chips</strong> follows that choice: <strong>Continue …</strong> when a session of it is still open (it picks up exactly where you left off), <strong>Study …</strong> for all its entries otherwise, or <strong>Practise articles</strong> (see <a href="#practising-articles">Practising articles</a>). The <strong>stop</strong> square next to <strong>Continue …</strong> discards the open session after you confirm: it can no longer be continued, and your answers so far stay saved.</li>
+      <li>The <strong>button under the chips</strong> follows that choice: <strong>Continue …</strong> when a session of it is still open (it picks up exactly where you left off), <strong>Next cards</strong> for up to 20 cards you have not studied yet, today's portion when you have a <a href="#study-plans">study plan</a>, or <strong>Practise articles</strong> (see <a href="#practising-articles">Practising articles</a>). The <strong>stop</strong> square next to <strong>Continue …</strong> discards the open session after you confirm: it can no longer be continued, and your answers so far stay saved.</li>
       <li><strong>Today's review</strong> starts or continues the review of the selected pack and chip; it shows only when that has cards to review, and never for Articles (see <a href="#todays-review">Today's review</a>).</li>
       <li>Lessons start <strong>collapsed</strong>: tap a lesson's name to open or close it. wörds remembers which lessons you left open. A search opens every lesson with a match.</li>
       <li>The <strong>▶ button</strong> next to a lesson starts that whole lesson, open or not.</li>
+      <li><strong>Make a study plan</strong> under the button plans the selected pack and chip over the coming weeks; see <a href="#study-plans">Study plans</a>.</li>
       <li>With two or more language pairs installed, tap the pair under the title to switch between them.</li>
       <li>The <strong>box icon</strong> at the top right opens the <a href="#language-packs">language packs</a>.</li>
     </ul>
@@ -110,6 +112,23 @@
         <figcaption>Switching the language pair</figcaption>
       </figure>
     </div>
+    <h2 id="study-plans">Study plans</h2>
+    <p>A study plan spreads a pack over the weeks, so that every day has a portion you can manage. There is one plan per pack and chip (<em>Wortschatz</em>, <em>Verbkonjugation</em>); several can run side by side. Articles have no plan.</p>
+    <p>Tap <strong>Make a study plan</strong> in the library, or <strong>Plan</strong> on a lesson's cards:</p>
+    <ol>
+      <li><strong>What</strong>: choose the lessons and their order. A card is one question, so a word learned in both directions is two cards.</li>
+      <li><strong>How fast</strong>: choose the time you have a day, the cards a day or a date to finish by, and your study days.</li>
+      <li><strong>Your plan</strong>: wörds shows when you will be done, how long the busiest day of each week takes and when each lesson starts, and calls the plan <strong>Realistic</strong>, <strong>Ambitious</strong> or <strong>Too much</strong>. It looks at your time and at how many new cards you can keep up with, because every new card keeps coming back. These are estimates: how much you remember changes the reviews.</li>
+    </ol>
+    <p>If the plans together need more than your daily limit of new cards, the last step offers to raise it.</p>
+    <p>With a plan, the button in the library shows what today holds:</p>
+    <ul>
+      <li><strong>Study today</strong>: today's new cards and reviews, in one session.</li>
+      <li><strong>Day off</strong>: on a day that is not a study day no new cards come up; reviews stay available if you like.</li>
+      <li><strong>Done for today</strong>: today's portion is done. You can study a few more on purpose.</li>
+    </ul>
+    <p>If you miss a day, nothing piles up: the portion stays the same and the end date moves. If a date you chose can no longer be reached, the plan says so, and you decide whether to go faster or pick a new date. Cards you learn in a lesson count towards the plan.</p>
+    <p>Tap the line under the button, or the plan in Progress, to change, pause or delete it. Pausing stops new cards, reviews go on; deleting a plan keeps what you have learned. If you don't want plans at all, turn off <strong>Study plans</strong> under <a href="#learning">Settings – Learning</a>: new cards then come in pack order again, and your plans wait until you turn it back on.</p>
     <h2 id="starting-a-session">Starting a session</h2>
     <p>Before a session starts, a sheet lets you decide how to practise:</p>
     <div class="figures">
@@ -270,7 +289,7 @@
     <ul>
       <li><strong>Difficult words</strong>: words you forgot three times or more after you had known them. Tap the card to see them. From the list you can <strong>edit</strong> a word (a word of an installed pack is edited in a copy of the pack, which keeps your progress), or <strong>reset</strong> it to learn it from scratch. A word leaves the list once you remember it for three weeks. In the library, the editor and on the answer side of a card, these words are marked <strong>Difficult</strong>.</li>
       <li><strong>Your week</strong>: from the first day of a week, a recap of the week before – how many answers you gave, how many were right compared with the week before that, and how many cards became consolidated. <strong>✕</strong> puts it away until next week.</li>
-      <li><strong>A lesson goal</strong>, if you set one (see <a href="#statistics">Statistics</a>): how many new cards of the lesson are left, how many a day that needs, and whether your daily limit of new cards makes it in time. Tap it to open the lesson; <strong>✕</strong> removes the goal.</li>
+      <li><strong>Study plans</strong>, if you have any: how many new cards each has left and when it will be done. Tap one to open it (see <a href="#study-plans">Study plans</a>).</li>
       <li><strong>Learning state – statistics</strong>: all cards of the language pair by how well you know them; tap it for the <a href="#statistics">statistics</a>.</li>
       <li><strong>Next 7 days</strong>: how many cards are due each day, overdue ones counted today.</li>
       <li><strong>Last 12 weeks</strong>: a calendar of the days you studied; the darker a day, the more answers you gave. <strong>Show as list</strong> spells both charts out as a table.</li>
@@ -335,7 +354,7 @@
         <figcaption>A card&#x27;s details</figcaption>
       </figure>
     </div>
-    <p>On a lesson's cards, <strong>Set goal</strong> asks for a date by which all cards of the lesson should be introduced. The goal then appears in Progress. There is one goal per language pair; setting another one replaces it.</p>
+    <p>On a lesson's cards, <strong>Plan</strong> starts a <a href="#study-plans">study plan</a> with that lesson. A lesson goal from an earlier version has become such a plan.</p>
     <h2 id="practising-weak-spots">Practising weak spots</h2>
     <p><strong>Practise weak spots</strong> starts a session with just the cards that need it. Open it with the button at the bottom of the statistics, with <strong>Practise this lesson</strong> on a lesson's cards, with <strong>Practise these</strong> on the difficult words, or by tapping a verb, a kind of typing mistake or <strong>Practise the weakest forms</strong> in the statistics.</p>
     <div class="figures">
@@ -535,6 +554,7 @@
     </div>
     <h3 id="learning">Learning</h3>
     <ul>
+      <li><strong>Study plans</strong>: on by default. Turned off, the library offers no plans, new cards come in pack order, and your plans wait until you turn it back on. See <a href="#study-plans">Study plans</a>.</li>
       <li><strong>Type answers</strong>: in the daily review and when <a href="#practising-weak-spots">practising weak spots</a>, you type each answer instead of flipping the card. Lessons ask when they start.</li>
       <li><strong>Accept missing accents</strong> counts an answer that differs only in accents as almost right; turned off, it is wrong.</li>
       <li><strong>Accept a missing article</strong> counts a noun without its article as almost right; turned off, it is wrong.</li>

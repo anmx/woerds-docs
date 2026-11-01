@@ -8,12 +8,13 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.21.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.22.0. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
 - [Getting started](#getting-started)
 - [The library](#the-library)
+- [Study plans](#study-plans)
 - [Starting a session](#starting-a-session)
 - [Studying a card](#studying-a-card)
 - [Looking back and correcting](#looking-back-and-correcting)
@@ -64,13 +65,16 @@ divided into sections (lessons), and each section into items: a verb with all it
   *Verbkonjugation* (verbs) and **Articles** once the pack has at least five nouns with their article. The library
   remembers the last one per pack.
 - The **button under the chips** follows that choice: **Continue …** when a session of it is still open (it picks up
-  exactly where you left off), **Study …** for all its entries otherwise, or **Practise articles** (see
+  exactly where you left off), **Next cards** for up to 20 cards you have not studied yet, today's portion when you
+  have a [study plan](#study-plans), or **Practise articles** (see
   [Practising articles](#practising-articles)). The **stop** square next to **Continue …** discards the open session after you confirm: it can no longer be continued, and your answers so far stay saved.
 - **Today's review** starts or continues the review of the selected pack and chip; it shows only when that has cards
   to review, and never for Articles (see [Today's review](#todays-review)).
 - Lessons start **collapsed**: tap a lesson's name to open or close it. wörds remembers which lessons you left open.
   A search opens every lesson with a match.
 - The **▶ button** next to a lesson starts that whole lesson, open or not.
+- **Make a study plan** under the button plans the selected pack and chip over the coming weeks; see
+  [Study plans](#study-plans).
 - With two or more language pairs installed, tap the pair under the title to switch between them.
 - The **box icon** at the top right opens the [language packs](#language-packs).
 
@@ -82,6 +86,37 @@ first: **Continue** the open one, **Start again** (or **Start anyway** for anoth
 so far are saved either way.
 
 ![Two verbs selected](../images/en/02-library-selection.png) ![Switching the language pair](../images/en/15-pair-switcher.png)
+
+## Study plans
+
+A study plan spreads a pack over the weeks, so that every day has a portion you can manage. There is one plan per pack
+and chip (*Wortschatz*, *Verbkonjugation*); several can run side by side. Articles have no plan.
+
+Tap **Make a study plan** in the library, or **Plan** on a lesson's cards:
+
+1. **What**: choose the lessons and their order. A card is one question, so a word learned in both directions is two
+   cards.
+2. **How fast**: choose the time you have a day, the cards a day or a date to finish by, and your study days.
+3. **Your plan**: wörds shows when you will be done, how long the busiest day of each week takes and when each lesson
+   starts, and calls the plan **Realistic**, **Ambitious** or **Too much**. It looks at your time and at how many new
+   cards you can keep up with, because every new card keeps coming back. These are estimates: how much you remember
+   changes the reviews.
+
+If the plans together need more than your daily limit of new cards, the last step offers to raise it.
+
+With a plan, the button in the library shows what today holds:
+
+- **Study today**: today's new cards and reviews, in one session.
+- **Day off**: on a day that is not a study day no new cards come up; reviews stay available if you like.
+- **Done for today**: today's portion is done. You can study a few more on purpose.
+
+If you miss a day, nothing piles up: the portion stays the same and the end date moves. If a date you chose can no
+longer be reached, the plan says so, and you decide whether to go faster or pick a new date. Cards you learn in a lesson
+count towards the plan.
+
+Tap the line under the button, or the plan in Progress, to change, pause or delete it. Pausing stops new cards, reviews
+go on; deleting a plan keeps what you have learned. If you don't want plans at all, turn off **Study plans** under
+[Settings – Learning](#learning): new cards then come in pack order again, and your plans wait until you turn it back on.
 
 ## Starting a session
 
@@ -254,9 +289,8 @@ Above the packs, Progress shows:
 - **Your week**: from the first day of a week, a recap of the week before – how many answers you gave, how many were
   right compared with the week before that, and how many cards became consolidated. **✕** puts it away until next
   week.
-- **A lesson goal**, if you set one (see [Statistics](#statistics)): how many new cards of the lesson are left, how
-  many a day that needs, and whether your daily limit of new cards makes it in time. Tap it to open the lesson;
-  **✕** removes the goal.
+- **Study plans**, if you have any: how many new cards each has left and when it will be done. Tap one to open it (see
+  [Study plans](#study-plans)).
 - **Learning state – statistics**: all cards of the language pair by how well you know them; tap it for the
   [statistics](#statistics).
 - **Next 7 days**: how many cards are due each day, overdue ones counted today.
@@ -303,8 +337,8 @@ from scratch, or **edit** it if it is one of your own words.
 
 ![The cards of a lesson](../images/en/64-lesson-cards.png) ![A card's details](../images/en/65-card-detail.png)
 
-On a lesson's cards, **Set goal** asks for a date by which all cards of the lesson should be introduced. The goal then
-appears in Progress. There is one goal per language pair; setting another one replaces it.
+On a lesson's cards, **Plan** starts a [study plan](#study-plans) with that lesson. A lesson goal from an earlier version
+has become such a plan.
 
 ## Practising weak spots
 
@@ -519,6 +553,8 @@ light and dark.
 
 ### Learning
 
+- **Study plans**: on by default. Turned off, the library offers no plans, new cards come in pack order, and your plans
+  wait until you turn it back on. See [Study plans](#study-plans).
 - **Type answers**: in the daily review and when [practising weak spots](#practising-weak-spots), you type each answer
   instead of flipping the card. Lessons ask when they start.
 - **Accept missing accents** counts an answer that differs only in accents as almost right; turned off, it is wrong.
