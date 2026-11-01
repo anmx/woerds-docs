@@ -8,7 +8,7 @@ wörds funktioniert offline, braucht kein Konto und zeigt keine Werbung. Mitgeli
 Deutschsprachige (Verben A1 und 120 Wörter des Alltags); weitere Sprachpakete lassen sich aus einer Datei oder von
 GitHub hinzufügen, und du kannst eigene erstellen, auch aus Fotos einer Wortliste.
 
-Dieses Handbuch beschreibt wörds 0.22.0. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
+Dieses Handbuch beschreibt wörds 0.22.1. Die Bildschirmfotos zeigen das Farbschema Terrakotta; deine App kann
 andere Farben haben.
 
 ## Inhalt
@@ -104,14 +104,14 @@ Tippe in der Bibliothek auf **Lernplan erstellen** oder bei den Karten einer Lek
    neue Karten du durchhalten kannst, denn jede neue Karte kommt immer wieder. Das sind Schätzungen: Wie viel du behältst,
    verändert die Wiederholungen.
 
-Brauchen deine Pläne zusammen mehr als dein Tageslimit für neue Karten, bietet der letzte Schritt an, es anzuheben.
+Brauchen deine Pläne zusammen mehr als dein Tageslimit für neue Karten, bietet der letzte Schritt an, es anzuheben. Der Schalter ist zunächst aus: Ohne ihn bekommt der Plan nur, was das Limit erlaubt, und die Vorschau zeigt das spätere Enddatum.
 
 Mit einem Plan zeigt der Knopf in der Bibliothek, was heute dran ist:
 
 - **Heute lernen**: die neuen Karten und Wiederholungen von heute in einer Sitzung.
 - **Heute frei**: An einem Tag, der kein Lerntag ist, kommen keine neuen Karten; Wiederholungen bleiben möglich, wenn du
   möchtest.
-- **Geschafft für heute**: Die Tagesportion ist erledigt. Du kannst gezielt noch ein paar mehr lernen.
+- **Du hast das Tagesziel erreicht!**: Die Tagesportion ist erledigt. Mit **Heute gelernte Wörter wiederholen** gehst du die heute neu gelernten Karten noch einmal durch.
 
 Lässt du einen Tag aus, staut sich nichts: Die Portion bleibt gleich, das Enddatum rückt nach hinten. Ist ein gewähltes
 Datum nicht mehr erreichbar, sagt der Plan das, und du entscheidest, ob du schneller lernst oder ein neues Datum wählst.

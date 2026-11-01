@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.22.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.22.1. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
@@ -102,13 +102,13 @@ Tap **Make a study plan** in the library, or **Plan** on a lesson's cards:
    cards you can keep up with, because every new card keeps coming back. These are estimates: how much you remember
    changes the reviews.
 
-If the plans together need more than your daily limit of new cards, the last step offers to raise it.
+If the plans together need more than your daily limit of new cards, the last step offers to raise it. The switch starts off: without it the plan gets only what the limit allows, and the preview shows the later end date.
 
 With a plan, the button in the library shows what today holds:
 
 - **Study today**: today's new cards and reviews, in one session.
 - **Day off**: on a day that is not a study day no new cards come up; reviews stay available if you like.
-- **Done for today**: today's portion is done. You can study a few more on purpose.
+- **You reached today's goal!**: today's portion is done. **Repeat the words learned today** goes through the cards you first studied today once more.
 
 If you miss a day, nothing piles up: the portion stays the same and the end date moves. If a date you chose can no
 longer be reached, the plan says so, and you decide whether to go faster or pick a new date. Cards you learn in a lesson
