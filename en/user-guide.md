@@ -8,7 +8,7 @@ wörds works offline, needs no account and shows no ads. It comes with Italian f
 120 everyday words); more language packs can be added from a file or from GitHub, and you can make your own,
 also from photos of a word list.
 
-This guide describes wörds 0.20.0. The screenshots show the Terracotta color scheme; your app may use other colors.
+This guide describes wörds 0.20.1. The screenshots show the Terracotta color scheme; your app may use other colors.
 
 ## Contents
 
