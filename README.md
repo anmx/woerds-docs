@@ -4,20 +4,13 @@ wörds is a flashcard app for learning languages: vocabulary and verb forms, wit
 
 wörds ist eine Lernkarten-App zum Sprachenlernen: Vokabeln und Verbformen, mit verteilter Wiederholung, offline.
 
+The documentation is published at <https://anmx.github.io/woerds-docs/>.
+
 | | English | Deutsch |
 | --- | --- | --- |
-| **Using the app (latest version)** · **Die App benutzen (aktuelle Version)** | [User guide](en/user-guide.md) | [Benutzerhandbuch](de/benutzerhandbuch.md) |
-| **Privacy** · **Datenschutz** | [Privacy policy](en/privacy-policy.md) | [Datenschutzerklärung](de/datenschutz.md) |
-| **Making language packs** · **Sprachpakete erstellen** | [Language pack specification](spec/README.md) (for developers) | [Sprachpaket-Spezifikation](spec/README.md) (für die Entwicklung, auf Englisch) |
-| **Earlier versions** · **Frühere Versionen** | [User guide 0.22.0](versions/0.22.0/en/user-guide.md)<br>[User guide 0.21.0](versions/0.21.0/en/user-guide.md)<br>[User guide 0.20.1](versions/0.20.1/en/user-guide.md)<br>[User guide 0.20.0](versions/0.20.0/en/user-guide.md)<br>[User guide 0.19.0](versions/0.19.0/en/user-guide.md)<br>[User guide 0.18.2](versions/0.18.2/en/user-guide.md)<br>[User guide 0.18.1](versions/0.18.1/en/user-guide.md)<br>[User guide 0.18.0](versions/0.18.0/en/user-guide.md)<br>[User guide 0.17.0](versions/0.17.0/en/user-guide.md)<br>[User guide 0.16.0](versions/0.16.0/en/user-guide.md) | [Benutzerhandbuch 0.22.0](versions/0.22.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.21.0](versions/0.21.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.20.1](versions/0.20.1/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.20.0](versions/0.20.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.19.0](versions/0.19.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.18.2](versions/0.18.2/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.18.1](versions/0.18.1/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.18.0](versions/0.18.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.17.0](versions/0.17.0/de/benutzerhandbuch.md)<br>[Benutzerhandbuch 0.16.0](versions/0.16.0/de/benutzerhandbuch.md) |
-| | [User guide 0.15.0](versions/0.15.0/en/user-guide.md) | [Benutzerhandbuch 0.15.0](versions/0.15.0/de/benutzerhandbuch.md) |
-| | [User guide 0.14.0](versions/0.14.0/en/user-guide.md) | [Benutzerhandbuch 0.14.0](versions/0.14.0/de/benutzerhandbuch.md) |
-| | [User guide 0.13.0](versions/0.13.0/en/user-guide.md) | [Benutzerhandbuch 0.13.0](versions/0.13.0/de/benutzerhandbuch.md) |
-| | [User guide 0.12.0](versions/0.12.0/en/user-guide.md) | [Benutzerhandbuch 0.12.0](versions/0.12.0/de/benutzerhandbuch.md) |
-| | [User guide 0.11.1](versions/0.11.1/en/user-guide.md) | [Benutzerhandbuch 0.11.1](versions/0.11.1/de/benutzerhandbuch.md) |
-| | [User guide 0.11.0](versions/0.11.0/en/user-guide.md) | [Benutzerhandbuch 0.11.0](versions/0.11.0/de/benutzerhandbuch.md) |
-| | [User guide 0.10.0](versions/0.10.0/en/user-guide.md) | [Benutzerhandbuch 0.10.0](versions/0.10.0/de/benutzerhandbuch.md) |
-| | [User guide 0.9.0](versions/0.9.0/en/user-guide.md) | [Benutzerhandbuch 0.9.0](versions/0.9.0/de/benutzerhandbuch.md) |
+| **Using the app** · **Die App benutzen** | [User guide](https://anmx.github.io/woerds-docs/en/user-guide) | [Benutzerhandbuch](https://anmx.github.io/woerds-docs/de/user-guide) |
+| **Privacy** · **Datenschutz** | [Privacy policy](https://anmx.github.io/woerds-docs/en/privacy-policy) | [Datenschutzerklärung](https://anmx.github.io/woerds-docs/de/privacy-policy) |
+| **Making language packs** · **Sprachpakete erstellen** | [Language pack specification](https://anmx.github.io/woerds-docs/en/spec) (for developers) | [Sprachpaket-Spezifikation](https://anmx.github.io/woerds-docs/en/spec) (für die Entwicklung, auf Englisch) |
 
 ## About this project · Über dieses Projekt
 
@@ -32,24 +25,33 @@ Austausch von Paketen in der Nähe. Die Nutzung und die damit verbundenen Risike
 Verantwortung; das gilt auch für Pakete, die du aus Dateien, von GitHub oder von anderen Personen annimmst. Rechte,
 die gesetzlich nicht ausgeschlossen werden können, bleiben unberührt.
 
+## Building the site
+
+The site is built with [Nextra](https://nextra.site) from the Markdown in `content/`. GitHub Actions does the work in a
+container: `.github/workflows/ci.yml` checks every pull request, and `.github/workflows/deploy.yml` builds `main` and
+publishes it to GitHub Pages. No generated file is committed.
+
+To try it before pushing, run the same image locally:
+
+```sh
+docker run --rm -p 3000:3000 -v "$PWD":/w -w /w -v woerds_nm:/w/node_modules node:24 sh -c 'npm ci && npm run dev -- -H 0.0.0.0'
+```
+
+Two choices in `package.json` work around limits of Nextra 4.6.1:
+
+- `zod` stays at 4.3.6. `nextra-theme-docs` removes `children` from the layout props but requires it in
+  `LayoutPropsSchema`; zod 4.4.0 and later reject that, and every page fails to render.
+- The build uses `--webpack`, because Turbopack cannot serialize the functions in `remarkPlugins`.
+
 ## Versions
 
-The user guide describes one version of the app; the privacy policy applies to all of them. `en/` and `de/` hold the
-guide of the latest version, so its address never changes. Earlier versions are kept, with their screenshots, in
-`versions/<version>/` and listed in `versions.json`. Before changing the guide for a new version, for example 0.11.0:
-
-1. `python3 tools/docs/build-manual.py --freeze 0.11.0` copies the current guides and their images to
-   `versions/<latest>/`, lists that version as earlier, and makes 0.11.0 the latest (in `versions.json` and in the
-   sentence of both guides that names the version).
-2. Link the frozen version in `index.html` and in the table above.
-3. Update the guides and run `python3 tools/docs/build-manual.py`.
-
-`--check` (run by CI) fails when an HTML page is out of date, a guide names a different version than
-`versions.json`, or `index.html` does not link an earlier version.
+The site shows the guide of the latest version only. For a new version, update both guides, including the sentence that
+names the version (`site.py check` fails when they differ); merging to `main` publishes them. Earlier guides remain in
+the git history.
 
 ## Language pack specification
 
-`spec/` holds the specification of the language pack format for developers of other tools (English only). It is
-versioned by the pack format (`spec/v1/`), not by the app, so `--freeze` leaves it alone. Its Markdown pages are built
-with the guides; the template archives, the conformance archives and the template index are built by
-`python3 tools/spec/build-spec.py` (CI runs it with `--check`). See [spec/README.md](spec/README.md).
+The pages of the specification (English only) are in `content/en/spec/`. `spec/` holds its schemas, templates and
+conformance cases, which are served at their addresses under `spec/v1/`. It is versioned by the pack format (`v1`), not
+by the app. The template archives, the conformance archives and the template index are built by
+`python3 tools/spec/build-spec.py` (CI runs it with `--check`).
