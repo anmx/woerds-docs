@@ -1,8 +1,6 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
 
 permissions:
@@ -15,16 +13,32 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    container: node:24@sha256:e7add2a490bb17d97b485b8641bd88455fff7839ade0f5eba493c3508124d413
+    timeout-minutes: 10
+    env:
+      NEXT_PUBLIC_BASE_PATH: /woerds-docs
+      NEXT_TELEMETRY_DISABLED: 1
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: HTML is up to date
-        # The HTML pages are generated from the Markdown next to them, and the guides must name the version in
-        # versions.json; locally: python3 tools/docs/build-manual.py
-        run: python3 tools/docs/build-manual.py --check
+      - run: npm ci
+
+      - name: Guides name the same version
+        run: python3 tools/docs/site.py check
 
       - name: Pack specification archives and index are up to date
         # The template and conformance archives and the template index are generated from the folders next to them,
-        # and cases.json must list every conformance case; locally: python3 tools/spec/build-spec.py
+        # and cases.json must list every conformance case.
         run: python3 tools/spec/build-spec.py --check
+
+      - name: Tests
+        run: |
+          npm test
+          python3 tools/docs/test_site.py
+
+      - run: npm run typecheck
+
+      - run: npm run build
+
+      - name: Earlier addresses, links and anchors work
+        run: python3 tools/docs/site.py verify

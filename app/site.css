@@ -1,0 +1,15 @@
+/* The decoy keeps email addresses from harvesters that ignore CSS. */
+.email { white-space: nowrap; }
+.email .decoy { display: none; }
+
+.figures { display: flex; flex-wrap: wrap; gap: 24px; margin: 24px 0; }
+.figures figure { margin: 0; }
+.figures img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgb(128 128 128 / 0.3); }
+.figures figure.shot { width: 260px; max-width: 100%; }
+.figures figure.wide { width: 100%; }
+.figures figcaption { margin-top: 8px; font-size: 14px; opacity: 0.8; }
+
+@media (max-width: 600px) {
+  .figures { gap: 16px; }
+  .figures figure.shot { width: calc(50% - 8px); }
+}
