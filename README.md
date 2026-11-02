@@ -37,6 +37,12 @@ To try it before pushing, run the same image locally:
 docker run --rm -p 3000:3000 -v "$PWD":/w -w /w -v woerds_nm:/w/node_modules node:24 sh -c 'npm ci && npm run dev -- -H 0.0.0.0'
 ```
 
+Two choices in `package.json` work around limits of Nextra 4.6.1:
+
+- `zod` stays at 4.3.6. `nextra-theme-docs` removes `children` from the layout props but requires it in
+  `LayoutPropsSchema`; zod 4.4.0 and later reject that, and every page fails to render.
+- The build uses `--webpack`, because Turbopack cannot serialize the functions in `remarkPlugins`.
+
 ## Versions
 
 The site shows the guide of the latest version only. For a new version, update both guides, including the sentence that

@@ -48,7 +48,7 @@ export default async function RootLayout({
       <Head />
       <body>
         <Layout
-          navbar={<Navbar logo={<b>wörds</b>} projectLink={REPOSITORY} />}
+          navbar={<Navbar logo={<b>wörds</b>} logoLink={`/${lang}`} projectLink={REPOSITORY} />}
           footer={<Footer>{labels.footer}</Footer>}
           pageMap={withLanguage(await getPageMap(`/${lang}`), lang)}
           docsRepositoryBase={`${REPOSITORY}/tree/main`}
